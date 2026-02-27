@@ -4,16 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-
-  background:
-    radial-gradient(circle at 28% 38%, rgba(255,255,255,0.07), transparent 55%),
-    radial-gradient(circle at 80% 65%, rgba(255,255,255,0.03), transparent 55%),
-    linear-gradient(to right, #2c2c2c, #1f1f1f);
-  color: #e5e5e5;
-  min-height: 100vh;
-}
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: radial-gradient(circle at 28% 38%, rgba(255,255,255,0.07), transparent 55%), radial-gradient(circle at 80% 65%, rgba(255,255,255,0.03), transparent 55%), linear-gradient(to right, #2c2c2c, #1f1f1f); color: #e5e5e5; min-height: 100vh; }
 
 /* ================= HERO ================= */
 
@@ -509,19 +500,6 @@ body {
   padding: 16px 0;
 }
 
-.faq-item summary {
-  list-style: none;
-  cursor: pointer;
-  font-size: 18px;
-  color: rgba(255,255,255,0.88);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.faq-item summary::-webkit-details-marker { display: none; }
-
 .faq-item .caret {
   display: inline-block;
   transform: rotate(0deg);
@@ -529,10 +507,6 @@ body {
   color: rgba(255,255,255,0.55);
   font-size: 22px;
   line-height: 1;
-}
-
-.faq-item[open] .caret {
-  transform: rotate(90deg);
 }
 
 .faq-item .answer {
@@ -611,7 +585,7 @@ body {
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
   background-size: 180px 180px;
-}
+} 
 
 /* 비네팅 */
 .page-depth::after {
@@ -620,7 +594,8 @@ body {
   inset: 0;
   background: radial-gradient(circle at 50% 45%, transparent 35%, rgba(0,0,0,0.55) 95%);
   opacity: 0.55;
-}
+} */
+
 .section-top-line {
   height: 1px;
   background:linear-gradient(
@@ -657,27 +632,183 @@ body {
   gap: 20px;
 }
 
-.hero-links {
-  display: flex;
-  gap: 14px;
-}
-
-.hero-links img {
+.icon {
   width: 22px;
   height: 22px;
-  opacity: 0.6;
-  transition: all 0.2s ease;
 }
 
-.hero-links img:hover {
-  opacity: 1;
-  transform: translateY(-2px);
+.icon-link {
+  color: rgba(255, 255, 255, 0.447);
+  transition: 0.2s ease;
 }
 
-.hero-links a {
-  color: rgba(255,255,255,0.6);
-}
-
-.hero-links a:hover {
+.icon-link:hover {
   color: #ffffff;
+}
+
+/* [FAQ 섹션 최적화 버전] */
+
+/* 1. 기본 상태: 다른 요소들과 마찬가지로 처음엔 숨김 */
+.faq-item.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease, border-color 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* 2. 등장 완료 상태: 스크롤 감지 시 나타남 */
+.faq-item.fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 3. 질문 스타일 */
+#faq .faq-question {
+  cursor: pointer;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  position: relative; /* Before 선 배치를 위해 필요 */
+}
+
+/* 마우스 호버 */
+#faq .faq-question:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 4. 클릭해서 열렸을 때 (is-open) 스타일 */
+.faq-item.is-open .faq-question {
+  color: #ffffff !important;
+  font-weight: 600;
+  padding-left: 15px;
+}
+
+/* 왼쪽 파란 선 효과 */
+.faq-item.is-open .faq-question::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+/* 5. 답변 영역 */
+#faq .faq-answer {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#faq .faq-answer > div {
+  padding: 10px 0 30px 0;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+}
+
+/* 사이드 네비게이션 스타일 */
+/* ============================= */
+/*        SUPREME NAV           */
+/* ============================= */
+
+.supreme-nav {
+  position: fixed;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%) translateX(120px);
+  opacity: 0;
+  transition: 
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.8s ease;
+  z-index: 60;
+  backdrop-filter: blur(10px);
+}
+
+.supreme-nav.show {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+}
+
+.supreme-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.03);
+  box-shadow:
+    0 0 30px rgba(255,255,255,0.04),
+    inset 0 0 20px rgba(255,255,255,0.02);
+}
+
+.supreme-nav li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 22px 0;
+  cursor: pointer;
+  transform: translateX(20px);
+  opacity: 0;
+  transition: 
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s ease;
+}
+
+.supreme-nav.show li {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* 점 */
+.supreme-nav .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transition: all 0.4s ease;
+  box-shadow: 0 0 0 rgba(255,255,255,0);
+}
+
+/* 텍스트 */
+.supreme-nav .label {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.4);
+  transition: all 0.4s ease;
+}
+
+/* hover */
+.supreme-nav li:hover .dot {
+  transform: scale(1.6);
+  background: #ffffff;
+}
+
+.supreme-nav li:hover .label {
+  color: #ffffff;
+  transform: translateX(6px);
+}
+
+/* active */
+.supreme-nav li.active .dot {
+  background: #ffffff;
+  box-shadow: 0 0 14px rgba(255,255,255,0.8);
+  transform: scale(1.4);
+}
+
+.supreme-nav li.active .label {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255,255,255,0.5);
+}
+
+/* ===== 섹션 타이틀 업그레이드 ===== */
+
+section:not(.hero) .section-title {
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.3px;
 }

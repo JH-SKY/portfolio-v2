@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ko">
   <head>
+    <link rel="icon" href="images/logo2.png" type="image/png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>이종혁 | Portfolio</title>
@@ -9,7 +10,7 @@
   <body>
     <div class="page-depth"></div>
     <div class="mouse-glow"></div>
-    <header class="hero">
+    <header section id="home" class="hero">
       <div class="hero-wrap">
         <div class="hero-main">
           <h1 class="hero-title reveal reveal-1">
@@ -19,32 +20,73 @@
 
           <h2 class="hero-sub reveal reveal-2">
             도봉캠퍼스 <strong>이종혁</strong>
-          </h2>
-          <div class="hero-links">
-            <a
-              href="https://github.com/your-github"
-              target="_blank"
-              rel="noopener"
-              aria-label="GitHub"
-            >
-              <img src="images/github.svg" alt="GitHub" />
-            </a>
+            <div class="hero-links">
+              <a
+                href="https://github.com/JH-SKY"
+                target="_blank"
+                rel="noopener"
+                class="icon-link"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" class="icon">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12
+    0 17.303 3.438 21.8 8.205 23.385
+    c.6.113.82-.258.82-.577
+    0-.285-.01-1.04-.015-2.04
+    -3.338.724-4.042-1.61-4.042-1.61
+    -.546-1.387-1.333-1.756-1.333-1.756
+    -1.089-.744.084-.729.084-.729
+    1.205.084 1.84 1.237 1.84 1.237
+    1.07 1.835 2.807 1.305 3.492.998
+    .108-.776.418-1.305.762-1.605
+    -2.665-.3-5.466-1.332-5.466-5.93
+    0-1.31.465-2.38 1.235-3.22
+    -.135-.303-.54-1.523.105-3.176
+    0 0 1.005-.322 3.3 1.23
+    .96-.267 1.98-.399 3-.405
+    1.02.006 2.04.138 3 .405
+    2.28-1.552 3.285-1.23 3.285-1.23
+    .645 1.653.24 2.873.12 3.176
+    .765.84 1.23 1.91 1.23 3.22
+    0 4.61-2.805 5.625-5.475 5.92
+    .435.375.81 1.11.81 2.24
+    0 1.62-.015 2.925-.015 3.32
+    0 .315.21.69.825.57
+    C20.565 21.795 24 17.295 24 12
+    24 5.37 18.63 0 12 0z"
+                  />
+                </svg>
+              </a>
 
-            <a
-              href="https://velog.io/@your-velog"
-              target="_blank"
-              rel="noopener"
-              aria-label="Velog"
-            >
-              <img src="images/velog.svg" alt="Velog" />
-            </a>
-          </div>
+              <a
+                href="https://velog.io/@popoa09"
+                target="_blank"
+                rel="noopener"
+                class="icon-link"
+                aria-label="Velog"
+              >
+                <svg
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  class="icon"
+                >
+                  <title>Velog</title>
+                  <path
+                    d="M3 0C1.338 0 0 1.338 0 3v18c0 1.662 1.338 3 3 3h18c1.662 0 3-1.338 3-3V3c0-1.662-1.338-3-3-3H3Zm6.883 6.25c.63 0 1.005.3 1.125.9l1.463 8.303c.465-.615.846-1.133 1.146-1.553.465-.66.893-1.418 1.283-2.273.405-.855.608-1.62.608-2.295 0-.405-.113-.727-.338-.967-.21-.255-.608-.577-1.193-.967.6-.765 1.35-1.148 2.25-1.148.48 0 .878.143 1.193.428.33.285.494.704.494 1.26 0 .93-.39 2.093-1.17 3.488-.765 1.38-2.241 3.457-4.431 6.232l-2.227.156-1.711-9.628h-2.25V7.24c.6-.195 1.305-.406 2.115-.63.81-.24 1.358-.36 1.643-.36Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </h2>
 
           <div class="hero-line reveal-line"></div>
 
           <p class="hero-desc reveal reveal-3">
-            RAG와 Agent로 기술적 해답을 찾고,<br />
-            협업을 통해 최고의 사용자 경험을 설계하고자하는 개발자 이종혁입니다.
+            RAG와 Agent를 사용하여,<br />
+            최고의 사용자 서비스를 설계하고자하는 개발자 이종혁입니다.
           </p>
         </div>
 
@@ -68,20 +110,23 @@
       <div class="section-wrap">
         <div class="section-top-line" aria-hidden="true"></div>
         <p class="section-label fade-up">About</p>
-        <h2 class="section-title fade-up">문제를 코드가 아닌 구조로 봅니다.</h2>
+        <h2 class="section-title fade-up">
+          사용자의 고민을 이해하고 해결하겠습니다.
+        </h2>
         <p class="section-desc fade-up">
-          기능을 구현하는 개발자가 아니라, 문제를 정의하고 해결 흐름을 설계하는
-          사람입니다.
+          효율적인 흐름을 설계하고 AI로 가치를 만들겠습니다.
         </p>
 
         <div class="about-points">
           <div class="about-item fade-up">
             <span>01</span>
-            <p>요구사항을 기능 단위로 나누고 흐름을 먼저 설계합니다</p>
+            <p>복잡한 요구사항도 핵심 기능부터 차근차근 구조화합니다.</p>
           </div>
           <div class="about-item fade-up">
             <span>02</span>
-            <p>백엔드와 프론트 간 데이터 구조를 먼저 정의합니다</p>
+            <p>
+              데이터의 흐름을 파악하여 군더더기 없는 통신 구조를 정의합니다.
+            </p>
           </div>
           <div class="about-item fade-up">
             <span>03</span>
@@ -102,20 +147,37 @@
 
         <div class="skills-grid">
           <div class="skill-card fade-up">
-            <p class="skill-k">Back-end</p>
-            <p class="skill-v">Python · FastAPI</p>
+            <p class="skill-k">LLM Optimization</p>
+            <p class="skill-v">프롬프트 엔지니어링 · LLM API 활용</p>
           </div>
           <div class="skill-card fade-up">
             <p class="skill-k">Front-end</p>
-            <p class="skill-v">HTML · CSS · JavaScript</p>
+            <p class="skill-v">React · CSS · JavaScript</p>
+          </div>
+          <div class="skill-card fade-up">
+            <p class="skill-k">Back-end</p>
+            <p class="skill-v">Python · FastAPI · Async/Await 비동기</p>
           </div>
           <div class="skill-card fade-up">
             <p class="skill-k">API</p>
             <p class="skill-v">REST 설계 · 외부 API 연동</p>
           </div>
           <div class="skill-card fade-up">
-            <p class="skill-k">Collaboration</p>
-            <p class="skill-v">Git · GitHub</p>
+            <p class="skill-k">Database</p>
+            <p class="skill-v">PostgreSQL · SQL 데이터 모델링 · Pydantic</p>
+          </div>
+
+          <div class="skill-card fade-up">
+            <p class="skill-k">AI Strategy</p>
+            <p class="skill-v">RAG(문서 기반 Q&A) · AI Agent 설계</p>
+          </div>
+          <div class="skill-card fade-up">
+            <p class="skill-k">Auth & Security</p>
+            <p class="skill-v">PyJWT 인증 · bcrypt 암호화 · 데이터 보안</p>
+          </div>
+          <div class="skill-card fade-up">
+            <p class="skill-k">AI Orchestration</p>
+            <p class="skill-v">LangChain · Agent Workflow · Function Calling</p>
           </div>
         </div>
       </div>
@@ -127,8 +189,8 @@
         <p class="section-label fade-up">Projects</p>
         <h2 class="section-title fade-up">프로젝트</h2>
         <p class="section-desc fade-up">
-          아래 카드는 “이미지 + GitHub 링크”용 껍데기입니다. 프로젝트가 생기면
-          이미지와 링크만 교체하면 됩니다.
+          프로젝트은 GitHub 저장소로 연결되어 있습니다. 클릭해서 자세한 내용을
+          확인해주세요.
         </p>
 
         <div class="projects-grid">
@@ -191,93 +253,107 @@
         <div class="section-top-line" aria-hidden="true"></div>
 
         <p class="section-label fade-up">FAQ</p>
-        <h2 class="section-title fade-up">FAQ</h2>
+        <h2 class="section-title fade-up">궁금해하실 내용들</h2>
         <p class="section-desc fade-up">
-          면접에서 자주 나오는 질문을 먼저 정리했습니다.
+          저에게 궁금해 하실수 있는 질문을 먼저 정리했습니다.
         </p>
 
-        <details class="faq-item fade-up">
-          <summary>
+        <div class="faq-item fade-up">
+          <div class="faq-question">
             AI 서비스 개발을 선택한 이유가 있나요 ? <span class="caret">›</span>
-          </summary>
-          <div class="answer">
-            AI는 앞으로 사람들의 생활 방식을 크게 바꿀 거라고 생각합니다.
-            <br /><b>변화의 흐름을 지켜보다 보니</b> AI에 관심이 생기게 되었고
-            개발을 접해보니,<br />
-            문제를 해결하고 만든 기능이 실제로 동작하고 서비스로 배포되는 과정에
-            흥미를 느꼈습니다. <br />
-            그래서 AI 서비스 개발을 선택했습니다.
           </div>
-        </details>
+          <div class="faq-answer">
+            <div>
+              AI는 앞으로 사람들의 생활 방식을 크게 바꿀 거라고 생각합니다.
+              <br /><b>변화의 흐름을 지켜보다 보니</b> AI에 관심이 생기게 되었고
+              개발을 접해보니,<br />
+              문제를 해결하고 만든 기능이 실제로 동작하고 서비스로 배포되는
+              과정에 흥미를 느꼈습니다. <br />
+              그래서 AI 서비스 개발을 선택했습니다.
+            </div>
+          </div>
+        </div>
 
-        <details class="faq-item fade-up">
-          <summary>
+        <div class="faq-item fade-up">
+          <div class="faq-question">
             비즈니스/영업 경험이 개발에 어떤 장점이 되나요?
             <span class="caret">›</span>
-          </summary>
-          <div class="answer">
-            영업은 상대가 이해하는 것으로 끝나지 않고, <b>행동</b>까지 이어져야
-            성과가 납니다.<br />
-            그래서 개발할 때도,이 기능을 보고 사용자가 어떤 <b>행동</b>을 하게
-            될지를 먼저 생각합니다. <br />
-            개발 결과물 역시 기능 설명이 아니라, 사용자 관점에서 설명하는 데
-            익숙합니다.
           </div>
-        </details>
+          <div class="faq-answer">
+            <div>
+              영업은 상대가 이해하는 것으로 끝나지 않고, <b>행동</b>까지
+              이어져야 성과가 납니다.<br />
+              그래서 개발할 때도,이 기능을 보고 사용자가 어떤 <b>행동</b>을 하게
+              될지를 먼저 생각합니다. <br />
+              개발 결과물 역시 기능 설명이 아니라, 사용자 관점에서 설명하는 데
+              익숙합니다.
+            </div>
+          </div>
+        </div>
 
-        <details class="faq-item fade-up">
-          <summary>
+        <div class="faq-item fade-up">
+          <div class="faq-question">
             가장 자신 있는 강점 은 무엇인가요? <span class="caret">›</span>
-          </summary>
-          <div class="answer">
-            새로운 개념을 빠르게 이해하고,<br />
-            실제 작업에 어떻게 쓰일지까지 같이 생각합니다.<br />
-            그래서 질문도 기능보다는<br />
-            동작 방식이나 구조 쪽으로 하게 됩니다.<br />
-            이런 점에서 이해가 빠르다는 평가를 자주 받습니다.
           </div>
-        </details>
+          <div class="faq-answer">
+            <div>
+              새로운 개념을 빠르게 이해하고,<br />
+              실제 작업에 어떻게 쓰일지까지 같이 생각합니다.<br />
+              그래서 질문도 기능보다는<br />
+              동작 방식이나 구조 쪽으로 하게 됩니다.<br />
+              이런 점에서 이해가 빠르다는 평가를 자주 받습니다.
+            </div>
+          </div>
+        </div>
 
-        <details class="faq-item fade-up">
-          <summary>
+        <div class="faq-item fade-up">
+          <div class="faq-question">
             전공자가 아닌데, 개발을 제대로 따라갈 수 있나요?
             <span class="caret">›</span>
-          </summary>
-          <div class="answer">
-            지난 학습과정과 원하는 프로젝트를 시행하는데 큰 어려움은 없었습니다.
-            <br />
-            비전공자인 만큼, 결과로 보여드리기 위해 더 신경 써서 준비해왔습니다.
           </div>
-        </details>
+          <div class="faq-answer">
+            <div>
+              지난 학습과정과 원하는 프로젝트를 시행하는데 큰 어려움은
+              없었습니다.
+              <br />
+              비전공자인 만큼, 결과로 보여드리기 위해 더 신경 써서
+              준비해왔습니다.
+            </div>
+          </div>
+        </div>
 
-        <details class="faq-item fade-up">
-          <summary>
+        <div class="faq-item fade-up">
+          <div class="faq-question">
             실무 경험이 없는 상태에서, 어떤 부분을 맡길 수 있을까요?
             <span class="caret">›</span>
-          </summary>
-          <div class="answer">
-            기존 코드 흐름을 이해하고,<br />작은 기능 단위 작업부터 바로 맡을 수
-            있습니다.<br /><br />
-            FastAPI 기반으로 간단한 API를 설계·구현하고,<br />
-            외부 API나 AI 모델을 연동하는 작업을<br />
-            직접 진행해본 경험이 있습니다.<br /><br />
-
-            또한 GitHub를 활용한 팀 프로젝트를 진행해,<br />
-            협업을 위한 기본적인 GitHub 사용에도<br />
-            큰 어려움은 없습니다.
           </div>
-        </details>
+          <div class="faq-answer">
+            <div>
+              기존 코드 흐름을 이해하고,<br />작은 기능 단위 작업부터 바로 맡을
+              수 있습니다.<br /><br />
+              FastAPI 기반으로 간단한 API를 설계·구현하고,<br />
+              외부 API나 AI 모델을 연동하는 작업을<br />
+              직접 진행해본 경험이 있습니다.<br /><br />
 
-        <details class="faq-item fade-up">
-          <summary>
+              또한 GitHub를 활용한 팀 프로젝트를 진행해,<br />
+              협업을 위한 기본적인 GitHub 사용에도<br />
+              큰 어려움은 없습니다.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <div class="faq-question">
             막혔던 문제를 어떻게 해결했는지 사례로 말해줄 수 있나요?
             <span class="caret">›</span>
-          </summary>
-          <div class="answer">
-            5월 중 프로젝트 완료 후,<br />
-            실제 경험을 기반으로 답변을 정리할 예정입니다.
           </div>
-        </details>
+          <div class="faq-answer">
+            <div>
+              5월 중 프로젝트 완료 후,<br />
+              실제 경험을 기반으로 답변을 정리할 예정입니다.
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -287,30 +363,56 @@
 
         <p class="section-label fade-up">Contact</p>
         <h2 class="section-title fade-up">Contact</h2>
-        <p class="section-desc fade-up">
-          연락은 가장 깔끔한 채널로만 열어두겠습니다.
-        </p>
+        <p class="section-desc fade-up">whdgur2034@naver.com</p>
 
         <div class="contact-links">
-          <a class="contact-link" href="mailto:your@email.com">Email</a>
           <a
             class="contact-link"
-            href="https://github.com/your-github"
+            href="https://github.com/jh-sky"
             target="_blank"
             rel="noopener"
             >GitHub</a
           >
           <a
             class="contact-link"
-            href="https://www.notion.so/"
+            href="https://open.kakao.com/o/slJuqyii/"
             target="_blank"
             rel="noopener"
-            >Notion</a
+            >Open Kakao</a
           >
         </div>
       </div>
     </section>
 
     <script src="script.js"></script>
+    <!-- 사이드네비게이션 -->
+  <nav class="supreme-nav">
+  <ul>
+    <li data-target="home">
+      <span class="dot"></span>
+      <span class="label">Home</span>
+    </li>
+    <li data-target="about">
+      <span class="dot"></span>
+      <span class="label">About</span>
+    </li>
+    <li data-target="skills">
+      <span class="dot"></span>
+      <span class="label">Skills</span>
+    </li>
+    <li data-target="projects">
+      <span class="dot"></span>
+      <span class="label">Projects</span>
+    </li>
+    <li data-target="faq">
+      <span class="dot"></span>
+      <span class="label">FAQ</span>
+    </li>
+    <li data-target="contact">
+      <span class="dot"></span>
+      <span class="label">Contact</span>
+    </li>
+  </ul>
+</nav>
   </body>
 </html>
