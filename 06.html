@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:#1C1814;
+  --ink2:#6B6158;
+  --ink3:#A89D93;
+  --paper:#F3EDE3;
+  --paper2:#EBE4D8;
+  --rule:rgba(28,24,20,0.12);
+  --red:#C0401A;
+  --green:#4A7C59;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'IBM Plex Sans',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.65;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:760px;margin:0 auto;padding:0 2.5rem}
+
+.pdf-btn{
+  position:fixed;bottom:2rem;right:2rem;
+  background:var(--ink);color:var(--paper);
+  border:none;border-radius:2px;
+  padding:.65rem 1.4rem;font-family:var(--mono);
+  font-size:11px;letter-spacing:.06em;
+  cursor:pointer;z-index:99;
+  transition:opacity .2s;
+}
+.pdf-btn:hover{opacity:.75}
+
+hr{border:none;border-top:1px solid var(--rule);margin:0}
+.thick-rule{border-top:2px solid var(--ink)}
+
+header{padding:5rem 0 3.5rem}
+.eyebrow{
+  font-family:var(--mono);font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:1.5rem;
+}
+.hero-name{
+  font-family:var(--serif);
+  font-size:clamp(3rem,7vw,5.5rem);
+  font-weight:900;letter-spacing:-.03em;
+  line-height:.95;color:var(--ink);
+  margin-bottom:1.5rem;
+}
+.hero-name em{font-weight:400;font-style:italic;color:var(--ink2)}
+.hero-desc{
+  font-size:15px;color:var(--ink2);
+  font-weight:300;max-width:480px;
+  line-height:1.7;
+  border-left:2px solid var(--red);
+  padding-left:1rem;
+}
+.header-links{
+  display:flex;gap:1.5rem;margin-top:2.5rem;
+  font-family:var(--mono);font-size:11px;
+}
+.header-links a{
+  color:var(--ink3);text-decoration:none;
+  letter-spacing:.04em;
+  border-bottom:1px solid var(--rule);
+  padding-bottom:2px;
+  transition:color .2s,border-color .2s;
+}
+.header-links a:hover{color:var(--ink);border-color:var(--ink)}
+
+section{padding:4rem 0}
+
+.sec-eye{
+  font-family:var(--mono);font-size:10px;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:2rem;
+}
+
+.proj-title-row{
+  display:flex;justify-content:space-between;
+  align-items:baseline;gap:1rem;
+  margin-bottom:.5rem;
+}
+.proj-name{
+  font-family:var(--serif);
+  font-size:clamp(2rem,5vw,3.5rem);
+  font-weight:900;letter-spacing:-.02em;
+  line-height:1;color:var(--ink);
+}
+.proj-links{display:flex;gap:.75rem;align-items:center;flex-shrink:0}
+.proj-links a{
+  font-family:var(--mono);font-size:10px;
+  color:var(--ink3);text-decoration:none;
+  letter-spacing:.06em;
+  border-bottom:1px solid var(--rule);
+  padding-bottom:1px;
+  transition:color .2s;
+}
+.proj-links a:hover{color:var(--red)}
+.proj-links a.live{color:var(--red);border-color:rgba(192,64,26,.3)}
+.proj-sub{
+  font-size:12px;color:var(--ink3);
+  font-weight:400;margin-bottom:2.5rem;
+  letter-spacing:.02em;
+}
+
+.stat-row{
+  display:flex;align-items:flex-end;gap:0;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+  margin:2.5rem 0;padding:1.75rem 0;
+}
+.stat-item{
+  flex:1;padding:0 1.5rem;
+  border-right:1px solid var(--rule);
+}
+.stat-item:first-child{padding-left:0}
+.stat-item:last-child{border-right:none}
+.stat-n{
+  font-family:var(--serif);
+  font-size:clamp(2.2rem,5vw,3.8rem);
+  font-weight:900;letter-spacing:-.04em;
+  line-height:1;color:var(--ink);display:block;
+}
+.stat-n.accent{color:var(--red)}
+.stat-l{
+  font-size:11px;color:var(--ink3);
+  letter-spacing:.04em;margin-top:.4rem;
+  display:block;line-height:1.4;
+}
+
+.story-strip{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:0;margin:2rem 0;
+  border-top:1px solid var(--rule);
+}
+.story-col{
+  padding:1.5rem 1.5rem 1.5rem 0;
+  border-right:1px solid var(--rule);
+}
+.story-col:last-child{border-right:none;padding-right:0}
+.story-col:first-child{padding-left:0}
+.s-step{
+  font-family:var(--mono);font-size:9px;
+  letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:.6rem;display:block;
+}
+.s-step.bad{color:var(--red)}
+.s-step.good{color:var(--green)}
+.s-title{
+  font-family:var(--serif);font-size:1rem;
+  font-weight:700;color:var(--ink);
+  line-height:1.25;margin-bottom:.5rem;
+}
+.s-body{font-size:12px;color:var(--ink2);line-height:1.6;font-weight:300}
+
+.exp-label{
+  display:flex;align-items:center;gap:.75rem;
+  margin:2.5rem 0 1rem;
+}
+.exp-n{
+  font-family:var(--serif);font-size:2.5rem;
+  font-weight:900;color:var(--paper2);
+  line-height:1;flex-shrink:0;
+}
+.exp-title{font-size:.95rem;font-weight:500;color:var(--ink);line-height:1.3}
+.exp-title small{
+  display:block;font-size:11px;
+  font-weight:300;color:var(--ink3);margin-top:.2rem;
+}
+
+.body-p{
+  font-size:14px;color:var(--ink2);
+  line-height:1.8;font-weight:300;
+  max-width:600px;margin-bottom:1rem;
+}
+.body-p strong{color:var(--ink);font-weight:500}
+
+.debug-list{margin:1.5rem 0;border-top:1px solid var(--rule)}
+.debug-item{
+  display:grid;grid-template-columns:90px 1fr 60px;
+  gap:1rem;align-items:baseline;
+  padding:.9rem 0;border-bottom:1px solid var(--rule);
+}
+.debug-tag{
+  font-family:var(--mono);font-size:10px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);
+}
+.debug-tag.fail{color:var(--red)}
+.debug-tag.win{color:var(--green)}
+.debug-text{font-size:13px;color:var(--ink2);line-height:1.5}
+.debug-text s{color:var(--ink3)}
+.debug-time{font-family:var(--mono);font-size:10px;color:var(--ink3);text-align:right}
+
+.pull{
+  margin:2rem 0;padding:1.75rem 0;
+  border-top:2px solid var(--ink);
+  border-bottom:1px solid var(--rule);
+}
+.pull-big{
+  font-family:var(--serif);
+  font-size:clamp(1.1rem,2.5vw,1.5rem);
+  font-style:italic;font-weight:400;
+  color:var(--ink);line-height:1.5;max-width:580px;
+}
+.pull-big strong{font-style:normal;font-weight:700}
+
+.score-block{
+  margin:2rem 0;display:flex;
+  align-items:center;gap:2rem;
+}
+.score-nums{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.sn{font-family:var(--serif);font-weight:900;letter-spacing:-.04em;line-height:1}
+.sn.before{font-size:2rem;color:var(--ink3)}
+.sn.after{font-size:2.8rem;color:var(--ink)}
+.sn-arrow{color:var(--ink3);font-size:1rem}
+.score-bars{flex:1}
+.sbar-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.6rem}
+.sbar-label{font-family:var(--mono);font-size:10px;color:var(--ink3);width:40px;text-align:right}
+.sbar{flex:1;height:5px;background:var(--paper2);border-radius:2px}
+.sbar-fill{height:100%;border-radius:2px;transition:width 1s}
+.sbar-fill.b{background:var(--ink3);width:78.6%}
+.sbar-fill.a{background:var(--ink);width:91.8%}
+.score-delta{flex-shrink:0;text-align:center}
+.delta-n{
+  font-family:var(--serif);font-size:2rem;
+  font-weight:900;color:var(--red);display:block;line-height:1;
+}
+.delta-l{font-size:10px;color:var(--ink3);margin-top:.3rem}
+
+.rubric-row{
+  display:flex;gap:0;margin:1.5rem 0;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.rb-item{
+  flex:1;padding:.9rem .75rem;
+  border-right:1px solid var(--rule);
+  font-size:11px;color:var(--ink2);line-height:1.5;
+}
+.rb-item:first-child{padding-left:0}
+.rb-item:last-child{border-right:none}
+.rb-head{
+  font-family:var(--mono);font-size:9px;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--red);margin-bottom:.3rem;display:block;
+}
+
+.rag-block{
+  margin:1.5rem 0;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:0;border:1px solid var(--rule);
+}
+.rag-side{padding:1.25rem}
+.rag-side:first-child{border-right:1px solid var(--rule)}
+.rag-h{
+  font-family:var(--mono);font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;
+  margin-bottom:.75rem;display:block;
+}
+.rag-h.bad{color:var(--red)}
+.rag-h.good{color:var(--green)}
+.rag-line{
+  font-size:12px;color:var(--ink2);
+  padding:.25rem 0;line-height:1.5;
+  border-bottom:1px solid var(--rule);
+}
+.rag-line:last-child{border-bottom:none}
+
+.flow{
+  margin:1.5rem 0;border-top:1px solid var(--rule);padding-top:1.5rem;
+}
+.flow-row{
+  display:flex;align-items:center;
+  gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;
+}
+.fnode{
+  font-family:var(--mono);font-size:11px;
+  color:var(--ink);background:var(--paper2);
+  padding:.4rem .9rem;border-radius:2px;line-height:1.3;
+}
+.fnode.entry{background:var(--ink);color:var(--paper)}
+.farrow{font-size:12px;color:var(--ink3)}
+.flow-desc{
+  font-size:12px;color:var(--ink2);
+  line-height:1.7;font-weight:300;
+  border-left:1px solid var(--rule);
+  padding-left:1rem;max-width:520px;
+}
+
+.lead-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3rem;margin-top:2rem;align-items:start;
+}
+.tl-item{
+  display:flex;gap:1rem;
+  padding-bottom:1.5rem;position:relative;
+}
+.tl-item::before{
+  content:'';position:absolute;
+  left:4px;top:14px;bottom:-6px;
+  width:1px;background:var(--rule);
+}
+.tl-item:last-child::before{display:none}
+.tl-dot{
+  width:9px;height:9px;border-radius:50%;
+  border:2px solid var(--ink3);background:var(--paper);
+  flex-shrink:0;margin-top:4px;
+}
+.tl-dot.k{background:var(--red);border-color:var(--red)}
+.tl-dot.g{background:var(--green);border-color:var(--green)}
+.tl-ph{
+  font-family:var(--mono);font-size:9px;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink3);margin-bottom:.2rem;
+}
+.tl-ct{font-size:13px;color:var(--ink);font-weight:400;line-height:1.4}
+.tl-dt{font-size:11px;color:var(--ink3);margin-top:.2rem}
+
+.learn-list{margin:2rem 0}
+.learn-item{
+  display:grid;grid-template-columns:3rem 1fr;
+  gap:1.5rem;align-items:start;
+  padding:1.75rem 0;border-bottom:1px solid var(--rule);
+}
+.learn-item:first-child{border-top:1px solid var(--rule)}
+.learn-n{
+  font-family:var(--serif);font-size:2.5rem;
+  font-weight:900;color:var(--paper2);
+  line-height:1;padding-top:.2rem;letter-spacing:-.04em;
+}
+.learn-t{
+  font-size:.95rem;font-weight:500;
+  color:var(--ink);margin-bottom:.5rem;line-height:1.3;
+}
+.learn-p{
+  font-size:13px;color:var(--ink2);
+  line-height:1.7;font-weight:300;max-width:520px;
+}
+.tag-row{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.75rem}
+.ttag{
+  font-family:var(--mono);font-size:9px;color:var(--ink3);
+  letter-spacing:.06em;border:1px solid var(--rule);padding:.2rem .5rem;
+}
+
+footer{
+  padding:2.5rem 0 4rem;border-top:2px solid var(--ink);
+  display:flex;justify-content:space-between;align-items:baseline;
+}
+.ft-l{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--ink2)}
+.ft-r{
+  font-family:var(--mono);font-size:10px;
+  color:var(--ink3);text-align:right;line-height:2;letter-spacing:.04em;
+}
+.ft-r a{color:inherit;text-decoration:none}
+
+@media print{
+  .pdf-btn{display:none}
+  .wrap{max-width:100%;padding:0 1.2cm}
+  section{page-break-inside:avoid}
+  .learn-item{page-break-inside:avoid}
+  @page{margin:1.5cm;size:A4}
+}
+</style>
+</head>
+<body>
+
+<button class="pdf-btn" onclick="window.print()">PDF 저장</button>
+
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Junior AI Engineer · 2025 Portfolio</p>
+  <h1 class="hero-name">
+    AI로<br><em>문제를</em><br>끝까지 파는<br>개발자
+  </h1>
+  <p class="hero-desc">
+    더 나은 프롬프트보다 먼저 원인을 찾습니다.<br>
+    LangSmith 트레이스 5시간, State 유실 발견, 질문 품질 +13점.
+  </p>
+  <div class="header-links">
+    <a href="https://github.com/bamti95" target="_blank">github.com/bamti95</a>
+    <a href="https://hr-agent.kr" target="_blank">hr-agent.kr ↗</a>
+  </div>
+</header>
+
+<hr class="thick-rule">
+
+<section>
+  <p class="sec-eye">Project 01</p>
+
+  <div class="proj-title-row">
+    <h2 class="proj-name">HR-Copilot</h2>
+    <div class="proj-links">
+      <a href="https://hr-agent.kr" target="_blank" class="live">↗ 배포됨</a>
+      <a href="https://github.com/bamti95/hr-copilot" target="_blank">GitHub</a>
+      <a href="https://checker-gambler-0f8.notion.site/HR-COPILOT-7331480769ac83ef971881f22f063100" target="_blank">Notion</a>
+    </div>
+  </div>
+  <p class="proj-sub">AI 면접 질문 자동 생성 · LangGraph 멀티에이전트 · 팀 리더</p>
+
+  <div class="stat-row">
+    <div class="stat-item">
+      <span class="stat-n">78.6</span>
+      <span class="stat-l">초기 질문<br>품질 점수</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n accent">91.8</span>
+      <span class="stat-l">개선 후<br>품질 점수</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n">+13.2</span>
+      <span class="stat-l">최종<br>점수 향상</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-n">D−10</span>
+      <span class="stat-l">마감 전<br>MVP 완성</span>
+    </div>
+  </div>
+
+  <div class="exp-label">
+    <span class="exp-n">01</span>
+    <div class="exp-title">
+      LangSmith Trace로 State 유실을 찾아낸 디버깅
+      <small>원인 추적 5시간 · 총 투입 50시간 이상</small>
+    </div>
+  </div>
+
+  <div class="story-strip">
+    <div class="story-col">
+      <span class="s-step bad">문제</span>
+      <p class="s-title">점수 미달인데<br>결과에 그대로 포함</p>
+      <p class="s-body">3회 리트라이 설정에도 불구하고 낮은 품질의 질문이 최종 응답에 나왔다.</p>
+    </div>
+    <div class="story-col">
+      <span class="s-step">추적</span>
+      <p class="s-title">가설 두 개,<br>둘 다 틀렸다</p>
+      <p class="s-body">리트라이는 정상이었다. 프롬프트를 여러 번 수정해도 결과가 달라지지 않았다.</p>
+    </div>
+    <div class="story-col">
+      <span class="s-step good">발견</span>
+      <p class="s-title">피드백이 일부 노드에만<br>전달되고 있었다</p>
+      <p class="s-body">State 초기화 구조 문제. 리뷰어 피드백이 다른 노드로 전달되지 못하고 있었다.</p>
+    </div>
+  </div>
+
+  <div class="debug-list">
+    <div class="debug-item">
+      <span class="debug-tag fail">가설 A 실패</span>
+      <span class="debug-text"><s>리트라이 로직 미작동 의심</s> → LangSmith 확인, 3회 모두 정상 실행</span>
+      <span class="debug-time">~1hr</span>
+    </div>
+    <div class="debug-item">
+      <span class="debug-tag fail">가설 B 실패</span>
+      <span class="debug-text"><s>리뷰어 프롬프트가 너무 엄격</s> → 여러 번 수정해도 변화 없음</span>
+      <span class="debug-time">~3hr</span>
+    </div>
+    <div class="debug-item">
+      <span class="debug-tag win">원인 발견</span>
+      <span class="debug-text">Trace 노드별 입출력 직접 추적 → <strong>State 유실</strong>, 피드백이 질문 생성 노드에만 도달</span>
+      <span class="debug-time">~5hr</span>
+    </div>
+  </div>
+
+  <div class="pull">
+    <p class="pull-big">"노드를 잘 나누는 것만큼, <strong>State가 어디서 생성되고 어디까지 살아있는지</strong>를 먼저 설계해야 한다."</p>
+  </div>
+
+  <div class="exp-label">
+    <span class="exp-n">02</span>
+    <div class="exp-title">
+      리스크 검증 노드 + 리랭킹 구조로 질문 품질 재정의
+      <small>도메인을 다시 정의하면 구조가 보인다</small>
+    </div>
+  </div>
+
+  <p class="body-p">
+    State 문제 해결 후에도 질문의 <strong>방향이 편향</strong>돼 있었다.
+    실무 역량 확인은 잘 됐지만, 잦은 이직·공백기·짧은 재직 같은 <strong>채용 리스크 포인트</strong>는 거의 다루지 못했다.
+  </p>
+
+  <div class="score-block">
+    <div class="score-nums">
+      <span class="sn before">78.6</span>
+      <span class="sn-arrow">→</span>
+      <span class="sn after">91.8</span>
+    </div>
+    <div class="score-bars">
+      <div class="sbar-row">
+        <span class="sbar-label">Before</span>
+        <div class="sbar"><div class="sbar-fill b"></div></div>
+      </div>
+      <div class="sbar-row">
+        <span class="sbar-label">After</span>
+        <div class="sbar"><div class="sbar-fill a"></div></div>
+      </div>
+    </div>
+    <div class="score-delta">
+      <span class="delta-n">+13.2</span>
+      <div class="delta-l">점수 향상</div>
+    </div>
+  </div>
+
+  <div class="rubric-row">
+    <div class="rb-item"><span class="rb-head">직무관련성</span>서류 실제 내용 기반 여부</div>
+    <div class="rb-item"><span class="rb-head">리스크 검증</span>채용 리스크 사전 확인 가능 여부</div>
+    <div class="rb-item"><span class="rb-head">구체성</span>검증 포인트 명확성</div>
+    <div class="rb-item"><span class="rb-head">실용성</span>실제 면접 활용 가능 여부</div>
+  </div>
+
+  <p class="body-p" style="margin-top:1rem">
+    후보 질문 <strong>10개 생성 → 위 기준으로 5개 선별</strong>하는 리랭킹 구조와,
+    서류에서 리스크 포인트만 별도 추출하는 노드를 추가했다.
+  </p>
+</section>
+
+<hr>
+
+<section>
+  <p class="sec-eye">Project 02</p>
+
+  <div class="proj-title-row">
+    <h2 class="proj-name">Biz-Fund-AI</h2>
+  </div>
+  <p class="proj-sub">창업 지원금 추천 AI · 하이브리드 RAG(RRF) · LangGraph 5노드</p>
+
+  <p class="body-p">
+    단일 벡터 검색으로는 사용자 표현과 정책 문서 표현이 달라 관련 문서를 찾지 못했다.
+    <strong>"창업 지원금"</strong>이라고 물어도 문서엔 <strong>"초기창업패키지"</strong>로 돼 있다.
+  </p>
+
+  <div class="rag-block">
+    <div class="rag-side">
+      <span class="rag-h bad">✗ 단일 벡터 검색</span>
+      <p class="rag-line">표현 불일치 시 관련 문서 미탐색</p>
+      <p class="rag-line">핵심 정보(금액·조건) 누락 빈번</p>
+      <p class="rag-line">출처 기반 답변 불안정</p>
+    </div>
+    <div class="rag-side">
+      <span class="rag-h good">✓ 하이브리드 RAG + RRF</span>
+      <p class="rag-line">키워드 검색 + 벡터 검색 병행</p>
+      <p class="rag-line">RRF로 두 결과 순위 재정렬</p>
+      <p class="rag-line">표현 불일치에도 안정적 검색</p>
+    </div>
+  </div>
+
+  <div class="flow">
+    <div class="flow-row">
+      <div class="fnode entry">Router</div>
+      <span class="farrow">→</span>
+      <div class="fnode">Diagnosis</div>
+      <div class="fnode">RAG</div>
+      <div class="fnode">Stats</div>
+      <div class="fnode">Simulation</div>
+    </div>
+    <p class="flow-desc">
+      Router가 질문 의도를 판단해 필요한 노드로 분기. 복합 질문은 두 노드를 연속 호출한다.
+      단순 키워드 라우팅 → 의도 판단 + 후속 노드 연결 구조로 전환한 게 가장 어려운 부분이었다.
+    </p>
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <p class="sec-eye">Team Leadership</p>
+  <h2 class="proj-name" style="font-size:2rem;margin-bottom:.5rem">문서 먼저,<br>코드는 나중에</h2>
+  <p class="proj-sub">팀 리더 · 비전공자 비중 높은 팀 · MVP 마감 10일 전 완성</p>
+
+  <div class="lead-grid">
+    <div>
+      <p class="body-p">
+        개발을 바로 시작하면 "이 기능이 맞는지", "API는 어떻게 주고받는지"를 두고
+        병목이 생길 게 뻔했다. <strong>기획안·WBS·API 명세·ERD를 먼저</strong> 정리해서
+        모든 의사결정의 기준으로 삼았다.
+      </p>
+      <p class="body-p">
+        의견 충돌엔 말 대신 <strong>근거 자료</strong>를 가져왔다.
+        결정은 즉시 문서화했다. 같은 주제로 반복 논쟁이 생기지 않았다.
+      </p>
+    </div>
+    <div>
+      <div class="tl-item">
+        <div class="tl-dot k"></div>
+        <div>
+          <p class="tl-ph">Sprint 시작</p>
+          <p class="tl-ct">기획안 · WBS · API 명세 · ERD 작성</p>
+          <p class="tl-dt">개발 기준 먼저 고정 → 병목 예방</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div>
+          <p class="tl-ph">Sprint 중반</p>
+          <p class="tl-ct">일 단위 체크 + 병목 즉시 조정</p>
+          <p class="tl-dt">근거 기반 의사결정 원칙 유지</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot g"></div>
+        <div>
+          <p class="tl-ph" style="color:var(--green)">마감 10일 전</p>
+          <p class="tl-ct">MVP 1차 완성</p>
+          <p class="tl-dt">남은 시간 → 리스크 노드 + 리랭킹 실험에 투자</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull">
+    <p class="pull-big">"일정 관리의 목적은 마감을 맞추는 게 아니었다. <strong>팀이 더 깊이 개선할 시간을 만드는 것</strong>이었다."</p>
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <p class="sec-eye">What I Learned</p>
+  <h2 class="proj-name" style="font-size:2rem;margin-bottom:.25rem">이 프로젝트가 남긴 것</h2>
+  <p class="proj-sub">코드보다 오래 남는 사고 방식</p>
+
+  <div class="learn-list">
+    <div class="learn-item">
+      <span class="learn-n">01</span>
+      <div>
+        <p class="learn-t">LangGraph는 노드가 아니라 State로 설계한다</p>
+        <p class="learn-p">노드를 잘 나누는 것만큼, State가 어느 노드에서 생성되고 어디까지 살아남아야 하는지를 먼저 설계해야 한다. 5시간의 Trace 추적 끝에 찾은 State 유실은, 구조를 먼저 그리지 않으면 반드시 생기는 문제였다.</p>
+        <div class="tag-row"><span class="ttag">LangGraph</span><span class="ttag">LangSmith</span><span class="ttag">State Design</span></div>
+      </div>
+    </div>
+    <div class="learn-item">
+      <span class="learn-n">02</span>
+      <div>
+        <p class="learn-t">도메인을 정의하면 구조가 보인다</p>
+        <p class="learn-p">"더 좋은 질문을 만들어줘"가 아니라, HR 관점에서 좋은 질문이 무엇인지를 먼저 정의했다. 그 답이 리스크 추출 노드와 리랭킹 구조라는 코드가 됐다.</p>
+        <div class="tag-row"><span class="ttag">Domain Design</span><span class="ttag">Reranking</span><span class="ttag">Evaluation</span></div>
+      </div>
+    </div>
+    <div class="learn-item">
+      <span class="learn-n">03</span>
+      <div>
+        <p class="learn-t">문서는 팀의 속도가 아니라 방향을 맞추는 도구다</p>
+        <p class="learn-p">기준이 명확할수록 결정이 빠르고 반복 논쟁이 사라진다. MVP를 10일 일찍 완성한 건 기능이 아니라 구조를 먼저 잡았기 때문이었다.</p>
+        <div class="tag-row"><span class="ttag">WBS</span><span class="ttag">API Spec</span><span class="ttag">Leadership</span></div>
+      </div>
+    </div>
+    <div class="learn-item">
+      <span class="learn-n">04</span>
+      <div>
+        <p class="learn-t">하이브리드 RAG는 기술이 아니라 검색의 본질 문제다</p>
+        <p class="learn-p">단일 벡터 검색이 실패한 건 성능이 아니라 언어의 문제였다. 사용자와 문서가 같은 개념을 다른 표현으로 쓴다. RRF로 두 방식을 결합한 건 그 간극을 메우기 위한 선택이었다.</p>
+        <div class="tag-row"><span class="ttag">Hybrid RAG</span><span class="ttag">RRF</span><span class="ttag">Vector Search</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="ft-l">AI Engineer Portfolio</span>
+  <div class="ft-r">
+    <a href="https://github.com/bamti95">github.com/bamti95</a><br>
+    <a href="https://hr-agent.kr">hr-agent.kr</a>
+  </div>
+</footer>
+
+</div>
+
+<script>
+document.querySelectorAll('.sbar-fill').forEach(el=>{
+  const w=el.classList.contains('b')?'78.6%':'91.8%';
+  el.style.width='0';
+  setTimeout(()=>{el.style.width=w},400);
+});
+</script>
+</body>
+</html>

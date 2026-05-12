@@ -1,0 +1,2630 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>이종혁 · AI 서비스 개발자 — Portfolio</title>
+<meta name="description" content="실패를 추적하고, 개선 가능한 구조로 만드는 개발자 이종혁의 포트폴리오." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+<style>
+  /* TOKENS */
+  :root {
+    --ink: #0a0a0f;
+    --ink-2: #1a1a22;
+    --ink-soft: #3a3a48;
+    --paper: #f5f0e8;
+    --paper-2: #ebe5db;
+    --cream: #faf7f1;
+    --muted: #6b6657;
+    --muted-2: #8d8676;
+    --line: #d8d0c0;
+    --line-dark: #2e2e3a;
+
+    --accent: #c8ff3e;
+    --accent-deep: #9fd000;
+    --accent-soft: #e8ffb3;
+    --rose-bg: #ffe4e6;
+    --rose-ink: #be123c;
+    --amber-bg: #fef3c7;
+    --amber-ink: #b45309;
+
+    --serif: 'Fraunces', 'Pretendard Variable', serif;
+    --sans: 'Pretendard Variable', 'Pretendard', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --radius: 4px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+  }
+
+  /* RESET */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: none; background: none; }
+  img, svg { display: block; max-width: 100%; }
+  ::selection { background: var(--accent); color: var(--ink); }
+
+  /* NAV */
+  nav.topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    border-bottom: 1px solid var(--line);
+  }
+  .brand {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand::before {
+    content: '';
+    width: 9px; height: 9px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .nav-links {
+    display: flex;
+    gap: 26px;
+    list-style: none;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-transform: uppercase;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  .print-btn {
+    padding: 9px 16px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .print-btn:hover { background: var(--accent); color: var(--ink); }
+  .print-btn svg { width: 13px; height: 13px; }
+
+  /* LAYOUT */
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+  section { padding: 110px 0; position: relative; }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--ink); }
+  .eyebrow.light { color: rgba(245, 240, 232, 0.65); }
+  .eyebrow.light::before { background: var(--accent); }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(40px, 5.5vw, 72px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 14px;
+  }
+  .section-title em { font-style: italic; color: var(--muted); }
+  .section-sub {
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    max-width: 60ch;
+    margin-bottom: 56px;
+  }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    padding: 130px 0 70px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: -10%; right: -15%;
+    width: 520px; height: 520px;
+    background: radial-gradient(circle, rgba(200, 255, 62, 0.16), transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 72px;
+    align-items: end;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-left { display: flex; flex-direction: column; gap: 30px; }
+
+  .hero-name-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-name-row .name {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+  .hero-name-row .role {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(46px, 7.6vw, 100px);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    font-variation-settings: "opsz" 144;
+  }
+  .hero-headline .h-line { display: block; }
+  .hero-headline em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--muted);
+  }
+  .hero-headline .mark {
+    background: linear-gradient(180deg, transparent 60%, var(--accent) 60%, var(--accent) 92%, transparent 92%);
+    padding: 0 4px;
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .hero-lead {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 22px;
+  }
+  .hero-lead strong { color: var(--ink); font-weight: 700; }
+
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 22px;
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.15s;
+    border: 1.5px solid transparent;
+  }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--accent); color: var(--ink); transform: translateY(-2px); }
+  .btn-ghost { border-color: var(--ink); color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  .btn svg { width: 14px; height: 14px; }
+
+  /* Hero right panel */
+  .hero-right {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: var(--radius-xl);
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -20%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(200, 255, 62, 0.1), transparent 65%);
+    pointer-events: none;
+  }
+  .hero-right-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero-meta-list { display: grid; gap: 4px; position: relative; }
+  .hero-meta-list li {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    padding: 11px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.12);
+    list-style: none;
+  }
+  .hero-meta-list li:last-child { border-bottom: none; }
+  .hero-meta-list .k {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    color: rgba(245, 240, 232, 0.55);
+    text-transform: uppercase;
+  }
+  .hero-meta-list .v {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--paper);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  /* Hero quick stats */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    margin-top: 60px;
+    padding-top: 22px;
+  }
+  .hero-stat { padding: 6px 18px 6px 0; border-right: 1px solid var(--line); }
+  .hero-stat:last-child { border-right: none; padding-right: 0; }
+  .hero-stat .num {
+    font-family: var(--serif);
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 6px;
+    font-variation-settings: "opsz" 144;
+  }
+  .hero-stat .num .arrow { color: var(--accent-deep); font-size: 22px; }
+  .hero-stat .desc {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* MANIFESTO */
+  #manifesto { background: var(--ink); color: var(--paper); }
+  .manifesto-quote {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4.6vw, 54px);
+    font-weight: 400;
+    line-height: 1.22;
+    letter-spacing: -0.025em;
+    max-width: 26ch;
+    margin-bottom: 64px;
+    font-variation-settings: "opsz" 96;
+  }
+  .manifesto-quote em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .principle {
+    padding: 30px 26px;
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius-lg);
+    background: rgba(255,255,255,0.02);
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .principle:hover {
+    background: rgba(200, 255, 62, 0.04);
+    border-color: var(--accent);
+  }
+  .principle .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+  .principle h3 {
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .principle p {
+    font-size: 14px;
+    color: rgba(245, 240, 232, 0.72);
+    line-height: 1.7;
+  }
+  .principle p em { font-style: normal; color: var(--accent); font-weight: 600; }
+
+  /* PIVOT SECTION : 영업 팀장 → AI 서비스 개발자 매핑 */
+  .pivot-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 8px;
+  }
+  .pivot-row {
+    display: grid;
+    grid-template-columns: 1fr 64px 1fr;
+    gap: 18px;
+    align-items: stretch;
+  }
+  .pivot-side {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 24px 26px;
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .pivot-side.dim { background: var(--paper-2); }
+  .pivot-side .side-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .pivot-side .side-head {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .pivot-side .side-detail {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .pivot-side.now { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .pivot-side.now .side-label { color: var(--accent); }
+  .pivot-side.now .side-head { color: var(--paper); }
+  .pivot-side.now .side-detail { color: rgba(245, 240, 232, 0.75); }
+  .pivot-arrow {
+    align-self: center;
+    justify-self: center;
+    width: 44px; height: 44px;
+    border: 1.5px solid var(--ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  /* JOURNEY */
+  #journey { background: var(--paper-2); }
+
+  .journey {
+    position: relative;
+    padding-left: 24px;
+    border-left: 1px solid var(--line);
+  }
+  .j-item {
+    padding: 18px 0 24px 26px;
+    position: relative;
+  }
+  .j-item + .j-item { border-top: 1px dashed var(--line); }
+  .j-item::before {
+    content: '';
+    position: absolute;
+    left: -29px; top: 26px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--paper-2);
+    border: 2px solid var(--ink);
+  }
+  .j-item.now::before { background: var(--accent); box-shadow: 0 0 0 4px rgba(200, 255, 62, 0.22); }
+  .j-period {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .j-item h4 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .role-chip {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .role-chip.now { background: var(--accent); color: var(--ink); }
+  .role-chip.lead { background: var(--ink); }
+  .role-chip.field { background: var(--muted); }
+  .j-item ul { list-style: none; margin: 8px 0 0; padding: 0; }
+  .j-item ul li {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    padding-left: 14px;
+    position: relative;
+  }
+  .j-item ul li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10px;
+    width: 6px; height: 1px;
+    background: var(--muted);
+  }
+  .j-item .highlight {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: var(--cream);
+    border-left: 3px solid var(--accent-deep);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 13.5px;
+    color: var(--ink-2);
+    line-height: 1.7;
+  }
+  .j-item .highlight strong { font-weight: 700; }
+
+  /* SKILLS */
+  #skills { background: var(--paper); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .skill {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 28px 26px;
+    position: relative;
+    transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  }
+  .skill:hover {
+    border-color: var(--ink);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(10, 10, 15, 0.06);
+  }
+  .skill-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .skill-head h3 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .skill-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+  .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 9px;
+    background: var(--paper-2);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--ink-soft);
+  }
+  .skill-why {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .skill-why strong { color: var(--ink); font-weight: 700; border-bottom: 2px solid var(--accent); }
+
+  /* PROJECTS */
+  #projects { background: var(--paper-2); }
+  .project {
+    border-top: 1px solid var(--ink);
+    padding-top: 52px;
+    margin-bottom: 100px;
+  }
+  .project:last-child { margin-bottom: 0; }
+
+  .project-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: start;
+    margin-bottom: 44px;
+  }
+  .project-id {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+  .project-name {
+    font-family: var(--serif);
+    font-size: clamp(40px, 6vw, 76px);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin-bottom: 14px;
+  }
+  .project-name em { font-style: italic; font-weight: 400; color: var(--muted); }
+  .project-tagline {
+    font-size: 16.5px;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    line-height: 1.6;
+  }
+  .project-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    text-align: right;
+    min-width: 200px;
+  }
+  .project-meta strong {
+    display: block;
+    color: var(--ink);
+    font-size: 12.5px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .project-links {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    border: 1px solid var(--ink);
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    transition: background 0.15s, color 0.15s;
+  }
+  .project-link:hover { background: var(--ink); color: var(--paper); }
+  .project-link svg { width: 11px; height: 11px; }
+
+  .project-stack { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 36px; }
+  .stack-chip {
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border: 1px solid var(--ink);
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Role split (역할별 카드 3개) */
+  .role-split {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 44px;
+  }
+  .role-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 22px 22px;
+  }
+  .role-card .role-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    color: var(--ink);
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .role-card h5 {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .role-card ul { list-style: none; padding: 0; margin: 0; }
+  .role-card ul li {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    padding-left: 12px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+  .role-card ul li::before {
+    content: '·';
+    position: absolute;
+    left: 0; top: 0;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  /* Service overview (입력→처리→출력) */
+  .service-flow {
+    display: grid;
+    grid-template-columns: 1fr 30px 1fr 30px 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+    align-items: stretch;
+  }
+  .sf-box {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 22px 20px;
+  }
+  .sf-box.process { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .sf-box .sf-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .sf-box.process .sf-label { color: var(--accent); }
+  .sf-box .sf-title {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .sf-box ul { list-style: none; padding: 0; margin: 0; }
+  .sf-box ul li {
+    font-family: var(--mono);
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+  .sf-box.process ul li { color: rgba(245, 240, 232, 0.78); }
+  .sf-arrow {
+    align-self: center;
+    text-align: center;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-weight: 700;
+  }
+
+  /* Architecture diagram (간소화) */
+  .arch {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 28px 30px;
+    margin-bottom: 32px;
+  }
+  .arch-title {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .arch-title::before { content: ''; width: 7px; height: 7px; background: var(--ink); }
+  .arch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .arch-col h6 {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .arch-box {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .arch-box strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 13.5px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.005em;
+  }
+  .arch-box.accent {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .arch-box.accent strong { color: var(--accent); }
+
+  /* Pipeline (LangGraph 노드 흐름) */
+  .pipeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .node {
+    padding: 12px 16px;
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    border-radius: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    flex: 1;
+    text-align: center;
+    min-width: 110px;
+  }
+  .node .sub {
+    display: block;
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .node.highlight { background: var(--accent); }
+  .node.loop { background: var(--amber-bg); border-color: var(--amber-ink); color: var(--amber-ink); }
+  .arrow {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .caption {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .caption strong { color: var(--ink); font-weight: 600; }
+
+  /* Impact strip */
+  .impact {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: var(--radius-xl);
+    padding: 44px 50px;
+    margin-bottom: 48px;
+    display: grid;
+    grid-template-columns: 1.1fr auto 1fr;
+    gap: 32px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .impact::before {
+    content: '';
+    position: absolute;
+    top: -40%; left: -10%;
+    width: 420px; height: 420px;
+    background: radial-gradient(circle, rgba(200, 255, 62, 0.1), transparent 65%);
+    pointer-events: none;
+  }
+  .impact-head {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    max-width: 18ch;
+    position: relative;
+  }
+  .impact-head em { font-style: italic; color: var(--accent); }
+  .impact-nums {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+  }
+  .impact-n .label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: rgba(245, 240, 232, 0.7);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .impact-n .value {
+    font-family: var(--serif);
+    font-size: clamp(48px, 6.5vw, 76px);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    font-variation-settings: "opsz" 144;
+  }
+  .impact-n.after .value { color: var(--accent); }
+  .impact-arrow { font-family: var(--serif); font-size: 28px; color: var(--accent); }
+  .impact-list {
+    position: relative;
+    display: grid;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11px;
+  }
+  .impact-list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.15);
+    color: rgba(245, 240, 232, 0.72);
+  }
+  .impact-list-item strong { color: var(--accent); font-weight: 600; }
+
+  /* Story block */
+  .story-block { margin-bottom: 52px; }
+  .story-block-head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+  .story-block-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+  .story-block h3 {
+    font-family: var(--serif);
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  .story-block h3 em { font-style: italic; color: var(--muted); font-weight: 400; }
+
+  /* Hypothesis table */
+  .hypo-table {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+  .hypo-row {
+    display: grid;
+    grid-template-columns: 70px 1.4fr 1.4fr 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .hypo-row:last-child { border-bottom: none; }
+  .hypo-row.head {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .hypo-row.head .cell {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 232, 0.85);
+  }
+  .hypo-row .cell {
+    padding: 16px 18px;
+    border-right: 1px solid var(--line);
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .hypo-row .cell:last-child { border-right: none; }
+  .hypo-row .cell .num {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .hypo-row .cell strong { color: var(--ink); font-weight: 700; }
+  .hypo-row.head .cell { border-right-color: rgba(255,255,255,0.1); }
+  .hypo-row.found { background: var(--accent-soft); }
+  .hypo-row.found .cell { color: #2d4a00; }
+  .hypo-row.found .cell .num { color: var(--accent-deep); }
+  .hypo-row.found .cell strong { color: #1a2e00; }
+  .conclusion-pill {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .conclusion-pill.ok { background: #d1fae5; color: #047857; }
+  .conclusion-pill.bad { background: var(--rose-bg); color: var(--rose-ink); }
+  .conclusion-pill.found { background: var(--ink); color: var(--accent); }
+
+  /* Before / After */
+  .ba {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .ba-side {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 26px 26px;
+    background: var(--cream);
+  }
+  .ba-side h5 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .ba-side h5 .label {
+    margin-left: 6px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--paper-2);
+    color: var(--ink-soft);
+  }
+  .ba-side.after { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .ba-side.after h5 .label { background: var(--accent); color: var(--ink); }
+  .ba-side.after h5 { color: var(--accent); }
+  .ba-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .ba-step {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+  .ba-step strong { font-weight: 700; }
+  .ba-step .desc { display: block; font-size: 10.5px; color: var(--muted); margin-top: 2px; font-family: var(--sans); font-weight: 400; }
+  .ba-side.after .ba-step { background: var(--ink-2); border-color: var(--line-dark); color: var(--paper); }
+  .ba-side.after .ba-step .desc { color: rgba(245, 240, 232, 0.6); }
+  .ba-side.after .ba-step.accent { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+  .ba-side.after .ba-step.accent .desc { color: rgba(10, 10, 15, 0.7); }
+  .ba-arrow {
+    align-self: center;
+    justify-self: center;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 1.5px solid var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .ba-note {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .ba-side.after .ba-note {
+    border-top-color: var(--line-dark);
+    color: rgba(245, 240, 232, 0.65);
+  }
+
+  /* Measurement detail */
+  .measure {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+  .measure-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 26px 28px;
+  }
+  .measure-card h5 {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .measure-table {
+    display: grid;
+    gap: 10px;
+  }
+  .measure-table .row {
+    display: grid;
+    grid-template-columns: 1fr 60px 60px 60px;
+    gap: 10px;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--line);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+  .measure-table .row.head {
+    color: var(--muted);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .measure-table .row.last { border-bottom: none; padding-top: 10px; border-top: 1px solid var(--ink); }
+  .measure-table .row.last .lab { font-family: var(--serif); font-size: 14px; font-weight: 700; color: var(--ink); }
+  .measure-table .lab { color: var(--ink-soft); }
+  .measure-table .val { text-align: right; }
+  .measure-table .val.delta { color: var(--accent-deep); font-weight: 600; }
+  .measure-method ul { list-style: none; padding: 0; margin: 0; }
+  .measure-method ul li {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.85;
+    padding-left: 14px;
+    position: relative;
+  }
+  .measure-method ul li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 11px;
+    width: 6px; height: 1px;
+    background: var(--accent-deep);
+  }
+  .measure-method ul li strong { color: var(--ink); font-weight: 700; }
+
+  /* Narrative */
+  .narrative {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-xl);
+    padding: 36px 40px;
+    position: relative;
+    margin-bottom: 28px;
+  }
+  .narrative::before {
+    content: '';
+    position: absolute;
+    top: 36px; left: -1px;
+    width: 4px;
+    height: calc(100% - 72px);
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent-deep) 100%);
+    border-radius: 4px 0 0 4px;
+  }
+  .narrative-meta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .narrative-badge {
+    padding: 5px 12px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 999px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .narrative-tag {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+  .narrative h4 {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.6vw, 28px);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .narrative h4 em { font-style: italic; color: var(--muted); }
+  .narrative-body { font-size: 15px; color: var(--ink-soft); line-height: 1.8; }
+  .narrative-body p + p { margin-top: 12px; }
+  .narrative-body strong {
+    color: var(--ink);
+    font-weight: 700;
+    background: linear-gradient(180deg, transparent 60%, var(--accent) 60%, var(--accent) 90%, transparent 90%);
+    padding: 0 3px;
+  }
+  .insight {
+    margin-top: 22px;
+    padding: 22px 24px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: var(--radius-md);
+    font-family: var(--serif);
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+  .insight strong {
+    color: var(--accent);
+    font-weight: 700;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Leadership 3 */
+  .lessons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .lesson {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 26px 24px;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .lesson:hover { border-color: var(--ink); transform: translateY(-2px); }
+  .lesson-num {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--accent-deep);
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+  .lesson h5 {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+  .lesson p { font-size: 13px; color: var(--ink-soft); line-height: 1.65; margin-bottom: 10px; }
+  .lesson .out {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--accent-deep);
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+
+  /* Hybrid viz (Biz-Fund-AI) */
+  .hybrid-viz {
+    display: grid;
+    grid-template-columns: 1fr 72px 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .hybrid-box {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 24px 22px;
+  }
+  .hybrid-box.good { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .hybrid-box.good h5 { color: var(--accent); }
+  .hybrid-box h5 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    color: var(--muted);
+  }
+  .hybrid-flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    font-size: 13px;
+  }
+  .pill {
+    background: var(--paper);
+    padding: 5px 11px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    border: 1px solid var(--line);
+  }
+  .hybrid-box.good .pill { background: var(--ink-2); border-color: var(--line-dark); color: var(--paper); }
+  .hybrid-box.good .pill.accent { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+  .hybrid-note {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .hybrid-box.good .hybrid-note { border-color: var(--line-dark); color: rgba(245, 240, 232, 0.7); }
+  .rrf-bridge {
+    align-self: center;
+    text-align: center;
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-deep);
+    letter-spacing: 0.04em;
+  }
+  .rrf-bridge small {
+    display: block;
+    font-family: var(--mono);
+    font-size: 9.5px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    margin-top: 3px;
+  }
+
+  /* Node map */
+  .node-map {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .node-card {
+    background: var(--paper);
+    border: 1.5px solid var(--ink);
+    border-radius: var(--radius-md);
+    padding: 18px 14px;
+    text-align: center;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .node-card:hover { background: var(--accent); transform: translateY(-2px); }
+  .node-card strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 5px;
+  }
+  .node-card span {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--muted);
+    line-height: 1.4;
+    display: block;
+  }
+
+  /* EDUCATION */
+  #education { background: var(--paper); }
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 20px;
+  }
+  .edu-main {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: var(--radius-xl);
+    padding: 40px 38px;
+    position: relative;
+    overflow: hidden;
+  }
+  .edu-main::before {
+    content: '';
+    position: absolute;
+    top: -40%; right: -10%;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(200, 255, 62, 0.1), transparent 65%);
+  }
+  .edu-period {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .edu-main h3 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+  .edu-org {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: rgba(245, 240, 232, 0.65);
+    letter-spacing: 0.04em;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .edu-main p {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: rgba(245, 240, 232, 0.78);
+    position: relative;
+    max-width: 50ch;
+  }
+  .edu-side { display: grid; gap: 14px; }
+  .cert {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .cert:hover { border-color: var(--ink); transform: translateX(4px); }
+  .cert-mark {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent-deep);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .cert h4 {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+  .cert p {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* CONTACT */
+  #contact { background: var(--ink); color: var(--paper); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+  }
+  .contact-head {
+    font-family: var(--serif);
+    font-size: clamp(42px, 5.5vw, 72px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    margin-bottom: 22px;
+  }
+  .contact-head em { font-style: italic; color: var(--accent); }
+  .contact-lead {
+    font-size: 16.5px;
+    color: rgba(245, 240, 232, 0.75);
+    line-height: 1.85;
+    margin-bottom: 32px;
+    max-width: 50ch;
+  }
+  .contact-cards { display: grid; gap: 12px; }
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius-lg);
+    transition: background 0.15s, border-color 0.15s, transform 0.15s;
+  }
+  .contact-card:hover {
+    background: rgba(200,255,62,0.05);
+    border-color: var(--accent);
+    transform: translateX(4px);
+  }
+  .contact-icon {
+    width: 40px; height: 40px;
+    background: var(--accent);
+    color: var(--ink);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-icon svg { width: 18px; height: 18px; }
+  .contact-card-info .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: rgba(245, 240, 232, 0.55);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .contact-card-info .value {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--paper);
+    font-weight: 500;
+  }
+
+  .closing {
+    padding: 36px 34px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius-xl);
+    position: relative;
+  }
+  .closing::before {
+    content: '"';
+    position: absolute;
+    top: -16px; left: 22px;
+    font-family: var(--serif);
+    font-size: 80px;
+    color: var(--accent);
+    line-height: 1;
+    font-weight: 600;
+  }
+  .closing blockquote {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--paper);
+    font-style: italic;
+    margin-bottom: 20px;
+    padding-top: 14px;
+  }
+  .closing cite {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: rgba(245, 240, 232, 0.55);
+    font-style: normal;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: block;
+    padding-top: 14px;
+    border-top: 1px solid var(--line-dark);
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 26px;
+    border-top: 1px solid var(--line-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: rgba(245, 240, 232, 0.45);
+    letter-spacing: 0.04em;
+  }
+  footer .dot::before { content: '◆ '; color: var(--accent); }
+
+  /* PRINT */
+  @page { size: A4; margin: 12mm; }
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    nav.topbar, .print-btn { display: none !important; }
+    body { background: #fff; font-size: 11pt; }
+    section { padding: 24px 0 !important; page-break-inside: avoid; }
+    .container { padding: 0; max-width: 100%; }
+    .hero-headline { font-size: 44px; }
+    .project, .story-block, .narrative, .impact, .pivot-row, .hypo-table { page-break-inside: avoid; }
+    .principles, .skills-grid, .lessons, .edu-grid, .contact-grid, .role-split, .measure {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    nav.topbar { padding: 14px 22px; }
+    .nav-links { display: none; }
+    .container { padding: 0 22px; }
+    section { padding: 70px 0; }
+    .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .hero-stat { padding: 12px 14px 12px 0; }
+    .hero-stat:nth-child(2) { border-right: none; padding-right: 0; }
+    .principles, .skills-grid, .pgs, .lessons, .role-split, .measure { grid-template-columns: 1fr; }
+    .pivot-row { grid-template-columns: 1fr; gap: 10px; }
+    .pivot-arrow { transform: rotate(90deg); margin: 0 auto; }
+    .impact { grid-template-columns: 1fr; padding: 30px 24px; gap: 24px; }
+    .impact-nums { justify-content: flex-start; }
+    .hybrid-viz { grid-template-columns: 1fr; }
+    .node-map { grid-template-columns: repeat(2, 1fr); }
+    .service-flow { grid-template-columns: 1fr; }
+    .service-flow .sf-arrow { transform: rotate(90deg); }
+    .arch-grid { grid-template-columns: 1fr; }
+    .ba { grid-template-columns: 1fr; }
+    .ba-arrow { transform: rotate(90deg); }
+    .pipeline { flex-direction: column; }
+    .pipeline .arrow { transform: rotate(90deg); }
+    .project-head { grid-template-columns: 1fr; }
+    .project-meta, .project-links { text-align: left; justify-content: flex-start; }
+    .edu-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+    .narrative { padding: 28px 24px; }
+    .closing { padding: 30px 22px; }
+    .hypo-row { grid-template-columns: 1fr; }
+    .hypo-row .cell { border-right: none; border-bottom: 1px dashed var(--line); }
+    .hypo-row.head { display: none; }
+    .measure-table .row { grid-template-columns: 1fr 50px 50px 50px; font-size: 11px; }
+  }
+  @media (max-width: 600px) {
+    .node-map { grid-template-columns: 1fr; }
+    .hero-name-row .name { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="topbar">
+  <a href="#hero" class="brand">이종혁 / Jonghyeok</a>
+  <ul class="nav-links">
+    <li><a href="#manifesto">Manifesto</a></li>
+    <li><a href="#pivot">Pivot</a></li>
+    <li><a href="#journey">Career</a></li>
+    <li><a href="#skills">Tools</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="print-btn" onclick="window.print()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+    PDF
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-left">
+        <div class="hero-name-row">
+          <span class="name">이종혁 · Jonghyeok</span>
+          <span class="role">AI 서비스 개발자 · Portfolio 2026</span>
+        </div>
+
+        <h1 class="hero-headline">
+          <span class="h-line">실패를</span>
+          <span class="h-line"><em>추적</em>하고,</span>
+          <span class="h-line">개선 가능한</span>
+          <span class="h-line"><span class="mark">구조</span>로 만든다.</span>
+        </h1>
+
+        <p class="hero-lead">
+          사람의 반복적인 검토를 최소화하고 <strong>스스로 검증하고 교정하는 고지능 에이전트</strong> 구현에 집중합니다. 에이전트의 핵심은 품질이며, 그다음이 비용과 시간이라는 원칙으로 비즈니스 가치를 만듭니다.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">
+            작업 보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://hr-agent.kr" target="_blank" rel="noopener" class="btn btn-ghost">
+            배포 서비스 (HR-Copilot)
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="hero-right-label">— Contact / 2026.05</div>
+        <ul class="hero-meta-list">
+          <li><span class="k">Email</span><span class="v">whdgur2034@naver.com</span></li>
+          <li><span class="k">Phone</span><span class="v">010-7204-2031</span></li>
+          <li><span class="k">GitHub</span><span class="v">github.com/JH-SKY</span></li>
+          <li><span class="k">Location</span><span class="v">서울 광진구 구의동</span></li>
+          <li><span class="k">Birth</span><span class="v">1994.12.16 (만 31세)</span></li>
+          <li><span class="k">Military</span><span class="v">군필 (육군)</span></li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- Hero quick stats -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">78.6 <span class="arrow">→</span> 91.8</div>
+        <div class="desc">HR-Copilot<br/>최종 품질 점수 (10세션·50문항)</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">−10일</div>
+        <div class="desc">비전공자 4인 팀<br/>마감 전 MVP 1차 완성</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">3 가설</div>
+        <div class="desc">LangSmith Trace<br/>전수 분석 → State 유실 발견</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">5 nodes</div>
+        <div class="desc">Biz-Fund-AI<br/>책임 분리 아키텍처</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MANIFESTO ── -->
+<section id="manifesto">
+  <div class="container">
+    <div class="eyebrow light">— Manifesto · 일하는 방식</div>
+
+    <blockquote class="manifesto-quote">
+      개선은 추측이 아니라, <em>데이터</em>에서 시작된다.
+      <br/>"LLM이 이상하다"가 아니라, <em>어느 state에서 정보가 끊겼는지</em>를 본다.
+    </blockquote>
+
+    <div class="principles">
+      <div class="principle">
+        <div class="num">— 01 / 데이터로 설득</div>
+        <h3>감보다 지표·로그·trace</h3>
+        <p>
+          영업 현장에서도 <em>"데이터는 거짓말하지 않는다"</em>는 원칙으로 일했습니다. AI 에이전트도 같습니다. 결과물을 감으로 평가하지 않고 <em>로그·State·루브릭·점수</em>로 추적합니다.
+        </p>
+      </div>
+      <div class="principle">
+        <div class="num">— 02 / 기준을 먼저</div>
+        <h3>루브릭과 문서로 판단 기준</h3>
+        <p>
+          "더 좋은 질문 만들어줘"가 아니라 HR 도메인 기준을 <em>루브릭·노드·평가 흐름</em>으로 코드화합니다. 비전공자 팀에서 의사결정 병목을 막는 것도 같은 원리입니다.
+        </p>
+      </div>
+      <div class="principle">
+        <div class="num">— 03 / 원인을 추적</div>
+        <h3>프롬프트가 아니라 state·흐름</h3>
+        <p>
+          품질이 안 나올 때 막연히 프롬프트를 고치지 않습니다. 수백 개 LangSmith Trace를 전수 분석해 <em>state 유실</em>이라는 진짜 원인을 찾아냅니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PIVOT : 영업 팀장 → AI 서비스 개발자 매핑 ── -->
+<section id="pivot">
+  <div class="container">
+    <div class="eyebrow">— About Me · 영업 팀장에서 AI 서비스 개발자로</div>
+
+    <h2 class="section-title">현장의 문제를 <em>데이터와 시스템 구조</em>로 바꾸는 방식<br/>— 이전 경력에서 이어졌다.</h2>
+    <p class="section-sub">
+      AI 에이전트 개발은 새로 시작한 일이지만, 일하는 방식은 영업 팀장 시절과 같습니다. 세 축이 그대로 옮겨왔습니다.
+    </p>
+
+    <div class="pivot-grid">
+      <!-- 1 -->
+      <div class="pivot-row">
+        <div class="pivot-side dim">
+          <div class="side-label">— 영업 팀장</div>
+          <div class="side-head">성과 지표 관리</div>
+          <div class="side-detail">매출 지표 분석으로 영업 전략을 수립. 숫자와 기록으로 팀을 설득했다.</div>
+        </div>
+        <div class="pivot-arrow">→</div>
+        <div class="pivot-side now">
+          <div class="side-label">— AI 서비스 개발자</div>
+          <div class="side-head">데이터로 설득</div>
+          <div class="side-detail">감보다 지표·로그·trace를 먼저 확인. AI 결과물을 점수와 루브릭으로 추적한다.</div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="pivot-row">
+        <div class="pivot-side dim">
+          <div class="side-label">— 영업 팀장</div>
+          <div class="side-head">문서화 / 기준 설계</div>
+          <div class="side-detail">직급 체계(팀원→멘토→수석멘토→부팀장→팀장)를 직접 재설계해 전사 표준으로 채택됐다.</div>
+        </div>
+        <div class="pivot-arrow">→</div>
+        <div class="pivot-side now">
+          <div class="side-label">— AI 서비스 개발자</div>
+          <div class="side-head">기준을 먼저 설계</div>
+          <div class="side-detail">루브릭과 문서로 팀의 판단 기준을 맞춘다. 비전공자 팀에서 의사결정 속도가 올라간다.</div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="pivot-row">
+        <div class="pivot-side dim">
+          <div class="side-label">— 영업 팀장</div>
+          <div class="side-head">WBS · 실적 리포트</div>
+          <div class="side-detail">목표를 일 단위로 쪼개고, 매일 실적을 점검·기록했다.</div>
+        </div>
+        <div class="pivot-arrow">→</div>
+        <div class="pivot-side now">
+          <div class="side-label">— AI 서비스 개발자</div>
+          <div class="side-head">원인을 추적</div>
+          <div class="side-detail">프롬프트만 고치지 않고 state와 흐름을 본다. 실험일지로 가설·검증을 기록한다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── JOURNEY ── -->
+<section id="journey">
+  <div class="container">
+    <div class="eyebrow">— Career · 5번의 경력</div>
+
+    <h2 class="section-title">현장 → 영업 → <em>AI</em>.</h2>
+    <p class="section-sub">
+      AI의 발전 속도를 영업 현장에서 직접 체감했고, 향후 5년 내 <strong>도메인 특화 에이전트</strong>의 수요가 폭발한다고 판단해 개발자의 길을 선택했습니다.
+    </p>
+
+    <div class="journey">
+      <div class="j-item now">
+        <div class="j-period">2025.12 — Now</div>
+        <h4>AI 서비스 개발자 양성과정 <span class="role-chip now">Building</span></h4>
+        <ul>
+          <li>새싹 청년취업사관학교</li>
+          <li>Backend · REST API · RAG · LLM Agent · DB / 인프라 · React</li>
+        </ul>
+        <div class="highlight">학습 중 만든 두 개의 실서비스 — <strong>HR-Copilot</strong>, <strong>Biz-Fund-AI</strong> — 가 이 포트폴리오의 본문입니다.</div>
+      </div>
+
+      <div class="j-item">
+        <div class="j-period">2023.11 — 2024.05</div>
+        <h4>Team Lead · 퍼스트림 <span class="role-chip lead">Lead</span></h4>
+        <ul>
+          <li>채용 설명회 기획 및 교육 프로그램 운영</li>
+          <li>전사 매출 데이터 분석 기반 실적 보고서 작성</li>
+          <li>매출 지표 분석을 통한 영업 전략 수립 및 성과 관리</li>
+        </ul>
+      </div>
+
+      <div class="j-item">
+        <div class="j-period">2021.02 — 2023.11</div>
+        <h4>Team Lead · 이상투자그룹 <span class="role-chip lead">Lead</span></h4>
+        <ul>
+          <li>채용 및 교육 프로그램 기획·운영</li>
+          <li>매출 지표 분석 및 실적 리포트 작성</li>
+          <li>영업 조직 성과 관리 / <strong>팀 전원 목표 실적 초과 달성</strong></li>
+          <li>직급 체계 재설계 (팀원→멘토→수석멘토→부팀장→팀장) — <strong>전사 운영 표준으로 채택</strong></li>
+        </ul>
+        <div class="highlight">교육 병목을 해결하고 보상·페널티가 명확한 구조를 만든 경험이 <strong>지금 팀 리딩의 근간</strong>이 되었습니다.</div>
+      </div>
+
+      <div class="j-item">
+        <div class="j-period">2020.01 — 2021.02</div>
+        <h4>TM Sales · 이상투자그룹 <span class="role-chip">Sales</span></h4>
+        <ul>
+          <li>유사투자자문 서비스 TM 영업 및 고객 상담</li>
+        </ul>
+      </div>
+
+      <div class="j-item">
+        <div class="j-period">2018.06 — 2019.12</div>
+        <h4>Field Technician · 신성ENG <span class="role-chip field">Field</span></h4>
+        <ul>
+          <li>아파트 신축 현장 소방 전선 포설 및 화재 감지기 설치</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="container">
+    <div class="eyebrow">— Skill Set · 도구와 선택의 이유</div>
+
+    <h2 class="section-title">스택이 아니라, <em>선택의 이유</em>.</h2>
+    <p class="section-sub">도구를 나열하는 대신 — 왜 그 도구를 골랐는가를 설명할 수 있어야 한다고 믿습니다.</p>
+
+    <div class="skills-grid">
+      <div class="skill">
+        <div class="skill-head"><h3>AI · LLM Agent</h3><span class="skill-num">— 01</span></div>
+        <div class="tags">
+          <span class="tag">LangGraph</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">LangSmith</span>
+          <span class="tag">OpenAI API</span>
+          <span class="tag">RAG</span>
+        </div>
+        <p class="skill-why">
+          LangGraph 기반 <strong>멀티에이전트 워크플로우</strong>를 노드 단위로 설계·분리해 디버깅과 개선이 용이하게 만듭니다. LangSmith로 수백 개 Trace를 분석해 State 유실 같은 구조적 문제를 데이터로 찾아냅니다.
+        </p>
+      </div>
+      <div class="skill">
+        <div class="skill-head"><h3>Backend</h3><span class="skill-num">— 02</span></div>
+        <div class="tags">
+          <span class="tag">FastAPI</span>
+          <span class="tag">Python</span>
+          <span class="tag">Pydantic</span>
+          <span class="tag">SQLAlchemy</span>
+          <span class="tag">SSE</span>
+        </div>
+        <p class="skill-why">
+          FastAPI <strong>비동기 서버 아키텍처</strong>로 LLM 응답을 SSE 기반 실시간 스트리밍으로 내려보내 체감 대기시간을 줄였습니다. Pydantic으로 LLM 출력을 구조화해 통제합니다.
+        </p>
+      </div>
+      <div class="skill">
+        <div class="skill-head"><h3>Database</h3><span class="skill-num">— 03</span></div>
+        <div class="tags">
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">pgvector</span>
+          <span class="tag">SQL · SQLD</span>
+        </div>
+        <p class="skill-why">
+          <strong>3NF 기반 정규화 테이블 설계와 ERD 작성</strong>이 기본기입니다. pgvector로 별도 Vector DB 없이 한 곳에서 벡터+관계형 데이터를 함께 관리하고, 벡터+키워드 <strong>Hybrid 검색</strong>을 구현했습니다.
+        </p>
+      </div>
+      <div class="skill">
+        <div class="skill-head"><h3>DevOps · Frontend</h3><span class="skill-num">— 04</span></div>
+        <div class="tags">
+          <span class="tag">Docker</span>
+          <span class="tag">Git-flow</span>
+          <span class="tag">APScheduler</span>
+          <span class="tag">React</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <p class="skill-why">
+          Docker Compose로 <strong>개발 환경 표준화</strong>, Git-flow로 팀 협업, APScheduler로 정책 공고 자동 수집을 운영 단계에서 유지합니다. React 컴포넌트 기반 UI도 함께 구현합니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="container">
+    <div class="eyebrow">— Selected Works · 두 개의 실서비스</div>
+
+    <h2 class="section-title">같은 줄기, <em>두 개의 풀이</em>.</h2>
+    <p class="section-sub">
+      둘 다 <strong>사람의 반복적인 검토를 최소화하고 스스로 검증·교정하는 에이전트</strong>를 만든다는 같은 문제의식 위에 있습니다.
+    </p>
+
+    <!-- ────────── PROJECT 01: HR-Copilot ────────── -->
+    <article class="project">
+      <div class="project-head">
+        <div>
+          <div class="project-id">— Project 01 / 팀 리더 + AI에이전트 개발 · 4인 팀 · 2026.04.10 – 05.20</div>
+          <h3 class="project-name">HR-Copilot <em>— Recruiting Agent</em></h3>
+          <p class="project-tagline">지원자 문서·면접 세션 정보를 기반으로 면접관이 활용할 수 있는 맞춤형 면접 질문·질문 근거·평가 가이드를 생성해주는 HR AI Agent.</p>
+        </div>
+        <div class="project-meta">
+          <strong>Role · Stack</strong>
+          <span>팀 리더 + AI 개발</span>
+          <span>LangGraph · LangSmith</span>
+          <span>FastAPI · PostgreSQL</span>
+          <div class="project-links">
+            <a href="https://hr-agent.kr" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              Live
+            </a>
+            <a href="https://github.com/bamti95/hr-copilot" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.74-1.33-1.74-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://checker-gambler-0f8.notion.site/HR-COPILOT-7331480769ac83ef971881f22f063100" target="_blank" rel="noopener" class="project-link">Notion</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-stack">
+        <span class="stack-chip">LangGraph</span>
+        <span class="stack-chip">LangSmith</span>
+        <span class="stack-chip">FastAPI</span>
+        <span class="stack-chip">PostgreSQL</span>
+        <span class="stack-chip">OpenAI API</span>
+        <span class="stack-chip">Docker</span>
+        <span class="stack-chip">React</span>
+      </div>
+
+      <!-- 서비스 개요: 입력 → 처리 → 출력 -->
+      <div class="service-flow">
+        <div class="sf-box">
+          <div class="sf-label">— 입력</div>
+          <div class="sf-title">지원자 문서</div>
+          <ul>
+            <li>PDF · DOC · DOCX</li>
+            <li>TXT · HWP</li>
+            <li>면접 세션 정보</li>
+          </ul>
+        </div>
+        <div class="sf-arrow">→</div>
+        <div class="sf-box process">
+          <div class="sf-label">— 처리</div>
+          <div class="sf-title">LangGraph Agent</div>
+          <ul>
+            <li>OCR / 텍스트 정제</li>
+            <li>검증 포인트 추출</li>
+            <li>질문 후보 / Reviewer</li>
+            <li>Retry · State 추적</li>
+          </ul>
+        </div>
+        <div class="sf-arrow">→</div>
+        <div class="sf-box">
+          <div class="sf-label">— 출력</div>
+          <div class="sf-title">맞춤 질문 + 근거</div>
+          <ul>
+            <li>최종 5문항</li>
+            <li>예상 답변 · 꼬리질문</li>
+            <li>루브릭 평가 가이드</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 담당 구현 범위 (3카드) -->
+      <div class="role-split">
+        <div class="role-card">
+          <div class="role-icon">01</div>
+          <h5>AI Agent 설계 / 구현</h5>
+          <ul>
+            <li>LangGraph 기반 질문 생성 Agent 설계</li>
+            <li>지원자 문서 기반 검증 포인트 도출</li>
+            <li>질문·근거·평가 가이드 생성 구조 구현</li>
+          </ul>
+        </div>
+        <div class="role-card">
+          <div class="role-icon">02</div>
+          <h5>질문 품질 개선</h5>
+          <ul>
+            <li>Reviewer / Retry 기반 품질 검증 흐름 설계</li>
+            <li>LangSmith Trace 기반 실패 원인 분석</li>
+            <li>자체 루브릭 78.6 → 91.8</li>
+          </ul>
+        </div>
+        <div class="role-card">
+          <div class="role-icon">03</div>
+          <h5>기획 · 문서화 · 팀 리딩</h5>
+          <ul>
+            <li>Notion 기반 기획 문서 작성</li>
+            <li>WBS / API 명세 / ERD 정리</li>
+            <li>실험 일지 · 회의록 관리</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Architecture -->
+      <div class="arch">
+        <div class="arch-title">시스템 아키텍처 (요약)</div>
+        <div class="arch-grid">
+          <div class="arch-col">
+            <h6>— Client / API</h6>
+            <div class="arch-box"><strong>React UI</strong>관리자 대시보드 · 질문/세션 화면</div>
+            <div class="arch-box"><strong>FastAPI Backend</strong>Auth · Applicant · Document · Session · LLM Usage</div>
+          </div>
+          <div class="arch-col">
+            <h6>— AI Core</h6>
+            <div class="arch-box accent"><strong>LangGraph Agent</strong>State 구성 → Risk Extractor → Questioner → Driller → Reviewer → Retry</div>
+            <div class="arch-box"><strong>OpenAI API</strong>질문 생성 · 예상 답변 · 평가 루브릭</div>
+            <div class="arch-box"><strong>LangSmith</strong>trace 기반 디버깅 · state/retry/feedback 관측</div>
+          </div>
+          <div class="arch-col">
+            <h6>— Data</h6>
+            <div class="arch-box"><strong>Document Pipeline</strong>PDF/DOC/HWP 추출 · OCR/정제</div>
+            <div class="arch-box"><strong>PostgreSQL</strong>지원자·문서 메타·세션·LLM 로그·비용</div>
+            <div class="arch-box"><strong>File Storage</strong>업로드 문서 원본 관리</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LangGraph 노드 흐름 -->
+      <div class="arch">
+        <div class="arch-title">LangGraph 노드 흐름 (질문 품질 ↑)</div>
+        <div class="pipeline">
+          <div class="node">prepare<br/>context<span class="sub">지원자/직무 정리</span></div>
+          <span class="arrow">→</span>
+          <div class="node highlight">verification<br/>point<span class="sub">검증 포인트 추출</span></div>
+          <span class="arrow">→</span>
+          <div class="node">questioner<span class="sub">질문 후보 10개</span></div>
+          <span class="arrow">→</span>
+          <div class="node">predictor<span class="sub">예상 답변</span></div>
+          <span class="arrow">→</span>
+          <div class="node">driller<span class="sub">꼬리 질문</span></div>
+          <span class="arrow">→</span>
+          <div class="node loop">reviewer<span class="sub">평가 · Retry ×3</span></div>
+          <span class="arrow">→</span>
+          <div class="node highlight">selector<span class="sub">최종 Top 5</span></div>
+        </div>
+        <p class="caption"><strong>실시간 응답보다 질문 품질과 검증력이 더 중요한 서비스</strong>이기 때문에 각 단계를 노드로 분리하고 State 기반 Retry 흐름을 설계.</p>
+      </div>
+
+      <!-- Impact strip -->
+      <div class="impact">
+        <h4 class="impact-head">자체 루브릭으로 <em>10세션 · 50문항</em>을 전후 동일 기준 비교.</h4>
+        <div class="impact-nums">
+          <div class="impact-n before"><div class="label">Before</div><div class="value">78.6</div></div>
+          <div class="impact-arrow">→</div>
+          <div class="impact-n after"><div class="label">After</div><div class="value">91.8</div></div>
+        </div>
+        <div class="impact-list">
+          <div class="impact-list-item"><span>개선 폭</span><strong>+13.2</strong></div>
+          <div class="impact-list-item"><span>목표 90.0 대비</span><strong>+1.8 초과</strong></div>
+          <div class="impact-list-item"><span>마감 전 MVP 완성</span><strong>−10일</strong></div>
+        </div>
+      </div>
+
+      <!-- Story 01 : State 유실 -->
+      <div class="story-block">
+        <div class="story-block-head">
+          <span class="story-block-num">— 01</span>
+          <h3>가설을 세우고, <em>Trace로 하나씩 제거</em>했다</h3>
+        </div>
+        <p class="section-sub" style="margin-bottom:24px">
+          테스트 과정에서 최종 결과물의 품질 점수가 지속적으로 낮게 측정되는 문제. <strong>"LLM이 이상하다"</strong>가 아니라 <strong>"어느 state에서 정보가 끊겼는지"</strong>를 보기 시작했습니다.
+        </p>
+
+        <div class="hypo-table">
+          <div class="hypo-row head">
+            <div class="cell">No.</div>
+            <div class="cell">가설</div>
+            <div class="cell">확인한 것</div>
+            <div class="cell">결론</div>
+          </div>
+          <div class="hypo-row">
+            <div class="cell"><span class="num">01</span></div>
+            <div class="cell"><strong>retry 미작동</strong><br/>리트라이 로직 자체가 작동하지 않는가?</div>
+            <div class="cell">분기 실행 확인</div>
+            <div class="cell"><span class="conclusion-pill ok">정상 작동 확인</span></div>
+          </div>
+          <div class="hypo-row">
+            <div class="cell"><span class="num">02</span></div>
+            <div class="cell"><strong>Reviewer 기준이 너무 엄격한가</strong><br/>도달할 수 없는 수준의 평가?</div>
+            <div class="cell">프롬프트 수정</div>
+            <div class="cell"><span class="conclusion-pill bad">주요 원인 아님</span></div>
+          </div>
+          <div class="hypo-row found">
+            <div class="cell"><span class="num">03</span></div>
+            <div class="cell"><strong>State 흐름 문제</strong><br/>에이전트들이 피드백을 제대로 전달받지 못하는가?</div>
+            <div class="cell">state 전수 분석</div>
+            <div class="cell"><span class="conclusion-pill found">feedback state 유실</span></div>
+          </div>
+        </div>
+
+        <div class="arch">
+          <div class="arch-title">발견한 데이터 유실 지점</div>
+          <div class="pipeline">
+            <div class="node">Reviewer<span class="sub">피드백 생성</span></div>
+            <span class="arrow">→</span>
+            <div class="node">questioner<span class="sub">피드백 반영</span></div>
+            <span class="arrow">→</span>
+            <div class="node">질문 후보<span class="sub">재생성</span></div>
+            <span class="arrow">→</span>
+            <div class="node loop">feedback<br/>State 초기화<span class="sub">⚠ 유실 지점</span></div>
+            <span class="arrow">→</span>
+            <div class="node">후속 노드<span class="sub">개선 방향 손실</span></div>
+          </div>
+          <p class="caption"><strong>State 초기화 시점 조정으로 문제 해결.</strong> 피드백이 단순히 글자로 전달되는 것이 아니라, 각 노드가 책임져야 할 데이터 구조에 직접 꽂히도록 시스템을 개선.</p>
+        </div>
+
+        <div class="narrative">
+          <div class="narrative-meta">
+            <span class="narrative-badge">경험 1 · 디버깅 회고</span>
+            <span class="narrative-tag">LangSmith · State 전파</span>
+          </div>
+          <h4>관측과 집요함, <em>그리고 시스템 구조</em></h4>
+          <div class="narrative-body">
+            <p>에이전트가 스스로 결과물을 수정하는 과정에서 왜 품질이 더 나아지지 않는지 그 본질적인 이유를 찾고 싶었습니다. LangSmith로 <strong>수백 개의 실행 로그(Trace)를 하나하나 대조</strong>해 데이터(State)의 변화를 추적했습니다.</p>
+            <p>검토 노드가 수정 지시를 내려도, 정작 질문을 만드는 노드들이 그 피드백을 제대로 반영하지 못해 무의미한 재시도만 반복하고 있었습니다. <strong>피드백이 단순히 글자로 전달되는 것이 아니라, 각 노드가 책임져야 할 데이터 구조에 직접 꽂히도록</strong> 시스템을 개선했습니다.</p>
+          </div>
+          <div class="insight">
+            <strong>배운 것</strong>
+            에이전트 개발자의 실력은 단순히 코드를 짜는 것이 아니라, <em>시스템 내부의 병목을 데이터로 찾아내고 구조적으로 해결하는 관측과 집요함</em>에서 나옵니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 02 : 구조 재설계 -->
+      <div class="story-block">
+        <div class="story-block-head">
+          <span class="story-block-num">— 02</span>
+          <h3>"좋은 질문"의 정의를 바꾸고 <em>구조</em>로 풀었다</h3>
+        </div>
+        <p class="section-sub" style="margin-bottom:24px">
+          State 유실을 해결한 뒤에도 질문은 자연스럽지만, <strong>채용 관점에서 반드시 확인해야 할 리스크 포인트</strong>(성과 과장·직무 전환 사유·협업 태도·이직 패턴·공백기)를 충분히 건드리지 못했습니다.
+          Questioner 프롬프트에 조건을 더 넣을 수도 있었지만, 그렇게 하면 한 노드에 책임이 몰립니다. <strong>질문 생성 전에 검증 포인트를 먼저 추출하는 구조</strong>로 그래프를 바꿨습니다.
+        </p>
+
+        <div class="ba">
+          <div class="ba-side">
+            <h5>Before <span class="label">변경 전</span></h5>
+            <div class="ba-flow">
+              <div class="ba-step"><strong>지원자 문서</strong><span class="desc">원본</span></div>
+              <div class="ba-step"><strong>Predictor / Driller</strong><span class="desc">바로 질문 생성</span></div>
+              <div class="ba-step"><strong>Reviewer</strong><span class="desc">통과 위주 검토</span></div>
+              <div class="ba-step"><strong>최종 5개</strong><span class="desc">무난한 질문도 통과</span></div>
+            </div>
+            <div class="ba-note">문서 전체에서 바로 질문을 만들면 프롬프트가 비대해지고, 무난한 질문이 통과될 위험이 컸음.</div>
+          </div>
+          <div class="ba-arrow">→</div>
+          <div class="ba-side after">
+            <h5>After <span class="label">변경 후</span></h5>
+            <div class="ba-flow">
+              <div class="ba-step"><strong>지원자 문서</strong><span class="desc">원본</span></div>
+              <div class="ba-step accent"><strong>Verification Point Extractor</strong><span class="desc">리스크 / 검증 포인트 선추출</span></div>
+              <div class="ba-step"><strong>Questioner</strong><span class="desc">검증 포인트 기반 질문 생성 ×10</span></div>
+              <div class="ba-step"><strong>Predictor / Driller / Reviewer</strong><span class="desc">후보 전체 평가</span></div>
+              <div class="ba-step accent"><strong>Selector</strong><span class="desc">상위 5개 선별</span></div>
+            </div>
+            <div class="ba-note">노드별 책임 분리. "이 지원자에게 무엇을 검증해야 하는가"를 먼저 정한 뒤 질문을 만듦.</div>
+          </div>
+        </div>
+
+        <div class="narrative">
+          <div class="narrative-meta">
+            <span class="narrative-badge">경험 2 · 채용 관점의 재정의</span>
+            <span class="narrative-tag">도메인 · 구조</span>
+          </div>
+          <h4>"무엇을 해봤는가"에서 <em>"문제가 될 수 있는 지점"</em>으로</h4>
+          <div class="narrative-body">
+            <p>저는 채용에서 가장 먼저 검증해야 할 것은 <strong>"이 사람이 일을 잘할 수 있는가"보다 "조직과 업무에 리스크가 되지 않는가"</strong>라고 생각합니다. 그래서 HR-Copilot은 단순히 좋은 질문을 많이 생성하는 서비스가 아니라, 지원자 문서 안에서 <strong>검증이 필요한 지점과 리스크</strong>를 찾아내고, 그것을 질문·평가 기준으로 확인할 수 있도록 돕는 HR Agent로 설계했습니다.</p>
+            <p>최종적으로 질문은 "무엇을 해봤는지 묻는 질문"에서 <strong>"채용 후 문제가 될 수 있는 지점을 사전에 확인하는 질문"</strong>으로 바뀌었습니다.</p>
+          </div>
+          <div class="insight">
+            <strong>판단</strong>
+            품질 개선은 프롬프트 튜닝이 아니라 <em>"이 시스템이 무엇을 잘해야 하는가"</em>라는 도메인 정의에서 시작됩니다. 기준을 구조로 만드는 것이 핵심이었습니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 03 : 평가 측정 디테일 -->
+      <div class="story-block">
+        <div class="story-block-head">
+          <span class="story-block-num">— 03</span>
+          <h3>결과: <em>78.6 → 91.8</em>, 측정 방식까지</h3>
+        </div>
+
+        <div class="measure">
+          <div class="measure-card measure-method">
+            <h5>— 평가 범위</h5>
+            <ul>
+              <li><strong>AI 개발 / 데이터 직무</strong> 최종 10개 세션</li>
+              <li>총 <strong>50개 문항</strong></li>
+              <li><strong>질문 품질 5항목 + 평가가이드 품질 5항목</strong> = 10항목</li>
+              <li>각 항목 <strong>1~5점 척도</strong>, 최종 100점 환산</li>
+            </ul>
+          </div>
+          <div class="measure-card">
+            <h5>— 점수 변화</h5>
+            <div class="measure-table">
+              <div class="row head">
+                <div class="lab">지표</div>
+                <div class="val">초기</div>
+                <div class="val">개선 후</div>
+                <div class="val">변화</div>
+              </div>
+              <div class="row">
+                <div class="lab">질문 품질 평균</div>
+                <div class="val">19.6 / 25</div>
+                <div class="val">23.1 / 25</div>
+                <div class="val delta">+3.5</div>
+              </div>
+              <div class="row">
+                <div class="lab">평가가이드 품질 평균</div>
+                <div class="val">19.7 / 25</div>
+                <div class="val">22.8 / 25</div>
+                <div class="val delta">+3.1</div>
+              </div>
+              <div class="row last">
+                <div class="lab">최종 품질 점수</div>
+                <div class="val">78.6</div>
+                <div class="val">91.8</div>
+                <div class="val delta">+13.2</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="narrative">
+          <div class="narrative-meta">
+            <span class="narrative-badge">회고 · 데이터에 답이 있다</span>
+            <span class="narrative-tag">영업 → AI</span>
+          </div>
+          <h4>"<em>데이터는 거짓말하지 않는다</em>"는 철학, AI Agent에서도 통했다</h4>
+          <div class="narrative-body">
+            <p>개선은 추측이 아닌 데이터에서 시작됩니다. 영업 직무에 있을 때에도 팀 성과에 대한 해답은 항상 데이터에 있었습니다. 성과의 이유는 객관적인 지표 속에 숨어 있었기 때문입니다.</p>
+            <p>이 철학은 AI 에이전트 개발 과정에서도 그대로 이어졌습니다. 성능이 나오지 않을 때 막연히 프롬프트를 수정하는 대신, LangSmith를 통해 <strong>각 노드의 데이터를 전수 조사</strong>했습니다. 결국 데이터는 "어디서 품질이 무너지는지"를 정확히 가리키고 있었고, 이를 통해 직관만으로는 절대 찾을 수 없던 State 유실 현상을 잡아낼 수 있었습니다.</p>
+          </div>
+          <div class="insight">
+            <strong>회고</strong>
+            영업 조직이든 AI 에이전트든, 결국 <em>관측하고 측정할 수 있는 데이터만이 성과를 개선할 수 있는 유일한 근거</em>라는 것을 다시 한번 경험했습니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 04 : 팀장 회고 -->
+      <div class="story-block">
+        <div class="story-block-head">
+          <span class="story-block-num">— 04</span>
+          <h3>비전공자 4인 팀, <em>마감 10일 전</em> MVP 완성</h3>
+        </div>
+
+        <div class="lessons">
+          <div class="lesson">
+            <div class="lesson-num">01</div>
+            <h5>기준을 만들었다</h5>
+            <p>비전공자 위주 팀의 의사결정 병목을 막기 위해 기획안 · WBS · API 명세 · ERD를 선제적으로 구축. 문서로 작업 방향과 우선순위 고정.</p>
+            <div class="out">→ 강사님 피드백 시 준비·질문 정리가 가장 잘 된 팀으로 평가</div>
+          </div>
+          <div class="lesson">
+            <div class="lesson-num">02</div>
+            <h5>충돌은 자료로 해결</h5>
+            <p>의견 충돌 시 각자의 논리를 담은 자료를 지참해 재논의하는 원칙. 결정 사항은 즉시 문서화해 정보 휘발성과 사후 불만을 방지.</p>
+            <div class="out">→ 반복 논쟁 차단, 객관적 의사결정</div>
+          </div>
+          <div class="lesson">
+            <div class="lesson-num">03</div>
+            <h5>일정은 일 단위로</h5>
+            <p>WBS 기반으로 목표를 주·일 단위로 나누고 하루에도 수시로 진행 상황 확인. 영업 시절 실적 관리 방식을 그대로 이식.</p>
+            <div class="out">→ 마감 10일 전 MVP 1차 완성 / LangGraph 고도화 시간 확보</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ────────── PROJECT 02: Biz-Fund-AI ────────── -->
+    <article class="project">
+      <div class="project-head">
+        <div>
+          <div class="project-id">— Project 02 / AI 에이전트 + 백엔드 · 2026.02 – 05</div>
+          <h3 class="project-name">Biz-Fund-AI <em>— Policy Matching</em></h3>
+          <p class="project-tagline">기업마당 API로 정책 공고를 자동 수집·업데이트하여 소상공인 사업장 정보·재무 상태를 바탕으로 정책을 매칭. 정밀진단·수혜 시뮬레이션·AI 챗봇 상담까지 통합한 AI 비서 서비스.</p>
+        </div>
+        <div class="project-meta">
+          <strong>Role · Stack</strong>
+          <span>AI 에이전트 + 백엔드</span>
+          <span>LangGraph · RAG(pgvector)</span>
+          <span>FastAPI · 기업마당 · 국세청</span>
+          <div class="project-links">
+            <a href="https://github.com/JH-SKY" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.74-1.33-1.74-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-stack">
+        <span class="stack-chip">LangGraph</span>
+        <span class="stack-chip">RAG · pgvector</span>
+        <span class="stack-chip">FastAPI</span>
+        <span class="stack-chip">PostgreSQL</span>
+        <span class="stack-chip">OpenAI API</span>
+        <span class="stack-chip">기업마당 API</span>
+        <span class="stack-chip">국세청 API</span>
+        <span class="stack-chip">APScheduler</span>
+      </div>
+
+      <div class="impact">
+        <h4 class="impact-head">단일 RAG의 <em>표현 민감성</em>을 구조로 풀었다.</h4>
+        <div class="impact-nums">
+          <div class="impact-n before"><div class="label">Nodes</div><div class="value">5</div></div>
+          <div class="impact-arrow">×</div>
+          <div class="impact-n after"><div class="label">Search</div><div class="value">RRF</div></div>
+        </div>
+        <div class="impact-list">
+          <div class="impact-list-item"><span>책임 분리</span><strong>Router · Diagnosis · RAG · Stats · Sim</strong></div>
+          <div class="impact-list-item"><span>검색</span><strong>벡터 + 키워드 + RRF</strong></div>
+          <div class="impact-list-item"><span>운영</span><strong>APScheduler 자동 수집</strong></div>
+        </div>
+      </div>
+
+      <!-- Story 01 : 5 nodes -->
+      <div class="story-block">
+        <div class="story-block-head">
+          <span class="story-block-num">— 01</span>
+          <h3>책임을 <em>5개 노드</em>로 분리</h3>
+        </div>
+
+        <div class="arch">
+          <div class="arch-title">5노드 역할 분리</div>
+          <div class="node-map">
+            <div class="node-card"><strong>Router</strong><span>의도 · 필요 기능 결정</span></div>
+            <div class="node-card"><strong>Diagnosis</strong><span>조건 ↔ 사업 적합</span></div>
+            <div class="node-card"><strong>RAG</strong><span>문서 근거 응답</span></div>
+            <div class="node-card"><strong>Stats</strong><span>통계 · 비교</span></div>
+            <div class="node-card"><strong>Simulation</strong><span>가능성 · 예상</span></div>
+          </div>
+          <p class="caption">한 LLM 올인-원 대비 <strong>추적 · 부분 개선 · 확장</strong>이 용이. 책임 범위를 나누는 것이 가장 어려웠고, 그만큼 유지보수 이점이 컸다.</p>
+        </div>
+
+        <div class="narrative">
+          <div class="narrative-meta">
+            <span class="narrative-badge">아키텍처 결정</span>
+            <span class="narrative-tag">Why 5 nodes</span>
+          </div>
+          <h4>책임을 나누면 <em>어디서 무엇을 고쳐야 할지</em> 명확해진다</h4>
+          <div class="narrative-body">
+            <p>하나의 LLM이 모든 걸 처리하게 만들 수도 있었습니다. 하지만 그렇게 하면 답변이 왜 그렇게 나왔는지 추적하기 어렵고, 특정 기능만 개선하기도 어렵습니다.</p>
+            <p>책임을 나누면 문제 발생 시 어느 노드에서 개선해야 하는지 바로 알 수 있고, 기능 추가 때도 전체를 갈아엎지 않고 노드만 확장하면 됩니다. <strong>HR-Copilot에서 State 유실로 겪은 경험</strong>이 처음부터 노드 책임을 명확히 설계한 직접적 이유였습니다.</p>
+          </div>
+          <div class="insight">
+            <strong>핵심 판단</strong>
+            복잡한 것을 단순하게 만드는 방법은 책임을 잘게 나누는 것. 각 노드가 <em>"자기 일만 잘하면"</em> 전체가 안정적으로 동작합니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 02 : Hybrid RAG -->
+      <div class="story-block">
+        <div class="story-block-head">
+          <span class="story-block-num">— 02</span>
+          <h3>Hybrid RAG로 <em>어휘 불일치</em>를 메우다</h3>
+        </div>
+
+        <div class="hybrid-viz">
+          <div class="hybrid-box">
+            <h5>— Before · 단일 검색</h5>
+            <div class="hybrid-flow">
+              <span class="pill">질문</span><span class="arrow">→</span><span class="pill">벡터 검색</span><span class="arrow">→</span><span class="pill">답변</span>
+            </div>
+            <div class="hybrid-note">"창업 지원금"이라고 물어도 문서에 "초기창업패키지"로 적혀 있으면 관련 문서가 상위 노출되지 않음.</div>
+          </div>
+          <div class="rrf-bridge">RRF<small>Reciprocal Rank Fusion</small></div>
+          <div class="hybrid-box good">
+            <h5>— After · Hybrid</h5>
+            <div class="hybrid-flow">
+              <span class="pill">질문</span><span class="arrow">→</span><span class="pill accent">키워드</span><span>+</span><span class="pill accent">벡터</span><span class="arrow">→</span><span class="pill">재순위</span><span class="arrow">→</span><span class="pill">답변</span>
+            </div>
+            <div class="hybrid-note">벡터+키워드 결과를 RRF로 재정렬 → 단순 벡터 검색 대비 답변 정확도 향상.</div>
+          </div>
+        </div>
+
+        <div class="narrative">
+          <div class="narrative-meta">
+            <span class="narrative-badge">RAG 고도화</span>
+            <span class="narrative-tag">pgvector · RRF</span>
+          </div>
+          <h4>RAG의 품질은 <em>검색 단계에서 절반이 결정된다</em></h4>
+          <div class="narrative-body">
+            <p>벡터 검색은 의미적 유사성에는 강하지만 정확한 키워드 매칭에 약하고, 키워드 검색은 그 반대입니다. 두 검색 결과를 <strong>RRF(Reciprocal Rank Fusion)</strong>로 재정렬하는 Hybrid RAG를 pgvector 기반으로 구현했습니다.</p>
+            <p>검증은 정책·지원금 관련 질문 세트를 사전에 준비하고, 단일/하이브리드 동일 입력 비교 — 상위 문서 포함, 조건 일치, 핵심 정보 누락, 출처 기반 응답을 기준으로 확인했습니다.</p>
+          </div>
+          <div class="insight">
+            <strong>핵심 개선</strong>
+            표현이 다른 질문에도 관련 문서를 안정적으로 찾아오는 것이 가장 큰 변화. <em>RAG의 품질은 검색 단계에서 이미 절반이 결정됩니다.</em>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story 03 : 통합 흐름 -->
+      <div class="story-block">
+        <div class="story-block-head">
+          <span class="story-block-num">— 03</span>
+          <h3>추천 · 진단 · 검색 · 시뮬레이션을 <em>하나의 상담 흐름</em>으로</h3>
+        </div>
+        <div class="role-split">
+          <div class="role-card">
+            <div class="role-icon">01</div>
+            <h5>외부 API 연동</h5>
+            <ul>
+              <li>국세청 사업자 진위 확인</li>
+              <li>기업마당 정책 공고 수집</li>
+              <li>APScheduler 자동 업데이트</li>
+            </ul>
+          </div>
+          <div class="role-card">
+            <div class="role-icon">02</div>
+            <h5>AI 상담 흐름</h5>
+            <ul>
+              <li>Router → Diagnosis · RAG · Stats · Simulation</li>
+              <li>복합 질문을 작업 묶음으로 판단</li>
+              <li>SSE 기반 실시간 답변 스트리밍</li>
+            </ul>
+          </div>
+          <div class="role-card">
+            <div class="role-icon">03</div>
+            <h5>운영 자동화</h5>
+            <ul>
+              <li>정책 공고 수작업 등록 제거</li>
+              <li>데이터 최신성 자동 확보</li>
+              <li>체계적 로깅 운영</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section id="education">
+  <div class="container">
+    <div class="eyebrow">— Education &amp; Certificate</div>
+
+    <h2 class="section-title">계속 <em>증명</em>하고,<br/>계속 <em>배운다</em>.</h2>
+    <p class="section-sub">교육은 시작에 불과합니다. 학습 내용이 어떤 작업으로 이어졌는지는 위의 두 프로젝트가 증명합니다.</p>
+
+    <div class="edu-grid">
+      <div class="edu-main">
+        <div class="edu-period">2025.12 — 2026.05 · 교육 중</div>
+        <h3>AI 서비스 개발자 양성과정</h3>
+        <div class="edu-org">— 새싹 청년취업사관학교</div>
+        <p>Back-end 개발 · REST API 설계 · RAG 시스템 및 LLM 응용 · AI Agent 및 서비스 최적화 · DB / 인프라 · React 컴포넌트 설계까지 일관된 흐름으로 학습. 그 안에서 HR-Copilot · Biz-Fund-AI 두 실서비스가 만들어졌습니다.</p>
+      </div>
+      <div class="edu-side">
+        <div class="cert">
+          <div class="cert-mark">SQLD</div>
+          <div>
+            <h4>SQL 개발자</h4>
+            <p>한국데이터산업진흥원 · 2026.03.27</p>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-mark">完</div>
+          <div>
+            <h4>병역 의무 완료</h4>
+            <p>육군 · 군필</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <div class="eyebrow light">— Contact · 같이 만들고 싶다면</div>
+
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact-head">시스템 <em>내부</em>를<br/>같이 들여다 봅시다.</h2>
+        <p class="contact-lead">
+          에이전트의 품질을 끌어올리는 것, 시스템 내부를 데이터로 들여다보는 것에서 가장 큰 보람을 느낍니다. 비즈니스 문제를 기술로 풀어가는 자리에 함께하고 싶습니다.
+        </p>
+
+        <div class="contact-cards">
+          <a href="mailto:whdgur2034@naver.com" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-card-info">
+              <div class="label">Email</div>
+              <div class="value">whdgur2034@naver.com</div>
+            </div>
+          </a>
+          <a href="tel:010-7204-2031" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 015 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div class="contact-card-info">
+              <div class="label">Phone</div>
+              <div class="value">010-7204-2031</div>
+            </div>
+          </a>
+          <a href="https://github.com/JH-SKY" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.4.6.1.82-.26.82-.58v-2c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.74-1.33-1.74-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </div>
+            <div class="contact-card-info">
+              <div class="label">GitHub</div>
+              <div class="value">github.com/JH-SKY</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="closing">
+        <blockquote>
+          영업 현장에서 직접 사람들을 만나며 배운 것은, 고객은 화려한 자료나 말이 아니라 자신의 불편함을 해결해 줄 실질적인 이득에 지갑을 연다는 점입니다. 개발자로서 제가 구현하는 기능이 사용자에게 어떤 문제 해결 경험을 제공하는지, 그리고 그것이 어떻게 서비스 경쟁력과 매출로 연결될 수 있는지를 항상 고민하며 개발에 임합니다.
+        </blockquote>
+        <cite>— 이종혁 · 입사지원서 자기소개 중에서</cite>
+      </div>
+    </div>
+
+    <footer>
+      <span class="dot">이종혁 / Jonghyeok · AI 서비스 개발자 · Portfolio 2026</span>
+      <span>마지막 업데이트 · 2026.05</span>
+    </footer>
+  </div>
+</section>
+
+</body>
+</html>
