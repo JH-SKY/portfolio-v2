@@ -103,7 +103,7 @@
       .hero-title {
         font-family: NotoKRBold, NotoKR, sans-serif;
         font-size: 74px;
-        line-height: 1.01;
+        line-height: 0.96;
         letter-spacing: -0.065em;
       }
       .section-title {
@@ -162,23 +162,13 @@
       }
       .hero-desc {
         max-width: 640px;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 700;
-        line-height: 1.55;
-        color: #d3d7df;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.72);
       }
       .hero-desc strong {
         color: #fff;
-      }
-      .hero-note {
-        border-left: 5px solid var(--green);
-        padding-left: 18px;
-        max-width: 600px;
-      }
-      .hero-note p {
-        font-size: 18px;
-        line-height: 1.65;
-        color: #c0c7d2;
       }
       .identity-stack {
         display: grid;
@@ -186,10 +176,10 @@
         align-self: stretch;
       }
       .glass {
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.045);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 24px;
-        padding: 18px 20px;
+        padding: 24px 20px 18px;
       }
       .glass small {
         display: block;
@@ -221,13 +211,14 @@
         grid-template-columns: 64px 1fr;
         gap: 10px;
         align-items: center;
-        border-top: 1px dashed rgba(255, 255, 255, 0.14);
-        padding-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 12px;
       }
       .contact-row span {
-        font-size: 13px;
-        color: #8891a0;
+        font-size: 11px;
+        color: #778092;
         font-weight: 700;
+        letter-spacing: 0.16em;
       }
       .contact-row b {
         font-size: 15px;
@@ -243,8 +234,9 @@
         width: 150mm;
         height: 150mm;
         background: var(--green);
-        top: -58mm;
-        right: -54mm;
+        top: -72mm;
+        right: -70mm;
+        opacity: 0.18;
       }
       .b2 {
         width: 90mm;
@@ -252,6 +244,7 @@
         background: #7bb5ff;
         left: -34mm;
         bottom: -20mm;
+        opacity: 0.22;
       }
       .dots {
         position: absolute;
@@ -584,17 +577,9 @@
                 >로<br />만드는 개발자입니다.
               </h1>
               <p class="hero-desc">
-                결과가 이상하면 프롬프트부터 고치지 않습니다.
-                <strong>LangSmith Trace, State 흐름, DB 결과</strong>를 대조해
-                원인을 좁히고 다시 재현 가능한 구조로 바꿉니다.
-              </p>
-            </div>
-            <div class="hero-note">
-              <p>
-                HR Copilot에서는 <strong>State 유실</strong>을 찾아 질문 품질을
-                <strong>78.6 → 91.8</strong>로 끌어올렸고, BIZ-FUND-AI에서는
-                <strong>Hybrid RAG</strong>와 운영 장애 복구로 설계를
-                증명했습니다.
+                <strong>프롬프트부터 고치지 않습니다.</strong><br />
+                LangSmith Trace, State 흐름, DB 결과를 대조해 원인을 좁히고 구조를
+                바꿉니다.
               </p>
             </div>
           </div>
