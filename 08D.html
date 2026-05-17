@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>이종혁 · AI 서비스 개발자 포트폴리오</title>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;800;900&display=swap');
       @font-face {
         font-family: NotoKR;
-        src: url("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc");
+        src: url("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
+             local('Noto Sans KR'),
+             local('Malgun Gothic');
       }
       @font-face {
         font-family: NotoKRBold;
-        src: url("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc");
+        src: url("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"),
+             local('Noto Sans KR Bold'),
+             local('Malgun Gothic Bold'),
+             local('Malgun Gothic');
       }
       :root {
         --bg: #f7f2e8;
@@ -1413,8 +1419,7 @@
               margin-bottom: 6mm;
             "
           >
-            ● BIZ-FUND-AI — 설계·운영·장애복구 · 솔로 사이드 프로젝트 · 2026.02.
-            ~
+            ● BIZ-FUND-AI — 설계·운영·장애복구 · 솔로 사이드 프로젝트 · 2026.02. ~ (진행중)
           </div>
           <div
             style="
@@ -1528,7 +1533,7 @@
           <article class="card project-card project-one">
             <div class="project-head">
               <div class="project-label">Project 1 — 핵심 프로젝트</div>
-              <div class="project-role">4인 팀 · 팀 리더</div>
+              <div class="project-role">4인 팀 · 팀 리더 · LangGraph 설계 전담</div>
             </div>
             <h3 class="card-title">HR Copilot<br />품질 추적과 구조 개선</h3>
             <!-- [신규] 한 줄 역할 정의 -->
@@ -1581,7 +1586,7 @@
                   border-color: #c8d3e0;
                   color: #4a5568;
                 "
-                >2026.02. ~</span
+                >2026.02 ~ 진행중</span
               >
               <span
                 style="
@@ -2485,7 +2490,12 @@
                 "
               >
                 동일 루브릭 · 10세션 · 50문항<br />질문품질 5항목 + 평가가이드
-                5항목 · 1–5점 척도 → 100점 환산
+                5항목 · 1–5점 척도 → 100점 환산<br />
+                <a
+                  href="https://checker-gambler-0f8.notion.site/3511480769ac80ff96f6f7d2ed60fdf6?source=copy_link"
+                  target="_blank"
+                  style="color: #5a8fd8; text-decoration: underline; text-underline-offset: 2px;"
+                >루브릭 전체 기준 보기 →</a>
               </div>
             </div>
           </article>
@@ -2498,7 +2508,7 @@
       ═══════════════════════════════════════════════ -->
       <section class="page dark" data-page="08">
         <div class="grid-lines"></div>
-        <div class="section-head" style="grid-template-columns: 0.84fr 1.16fr">
+        <div class="section-head" style="grid-template-columns: 0.84fr 1.16fr; margin-bottom: 4mm">
           <div>
             <div class="project-kicker">
               <div class="topic-line">Architecture Rationale</div>
@@ -2545,7 +2555,7 @@
         <div class="cards-2">
           <article
             class="card dark-card"
-            style="display: flex; flex-direction: column; min-height: 292px"
+            style="display: flex; flex-direction: column; min-height: 250px"
           >
             <!-- [변경] 기술 선택 이유 명시 -->
             <div class="tiny-label" style="margin-bottom: 12px">
@@ -2626,7 +2636,7 @@
         <div
           class="proof-list"
           style="
-            margin-top: 7mm;
+            margin-top: 2mm;
             background: rgba(255, 255, 255, 0.05);
             border-color: rgba(255, 255, 255, 0.12);
           "
@@ -2655,7 +2665,7 @@
            [변경] 1,282 vs 1,255 차이 명확화 / 데이터 정제 맥락 추가
       ═══════════════════════════════════════════════ -->
       <section class="page dark" data-page="09">
-        <div class="section-head" style="gap: 12mm; margin-bottom: 8mm">
+        <div class="section-head" style="gap: 12mm; margin-bottom: 5mm">
           <div>
             <div class="project-kicker">
               <div class="topic-line">Real Troubleshooting</div>
@@ -2825,6 +2835,30 @@
               결과: 1,255건 Full Sync 안정화 (중복 제거 후 순수 공고 수)
             </div>
           </article>
+        </div>
+
+        <div
+          class="proof-list"
+          style="
+            margin-top: 3mm;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+          "
+        >
+          <div
+            class="proof-item"
+            style="border-color: rgba(255, 255, 255, 0.1)"
+          >
+            <span style="color: #8a9ab0">기능 검증</span>
+            <strong style="color: #fff">평가 하네스 직접 구축 · 12케이스 중 10개 통과 (83.3%)</strong>
+          </div>
+          <div
+            class="proof-item"
+            style="border-color: rgba(255, 255, 255, 0.1)"
+          >
+            <span style="color: #8a9ab0">장애 복구</span>
+            <strong style="color: #fff">데이터 유실 · 파싱 실패 · 세션 끊김 — 3건 구조적 해결</strong>
+          </div>
         </div>
       </section>
 
