@@ -1,0 +1,3353 @@
+﻿<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이종혁 · AI 서비스 개발자 포트폴리오</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;800;900&display=swap");
+      @font-face {
+        font-family: NotoKR;
+        src:
+          url("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
+          local("Noto Sans KR"), local("Malgun Gothic");
+      }
+      @font-face {
+        font-family: NotoKRBold;
+        src:
+          url("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"),
+          local("Noto Sans KR Bold"), local("Malgun Gothic Bold"),
+          local("Malgun Gothic");
+      }
+      :root {
+        --bg: #f7f2e8;
+        --paper: #ffffff;
+        --paper-2: #eaeff6;
+        --ink: #0d1117;
+        --muted: #5b6577;
+        --line: #dde3ec;
+        --dark: #0b1120;
+        --dark-2: #131f36;
+        --dark-3: #1a2a42;
+        --dark-soft-1: #162131;
+        --dark-soft-2: #1b293d;
+        --dark-soft-3: #22324a;
+        --group-moss-1: #6a604f;
+        --group-moss-2: #7a6f5c;
+        --group-moss-3: #8a7f6a;
+        --accent: #b9ff2d;
+        --accent-soft: #e2ffad;
+        --accent-deep: #7cb800;
+        --card: #ffffff;
+        --shadow:
+          0 1px 2px rgba(13, 17, 23, 0.06), 0 6px 20px rgba(13, 17, 23, 0.07);
+        --radius: 20px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #d8d0c1;
+        color: var(--ink);
+        font-family: NotoKR, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      }
+      body {
+        font-size: 22px;
+        line-height: 1.45;
+      }
+      .deck {
+        width: 100%;
+      }
+
+      .page {
+        width: 297mm;
+        min-height: 210mm;
+        height: auto;
+        background: var(--bg);
+        margin: 0 auto 18px;
+        position: relative;
+        overflow: visible;
+        page-break-after: always;
+        padding: 18mm 20mm 22mm;
+      }
+      .page.dark {
+        background: var(--dark);
+        color: #fff;
+      }
+      .page[data-page="02"],
+      .page[data-page="03"],
+      .page[data-page="04"] {
+        background: var(--bg);
+      }
+      .page[data-page="02"] .marker,
+      .page[data-page="03"] .marker,
+      .page[data-page="04"] .marker {
+        background: linear-gradient(transparent 55%, #e8d6a8 55%);
+      }
+      .page[data-page="05"],
+      .page[data-page="06"],
+      .page[data-page="07"] {
+        background: #f2f5f9;
+      }
+      .page[data-page="05"] .marker,
+      .page[data-page="06"] .marker,
+      .page[data-page="07"] .marker {
+        background: linear-gradient(transparent 55%, #dceaff 55%);
+      }
+      .page[data-page="05"] .project-kicker .topic-line,
+      .page[data-page="06"] .project-kicker .topic-line,
+      .page[data-page="07"] .project-kicker .topic-line {
+        color: #73859d;
+      }
+      .page[data-page="06"] .section-title .accent {
+        color: #5f7898;
+      }
+      .page[data-page="05"] .project-stamp,
+      .page[data-page="06"] .project-stamp,
+      .page[data-page="07"] .project-stamp {
+        border-color: #d7e0eb;
+        background: rgba(252, 254, 255, 0.92);
+        box-shadow: 0 12px 26px rgba(88, 108, 132, 0.08);
+      }
+      .page[data-page="05"] .project-stamp small,
+      .page[data-page="06"] .project-stamp small,
+      .page[data-page="07"] .project-stamp small {
+        color: #73859d;
+      }
+      .page[data-page="05"] .project-stamp b,
+      .page[data-page="06"] .project-stamp b,
+      .page[data-page="07"] .project-stamp b {
+        color: #203955;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+        letter-spacing: -0.07em;
+      }
+      .page[data-page="05"] .project-stamp,
+      .page[data-page="06"] .project-stamp,
+      .page[data-page="07"] .project-stamp {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.96) 0%,
+          rgba(240, 246, 252, 0.96) 100%
+        );
+      }
+      .page.dark[data-page="08"] .project-stamp,
+      .page.dark[data-page="09"] .project-stamp {
+        border-color: rgba(196, 210, 228, 0.2);
+        background: linear-gradient(
+          180deg,
+          rgba(251, 253, 255, 0.1) 0%,
+          rgba(229, 239, 250, 0.06) 100%
+        );
+        box-shadow: 0 14px 30px rgba(6, 10, 18, 0.22);
+      }
+      .page.dark[data-page="08"] .project-stamp small,
+      .page.dark[data-page="09"] .project-stamp small {
+        color: #b6c6d8;
+      }
+      .page.dark[data-page="08"] .project-stamp b,
+      .page.dark[data-page="09"] .project-stamp b {
+        color: #f3f7fc;
+        text-shadow: 0 1px 0 rgba(10, 18, 30, 0.28);
+        letter-spacing: -0.07em;
+      }
+      .page[data-page="05"] .section-head p,
+      .page[data-page="06"] .section-head p,
+      .page[data-page="07"] .section-head p,
+      .page[data-page="05"] .section-head .sub,
+      .page[data-page="06"] .section-head .sub,
+      .page[data-page="07"] .section-head .sub {
+        color: #5f7086;
+      }
+      .page[data-page="05"] .card.tinted {
+        background: #eef5ea;
+        border-color: #cfe0bd;
+      }
+      .page[data-page="05"] .flow-step.highlight {
+        background: #eaf4df;
+        border-color: #bfd694;
+      }
+      .page[data-page="06"] .trace-wrap {
+        background: #f7fafe;
+        border-color: #d6e0ec;
+      }
+      .page.dark[data-page="08"],
+      .page.dark[data-page="09"] {
+        background: linear-gradient(
+          135deg,
+          var(--dark-soft-1) 0%,
+          var(--dark-soft-2) 58%,
+          var(--dark-soft-3) 100%
+        );
+      }
+      .page:after {
+        content: attr(data-page);
+        position: absolute;
+        right: 20mm;
+        bottom: 11mm;
+        font: 700 12px/1 NotoKR;
+        color: #8a96a8;
+        letter-spacing: 0.06em;
+      }
+      .dark:after {
+        color: #3a4d66;
+      }
+      .page.dark[data-page="08"]:after,
+      .page.dark[data-page="09"]:after {
+        color: #71839b;
+      }
+      .page.dark[data-page="08"] .card:not(.dark-card),
+      .page.dark[data-page="09"] .card:not(.dark-card) {
+        background: #f7fafe;
+        border-color: #d8e2ef;
+        color: #142235;
+      }
+      .page.dark[data-page="08"] .card:not(.dark-card) .tiny-label,
+      .page.dark[data-page="09"] .card:not(.dark-card) .tiny-label {
+        color: #6f829b;
+      }
+      .page.dark[data-page="08"] .card:not(.dark-card) .micro,
+      .page.dark[data-page="09"] .card:not(.dark-card) .micro,
+      .page.dark[data-page="08"] .card:not(.dark-card) .proof-item span,
+      .page.dark[data-page="09"] .card:not(.dark-card) .proof-item span {
+        color: #65788f;
+      }
+      .page.dark[data-page="08"] .card:not(.dark-card) .proof-item strong,
+      .page.dark[data-page="09"] .card:not(.dark-card) .proof-item strong {
+        color: #142235;
+      }
+      .page.dark[data-page="09"] .section-title {
+        color: #fff;
+      }
+      .page.dark[data-page="08"]:after,
+      .page.dark[data-page="09"]:after {
+        color: #71839b;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+      .hero-title {
+        font-family: NotoKRBold, NotoKR, sans-serif;
+        font-size: 68px;
+        line-height: 0.96;
+        letter-spacing: -0.065em;
+      }
+      .section-title {
+        font-family: NotoKRBold, NotoKR, sans-serif;
+        font-size: 46px;
+        line-height: 1.08;
+        letter-spacing: -0.05em;
+      }
+      .card-title {
+        font-family: NotoKRBold, NotoKR, sans-serif;
+        font-size: 27px;
+        line-height: 1.22;
+        letter-spacing: -0.04em;
+      }
+      .sub {
+        font-size: 16px;
+        line-height: 1.65;
+        color: var(--muted);
+      }
+      .dark .sub {
+        color: #a8b4c4;
+      }
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+        letter-spacing: -0.02em;
+      }
+      .accent {
+        color: var(--accent);
+      }
+      .marker {
+        background: linear-gradient(transparent 55%, var(--accent) 55%);
+        padding: 0 0.06em;
+        color: var(--ink);
+      }
+
+      .kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font: 700 12px/1 NotoKR;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #7a8898;
+      }
+      .kicker:before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+      .dark .kicker {
+        color: var(--accent-soft);
+      }
+      .project-kicker {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 2px;
+      }
+      .project-kicker .topic-line {
+        font: 800 12px/1 NotoKR;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #8a96a8;
+      }
+      .page.dark .project-kicker .topic-line {
+        color: #8ea0b8;
+      }
+      .project-meta {
+        display: grid;
+        justify-items: end;
+        align-content: start;
+        gap: 20px;
+      }
+      .project-stamp {
+        display: grid;
+        justify-items: end;
+        align-content: start;
+        gap: 7px;
+        min-width: 236px;
+        padding: 16px 18px 15px;
+        border-radius: 18px;
+        border: 1px solid #e0d5c3;
+        background: rgba(255, 252, 246, 0.88);
+        box-shadow: 0 12px 28px rgba(92, 74, 38, 0.08);
+      }
+      .project-stamp small {
+        font: 800 12px/1 NotoKR;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #8b7a64;
+      }
+      .project-stamp b {
+        font-family: NotoKRBold, NotoKR, sans-serif;
+        font-size: 42px;
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+        color: #1f2937;
+        text-align: right;
+      }
+      .project-meta p {
+        width: 100%;
+      }
+      .page.dark .project-stamp small {
+        color: #d4dfcf;
+      }
+      .page.dark .project-stamp b {
+        color: #f5f8fd;
+      }
+      .page.dark .project-stamp {
+        border-color: rgba(197, 218, 203, 0.18);
+        background: rgba(250, 253, 248, 0.06);
+        box-shadow: 0 12px 32px rgba(8, 12, 10, 0.2);
+      }
+
+      .page-grid {
+        display: grid;
+        height: 100%;
+        gap: 12mm;
+      }
+      .hero-layout {
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: stretch;
+      }
+      .cluster {
+        display: grid;
+        gap: 10px;
+      }
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .hero-top {
+        display: grid;
+        gap: 18px;
+      }
+
+      .cards-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 7mm;
+      }
+      .cards-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7mm;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 7mm;
+        box-shadow: var(--shadow);
+      }
+      .card.dark-card {
+        background: var(--dark-2);
+        border-color: var(--dark-3);
+        box-shadow: none;
+        color: #fff;
+      }
+      .card.tinted {
+        background: #eef7e0;
+        border-color: #cde99a;
+      }
+
+      .icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: var(--accent);
+        display: grid;
+        place-items: center;
+        color: #0d1117;
+        font-family: NotoKRBold, NotoKR, sans-serif;
+        font-size: 20px;
+        margin-bottom: 13px;
+      }
+
+      .tiny-label {
+        font: 700 11px/1 NotoKR;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #8a96a8;
+        margin-bottom: 9px;
+      }
+      .dark .tiny-label,
+      .dark-card .tiny-label {
+        color: #5a7090;
+      }
+      .micro {
+        margin-top: 11px;
+        font-size: 14px;
+        line-height: 1.58;
+        color: #6a7585;
+      }
+      .dark-card .micro {
+        color: #7a90a8;
+      }
+
+      .tags {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+      .tags span {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        padding: 5px 10px;
+        background: var(--paper-2);
+        font-size: 12px;
+        font-weight: 700;
+        color: #505c6a;
+      }
+      .dark-card .tags span {
+        background: #1e2e44;
+        color: #a8b8cc;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 0.78fr 1.22fr;
+        gap: 16mm;
+        align-items: end;
+        margin-bottom: 10mm;
+      }
+      .section-head p {
+        font-size: 17px;
+        line-height: 1.68;
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .page.dark .section-head p {
+        color: #c4d0c7;
+      }
+
+      .score-panel {
+        background: var(--dark);
+        border-radius: 22px;
+        padding: 7mm;
+        color: #fff;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: end;
+        gap: 12px;
+      }
+      .score-col small {
+        display: block;
+        font: 700 11px/1 NotoKR;
+        color: #6a7e96;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 9px;
+      }
+      .score-col b {
+        display: block;
+        font-family: NotoKRBold, NotoKR, sans-serif;
+        font-size: 76px;
+        line-height: 0.92;
+        letter-spacing: -0.08em;
+      }
+      .score-col.after b {
+        color: var(--accent);
+      }
+      .score-arrow {
+        font-family: NotoKRBold;
+        font-size: 42px;
+        color: var(--accent);
+      }
+
+      .proof-list {
+        display: grid;
+        gap: 9px;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 7mm;
+      }
+      .proof-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 9px;
+        border-bottom: 1px dashed var(--line);
+      }
+      .proof-item:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+      .proof-item span {
+        font-size: 13px;
+        color: #6a7585;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .proof-item strong {
+        font-size: 16px;
+        line-height: 1.25;
+        text-align: right;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        border-radius: 999px;
+        padding: 5px 11px;
+        background: var(--dark);
+        color: #fff;
+        font: 700 12px/1 NotoKR;
+      }
+      .pill.green {
+        background: var(--accent);
+        color: #111;
+      }
+      .pill.soft {
+        background: var(--paper-2);
+        color: #3e4a56;
+      }
+
+      .metric-band {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6mm;
+        margin-bottom: 8mm;
+      }
+      .metric-cell {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 14px 16px;
+      }
+      .metric-cell small {
+        display: block;
+        font: 700 11px/1 NotoKR;
+        color: #8a96a8;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      .metric-cell b {
+        display: block;
+        font-family: NotoKRBold;
+        font-size: 36px;
+        line-height: 1;
+        letter-spacing: -0.06em;
+        color: var(--ink);
+      }
+      .metric-cell b em {
+        font-style: normal;
+        font-size: 22px;
+      }
+      .metric-cell p {
+        font-size: 13px;
+        line-height: 1.5;
+        color: #7a8898;
+        margin-top: 4px;
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.045);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 20px 18px 16px;
+      }
+      .glass small {
+        display: block;
+        font: 700 11px/1 NotoKR;
+        color: #6a7e96;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 7px;
+      }
+      .glass b {
+        font-family: NotoKRBold;
+        font-size: 24px;
+        line-height: 1.2;
+        letter-spacing: -0.04em;
+      }
+      .glass p {
+        margin-top: 7px;
+        font-size: 14px;
+        line-height: 1.55;
+        color: #c0cbdb;
+      }
+
+      .contact {
+        display: grid;
+        gap: 9px;
+        padding-top: 10px;
+      }
+      .contact-row {
+        display: grid;
+        grid-template-columns: 58px 1fr;
+        gap: 8px;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 10px;
+      }
+      .contact-row span {
+        font-size: 10px;
+        color: #6a7e96;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+      }
+      .contact-row b {
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(40px);
+        pointer-events: none;
+      }
+      .b1 {
+        width: 160mm;
+        height: 160mm;
+        background: var(--accent);
+        top: -80mm;
+        right: -80mm;
+        opacity: 0.12;
+      }
+      .b2 {
+        width: 100mm;
+        height: 100mm;
+        background: #4a8cff;
+        left: -40mm;
+        bottom: -20mm;
+        opacity: 0.14;
+      }
+      .dots {
+        position: absolute;
+        right: 20mm;
+        top: 24mm;
+        width: 140px;
+        height: 140px;
+        opacity: 0.1;
+        background-image: radial-gradient(#b9ff2d 1.2px, transparent 1.2px);
+        background-size: 11px 11px;
+      }
+      .grid-lines {
+        display: none;
+      }
+
+      .flow-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 14px;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: var(--paper);
+      }
+      .flow-step.highlight {
+        background: #eef7e0;
+        border-color: #bde87a;
+      }
+      .flow-num {
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background: var(--paper-2);
+        display: grid;
+        place-items: center;
+        font: 700 13px/1 NotoKR;
+        color: #5b6577;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .flow-step.highlight .flow-num {
+        background: var(--accent);
+        color: #0d1117;
+      }
+      .flow-step strong {
+        display: block;
+        font-size: 16px;
+      }
+      .flow-step span {
+        display: block;
+        font-size: 13px;
+        color: #7a8898;
+        margin-top: 2px;
+      }
+
+      .trace-wrap {
+        background: #eef1f6;
+        border: 1px solid #dde3ec;
+        border-radius: 18px;
+        padding: 16px;
+        overflow: hidden;
+      }
+
+      .node-row {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 7px;
+        margin-top: 12px;
+      }
+      .node {
+        padding: 10px 6px;
+        border-radius: 14px;
+        text-align: center;
+        border: 1px solid var(--line);
+        background: var(--paper);
+      }
+      .node.hi {
+        background: var(--accent);
+        border-color: #0d1117;
+      }
+      .node strong {
+        display: block;
+        font-size: 12px;
+      }
+      .node span {
+        font-size: 10px;
+        color: #7a8898;
+      }
+      .node.hi span {
+        color: #0d1117;
+      }
+
+      .proj-meta {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .proj-meta span {
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        background: #eaeff6;
+        border: 1px solid #c8d3e0;
+        color: #4a5568;
+      }
+
+      .scanline {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.14),
+          transparent
+        );
+      }
+
+      .method-step {
+        padding: 13px 15px;
+        border-radius: 16px;
+        background: #0f1c30;
+        border: 1px solid #1e2d44;
+      }
+      .method-step strong {
+        display: block;
+        font-size: 17px;
+        color: var(--accent);
+        margin-bottom: 4px;
+      }
+      .method-step span {
+        font-size: 13px;
+        color: #a0b0c4;
+        line-height: 1.5;
+      }
+
+      .page[data-page="04"] .section-title {
+        font-size: 42px;
+        line-height: 1.04;
+      }
+      .page[data-page="04"] .cards-2 {
+        gap: 6mm;
+      }
+      .page[data-page="04"] .card {
+        padding: 7mm;
+      }
+      .page[data-page="04"] .card-title {
+        font-size: 26px;
+      }
+      .page[data-page="04"] .project-card {
+        position: relative;
+        overflow: hidden;
+      }
+      .page[data-page="04"] .project-card:before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 7px;
+        border-radius: 20px 0 0 20px;
+      }
+      .page[data-page="04"] .project-card.project-one:before {
+        background: linear-gradient(180deg, #8da9c7 0%, #6987a8 100%);
+      }
+      .page[data-page="04"] .project-card.project-two:before {
+        background: linear-gradient(180deg, #d0b188 0%, #b78e60 100%);
+      }
+      .page[data-page="04"] .project-card.project-one {
+        background: linear-gradient(180deg, #fcfdff 0%, #eef4fb 100%);
+        border-color: #d6e1ee;
+        box-shadow: 0 12px 28px rgba(104, 124, 150, 0.1);
+      }
+      .page[data-page="04"] .project-card.project-two {
+        background: linear-gradient(180deg, #faf4ea 0%, #efe4d2 100%);
+        border-color: #decfb7;
+        box-shadow: 0 12px 28px rgba(133, 109, 74, 0.1);
+      }
+      .page[data-page="04"] .project-card .project-label {
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 12px;
+        border-radius: 999px;
+        font: 900 12px/1 NotoKR;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+      .page[data-page="04"] .project-head {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+      .page[data-page="04"] .project-card.project-one .project-label {
+        background: #e8f0fb;
+        color: #44607f;
+        border: 1px solid #c8d7e8;
+      }
+      .page[data-page="04"] .project-card.project-two .project-label {
+        background: #f4e8d5;
+        color: #7c5d33;
+        border: 1px solid #dfc8a6;
+      }
+      .page[data-page="04"] .project-card .project-role {
+        font: 700 11px/1.3 NotoKR;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #7d8a99;
+        margin-bottom: 0;
+      }
+      .page[data-page="04"] .project-card.project-two .project-role {
+        color: #8a7455;
+      }
+      .page[data-page="04"] .proof-list {
+        padding: 6.5mm;
+      }
+      .page[data-page="04"] .proof-item {
+        padding-bottom: 8px;
+      }
+      .page[data-page="04"] .proof-item strong {
+        font-size: 16px;
+      }
+
+      .project-banner {
+        margin-bottom: 8mm;
+        display: grid;
+        gap: 10px;
+      }
+      .project-banner small {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font: 800 12px/1 NotoKR;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #7a8898;
+      }
+      .project-banner small:before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+      .project-banner.dark small {
+        color: #d6ff8f;
+      }
+      .project-banner h2 {
+        font-family: NotoKRBold, NotoKR, sans-serif;
+        font-size: 52px;
+        line-height: 0.98;
+        letter-spacing: -0.06em;
+        margin: 0;
+      }
+      .project-banner p {
+        margin: 0;
+        max-width: 680px;
+        font-size: 17px;
+        line-height: 1.65;
+        font-weight: 700;
+        color: #5b6577;
+      }
+      .project-banner.dark h2 {
+        color: #fff;
+      }
+      .project-banner.dark p {
+        color: #b4c0d0;
+      }
+      .project-corner {
+        display: grid;
+        justify-items: end;
+        gap: 6px;
+        margin-bottom: 5mm;
+      }
+      .project-corner small {
+        font: 800 12px/1 NotoKR;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #7a8898;
+      }
+      .project-corner b {
+        font-family: NotoKRBold, NotoKR, sans-serif;
+        font-size: 34px;
+        line-height: 1;
+        letter-spacing: -0.05em;
+        color: #101113;
+      }
+      .project-corner.dark small {
+        color: #d6ff8f;
+      }
+      .project-corner.dark b {
+        color: #fff;
+      }
+
+      @media print {
+        @page {
+          size: A4 landscape;
+          margin: 0;
+        }
+        body {
+          background: #fff;
+        }
+        .page {
+          min-height: 0;
+          height: 210mm;
+          margin: 0;
+          overflow: hidden;
+          box-shadow: none;
+          padding-bottom: 18mm;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="deck">
+      <!-- ═══════════════════════════════════════════════
+           PAGE 01 · COVER
+           [변경] 히어로 타이틀 명확화 / 수치 배지 레이블 구체화 / 기술 스택 태그바 추가
+      ═══════════════════════════════════════════════ -->
+      <section class="page dark" data-page="01">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="dots"></div>
+        <div class="grid-lines"></div>
+
+        <div class="page-grid hero-layout">
+          <div class="hero-copy">
+            <div class="hero-top">
+              <div class="kicker">AI Service Developer Portfolio</div>
+              <div>
+                <div
+                  style="
+                    font: 700 15px/1 NotoKR;
+                    color: #6a7e96;
+                    letter-spacing: 0.06em;
+                    margin-bottom: 10px;
+                  "
+                >
+                  이종혁 LEE JONGHYEOK
+                </div>
+                <!-- [변경] "실패를 추적하고, 개선 가능한 구조로" → 더 능동적·명확한 표현으로 -->
+                <h1 class="hero-title">
+                  <span class="accent">수치로 증명</span>하는<br />AI 개발자.
+                </h1>
+              </div>
+              <p
+                style="
+                  font-size: 18px;
+                  font-weight: 700;
+                  line-height: 1.65;
+                  color: rgba(255, 255, 255, 0.6);
+                  max-width: 580px;
+                "
+              >
+                <br />LangSmith Trace와 DB 교차검증으로 원인을 좁히고,<br />
+                <strong style="color: #fff">개선 결과를 확인합니다.</strong>
+              </p>
+
+              <!-- [변경] 수치 배지: 레이블 + 맥락 설명 추가 -->
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 10px;
+                  margin-top: 118px;
+                "
+              >
+                <div
+                  style="
+                    padding: 14px;
+                    border-radius: 16px;
+                    background: rgba(255, 255, 255, 0.055);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                  "
+                >
+                  <div
+                    style="
+                      font: 700 11px/1 NotoKR;
+                      color: #6a7e96;
+                      letter-spacing: 0.1em;
+                      text-transform: uppercase;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    HR Copilot
+                  </div>
+                  <div
+                    style="
+                      font-family: NotoKRBold;
+                      font-size: 28px;
+                      letter-spacing: -0.06em;
+                      color: var(--accent);
+                    "
+                  >
+                    78.6 → 91.8
+                  </div>
+                  <!-- [변경] "품질 점수 개선" → 기준 명시 -->
+                  <div style="font-size: 12px; color: #8a9ab0; margin-top: 4px">
+                    LangSmith 활용 품질 점수 개선
+                  </div>
+                </div>
+                <div
+                  style="
+                    padding: 14px;
+                    border-radius: 16px;
+                    background: rgba(255, 255, 255, 0.055);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                  "
+                >
+                  <div
+                    style="
+                      font: 700 11px/1 NotoKR;
+                      color: #6a7e96;
+                      letter-spacing: 0.1em;
+                      text-transform: uppercase;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    BIZ-FUND-AI
+                  </div>
+                  <div
+                    style="
+                      font-family: NotoKRBold;
+                      font-size: 28px;
+                      letter-spacing: -0.06em;
+                      color: var(--accent);
+                    "
+                  >
+                    15배 절감
+                  </div>
+                  <div style="font-size: 12px; color: #8a9ab0; margin-top: 4px">
+                    작업 복잡도별 모델 분리 · 품질 83.3% 유지 검증
+                  </div>
+                </div>
+                <div
+                  style="
+                    padding: 14px;
+                    border-radius: 16px;
+                    background: rgba(255, 255, 255, 0.055);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                  "
+                >
+                  <div
+                    style="
+                      font: 700 11px/1 NotoKR;
+                      color: #6a7e96;
+                      letter-spacing: 0.1em;
+                      text-transform: uppercase;
+                      margin-bottom: 6px;
+                    "
+                  >
+                    평가 하네스
+                  </div>
+                  <div
+                    style="
+                      font-family: NotoKRBold;
+                      font-size: 28px;
+                      letter-spacing: -0.06em;
+                      color: var(--accent);
+                    "
+                  >
+                    83.3%
+                  </div>
+                  <!-- [변경] 기준 명시 -->
+                  <div style="font-size: 12px; color: #8a9ab0; margin-top: 4px">
+                    12개 케이스 중 10개 자동 통과
+                  </div>
+                </div>
+              </div>
+
+              <!-- [신규] 기술 스택 태그 바 추가 — 3초 스캔 대응 -->
+            </div>
+          </div>
+
+          <div style="display: grid; gap: 12px; align-self: start">
+            <div
+              class="glass"
+              style="padding: 16px 16px 13px; margin-top: 60px"
+            >
+              <small>Core Strength</small>
+              <b style="font-size: 20px; line-height: 2"
+                >LangGraph · LangSmith · RAG</b
+              >
+              <!-- [변경] 설명 구체화 -->
+              <p>추적 → 수정 → 재검증의 흐름을 두 프로젝트에서 반복했습니다.</p>
+            </div>
+            <div class="contact" style="margin-top: 180px">
+              <div class="contact-row">
+                <span>PHONE</span><b>010.7204.2031</b>
+              </div>
+              <div class="contact-row">
+                <span>EMAIL</span><b>whdgur2034@naver.com</b>
+              </div>
+              <div class="contact-row">
+                <span>GITHUB</span
+                ><b
+                  ><a
+                    href="https://github.com/JH-SKY"
+                    target="_blank"
+                    style="color: inherit; text-decoration: none"
+                    >github.com/JH-SKY</a
+                  ></b
+                >
+              </div>
+              <div class="contact-row">
+                <span>HR COPILOT</span>
+                <b style="display: flex; gap: 10px">
+                  <a
+                    href="https://github.com/bamti95/hr-copilot"
+                    target="_blank"
+                    style="
+                      color: #3b7dd8;
+                      text-decoration: underline;
+                      text-underline-offset: 2px;
+                      font-size: 13px;
+                    "
+                    >GitHub</a
+                  >
+                  <a
+                    href="https://checker-gambler-0f8.notion.site/HR-COPILOT-7331480769ac83ef971881f22f063100?source=copy_link"
+                    target="_blank"
+                    style="
+                      color: #3b7dd8;
+                      text-decoration: underline;
+                      text-underline-offset: 2px;
+                      font-size: 13px;
+                    "
+                    >Notion</a
+                  >
+                </b>
+              </div>
+              <div class="contact-row">
+                <span>BIZ-FUND-AI</span>
+                <b style="display: flex; gap: 10px">
+                  <a
+                    href="https://github.com/JH-SKY/biz-fund-ai"
+                    target="_blank"
+                    style="
+                      color: #3b7dd8;
+                      text-decoration: underline;
+                      text-underline-offset: 2px;
+                      font-size: 13px;
+                    "
+                    >GitHub</a
+                  >
+                  <a
+                    href="https://phrygian-periodical-80a.notion.site/__Biz-Fund-AI__-8f2a1038d825836fbeb381945485ec15"
+                    target="_blank"
+                    style="
+                      color: #3b7dd8;
+                      text-decoration: underline;
+                      text-underline-offset: 2px;
+                      font-size: 13px;
+                    "
+                    >Notion</a
+                  >
+                </b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           PAGE 02 · POSITIONING
+           [변경] 카드별 구체적 예시 한 줄 추가 / 카드 설명 더 직관적으로
+      ═══════════════════════════════════════════════ -->
+      <section class="page" data-page="02">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Positioning</div>
+            <h2 class="section-title">
+              태도가 아니라,<br />실제
+              <span class="marker" style="background: none; color: #6b8f1f"
+                >작업 방식</span
+              >으로<br />설명합니다.
+            </h2>
+          </div>
+          <!-- [변경] 설명 문장 강화 -->
+          <p>
+            AI를 붙인 사람이 아닙니다. 로그를 보고, 기준을 세우고, 원인을 좁혀
+            해결한 사람입니다. 두 프로젝트의 세 가지 패턴이 저를 설명합니다.
+          </p>
+        </div>
+
+        <div class="cards-3" style="margin-top: 80px">
+          <article class="card">
+            <div class="icon">1</div>
+            <!-- [변경] 레이블 → 행동 중심으로 -->
+            <div class="tiny-label">Track First — 먼저 보이게 만든다</div>
+            <h3 class="card-title">감 대신 로그</h3>
+            <p class="sub">
+              <br />이상한 결과가 나오면 LangSmith Trace와 State 흐름부터
+              확인합니다.
+            </p>
+            <div class="tags">
+              <span>LangSmith Trace</span><span>State 전파 추적</span
+              ><span>DB 교차검증</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon">2</div>
+            <!-- [변경] 레이블 명확화 -->
+            <div class="tiny-label">Define the Bar — 수치로 고정한다</div>
+            <h3 class="card-title">말 대신 기준</h3>
+            <p class="sub">
+              <br />
+              품질 루브릭과 평가 하네스로 <br />
+              기준을 고정합니다.
+            </p>
+            <div class="tags">
+              <span>품질 루브릭 설계</span><span>평가 하네스</span
+              ><span>전후 비교 고정</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon">3</div>
+            <!-- [변경] 레이블 명확화 -->
+            <div class="tiny-label">Change the System — 구조를 조정</div>
+            <h3 class="card-title">기능 대신 구조</h3>
+            <p class="sub">
+              <br />임시 수정으로 끝내지 않고 노드 책임과 트랜잭션 경계를 다시
+              나눕니다.
+            </p>
+            <div class="tags">
+              <span>노드 책임 분리</span><span>Router Orchestration</span
+              ><span>UPSERT / Session 재설계</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           PAGE 03 · EVIDENCE MAP
+           [변경] Root Cause 셀 → 수치 형식 통일 / 1,282·1,255 차이 명시
+      ═══════════════════════════════════════════════ -->
+      <section class="page" data-page="03">
+        <div class="section-head" style="margin-bottom: 8mm">
+          <div>
+            <div class="kicker">Evidence Map</div>
+            <h2 class="section-title">
+              스캔만 해도<br />강점이 보이도록<br /><span
+                style="white-space: nowrap"
+                ><span class="marker" style="background: none; color: #6b8f1f"
+                  >숫자로 정리</span
+                >했습니다.</span
+              >
+            </h2>
+          </div>
+          <p>각 숫자 뒤에는 로그를 뒤지고 구조를 바꾼 과정이 있습니다.</p>
+        </div>
+
+        <!-- HR Copilot numbers -->
+        <div style="margin-bottom: 5mm">
+          <div
+            style="
+              font: 800 14px/1.2 NotoKR;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+              color: #6f7f93;
+              margin-bottom: 6mm;
+            "
+          >
+            ● HR Copilot — 품질 추적과 구조 개선 · 4인 팀 · 팀 리더 · 2026.04 ~
+            05
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 6mm;
+            "
+          >
+            <div
+              class="metric-cell"
+              style="
+                background: #eef7e0;
+                border-color: #cde99a;
+                box-shadow:
+                  0 10px 24px rgba(142, 196, 0, 0.1),
+                  0 1px 2px rgba(13, 17, 23, 0.05);
+              "
+            >
+              <small>Quality Score (LangSmith)</small>
+              <b
+                style="
+                  font-size: 52px;
+                  line-height: 0.92;
+                  letter-spacing: -0.08em;
+                  color: #204400;
+                "
+                >91.8<em>점</em></b
+              >
+              <!-- [변경] 기준 명시 -->
+              <p>78.6점 → 개선.<br />동일 루브릭, 100점 기준</p>
+            </div>
+            <div class="metric-cell">
+              <small>Test Scale</small>
+              <b style="font-size: 30px; color: #586170">50<em>문항</em></b>
+              <p style="color: #8a96a8">
+                10세션 × 5문항.<br />동일 기준 반복 측정
+              </p>
+            </div>
+            <!-- [변경] "State 유실" → 개념+맥락으로 표현, 수치칸 형식 통일 -->
+            <div class="metric-cell">
+              <small>Root Cause (Trace 발견)</small>
+              <b
+                style="
+                  font-size: 20px;
+                  letter-spacing: -0.02em;
+                  line-height: 1.15;
+                  color: #c92d2d;
+                "
+                >State<br />유실</b
+              >
+              <p style="color: #8a96a8">
+                프롬프트 문제 아님.<br />Trace 소거로 특정
+              </p>
+            </div>
+            <div class="metric-cell">
+              <small>Fix Applied</small>
+              <b
+                style="
+                  font-size: 20px;
+                  letter-spacing: -0.02em;
+                  line-height: 1.2;
+                  color: #586170;
+                "
+                >검증 포인트<br />선추출</b
+              >
+              <p style="color: #8a96a8">구조 변경.<br />Reviewer 재설계</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BIZ-FUND-AI numbers -->
+        <div>
+          <div
+            style="
+              font: 800 14px/1.2 NotoKR;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+              color: #6f7f93;
+              margin-bottom: 6mm;
+            "
+          >
+            ● BIZ-FUND-AI — 설계·운영·장애복구 · 솔로 사이드 프로젝트 · 2026.02.
+            ~ (진행중)
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(5, 1fr);
+              gap: 5mm;
+            "
+          >
+            <div
+              class="metric-cell"
+              style="
+                background: #eef7e0;
+                border-color: #cde99a;
+                box-shadow:
+                  0 10px 24px rgba(142, 196, 0, 0.1),
+                  0 1px 2px rgba(13, 17, 23, 0.05);
+              "
+            >
+              <small>LLM Cost</small>
+              <b
+                style="
+                  font-size: 52px;
+                  line-height: 0.92;
+                  letter-spacing: -0.08em;
+                  color: #204400;
+                "
+                >15<em>배↓</em></b
+              >
+              <p>
+                작업 복잡도별 모델 분리.<br />Router·RAG→mini, Greeting→정적
+              </p>
+            </div>
+            <!-- [변경] 1,282건 → 맥락 명확화 -->
+            <div class="metric-cell">
+              <small>Data Safety</small>
+              <b style="font-size: 30px; color: #586170">1,282<em>건</em></b>
+              <p style="color: #8a96a8">
+                수집 = 저장.<br />유실 0 · UPSERT 패턴
+              </p>
+            </div>
+            <div class="metric-cell">
+              <small>Parse Rate</small>
+              <b style="font-size: 30px; color: #586170">57<em>%</em></b>
+              <p style="color: #8a96a8">
+                24%에서 개선.<br />파일 시그니처 감지 방식
+              </p>
+            </div>
+            <div
+              class="metric-cell"
+              style="
+                background: #eef7e0;
+                border-color: #cde99a;
+                box-shadow:
+                  0 10px 24px rgba(142, 196, 0, 0.1),
+                  0 1px 2px rgba(13, 17, 23, 0.05);
+              "
+            >
+              <small>Eval Harness</small>
+              <b
+                style="
+                  font-size: 52px;
+                  line-height: 0.92;
+                  letter-spacing: -0.08em;
+                  color: #204400;
+                "
+                >83.3<em>%</em></b
+              >
+              <!-- [변경] 기준 명시 -->
+              <p>12케이스 중 10개 통과.<br />자동 평가 직접 구축</p>
+            </div>
+            <!-- [변경] 1,255건 → 1,282와 차이 명확화 -->
+            <div class="metric-cell">
+              <small>Full Sync</small>
+              <b style="font-size: 30px; color: #586170">1,255<em>건</em></b>
+              <!-- [변경] 두 숫자의 차이 설명 -->
+              <p style="color: #8a96a8">
+                AI 구조화 수집.<br />※ 1,282건 중 중복 제거 후
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           PAGE 04 · PROJECT MAP
+           [변경] 제목 완성 / 부제 강화 / 카드 역할 정의 한 줄 추가
+      ═══════════════════════════════════════════════ -->
+      <section class="page" data-page="04">
+        <div class="grid-lines"></div>
+        <div class="section-head" style="grid-template-columns: 0.9fr 1.1fr">
+          <div>
+            <div class="kicker">Project Map</div>
+            <!-- [변경] "강점은 선명하게" → 문장 완성 -->
+            <h2 class="section-title">
+              프로젝트는 달라도,<br />보여줄
+              <span class="marker" style="background: none; color: #6b8f1f"
+                >강점</span
+              >은<br />분명합니다.
+            </h2>
+          </div>
+          <!-- [변경] 설명 더 구체적으로 -->
+          <p class="sub">
+            HR Copilot은
+            <strong>팀 안에서 품질 기준을 세우고 개선한 경험</strong>입니다.
+            <br />
+            BIZ-FUND-AI는
+            <strong>혼자 구축하고 운영까지 맡은 경험</strong>입니다.
+          </p>
+        </div>
+
+        <div class="cards-2" style="align-items: start">
+          <article class="card project-card project-one">
+            <div class="project-head">
+              <div class="project-label">Project 1 — 핵심 프로젝트</div>
+              <div class="project-role">
+                4인 팀 · 팀 리더 · LangGraph 설계 전담
+              </div>
+            </div>
+            <h3 class="card-title">HR Copilot<br />품질 추적과 구조 개선</h3>
+            <!-- [신규] 한 줄 역할 정의 -->
+            <div
+              style="
+                font-size: 13px;
+                color: #556070;
+                font-weight: 700;
+                margin-top: 6px;
+                letter-spacing: 0.02em;
+              "
+            >
+              사내 HR 인터뷰 질문 AI · LangGraph 설계 · 팀 리드
+            </div>
+            <div class="proj-meta">
+              <span>2026.04 ~ 05</span>
+              <span>LangGraph · LangSmith</span>
+              <span>팀 리더</span>
+            </div>
+            <div class="tags" style="margin-top: 10px">
+              <span>State 유실 추적</span><span>노드 책임 분리</span
+              ><span>78.6 → 91.8</span>
+            </div>
+          </article>
+
+          <article class="card project-card project-two">
+            <div class="project-head">
+              <div class="project-label">Project 2</div>
+              <div class="project-role">솔로 사이드 프로젝트</div>
+            </div>
+            <h3 class="card-title" style="color: #2f3742">
+              BIZ-FUND-AI<br />설계·운영·장애 복구
+            </h3>
+            <!-- [신규] 한 줄 역할 정의 -->
+            <div
+              style="
+                font-size: 13px;
+                color: #7a6040;
+                font-weight: 700;
+                margin-top: 6px;
+                letter-spacing: 0.02em;
+              "
+            >
+              중소기업 보조금 매칭 AI · Hybrid RAG · 파이프라인 전체 구축
+            </div>
+            <div class="proj-meta" style="margin-top: 10px">
+              <span
+                style="
+                  background: #eaeff6;
+                  border-color: #c8d3e0;
+                  color: #4a5568;
+                "
+                >2026.02 ~ 진행중</span
+              >
+              <span
+                style="
+                  background: #eaeff6;
+                  border-color: #c8d3e0;
+                  color: #4a5568;
+                "
+                >Backend / AI / RAG</span
+              >
+              <span
+                style="
+                  background: #eaeff6;
+                  border-color: #c8d3e0;
+                  color: #4a5568;
+                "
+                >FastAPI · pgvector</span
+              >
+              <span
+                style="
+                  background: #eaeff6;
+                  border-color: #c8d3e0;
+                  color: #4a5568;
+                "
+                >솔로</span
+              >
+            </div>
+            <div class="tags">
+              <span>Hybrid RAG</span><span>Router 분리</span
+              ><span>15배 비용 절감</span><span>평가 하네스</span>
+            </div>
+          </article>
+        </div>
+
+        <div
+          class="proof-list"
+          style="margin-top: 7mm; background: #f3ecdf; border-color: #e2d7c4"
+        >
+          <div class="proof-item">
+            <span>HR Copilot 핵심</span>
+            <strong>팀 리더 · 품질 추적 → 루브릭 정의 → 개선 확인</strong>
+          </div>
+          <div class="proof-item">
+            <span>BIZ-FUND-AI 핵심</span>
+            <strong
+              >솔로 · 시스템 구축 → 운영 장애 복구 → 평가 기준 정리</strong
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           PAGE 05 · HR COPILOT · PROBLEM
+           [변경] 배경 맥락 한 줄 추가 / 역할 구분 명확화
+      ═══════════════════════════════════════════════ -->
+      <section class="page" data-page="05">
+        <div class="section-head">
+          <div>
+            <div class="project-kicker">
+              <div class="topic-line">Problem Definition</div>
+            </div>
+            <h2 class="section-title">
+              <span class="marker" style="background: none; color: #2f6fb2"
+                >리스크 검증</span
+              >
+              구조를<br />만들어야 했습니다.
+            </h2>
+          </div>
+          <div class="project-meta">
+            <div class="project-stamp">
+              <small>Project 1</small>
+              <b>HR Copilot</b>
+            </div>
+            <!-- [변경] 배경 한 줄 추가 -->
+            <p>
+              목표는 자연스러운 질문 생성이 아니라, 면접관이 반드시 확인해야 할
+              <strong><br />공백기, 직무 전환, 성과 과장</strong> 같은 리스크를
+              검증하는 흐름이 먼저였습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-2" style="align-items: start">
+          <article class="card" style="padding: 5mm 5mm 4.2mm">
+            <div class="tiny-label">
+              What Had To Be Checked — 반드시 짚어야 할 항목
+            </div>
+            <h3 class="card-title">
+              문장 품질보다<br />검증 포인트 누락이 문제
+            </h3>
+            <div class="tags">
+              <span>성과 과장</span><span>공백기</span><span>직무 전환</span
+              ><span>협업 리스크</span>
+            </div>
+            <p class="micro" style="margin-top: 8px">
+              지원자 문서를 그대로 질문으로 변환하면, 면접관이 확인해야 할 핵심
+              리스크가 무난한 질문에 묻혔습니다.
+            </p>
+            <a
+              href="https://checker-gambler-0f8.notion.site/LangGraph-3621480769ac8031899ed4b5e6026f60?source=copy_link"
+              target="_blank"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 14px;
+                font-size: 13px;
+                font-weight: 800;
+                color: #1a5fb8;
+                text-decoration: none;
+                background: #ddeaff;
+                border: 1.5px solid #8ab4f8;
+                border-radius: 8px;
+                padding: 8px 16px;
+                letter-spacing: 0.02em;
+              "
+            >
+              LangGraph 설계 문서 보러가기 →</a
+            >
+          </article>
+
+          <article class="card tinted">
+            <div class="tiny-label">
+              Target Flow — 설계한 구조 (가장 중요한 변경 포인트)
+            </div>
+            <div style="display: grid; gap: 8px">
+              <div class="flow-step">
+                <div class="flow-num">1</div>
+                <div>
+                  <strong>지원자 문서 입력</strong
+                  ><span>이력서 · 포트폴리오 · 자소서</span>
+                </div>
+              </div>
+              <!-- [변경] 2단계 설명 강화 -->
+              <div class="flow-step highlight">
+                <div class="flow-num">2</div>
+                <div>
+                  <strong>검증 포인트 추출 ← 핵심 변경</strong>
+                  <span
+                    >무엇을 먼저 확인할지 먼저 정의. 이 단계가 없으면 무난한
+                    질문만 나옴</span
+                  >
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-num">3</div>
+                <div>
+                  <strong>질문 후보 생성</strong
+                  ><span>Questioner / Driller</span>
+                </div>
+              </div>
+              <div class="flow-step">
+                <div class="flow-num">4</div>
+                <div>
+                  <strong>Reviewer 선별</strong
+                  ><span>상위 질문만 채택 · 루브릭 기준 채점</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           PAGE 06 · HR COPILOT · TRACE ANALYSIS
+           [변경] 가설 3 명확화 / Key Insight 강화 / 비개발자 설명 추가
+      ═══════════════════════════════════════════════ -->
+      <section class="page" data-page="06">
+        <div class="grid-lines"></div>
+        <div class="section-head" style="grid-template-columns: 0.82fr 1.18fr">
+          <div>
+            <div class="project-kicker">
+              <div class="topic-line">Trace Analysis</div>
+            </div>
+            <h2 class="section-title">
+              프롬프트가 아니라,<br /><span
+                class="accent"
+                style="color: #2f6fb2"
+                >State 유실</span
+              >이<br />원인이었습니다.
+            </h2>
+          </div>
+          <div class="project-meta">
+            <div class="project-stamp">
+              <small>Project 1</small><b>HR Copilot</b>
+            </div>
+            <p class="sub">
+              가설을 하나씩 지우며 Trace를 확인한 결과, 문제는 Prompt가 아니라
+              <strong
+                >Reviewer 피드백이 다음 생성 루프로 전달되지 않는 구조</strong
+              >였습니다.
+            </p>
+            <a
+              href="https://checker-gambler-0f8.notion.site/3611480769ac8067a741c567dc5cf961?pvs=143"
+              target="_blank"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 12px;
+                font-size: 13px;
+                font-weight: 800;
+                color: #1a5fb8;
+                text-decoration: none;
+                background: #ddeaff;
+                border: 1.5px solid #8ab4f8;
+                border-radius: 8px;
+                padding: 8px 16px;
+                letter-spacing: 0.02em;
+              "
+              >실험일지 보러가기 →</a
+            >
+          </div>
+        </div>
+
+        <div class="cards-2" style="align-items: start">
+          <article
+            class="card"
+            style="background: #f7fafe; border-color: #d8e2ef"
+          >
+            <div class="tiny-label">Hypothesis Check — 가설 소거 과정</div>
+            <div style="margin-top: 8px">
+              <!-- 헤더 -->
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 26px 1fr 1fr 58px;
+                  gap: 6px;
+                  padding: 4px 0;
+                  border-bottom: 1.5px solid #b0c4d8;
+                  font-size: 9px;
+                  color: #7a8898;
+                  font-weight: 700;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                "
+              >
+                <div>#</div>
+                <div>가설</div>
+                <div>확인 방법</div>
+                <div style="text-align: center">결론</div>
+              </div>
+              <!-- H1 -->
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 26px 1fr 1fr 58px;
+                  gap: 6px;
+                  padding: 7px 0;
+                  border-bottom: 1px dashed #dde8f0;
+                  font-size: 11px;
+                  align-items: start;
+                "
+              >
+                <div style="color: #9aaab8; font-weight: 700; font-size: 10px">
+                  H1
+                </div>
+                <div style="color: #2d3748">Retry 로직에 문제가 있는가?</div>
+                <div style="color: #6a7a8a; font-size: 10.5px">
+                  retry_count State 값 추적
+                </div>
+                <div
+                  style="text-align: center; color: #9aaab8; font-weight: 700"
+                >
+                  ✗ 아님
+                </div>
+              </div>
+              <!-- H2 -->
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 26px 1fr 1fr 58px;
+                  gap: 6px;
+                  padding: 7px 0;
+                  border-bottom: 1px dashed #dde8f0;
+                  font-size: 11px;
+                  align-items: start;
+                "
+              >
+                <div style="color: #9aaab8; font-weight: 700; font-size: 10px">
+                  H2
+                </div>
+                <div style="color: #2d3748">Reviewer 채점 기준이 문제인가?</div>
+                <div style="color: #6a7a8a; font-size: 10.5px">
+                  reviewer output 전수 확인
+                </div>
+                <div
+                  style="text-align: center; color: #9aaab8; font-weight: 700"
+                >
+                  ✗ 아님
+                </div>
+              </div>
+              <!-- H3 -->
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 26px 1fr 1fr 58px;
+                  gap: 6px;
+                  padding: 7px 0;
+                  border-bottom: 1px dashed #dde8f0;
+                  font-size: 11px;
+                  align-items: start;
+                "
+              >
+                <div style="color: #9aaab8; font-weight: 700; font-size: 10px">
+                  H3
+                </div>
+                <div style="color: #2d3748">Prompt 품질이 문제인가?</div>
+                <div style="color: #6a7a8a; font-size: 10.5px">
+                  프롬프트 변경 후 재실험
+                </div>
+                <div
+                  style="text-align: center; color: #9aaab8; font-weight: 700"
+                >
+                  ✗ 아님
+                </div>
+              </div>
+              <!-- H4 — 원인 발견 -->
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 26px 1fr 1fr 58px;
+                  gap: 6px;
+                  padding: 7px 8px;
+                  border-radius: 8px;
+                  background: #fff3f3;
+                  border: 1px solid #f0c0c0;
+                  font-size: 11px;
+                  align-items: start;
+                  margin-top: 4px;
+                "
+              >
+                <div style="color: #c92d2d; font-weight: 700; font-size: 10px">
+                  H4
+                </div>
+                <div style="color: #c92d2d; font-weight: 600">
+                  State 흐름이 끊기는가?
+                </div>
+                <div style="color: #8a3030; font-size: 10.5px">
+                  노드간 입출력 State 대조
+                </div>
+                <div
+                  style="text-align: center; color: #c92d2d; font-weight: 800"
+                >
+                  ✓ 원인
+                </div>
+              </div>
+            </div>
+            <p class="micro" style="margin-top: 10px">
+              수백 개 Trace를 따라가며 노드별 입력·출력을 대조했고,
+              <strong>피드백 State가 다음 생성 루프로 유지되지 않는 지점</strong
+              >을 찾았습니다.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="tiny-label">Trace View — LangSmith 추적 결과</div>
+            <div class="trace-wrap" style="padding: 10px 12px 12px">
+              <svg
+                width="100%"
+                height="300"
+                viewBox="0 0 560 300"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+              >
+                <defs>
+                  <marker
+                    id="arr"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="6"
+                    markerHeight="6"
+                    orient="auto-start-reverse"
+                  >
+                    <path d="M0,0 L10,5 L0,10 z" fill="#7a8898" />
+                  </marker>
+                </defs>
+                <rect
+                  x="12"
+                  y="34"
+                  width="96"
+                  height="64"
+                  rx="14"
+                  fill="#fff"
+                  stroke="#dde3ec"
+                />
+                <text
+                  x="60"
+                  y="60"
+                  text-anchor="middle"
+                  font-size="16"
+                  font-weight="800"
+                  fill="#0d1117"
+                >
+                  Questioner
+                </text>
+                <text
+                  x="60"
+                  y="81"
+                  text-anchor="middle"
+                  font-size="12"
+                  fill="#7a8898"
+                >
+                  질문 생성
+                </text>
+                <rect
+                  x="119"
+                  y="34"
+                  width="96"
+                  height="64"
+                  rx="14"
+                  fill="#fff"
+                  stroke="#dde3ec"
+                />
+                <text
+                  x="167"
+                  y="60"
+                  text-anchor="middle"
+                  font-size="16"
+                  font-weight="800"
+                  fill="#0d1117"
+                >
+                  Predictor
+                </text>
+                <text
+                  x="167"
+                  y="81"
+                  text-anchor="middle"
+                  font-size="12"
+                  fill="#7a8898"
+                >
+                  예상답변
+                </text>
+                <rect
+                  x="226"
+                  y="34"
+                  width="96"
+                  height="64"
+                  rx="14"
+                  fill="#fff"
+                  stroke="#dde3ec"
+                />
+                <text
+                  x="274"
+                  y="60"
+                  text-anchor="middle"
+                  font-size="16"
+                  font-weight="800"
+                  fill="#0d1117"
+                >
+                  Driller
+                </text>
+                <text
+                  x="274"
+                  y="81"
+                  text-anchor="middle"
+                  font-size="12"
+                  fill="#7a8898"
+                >
+                  꼬리질문
+                </text>
+                <rect
+                  x="333"
+                  y="34"
+                  width="96"
+                  height="64"
+                  rx="14"
+                  fill="#fff"
+                  stroke="#dde3ec"
+                />
+                <text
+                  x="381"
+                  y="60"
+                  text-anchor="middle"
+                  font-size="16"
+                  font-weight="800"
+                  fill="#0d1117"
+                >
+                  Reviewer
+                </text>
+                <text
+                  x="381"
+                  y="81"
+                  text-anchor="middle"
+                  font-size="12"
+                  fill="#7a8898"
+                >
+                  품질 평가
+                </text>
+                <rect
+                  x="440"
+                  y="34"
+                  width="108"
+                  height="64"
+                  rx="14"
+                  fill="#e2ffad"
+                  stroke="#0d1117"
+                />
+                <text
+                  x="494"
+                  y="60"
+                  text-anchor="middle"
+                  font-size="16"
+                  font-weight="900"
+                  fill="#0d1117"
+                >
+                  Retry
+                </text>
+                <text
+                  x="494"
+                  y="81"
+                  text-anchor="middle"
+                  font-size="12"
+                  fill="#0d1117"
+                >
+                  재생성 루프
+                </text>
+                <line
+                  x1="108"
+                  y1="66"
+                  x2="119"
+                  y2="66"
+                  stroke="#7a8898"
+                  stroke-width="3"
+                  marker-end="url(#arr)"
+                />
+                <line
+                  x1="215"
+                  y1="66"
+                  x2="226"
+                  y2="66"
+                  stroke="#7a8898"
+                  stroke-width="3"
+                  marker-end="url(#arr)"
+                />
+                <line
+                  x1="322"
+                  y1="66"
+                  x2="333"
+                  y2="66"
+                  stroke="#7a8898"
+                  stroke-width="3"
+                  marker-end="url(#arr)"
+                />
+                <line
+                  x1="429"
+                  y1="66"
+                  x2="440"
+                  y2="66"
+                  stroke="#7a8898"
+                  stroke-width="3"
+                  marker-end="url(#arr)"
+                />
+                <path
+                  d="M494 104 V168 H60 V104"
+                  fill="none"
+                  stroke="#f05050"
+                  stroke-width="4"
+                  stroke-dasharray="8 6"
+                  marker-end="url(#arr)"
+                />
+                <rect
+                  x="82"
+                  y="184"
+                  width="396"
+                  height="70"
+                  rx="20"
+                  fill="#0d1117"
+                />
+                <text
+                  x="280"
+                  y="216"
+                  text-anchor="middle"
+                  font-size="18"
+                  font-weight="800"
+                  fill="#fff"
+                >
+                  Questioner 노드 재진입 시
+                </text>
+                <text
+                  x="280"
+                  y="240"
+                  text-anchor="middle"
+                  font-size="18"
+                  font-weight="900"
+                  fill="#f05050"
+                >
+                  Reviewer 피드백 State 소실
+                </text>
+              </svg>
+            </div>
+          </article>
+        </div>
+
+        <div
+          style="
+            margin-top: 7mm;
+            padding: 16px 18px 18px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #e7eef7 0%, #dce7f4 100%);
+            border: 1px solid #cad8ea;
+          "
+        >
+          <div
+            style="
+              display: inline-flex;
+              align-items: center;
+              padding: 6px 11px;
+              border-radius: 999px;
+              background: rgba(116, 146, 182, 0.12);
+              border: 1px solid rgba(116, 146, 182, 0.22);
+              color: #58738f;
+              font: 800 11px/1 NotoKR;
+              letter-spacing: 0.08em;
+              text-transform: uppercase;
+            "
+          >
+            Key Insight
+          </div>
+          <!-- [변경] 비개발자도 이해할 수 있는 한 줄 추가 -->
+          <b
+            style="
+              display: block;
+              margin-top: 12px;
+              font-size: 26px;
+              line-height: 1.32;
+              letter-spacing: -0.05em;
+              color: #16253a;
+            "
+          >
+            프롬프트를 고친 게 아닙니다. "피드백이 다음 단계로 전달되지 않는
+            구조"를 바꿨습니다.
+          </b>
+          <div
+            style="
+              margin-top: 10px;
+              font-size: 14px;
+              line-height: 1.6;
+              color: #5f7086;
+            "
+          >
+            Reviewer가 낮은 점수를 줘도 같은 질문을 반복했습니다. State 유실이
+            품질 정체의 원인이었고, 구조 수정 후 78.6 → 91.8점으로 개선됐습니다.
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           PAGE 07 · HR COPILOT · RESULT
+           [변경] 점수 단위 기준 명시 / 마지막 임팩트 문장 추가
+      ═══════════════════════════════════════════════ -->
+      <section class="page" data-page="07">
+        <div class="section-head">
+          <div>
+            <div class="project-kicker">
+              <div class="topic-line">Redesign Result</div>
+            </div>
+            <h2 class="section-title">
+              구조를 바꾸자,<br /><span
+                class="marker"
+                style="background: none; color: #2f6fb2"
+                >질문 품질</span
+              >이<br />올라갔습니다.
+            </h2>
+          </div>
+          <div class="project-meta">
+            <div class="project-stamp">
+              <small>Project 1</small><b>HR Copilot</b>
+            </div>
+            <a
+              href="https://checker-gambler-0f8.notion.site/LangGraph-3581480769ac80fb93eacbae1081febc?source=copy_link"
+              target="_blank"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 10px;
+                font-size: 13px;
+                font-weight: 800;
+                color: #1a5fb8;
+                text-decoration: none;
+                background: #ddeaff;
+                border: 1.5px solid #8ab4f8;
+                border-radius: 8px;
+                padding: 8px 16px;
+                letter-spacing: 0.02em;
+              "
+            >
+              품질 분석 보고서 보러가기 →</a
+            >
+            <p style="margin-top: 10px">
+              노드 책임을 나누고, 같은 루브릭으로 다시 비교했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-2" style="align-items: start">
+          <article class="card">
+            <div class="tiny-label">Before → After — 구조 변화</div>
+            <div style="display: grid; gap: 8px">
+              <div
+                style="
+                  padding: 12px 14px;
+                  border-radius: 12px;
+                  background: #f8f0f0;
+                  border: 1px solid #f0d0d0;
+                "
+              >
+                <strong
+                  style="
+                    display: block;
+                    font-size: 14px;
+                    margin-bottom: 7px;
+                    color: #b04040;
+                  "
+                  >Before</strong
+                >
+                <div
+                  style="
+                    display: grid;
+                    gap: 5px;
+                    font-size: 12px;
+                    color: #8a6060;
+                    line-height: 1.45;
+                  "
+                >
+                  <div>① 문서 전체 → Questioner 직접 입력</div>
+                  <div>② 검증 포인트 사전 정의 없음</div>
+                  <div>③ 무난한 질문 반복 · 핵심 리스크 누락</div>
+                </div>
+              </div>
+              <div
+                style="
+                  padding: 12px 14px;
+                  border-radius: 12px;
+                  background: #edf5e7;
+                  border: 1px solid #c7dcae;
+                "
+              >
+                <strong
+                  style="
+                    display: block;
+                    font-size: 14px;
+                    margin-bottom: 7px;
+                    color: #3a7a20;
+                  "
+                  >After</strong
+                >
+                <div
+                  style="
+                    display: grid;
+                    gap: 5px;
+                    font-size: 12px;
+                    color: #3a5a20;
+                    line-height: 1.45;
+                  "
+                >
+                  <div>① verification_point_extractor → must_ask 정의</div>
+                  <div>② Questioner: 포인트 기반 14개 후보 생성</div>
+                  <div>③ Reviewer: 루브릭 채점 → 상위 5개 선별</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <!-- [변경] 측정 기준 명시 -->
+            <div
+              class="score-panel"
+              style="
+                padding: 0;
+                background: transparent;
+                color: var(--ink);
+                grid-template-columns: 1fr auto 1fr;
+              "
+            >
+              <div class="score-col">
+                <small>Before</small>
+                <b style="color: #d05050">78.6</b>
+              </div>
+              <div class="score-arrow" style="color: var(--accent-deep)">→</div>
+              <div class="score-col after">
+                <small>After</small>
+                <b style="color: #4a8800">91.8</b>
+              </div>
+            </div>
+            <!-- [신규] 단위 레이블 -->
+            <div
+              style="
+                text-align: center;
+                font-size: 11px;
+                color: #7a8898;
+                font-weight: 700;
+                margin-top: 6px;
+              "
+            >
+              자체 루브릭 · 100점 만점
+            </div>
+            <!-- 루브릭 breakdown 표 -->
+            <div style="margin-top: 14px">
+              <!-- header -->
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 52px 52px 38px;
+                  gap: 4px;
+                  padding: 5px 0;
+                  border-bottom: 1px solid #c8d4e0;
+                  font-size: 9.5px;
+                  color: #7a8898;
+                  font-weight: 700;
+                  letter-spacing: 0.06em;
+                  text-transform: uppercase;
+                "
+              >
+                <div>지표</div>
+                <div style="text-align: right">초기</div>
+                <div style="text-align: right">개선 후</div>
+                <div style="text-align: right">변화</div>
+              </div>
+              <!-- row 1 -->
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 52px 52px 38px;
+                  gap: 4px;
+                  padding: 6px 0;
+                  border-bottom: 1px dashed #e2e8f0;
+                  font-size: 11px;
+                "
+              >
+                <div style="color: #4a5568">질문 품질 평균</div>
+                <div
+                  style="text-align: right; color: #8a95a5; font-size: 10.5px"
+                >
+                  19.6/25
+                </div>
+                <div
+                  style="text-align: right; color: #3a6b10; font-size: 10.5px"
+                >
+                  23.1/25
+                </div>
+                <div
+                  style="text-align: right; color: #4a8800; font-weight: 700"
+                >
+                  +3.5
+                </div>
+              </div>
+              <!-- row 2 -->
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 52px 52px 38px;
+                  gap: 4px;
+                  padding: 6px 0;
+                  border-bottom: 1px dashed #e2e8f0;
+                  font-size: 11px;
+                "
+              >
+                <div style="color: #4a5568">평가가이드 품질 평균</div>
+                <div
+                  style="text-align: right; color: #8a95a5; font-size: 10.5px"
+                >
+                  19.7/25
+                </div>
+                <div
+                  style="text-align: right; color: #3a6b10; font-size: 10.5px"
+                >
+                  22.8/25
+                </div>
+                <div
+                  style="text-align: right; color: #4a8800; font-weight: 700"
+                >
+                  +3.1
+                </div>
+              </div>
+              <!-- total -->
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 52px 52px 38px;
+                  gap: 4px;
+                  padding: 8px 0 3px;
+                  border-top: 1.5px solid #1a2a42;
+                  font-size: 12.5px;
+                  font-weight: 700;
+                "
+              >
+                <div style="color: #0d1117">최종 품질 점수</div>
+                <div style="text-align: right; color: #d05050">78.6</div>
+                <div style="text-align: right; color: #4a8800">91.8</div>
+                <div style="text-align: right; color: #4a8800">+13.2</div>
+              </div>
+              <!-- caption -->
+              <div
+                style="
+                  font-size: 9.5px;
+                  color: #8a95a5;
+                  margin-top: 5px;
+                  line-height: 1.4;
+                "
+              >
+                동일 루브릭 · 10세션 · 50문항<br />질문품질 5항목 + 평가가이드
+                5항목 · 1–5점 척도 → 100점 환산<br />
+                <a
+                  href="https://checker-gambler-0f8.notion.site/3511480769ac80ff96f6f7d2ed60fdf6?source=copy_link"
+                  target="_blank"
+                  style="
+                    color: #5a8fd8;
+                    text-decoration: underline;
+                    text-underline-offset: 2px;
+                  "
+                  >루브릭 전체 기준 보기 →</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           PAGE 08 · BIZ-FUND-AI · ARCHITECTURE
+           [변경] 기술 선택 이유 명시 / 설명 구체화
+      ═══════════════════════════════════════════════ -->
+      <section class="page dark" data-page="08">
+        <div class="grid-lines"></div>
+        <div
+          class="section-head"
+          style="grid-template-columns: 0.84fr 1.16fr; margin-bottom: 4mm"
+        >
+          <div>
+            <div class="project-kicker">
+              <div class="topic-line">Architecture Rationale</div>
+            </div>
+            <h2 class="section-title" style="color: #fff">
+              Hybrid RAG 구조는<br />문제를 풀기 위해<br /><span class="accent"
+                >필요한 선택</span
+              >이었습니다.
+            </h2>
+          </div>
+          <div class="project-meta">
+            <div class="project-stamp">
+              <small>Project 2</small><b>BIZ-FUND-AI</b>
+            </div>
+            <!-- [변경] 왜 이 구조가 필요했는지 배경 명확화 -->
+            <a
+              href="https://github.com/JH-SKY/biz-fund-ai/blob/main/docs/06_rag_pipeline_design.md"
+              target="_blank"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 10px;
+                font-size: 13px;
+                font-weight: 800;
+                color: #1a5fb8;
+                text-decoration: none;
+                background: #ddeaff;
+                border: 1.5px solid #8ab4f8;
+                border-radius: 8px;
+                padding: 8px 16px;
+                letter-spacing: 0.02em;
+              "
+            >
+              RAG 파이프라인 설계 문서 보러가기 →</a
+            >
+            <p class="sub" style="margin-top: 10px">
+              정책자금 질문은 표현이 다르고 의도도 복합적입니다. 단일 검색과
+              단일 LLM으로는 끝까지 설명하기 어려웠습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-2">
+          <article
+            class="card dark-card"
+            style="display: flex; flex-direction: column; min-height: 250px"
+          >
+            <!-- [변경] 기술 선택 이유 명시 -->
+            <div class="tiny-label" style="margin-bottom: 12px">
+              Why Hybrid RAG — 단일 검색의 한계를 해결하기 위해
+            </div>
+            <h3 class="card-title" style="font-size: 31px; line-height: 1.15">
+              "창업 지원금"과<br />"초기창업패키지"를<br />같은 질문으로 찾아야
+              했습니다.
+            </h3>
+            <div class="tags" style="margin-top: 16px; gap: 8px">
+              <span>Keyword Search</span><span>Vector Search</span
+              ><span>RRF Re-ranking</span>
+            </div>
+            <p
+              class="micro"
+              style="
+                margin-top: auto;
+                padding-top: 16px;
+                border-top: 1px solid rgba(255, 255, 255, 0.08);
+              "
+            >
+              Vector + Keyword를 RRF로 결합해 Top 5 반환.<br />
+              <strong style="color: #e2ffad">표현 편차에 강했습니다.</strong>
+            </p>
+          </article>
+
+          <article class="card" style="background: #f5f8fd">
+            <!-- [변경] 기술 선택 이유 명시 -->
+            <div class="tiny-label">
+              Why Node Separation — 추적과 복구를 위해
+            </div>
+            <h3 class="card-title">
+              하나의 LLM에 몰아주면<br />추적도 복구도 어렵습니다.
+            </h3>
+            <div class="node-row">
+              <div class="node hi">
+                <strong>Router</strong><span>의도 판단</span>
+              </div>
+              <div class="node">
+                <strong>Diagnosis</strong><span>조건 분석</span>
+              </div>
+              <div class="node"><strong>RAG</strong><span>근거 검색</span></div>
+              <div class="node">
+                <strong>Stats</strong><span>통계 조회</span>
+              </div>
+              <div class="node">
+                <strong>Simulation</strong><span>가능성 계산</span>
+              </div>
+            </div>
+            <!-- [변경] 비용 최적화 설명 강화 -->
+            <div
+              style="
+                margin-top: 12px;
+                padding: 12px 14px;
+                border-radius: 14px;
+                background: #eef7e0;
+                border: 1px solid #bde87a;
+              "
+            >
+              <strong style="font-size: 15px; color: #2a5a00"
+                >비용 최적화
+              </strong>
+              <div
+                style="
+                  font-size: 13px;
+                  color: #3a6a20;
+                  margin-top: 4px;
+                  line-height: 1.55;
+                "
+              >
+                Router·Greeting·RAG 노드를 <b>작업 복잡도 기준</b>으로 모델
+                분리<br />
+                (단순 분류 → mini, 인사 → 정적 문자열, PolicySync → gpt-4o
+                유지)<br />
+                모델 전환 후 평가 하네스 재실행 → 품질 <b>83.3% 유지</b> 확인 ·
+                비용 <b>약 15배 절감</b>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div
+          class="proof-list"
+          style="
+            margin-top: 2mm;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+          "
+        >
+          <div
+            class="proof-item"
+            style="border-color: rgba(255, 255, 255, 0.1)"
+          >
+            <span style="color: #8a9ab0">Hybrid RAG 이유</span>
+            <strong style="color: #fff"
+              >Vector + Keyword + RRF로 누락 감소</strong
+            >
+          </div>
+          <div
+            class="proof-item"
+            style="border-color: rgba(255, 255, 255, 0.1)"
+          >
+            <span style="color: #8a9ab0">비용 절감 방법</span>
+            <strong style="color: #fff"
+              >작업 복잡도별 모델 분리로 비용 15배↓ · 품질 83.3% 유지
+              검증</strong
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           PAGE 09 · BIZ-FUND-AI · TROUBLESHOOTING
+           [변경] 1,282 vs 1,255 차이 명확화 / 데이터 정제 맥락 추가
+      ═══════════════════════════════════════════════ -->
+      <section class="page dark" data-page="09">
+        <div class="section-head" style="gap: 12mm; margin-bottom: 5mm">
+          <div>
+            <div class="project-kicker">
+              <div class="topic-line">Real Troubleshooting</div>
+            </div>
+            <h2 class="section-title">
+              기능보다 강한 증거는<br /><span
+                class="marker"
+                style="color: var(--accent); background: none"
+                >실제 장애를 복구한<br />기록</span
+              >입니다.
+            </h2>
+          </div>
+          <div class="project-meta">
+            <div class="project-stamp">
+              <small>Project 2</small><b>BIZ-FUND-AI</b>
+            </div>
+            <a
+              href="https://github.com/JH-SKY/biz-fund-ai/blob/main/docs/05_troubleshooting_log.md"
+              target="_blank"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 10px;
+                font-size: 13px;
+                font-weight: 800;
+                color: #1a5fb8;
+                text-decoration: none;
+                background: #ddeaff;
+                border: 1.5px solid #8ab4f8;
+                border-radius: 8px;
+                padding: 8px 16px;
+                letter-spacing: 0.02em;
+              "
+            >
+              트러블슈팅 문서 보러가기 →</a
+            >
+            <p style="margin-top: 10px">
+              AI 기능만 만든 것이 아닙니다. 운영에서 터지는 데이터·배치·트랜잭션
+              문제를 구조적으로 해결했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <div class="tiny-label">Issue 01 · 데이터 유실</div>
+            <h3 class="card-title" style="font-size: 22px">
+              로그 성공 1,282건,<br />실제 DB엔 300건
+            </h3>
+            <div
+              class="proof-list"
+              style="
+                padding: 0;
+                border: 0;
+                background: transparent;
+                margin-top: 10px;
+              "
+            >
+              <div class="proof-item">
+                <span>원인</span
+                ><strong>rollback이 이전 성공분까지 전량 되돌림</strong>
+              </div>
+              <div class="proof-item">
+                <span style="color: #2a8a20">해결</span>
+                <strong style="color: #2a8a20"
+                  >UPSERT + 트랜잭션 범위 재설계</strong
+                >
+              </div>
+            </div>
+            <!-- [변경] 결과 수치 맥락 명확화 -->
+            <div
+              style="
+                margin-top: 10px;
+                padding: 8px 10px;
+                border-radius: 12px;
+                background: #eef7e0;
+                border: 1px solid #bde87a;
+                font-size: 13px;
+                color: #3a6a20;
+                font-weight: 700;
+              "
+            >
+              결과: 수집 1,282건 = 저장 1,282건. 유실 0건 달성
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="tiny-label">Issue 02 · 파일 파싱 실패</div>
+            <h3 class="card-title" style="font-size: 22px">
+              파일명은 .pdf<br />실제 형식은 HWP
+            </h3>
+            <div
+              class="proof-list"
+              style="
+                padding: 0;
+                border: 0;
+                background: transparent;
+                margin-top: 10px;
+              "
+            >
+              <div class="proof-item">
+                <span>원인</span
+                ><strong>확장자 기반 판단 + 전체 배치 롤백</strong>
+              </div>
+              <div class="proof-item">
+                <span style="color: #2a8a20">해결</span>
+                <strong style="color: #2a8a20"
+                  >Magic Number + Savepoint (중첩 트랜잭션)</strong
+                >
+              </div>
+            </div>
+            <div
+              style="
+                margin-top: 10px;
+                padding: 8px 10px;
+                border-radius: 12px;
+                background: #eef7e0;
+                border: 1px solid #bde87a;
+                font-size: 13px;
+                color: #3a6a20;
+                font-weight: 700;
+              "
+            >
+              결과: 파싱 성공률 24% → 57%
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="tiny-label">Issue 03 · 배치 세션 끊김</div>
+            <h3 class="card-title" style="font-size: 22px">
+              200건 이후<br />DB 연결이 끊김
+            </h3>
+            <div
+              class="proof-list"
+              style="
+                padding: 0;
+                border: 0;
+                background: transparent;
+                margin-top: 10px;
+              "
+            >
+              <div class="proof-item">
+                <span>원인</span
+                ><strong>Supabase pgbouncer 5분 idle timeout</strong>
+              </div>
+              <div class="proof-item">
+                <span style="color: #2a8a20">해결</span>
+                <strong style="color: #2a8a20"
+                  >100건/페이지 fresh session 구조</strong
+                >
+              </div>
+            </div>
+            <!-- [변경] 1,255건 맥락 명확화 (1,282에서 중복 제거 후) -->
+            <div
+              style="
+                margin-top: 10px;
+                padding: 8px 10px;
+                border-radius: 12px;
+                background: #eef7e0;
+                border: 1px solid #bde87a;
+                font-size: 13px;
+                color: #3a6a20;
+                font-weight: 700;
+              "
+            >
+              결과: 1,255건 Full Sync 안정화 (중복 제거 후 순수 공고 수)
+            </div>
+          </article>
+        </div>
+
+        <div
+          class="proof-list"
+          style="
+            margin-top: 3mm;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+          "
+        >
+          <div
+            class="proof-item"
+            style="border-color: rgba(255, 255, 255, 0.1)"
+          >
+            <span style="color: #8a9ab0">기능 검증</span>
+            <strong style="color: #fff"
+              >평가 하네스 직접 구축 · 12케이스 중 10개 통과 (83.3%)</strong
+            >
+          </div>
+          <div
+            class="proof-item"
+            style="border-color: rgba(255, 255, 255, 0.1)"
+          >
+            <span style="color: #8a9ab0">장애 복구</span>
+            <strong style="color: #fff"
+              >데이터 유실 · 파싱 실패 · 세션 끊김 — 3건 구조적 해결</strong
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════
+           PAGE 10 · CLOSING — 문서 인덱스
+      ═══════════════════════════════════════════════ -->
+      <section class="page dark" data-page="10">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="dots"></div>
+        <div class="grid-lines"></div>
+
+        <!-- 상단: 타이틀 + 연락처 -->
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: start;
+            gap: 20mm;
+            margin-bottom: 8mm;
+          "
+        >
+          <div>
+            <div class="kicker" style="margin-bottom: 10px">
+              Closing · 이종혁 LEE JONGHYEOK
+            </div>
+            <h2
+              style="
+                font-family: NotoKRBold;
+                font-size: 44px;
+                line-height: 1.06;
+                letter-spacing: -0.06em;
+                color: #fff;
+                margin: 0 0 10px;
+              "
+            >
+              지난 여정을 담았습니다.<br />
+              <span class="accent">상세 문서</span>를 함께 확인해주세요.
+            </h2>
+            <p
+              style="
+                font-size: 15px;
+                font-weight: 700;
+                color: rgba(255, 255, 255, 0.45);
+                line-height: 1.6;
+                max-width: 540px;
+              "
+            >
+              각 섹션에 링크를 넣어뒀지만 놓치셨을 수 있습니다.<br />설계 근거,
+              실험 기록, 트러블슈팅 로그까지 문서로 정리해뒀습니다.
+            </p>
+          </div>
+          <div style="display: grid; gap: 7px; min-width: 220px">
+            <div style="display: flex; align-items: center; gap: 10px">
+              <span
+                style="
+                  font: 700 10px/1 NotoKR;
+                  color: #6a7e96;
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  width: 44px;
+                  flex-shrink: 0;
+                "
+                >Phone</span
+              >
+              <b style="font-size: 15px; color: #fff; letter-spacing: -0.01em"
+                >010.7204.2031</b
+              >
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px">
+              <span
+                style="
+                  font: 700 10px/1 NotoKR;
+                  color: #6a7e96;
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  width: 44px;
+                  flex-shrink: 0;
+                "
+                >Email</span
+              >
+              <b style="font-size: 14px; color: #fff">whdgur2034@naver.com</b>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px">
+              <span
+                style="
+                  font: 700 10px/1 NotoKR;
+                  color: #6a7e96;
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  width: 44px;
+                  flex-shrink: 0;
+                "
+                >GitHub</span
+              >
+              <a
+                href="https://github.com/JH-SKY"
+                target="_blank"
+                style="
+                  font-size: 14px;
+                  font-weight: 800;
+                  color: #8ab4f8;
+                  text-decoration: none;
+                "
+                >github.com/JH-SKY</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 문서 인덱스 -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px">
+          <!-- HR Copilot 문서들 -->
+          <div
+            style="
+              background: rgba(255, 255, 255, 0.04);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 20px;
+              padding: 16px 18px;
+            "
+          >
+            <div
+              style="
+                font: 800 11px/1 NotoKR;
+                color: #6a8cb0;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+              "
+            >
+              ● Project 1 — HR Copilot
+            </div>
+            <div style="display: grid; gap: 8px">
+              <a
+                href="https://checker-gambler-0f8.notion.site/HR-COPILOT-7331480769ac83ef971881f22f063100?source=copy_link"
+                target="_blank"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 10px 14px;
+                  border-radius: 12px;
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  text-decoration: none;
+                "
+              >
+                <div>
+                  <div
+                    style="font-size: 13px; font-weight: 800; color: #e0eaff"
+                  >
+                    프로젝트 전체 문서
+                  </div>
+                  <div style="font-size: 11px; color: #6a7e96; margin-top: 2px">
+                    설계 배경 · 팀 역할 · 전체 흐름
+                  </div>
+                </div>
+                <span
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: #8ab4f8;
+                    letter-spacing: 0.04em;
+                  "
+                  >Notion →</span
+                >
+              </a>
+              <a
+                href="https://checker-gambler-0f8.notion.site/LangGraph-3621480769ac8031899ed4b5e6026f60?source=copy_link"
+                target="_blank"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 10px 14px;
+                  border-radius: 12px;
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  text-decoration: none;
+                "
+              >
+                <div>
+                  <div
+                    style="font-size: 13px; font-weight: 800; color: #e0eaff"
+                  >
+                    LangGraph 설계 문서
+                  </div>
+                  <div style="font-size: 11px; color: #6a7e96; margin-top: 2px">
+                    노드 구조 · State 흐름 · 선별 알고리즘
+                  </div>
+                </div>
+                <span
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: #8ab4f8;
+                    letter-spacing: 0.04em;
+                  "
+                  >Notion →</span
+                >
+              </a>
+              <a
+                href="https://checker-gambler-0f8.notion.site/3611480769ac8067a741c567dc5cf961?pvs=143"
+                target="_blank"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 10px 14px;
+                  border-radius: 12px;
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  text-decoration: none;
+                "
+              >
+                <div>
+                  <div
+                    style="font-size: 13px; font-weight: 800; color: #e0eaff"
+                  >
+                    실험 일지 · 가설 소거 기록
+                  </div>
+                  <div style="font-size: 11px; color: #6a7e96; margin-top: 2px">
+                    H1~H4 가설 검증 · Trace 분석 과정
+                  </div>
+                </div>
+                <span
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: #8ab4f8;
+                    letter-spacing: 0.04em;
+                  "
+                  >Notion →</span
+                >
+              </a>
+              <a
+                href="https://checker-gambler-0f8.notion.site/LangGraph-3581480769ac80fb93eacbae1081febc?source=copy_link"
+                target="_blank"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 10px 14px;
+                  border-radius: 12px;
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  text-decoration: none;
+                "
+              >
+                <div>
+                  <div
+                    style="font-size: 13px; font-weight: 800; color: #e0eaff"
+                  >
+                    품질 분석 보고서
+                  </div>
+                  <div style="font-size: 11px; color: #6a7e96; margin-top: 2px">
+                    78.6 → 91.8 루브릭 전수 측정 기록
+                  </div>
+                </div>
+                <span
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: #8ab4f8;
+                    letter-spacing: 0.04em;
+                  "
+                  >Notion →</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <!-- BIZ-FUND-AI 문서들 -->
+          <div
+            style="
+              background: rgba(255, 255, 255, 0.04);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 20px;
+              padding: 16px 18px;
+            "
+          >
+            <div
+              style="
+                font: 800 11px/1 NotoKR;
+                color: #6a8cb0;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                margin-bottom: 12px;
+              "
+            >
+              ● Project 2 — BIZ-FUND-AI
+            </div>
+            <div style="display: grid; gap: 8px">
+              <a
+                href="https://phrygian-periodical-80a.notion.site/__Biz-Fund-AI__-8f2a1038d825836fbeb381945485ec15"
+                target="_blank"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 10px 14px;
+                  border-radius: 12px;
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  text-decoration: none;
+                "
+              >
+                <div>
+                  <div
+                    style="font-size: 13px; font-weight: 800; color: #e0eaff"
+                  >
+                    프로젝트 전체 문서
+                  </div>
+                  <div style="font-size: 11px; color: #6a7e96; margin-top: 2px">
+                    시스템 설계 · 운영 기록 · 전체 흐름
+                  </div>
+                </div>
+                <span
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: #8ab4f8;
+                    letter-spacing: 0.04em;
+                  "
+                  >Notion →</span
+                >
+              </a>
+              <a
+                href="https://github.com/JH-SKY/biz-fund-ai/blob/main/docs/06_rag_pipeline_design.md"
+                target="_blank"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 10px 14px;
+                  border-radius: 12px;
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  text-decoration: none;
+                "
+              >
+                <div>
+                  <div
+                    style="font-size: 13px; font-weight: 800; color: #e0eaff"
+                  >
+                    RAG 파이프라인 설계 문서
+                  </div>
+                  <div style="font-size: 11px; color: #6a7e96; margin-top: 2px">
+                    Hybrid RAG 선택 근거 · pgvector · RRF
+                  </div>
+                </div>
+                <span
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: #8ab4f8;
+                    letter-spacing: 0.04em;
+                  "
+                  >GitHub →</span
+                >
+              </a>
+              <a
+                href="https://github.com/JH-SKY/biz-fund-ai/blob/main/docs/05_troubleshooting_log.md"
+                target="_blank"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 10px 14px;
+                  border-radius: 12px;
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  text-decoration: none;
+                "
+              >
+                <div>
+                  <div
+                    style="font-size: 13px; font-weight: 800; color: #e0eaff"
+                  >
+                    트러블슈팅 로그
+                  </div>
+                  <div style="font-size: 11px; color: #6a7e96; margin-top: 2px">
+                    데이터 유실 · 파싱 실패 · 세션 끊김 복구
+                  </div>
+                </div>
+                <span
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: #8ab4f8;
+                    letter-spacing: 0.04em;
+                  "
+                  >GitHub →</span
+                >
+              </a>
+              <a
+                href="https://github.com/JH-SKY/biz-fund-ai/blob/main/docs/04_experiment_and_test.md"
+                target="_blank"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 10px 14px;
+                  border-radius: 12px;
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  text-decoration: none;
+                "
+              >
+                <div>
+                  <div
+                    style="font-size: 13px; font-weight: 800; color: #e0eaff"
+                  >
+                    실험 기록 · 비용 최적화 근거
+                  </div>
+                  <div style="font-size: 11px; color: #6a7e96; margin-top: 2px">
+                    모델 분리 판단 · 83.3% 하네스 · 15배 절감 수치
+                  </div>
+                </div>
+                <span
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: #8ab4f8;
+                    letter-spacing: 0.04em;
+                  "
+                  >GitHub →</span
+                >
+              </a>
+              <a
+                href="https://phrygian-periodical-80a.notion.site/34ea1038d825806faadae4081bb15963?source=copy_link"
+                target="_blank"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 10px 14px;
+                  border-radius: 12px;
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  text-decoration: none;
+                "
+              >
+                <div>
+                  <div
+                    style="font-size: 13px; font-weight: 800; color: #e0eaff"
+                  >
+                    LangGraph 에이전트 설계
+                  </div>
+                  <div style="font-size: 11px; color: #6a7e96; margin-top: 2px">
+                    4노드 그래프 구조 · 라우팅 로직 · 상태 설계
+                  </div>
+                </div>
+                <span
+                  style="
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: #8ab4f8;
+                    letter-spacing: 0.04em;
+                  "
+                  >Notion →</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
