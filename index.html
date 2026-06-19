@@ -1108,6 +1108,10 @@
       .biz-function span {
         display: block; margin-top: 3px; font-size: 11px; line-height: 1.4; font-weight: 700; color: #667a92;
       }
+      .biz-function-foot {
+        margin-top: 10px; padding: 11px 12px; border-radius: 14px; background: #f4f7fb;
+        border: 1px dashed #d8e2ef; font-size: 11px; line-height: 1.5; font-weight: 800; color: #6a7d95;
+      }
       .biz-stackline {
         display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 11px;
         padding: 10px 14px; border-radius: 14px; border: 1px solid rgba(217,230,246,.14);
@@ -1194,6 +1198,10 @@
       .eval-arrow { color: #8195ad; font-size: 19px; font-weight: 900; }
       .eval-step.result { border-color: #b9db87; background: #eff8df; }
       .eval-step.result strong { color: #477900; }
+      .eval-harness-note {
+        margin-top: 8px; font-size: 10.5px; line-height: 1.35; font-weight: 800; color: #6a7d95;
+        text-align: right;
+      }
       .pipeline-card { padding: 5.5mm; }
       .pipeline-card-head {
         display: grid; grid-template-columns: .92fr 1.08fr; gap: 14px; align-items: end;
@@ -3968,11 +3976,11 @@
           <article class="biz-card biz-function-card">
             <div class="biz-label">CORE FUNCTIONS</div>
             <div class="biz-function-list">
-              <div class="biz-function"><i>01</i><div><strong>맞춤 정책 검색</strong><span>질문과 사업장 조건을 함께 반영한 정책 후보 제공</span></div></div>
-              <div class="biz-function"><i>02</i><div><strong>신청 근거 설명</strong><span>공고문을 근거로 추천 이유와 신청 조건 제시</span></div></div>
-              <div class="biz-function"><i>03</i><div><strong>사업장 진단</strong><span>재무·운영 지표를 규칙 기반 점수로 진단</span></div></div>
-              <div class="biz-function"><i>04</i><div><strong>동종업계 비교</strong><span>업종별 매출과 사업장 지표를 통계로 비교</span></div></div>
+              <div class="biz-function"><i>01</i><div><strong>공공데이터 API 연동</strong><span>기업마당 등 외부 공고를 수집해 검색 가능한 정책 데이터로 전환</span></div></div>
+              <div class="biz-function"><i>02</i><div><strong>맞춤 정책 추천</strong><span>질문과 사업장 조건을 함께 반영해 정책 후보를 선별</span></div></div>
+              <div class="biz-function"><i>03</i><div><strong>신청 근거 설명</strong><span>공고문 근거와 제외 조건까지 함께 제시해 바로 판단 가능하게 구성</span></div></div>
             </div>
+            <div class="biz-function-foot">부가 기능으로 사업장 진단과 동종업계 비교도 연결했지만, 이 프로젝트의 핵심은 정책 추천과 신청 근거 설명 자동화입니다.</div>
           </article>
         </div>
       </section>
@@ -3982,11 +3990,11 @@
         <div class="grid-lines"></div>
         <div class="section-head" style="grid-template-columns:.9fr 1.1fr">
           <div><div class="project-kicker"><div class="topic-line">RAG ARCHITECTURE</div></div><h2 class="section-title"><span class="accent">Hybrid RAG</span> 설계</h2></div>
-          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>정책 문서의 섹션 구조와 질문의 표현 편차</strong>를 함께 고려해 수집부터 개인화 검색까지 설계했습니다.</p></div>
+          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>정책 문서의 섹션 구조와 질문의 표현 편차</strong>를 함께 고려해 검색 실패와 오탐을 줄이도록 Hybrid RAG를 설계했습니다.</p></div>
         </div>
         <article class="biz-card biz-dark-card rag-shell">
           <div class="rag-lane"><div class="rag-lane-title"><b>01</b> 정책 공고 색인 파이프라인</div><div class="rag-flow">
-            <div class="rag-step"><strong>외부 공고</strong><span>기업마당 정책 데이터</span></div><div class="rag-step"><strong>문서 파싱</strong><span>PDF · HWP · HTML</span></div><div class="rag-step key"><strong>섹션 청킹</strong><span>지원 대상·한도 경계 보존</span></div><div class="rag-step"><strong>맥락 보강</strong><span>정책명·기관명 추가</span></div><div class="rag-step"><strong>임베딩</strong><span>text-embedding-3-small</span></div><div class="rag-step"><strong>원문 저장</strong><span>정책·청크 구조화</span></div><div class="rag-step key"><strong>pgvector</strong><span>검색 색인 완성</span></div>
+            <div class="rag-step"><strong>외부 공고</strong><span>공공데이터 API 정책 데이터</span></div><div class="rag-step"><strong>문서 파싱</strong><span>PDF · HWP · HTML</span></div><div class="rag-step key"><strong>섹션 청킹</strong><span>지원 대상·한도 경계 보존</span></div><div class="rag-step"><strong>맥락 보강</strong><span>정책명·기관명 추가</span></div><div class="rag-step"><strong>임베딩</strong><span>text-embedding-3-small</span></div><div class="rag-step"><strong>원문 저장</strong><span>정책·청크 구조화</span></div><div class="rag-step key"><strong>pgvector</strong><span>검색 색인 완성</span></div>
           </div></div>
           <div class="rag-lane"><div class="rag-lane-title"><b>02</b> 개인화 검색·답변 파이프라인</div><div class="rag-flow">
             <div class="rag-step"><strong>사용자 질문</strong><span>생활어·복합 목적 질문</span></div><div class="rag-step key"><strong>의도 분해</strong><span>운영비·고용 등 목적 분리</span></div><div class="rag-step"><strong>의미 검색</strong><span>유사 표현 후보 검색</span></div><div class="rag-step"><strong>키워드 검색</strong><span>정책명·기관명 검색</span></div><div class="rag-step key"><strong>RRF 결합</strong><span>두 검색 순위 통합</span></div><div class="rag-step"><strong>사업장 재정렬</strong><span>지역·업종·업력 반영</span></div><div class="rag-step key"><strong>근거 답변</strong><span>상위 정책과 이유 제시</span></div>
@@ -4004,7 +4012,7 @@
         <div class="grid-lines"></div>
         <div class="section-head" style="grid-template-columns:.9fr 1.1fr">
           <div><div class="project-kicker"><div class="topic-line">COST &amp; QUALITY VALIDATION</div></div><h2 class="section-title"><span class="accent">비용·품질</span> 검증</h2></div>
-          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>작업 복잡도에 따라 모델 선택 기준을 직접 정의</strong>하고, 비용을 낮춘 뒤에도 실제 API 흐름 기준으로 품질이 유지되는지 검증했습니다.</p></div>
+          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>작업 복잡도에 따라 모델 선택 기준을 직접 정의</strong>하고, 경량 모델 전환 뒤에도 같은 평가셋에서 통과 건수가 유지되는지 검증했습니다.</p></div>
         </div>
         <div class="ops9-grid">
           <article class="biz-card biz-dark-card model-card"><div class="biz-label">MODEL SELECTION</div><div class="model-table">
@@ -4016,12 +4024,13 @@
         </div>
         <article class="eval-harness">
           <div class="eval-harness-head">
-            <div><small>QUALITY HARNESS</small><strong>모델을 가볍게 바꾼 뒤에도 같은 질문을 같은 조건에서 통과하는지 비교 검증</strong></div>
-            <p>단순 응답 비교가 아니라 시나리오 계정으로 실제 API 흐름을 실행하고, 분기 정확도·예상 정책·핵심 내용 유지 여부를 함께 확인했습니다.</p>
+            <div><small>QUALITY HARNESS</small><strong>경량 모델 전환 뒤에도 통과 건수가 유지되는지 검증</strong></div>
+            <p>운영 판단 기준은 통과 건수 유지였습니다. 시나리오 계정으로 실제 API 흐름을 실행해 분기 정확도·예상 정책·핵심 내용을 함께 확인했습니다.</p>
           </div>
           <div class="eval-strip">
             <div class="eval-step"><strong>고정 평가셋 12개</strong><span>정책 검색 10 · 통계 1 · 일반 상담 1</span></div><div class="eval-arrow">›</div><div class="eval-step"><strong>동일 사업장 조건</strong><span>시나리오 계정으로 실제 API 흐름 실행</span></div><div class="eval-arrow">›</div><div class="eval-step"><strong>통과 기준 3개</strong><span>분기 · 예상 정책 · 핵심 내용</span></div><div class="eval-arrow">›</div><div class="eval-step result"><strong>10 / 12 통과 유지</strong><span>모델 변경 전후 83.3% 동일</span></div>
           </div>
+          <div class="eval-harness-note">3개 기준을 모두 충족해야 1건 통과로 집계했고, 미통과 2건은 표현 편차 케이스로 분리했습니다.</div>
         </article>
       </section>
 
@@ -4035,12 +4044,12 @@
         <article class="biz-card biz-dark-card pipeline-card">
           <div class="pipeline-card-head">
             <div><div class="biz-label">WHY THIS PAGE</div><strong>검색이 좋아도 적재가 흔들리면 추천 근거 전체가 흔들립니다.</strong></div>
-            <p>이 페이지는 “데이터를 얼마나 많이 모았는가”보다 “외부 공고를 얼마나 안정적으로 구조화해 RAG에 넣을 수 있게 만들었는가”를 보여주기 위한 구성입니다.</p>
+            <p>이 페이지는 수집량 자랑이 아니라, 외부 공고와 첨부파일을 얼마나 안정적으로 구조화해 RAG 입력 품질을 지켰는지 보여주기 위한 구성입니다.</p>
           </div>
           <div class="biz-label">FAILURE-CONTROLLED INGESTION</div>
           <div class="pipeline-flow">
             <div class="pipeline-stage"><strong>공공데이터 API 수집</strong><span>대량 공고와 첨부파일 수집</span><div class="pipeline-guard">페이지별 독립 세션<br />DB 연결 끊김 방지</div></div>
-            <div class="pipeline-stage"><strong>실제 형식 판별</strong><span>확장자가 아닌 파일 헤더 확인</span><div class="pipeline-guard">Magic Number<br />정상 파싱 24% → 57%</div></div>
+            <div class="pipeline-stage"><strong>실제 형식 판별</strong><span>확장자가 아닌 파일 헤더 확인</span><div class="pipeline-guard">Magic Number<br />첨부파일 정상 파싱률 24% → 57%</div></div>
             <div class="pipeline-stage"><strong>공고별 파싱</strong><span>실패 범위를 해당 공고로 제한</span><div class="pipeline-guard">Savepoint<br />부분 롤백</div></div>
             <div class="pipeline-stage"><strong>AI 구조화·검증</strong><span>필수 필드가 없는 결과 차단</span><div class="pipeline-guard">품질 미달 데이터<br />저장 제외</div></div>
             <div class="pipeline-stage"><strong>정책 DB 적재</strong><span>중복 공고도 안전하게 재실행</span><div class="pipeline-guard">UPSERT<br />멱등성 확보</div></div>
