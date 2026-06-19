@@ -1161,13 +1161,32 @@
       }
       .ops-score .big small { font-size: 20px; color: #667b91; letter-spacing: -.03em; }
       .ops-score p { margin-top: 10px; font-size: 12px; line-height: 1.5; font-weight: 800; color: #60758d; }
-      .eval-strip {
-        display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; align-items: center;
-        gap: 10px; margin-top: 15px; padding: 18px 16px; border-radius: 17px;
+      .eval-harness {
+        margin-top: 13px; padding: 16px 14px; border-radius: 17px;
         border: 1px solid #d8e2ef; background: #f7fafe;
       }
+      .eval-harness-head {
+        display: grid; grid-template-columns: 1.06fr .94fr; gap: 14px; align-items: end;
+        margin-bottom: 12px;
+      }
+      .eval-harness-head small {
+        display: block; font-size: 11px; line-height: 1; font-weight: 900;
+        letter-spacing: .14em; color: #7a8ea7;
+      }
+      .eval-harness-head strong {
+        display: block; margin-top: 8px; font-size: 22px; line-height: 1.16;
+        letter-spacing: -.04em; color: #17375d;
+      }
+      .eval-harness-head p {
+        font-size: 12px; line-height: 1.45; font-weight: 800; color: #60758d;
+        text-align: right;
+      }
+      .eval-strip {
+        display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; align-items: center;
+        gap: 10px;
+      }
       .eval-step {
-        min-height: 76px; padding: 13px 10px; border-radius: 12px; border: 1px solid #d7e1ed;
+        min-height: 72px; padding: 12px 9px; border-radius: 12px; border: 1px solid #d7e1ed;
         background: #fff; text-align: center;
       }
       .eval-step strong { display: block; font-size: 15px; color: #17375d; }
@@ -1175,10 +1194,21 @@
       .eval-arrow { color: #8195ad; font-size: 19px; font-weight: 900; }
       .eval-step.result { border-color: #b9db87; background: #eff8df; }
       .eval-step.result strong { color: #477900; }
-      .pipeline-card { padding: 6mm; }
+      .pipeline-card { padding: 5.5mm; }
+      .pipeline-card-head {
+        display: grid; grid-template-columns: .92fr 1.08fr; gap: 14px; align-items: end;
+      }
+      .pipeline-card-head strong {
+        display: block; margin-top: 8px; font-size: 22px; line-height: 1.15;
+        letter-spacing: -.04em; color: #f5f9fe;
+      }
+      .pipeline-card-head p {
+        font-size: 12px; line-height: 1.45; font-weight: 800; color: #a9bbd0;
+        text-align: right;
+      }
       .pipeline-flow { display: grid; grid-template-columns: repeat(5,1fr); gap: 9px; margin-top: 17px; }
       .pipeline-stage {
-        position: relative; min-height: 220px; padding: 19px 13px; border-radius: 15px;
+        position: relative; min-height: 204px; padding: 17px 12px; border-radius: 15px;
         border: 1px solid rgba(216,229,244,.15); background: rgba(255,255,255,.06);
       }
       .pipeline-stage:not(:last-child):after {
@@ -1187,17 +1217,17 @@
       }
       .pipeline-stage > strong { display: block; font-size: 16px; color: #f5f9fe; }
       .pipeline-stage > span {
-        display: block; margin-top: 7px; min-height: 38px; font-size: 11px;
+        display: block; margin-top: 7px; min-height: 34px; font-size: 11px;
         line-height: 1.45; font-weight: 700; color: #93a7bf;
       }
       .pipeline-guard {
-        margin-top: 20px; padding: 13px 10px; border-radius: 10px;
+        margin-top: 14px; padding: 11px 10px; border-radius: 10px;
         background: rgba(185,255,45,.12); color: #dbff98; font-size: 12px; line-height: 1.4; font-weight: 900;
       }
-      .pipeline-results { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 15px; }
-      .pipeline-result { padding: 17px 16px; border-radius: 15px; border: 1px solid #d8e2ef; background: #f7fafe; }
+      .pipeline-results { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 12px; }
+      .pipeline-result { padding: 15px 15px; border-radius: 15px; border: 1px solid #d8e2ef; background: #f7fafe; }
       .pipeline-result span { display: block; font-size: 12px; font-weight: 800; color: #6c8097; }
-      .pipeline-result strong { display: block; margin-top: 7px; font-size: 22px; line-height: 1.15; color: #17375d; }
+      .pipeline-result strong { display: block; margin-top: 7px; font-size: 20px; line-height: 1.15; color: #17375d; }
       .pipeline-result strong b { color: #4f8d00; }
 
 
@@ -2406,7 +2436,7 @@
                 <div class="compare-pill">Solo Project</div>
                 <div class="compare-project">BIZ-FUND-AI</div>
                 <div class="compare-desc">
-                  정책자금 AI 서비스<br />설계·운영 프로젝트
+                  정책자금 추천 에이전트<br />설계·운영 프로젝트
                 </div>
               </div>
               <div class="compare-date">2026.03.10 ~ 06.20</div>
@@ -3919,15 +3949,15 @@
         <div class="grid-lines"></div>
         <div class="section-head" style="grid-template-columns:.9fr 1.1fr">
           <div><div class="project-kicker"><div class="topic-line">PROJECT OVERVIEW</div></div><h2 class="section-title" style="color:#fff"><span class="accent">프로젝트</span> 소개</h2></div>
-          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>정책 공고를 수집·분석하고, 사업장 조건에 맞는 정책과 신청 근거를 제공</strong>하는 소상공인 정책자금 AI 서비스입니다.</p></div>
+          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>공공데이터 API로 정책 공고를 수집하고, 사업장 조건에 맞는 정책과 신청 근거를 제시하는</strong> 소상공인 맞춤 정책자금 추천 에이전트입니다.</p></div>
         </div>
         <div class="biz-overview-grid">
           <article class="biz-card biz-dark-card biz-overview-main">
             <div class="biz-label">SERVICE DEFINITION</div>
             <h3>복잡한 정책 공고를<br />사업장별 신청 가능한 정보로 전환</h3>
             <div class="biz-inputs">
-              <div class="biz-input"><strong>정책 공고 데이터</strong><span>지원 대상 · 신청 조건 · 지원 한도 · 제출 서류</span></div>
-              <div class="biz-input"><strong>사용자·사업장 정보</strong><span>질문 · 지역 · 업종 · 업력 · 재무 조건</span></div>
+            <div class="biz-input"><strong>공공데이터 API 정책 공고</strong><span>지원 대상 · 신청 조건 · 지원 한도 · 제출 서류</span></div>
+            <div class="biz-input"><strong>사용자·사업장 정보</strong><span>질문 · 지역 · 업종 · 업력 · 재무 조건</span></div>
             </div>
             <div class="biz-engine"><b>BIZ-FUND-AI 분석</b></div>
             <div class="biz-outputs">
@@ -3974,7 +4004,7 @@
         <div class="grid-lines"></div>
         <div class="section-head" style="grid-template-columns:.9fr 1.1fr">
           <div><div class="project-kicker"><div class="topic-line">COST &amp; QUALITY VALIDATION</div></div><h2 class="section-title"><span class="accent">비용·품질</span> 검증</h2></div>
-          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>작업 복잡도에 따라 모델 선택 기준을 직접 정의</strong>하고, 동일 평가셋으로 품질 유지 여부를 검증했습니다.</p></div>
+          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>작업 복잡도에 따라 모델 선택 기준을 직접 정의</strong>하고, 비용을 낮춘 뒤에도 실제 API 흐름 기준으로 품질이 유지되는지 검증했습니다.</p></div>
         </div>
         <div class="ops9-grid">
           <article class="biz-card biz-dark-card model-card"><div class="biz-label">MODEL SELECTION</div><div class="model-table">
@@ -3984,22 +4014,32 @@
           </div></article>
           <article class="biz-card ops-score"><div class="biz-label">COST RESULT</div><div class="big">약 1/15 <small>비용</small></div><p>모델 단가와 작업별 호출 구조를 기준으로 계산한 추정치입니다. 실제 청구 비용이 아닌 설계 전후 예상 비용을 비교했습니다.</p></article>
         </div>
-        <div class="eval-strip">
-          <div class="eval-step"><strong>고정 질문 12개</strong><span>정책 검색 10 · 통계 1 · 일반 상담 1</span></div><div class="eval-arrow">›</div><div class="eval-step"><strong>동일 사업장 조건</strong><span>시나리오 계정으로 실제 API 흐름 실행</span></div><div class="eval-arrow">›</div><div class="eval-step"><strong>통과 기준 3개</strong><span>분기 · 예상 정책 · 핵심 내용</span></div><div class="eval-arrow">›</div><div class="eval-step result"><strong>10 / 12 통과</strong><span>모델 변경 전후 83.3% 유지</span></div>
-        </div>
+        <article class="eval-harness">
+          <div class="eval-harness-head">
+            <div><small>QUALITY HARNESS</small><strong>모델을 가볍게 바꾼 뒤에도 같은 질문을 같은 조건에서 통과하는지 비교 검증</strong></div>
+            <p>단순 응답 비교가 아니라 시나리오 계정으로 실제 API 흐름을 실행하고, 분기 정확도·예상 정책·핵심 내용 유지 여부를 함께 확인했습니다.</p>
+          </div>
+          <div class="eval-strip">
+            <div class="eval-step"><strong>고정 평가셋 12개</strong><span>정책 검색 10 · 통계 1 · 일반 상담 1</span></div><div class="eval-arrow">›</div><div class="eval-step"><strong>동일 사업장 조건</strong><span>시나리오 계정으로 실제 API 흐름 실행</span></div><div class="eval-arrow">›</div><div class="eval-step"><strong>통과 기준 3개</strong><span>분기 · 예상 정책 · 핵심 내용</span></div><div class="eval-arrow">›</div><div class="eval-step result"><strong>10 / 12 통과 유지</strong><span>모델 변경 전후 83.3% 동일</span></div>
+          </div>
+        </article>
       </section>
 
       <!-- PAGE 10 · BIZ-FUND-AI · DATA OPERATIONS -->
       <section class="page dark biz-page" data-page="10">
         <div class="grid-lines"></div>
         <div class="section-head" style="grid-template-columns:.9fr 1.1fr">
-          <div><div class="project-kicker"><div class="topic-line">DATA PIPELINE OPERATIONS</div></div><h2 class="section-title"><span class="accent">데이터 파이프라인</span> 운영</h2></div>
-          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>RAG에 사용할 정책 데이터를 누락 없이 적재</strong>하고, 개별 실패가 전체 배치로 확산되지 않도록 개선했습니다.</p></div>
+          <div><div class="project-kicker"><div class="topic-line">DATA PIPELINE OPERATIONS</div></div><h2 class="section-title"><span class="accent">정책 데이터</span> 적재 운영</h2></div>
+          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>RAG 품질 이전에, 공공데이터 API와 첨부파일에서 들어오는 정책 데이터를 안정적으로 적재</strong>해야 했고, 개별 실패가 전체 배치로 번지지 않도록 운영 구조를 설계했습니다.</p></div>
         </div>
         <article class="biz-card biz-dark-card pipeline-card">
+          <div class="pipeline-card-head">
+            <div><div class="biz-label">WHY THIS PAGE</div><strong>검색이 좋아도 적재가 흔들리면 추천 근거 전체가 흔들립니다.</strong></div>
+            <p>이 페이지는 “데이터를 얼마나 많이 모았는가”보다 “외부 공고를 얼마나 안정적으로 구조화해 RAG에 넣을 수 있게 만들었는가”를 보여주기 위한 구성입니다.</p>
+          </div>
           <div class="biz-label">FAILURE-CONTROLLED INGESTION</div>
           <div class="pipeline-flow">
-            <div class="pipeline-stage"><strong>외부 정책 API</strong><span>대량 공고와 첨부파일 수집</span><div class="pipeline-guard">페이지별 독립 세션<br />DB 연결 끊김 방지</div></div>
+            <div class="pipeline-stage"><strong>공공데이터 API 수집</strong><span>대량 공고와 첨부파일 수집</span><div class="pipeline-guard">페이지별 독립 세션<br />DB 연결 끊김 방지</div></div>
             <div class="pipeline-stage"><strong>실제 형식 판별</strong><span>확장자가 아닌 파일 헤더 확인</span><div class="pipeline-guard">Magic Number<br />정상 파싱 24% → 57%</div></div>
             <div class="pipeline-stage"><strong>공고별 파싱</strong><span>실패 범위를 해당 공고로 제한</span><div class="pipeline-guard">Savepoint<br />부분 롤백</div></div>
             <div class="pipeline-stage"><strong>AI 구조화·검증</strong><span>필수 필드가 없는 결과 차단</span><div class="pipeline-guard">품질 미달 데이터<br />저장 제외</div></div>
