@@ -1166,23 +1166,23 @@
       .ops-score .big small { font-size: 20px; color: #667b91; letter-spacing: -.03em; }
       .ops-score p { margin-top: 10px; font-size: 12px; line-height: 1.5; font-weight: 800; color: #60758d; }
       .eval-harness {
-        margin-top: 13px; padding: 16px 14px; border-radius: 17px;
+        margin-top: 12px; padding: 14px 13px; border-radius: 17px;
         border: 1px solid #d8e2ef; background: #f7fafe;
       }
       .eval-harness-head {
         display: grid; grid-template-columns: 1.06fr .94fr; gap: 14px; align-items: end;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
       }
       .eval-harness-head small {
         display: block; font-size: 11px; line-height: 1; font-weight: 900;
         letter-spacing: .14em; color: #7a8ea7;
       }
       .eval-harness-head strong {
-        display: block; margin-top: 8px; font-size: 22px; line-height: 1.16;
+        display: block; margin-top: 7px; font-size: 20px; line-height: 1.14;
         letter-spacing: -.04em; color: #17375d;
       }
       .eval-harness-head p {
-        font-size: 12px; line-height: 1.45; font-weight: 800; color: #60758d;
+        font-size: 11.5px; line-height: 1.4; font-weight: 800; color: #60758d;
         text-align: right;
       }
       .eval-strip {
@@ -1190,7 +1190,7 @@
         gap: 10px;
       }
       .eval-step {
-        min-height: 72px; padding: 12px 9px; border-radius: 12px; border: 1px solid #d7e1ed;
+        min-height: 68px; padding: 11px 8px; border-radius: 12px; border: 1px solid #d7e1ed;
         background: #fff; text-align: center;
       }
       .eval-step strong { display: block; font-size: 15px; color: #17375d; }
@@ -4013,7 +4013,7 @@
         <div class="grid-lines"></div>
         <div class="section-head" style="grid-template-columns:.9fr 1.1fr">
           <div><div class="project-kicker"><div class="topic-line">COST &amp; QUALITY VALIDATION</div></div><h2 class="section-title"><span class="accent">비용·품질</span> 검증</h2></div>
-          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>작업 복잡도에 따라 모델 선택 기준을 직접 정의</strong>하고, 경량 모델 전환 뒤에도 같은 평가셋에서 통과 건수가 유지되는지 검증했습니다.</p></div>
+          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>작업 복잡도에 따라 모델 선택 기준을 직접 정의</strong>하고, 평가 하네스로 경량 모델 전환 이후 품질 회귀 여부를 검증했습니다.</p></div>
         </div>
         <div class="ops9-grid">
           <article class="biz-card biz-dark-card model-card"><div class="biz-label">MODEL SELECTION</div><div class="model-table">
@@ -4025,13 +4025,13 @@
         </div>
         <article class="eval-harness">
           <div class="eval-harness-head">
-            <div><small>QUALITY HARNESS</small><strong>경량 모델 전환 뒤에도 통과 건수가 유지되는지 검증</strong></div>
-            <p>운영 판단 기준은 통과 건수 유지였습니다. 시나리오 계정으로 실제 API 흐름을 실행해 분기 정확도·예상 정책·핵심 내용을 함께 확인했습니다.</p>
+            <div><small>EVALUATION HARNESS</small><strong>평가 하네스로 경량 모델 전환 이후 품질 회귀 여부를 검증</strong></div>
+            <p>고정 평가셋과 승인 기준을 먼저 정의한 뒤, 시나리오 계정으로 API E2E를 반복 실행해 핵심 품질이 유지되는지 확인했습니다.</p>
           </div>
           <div class="eval-strip">
-            <div class="eval-step"><strong>고정 평가셋 12개</strong><span>정책 검색 10 · 통계 1 · 일반 상담 1</span></div><div class="eval-arrow">›</div><div class="eval-step"><strong>동일 사업장 조건</strong><span>시나리오 계정으로 실제 API 흐름 실행</span></div><div class="eval-arrow">›</div><div class="eval-step"><strong>통과 기준 3개</strong><span>분기 · 예상 정책 · 핵심 내용</span></div><div class="eval-arrow">›</div><div class="eval-step result"><strong>10 / 12 통과 유지</strong><span>모델 변경 전후 83.3% 동일</span></div>
+            <div class="eval-step"><strong>고정 평가셋 12개</strong><span>정책 검색 10 · 통계 1 · 일반 상담 1</span></div><div class="eval-arrow">›</div><div class="eval-step"><strong>동일 사업장 시나리오</strong><span>시나리오 계정으로 실제 API E2E 실행</span></div><div class="eval-arrow">›</div><div class="eval-step"><strong>승인 기준 3개</strong><span>분기 · 예상 정책 · 핵심 내용</span></div><div class="eval-arrow">›</div><div class="eval-step result"><strong>10 / 12 승인 기준 충족</strong><span>모델 변경 전후 83.3% 동일</span></div>
           </div>
-          <div class="eval-harness-note">3개 기준을 모두 충족해야 1건 통과로 집계했고, 미통과 2건은 표현 편차 케이스로 분리했습니다.</div>
+          <div class="eval-harness-note">3개 기준을 모두 충족해야 1건 승인으로 집계했고, 미통과 2건은 표현 편차 케이스로 분리했습니다.</div>
         </article>
       </section>
 
