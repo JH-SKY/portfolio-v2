@@ -1143,10 +1143,10 @@
       .rag-step span { margin-top: 5px; font-size: 10px; line-height: 1.35; font-weight: 700; color: #91a5bc; }
       .rag-step.key { border-color: rgba(185,255,45,.42); background: rgba(185,255,45,.12); }
       .rag-step.key strong { color: #dfff9f; }
-      .rag-decisions { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 12px; }
+      .rag-decisions { display: grid; grid-template-columns: repeat(4,1fr); gap: 9px; margin-top: 10px; }
       .rag-decision { padding: 15px 14px; border-radius: 14px; border: 1px solid #d8e2ef; background: #f7fafe; }
-      .rag-decision strong { display: block; font-size: 16px; color: #17375d; }
-      .rag-decision span { display: block; margin-top: 5px; font-size: 11px; line-height: 1.45; font-weight: 700; color: #647991; }
+      .rag-decision strong { display: block; font-size: 15px; line-height: 1.2; color: #17375d; }
+      .rag-decision span { display: block; margin-top: 5px; font-size: 10.5px; line-height: 1.4; font-weight: 800; color: #647991; }
       .ops9-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: 11px; }
       .model-card, .ops-score { min-height: 260px; padding: 6mm; }
       .model-table { display: grid; gap: 10px; margin-top: 16px; }
@@ -4001,9 +4001,10 @@
           </div></div>
         </article>
         <div class="rag-decisions">
-          <div class="rag-decision"><strong>정책 문서 전용 청킹</strong><span>섹션을 먼저 분리해 신청 방법과 지원 한도가 섞이는 문제 방지</span></div>
-          <div class="rag-decision"><strong>검색 실패 대비 폴백</strong><span>임베딩 호출 실패 시 키워드 검색으로 전환해 서비스 중단 방지</span></div>
-          <div class="rag-decision"><strong>개인화 후보 재정렬</strong><span>사업장 조건과 맞지 않는 정책의 순위를 낮춰 추천 정확도 보강</span></div>
+          <div class="rag-decision"><strong>검색 후보 수 설계</strong><span>Vector top 20 · FTS top 20을 먼저 모은 뒤 RRF로 top 5 정책만 남겼습니다.</span></div>
+          <div class="rag-decision"><strong>RRF + 답변 컨텍스트</strong><span>RRF는 k=60을 적용했고, 최종 답변에는 상위 3청크만 넣어 잡음을 줄였습니다.</span></div>
+          <div class="rag-decision"><strong>정책 문서 전용 청킹</strong><span>섹션 분할을 우선하고, 헤더가 약한 문서는 800자 윈도우 · 100자 오버랩으로 폴백했습니다.</span></div>
+          <div class="rag-decision"><strong>Contextual Embedding</strong><span>정책명·기관명 prefix를 붙여 text-embedding-3-small 1536차원으로 임베딩했습니다.</span></div>
         </div>
       </section>
 
