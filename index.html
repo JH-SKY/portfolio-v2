@@ -76,65 +76,63 @@
         background: var(--dark);
         color: #fff;
       }
-      .page[data-page="02"],
-      .page[data-page="03"] {
+      .page[data-page="02"] {
         background: var(--bg);
       }
-      .page[data-page="02"] .marker,
-      .page[data-page="03"] .marker {
+      .page[data-page="02"] .marker {
         background: linear-gradient(transparent 55%, #e8d6a8 55%);
       }
+      .page[data-page="03"],
       .page[data-page="04"],
-      .page[data-page="05"],
-      .page[data-page="06"] {
+      .page[data-page="05"] {
         background: #f2f5f9;
       }
-      .page[data-page="05"] {
+      .page[data-page="04"] {
         padding-top: 12mm;
       }
+      .page[data-page="03"] .marker,
       .page[data-page="04"] .marker,
-      .page[data-page="05"] .marker,
-      .page[data-page="06"] .marker {
+      .page[data-page="05"] .marker {
         background: linear-gradient(transparent 55%, #dceaff 55%);
       }
+      .page[data-page="03"] .project-kicker .topic-line,
       .page[data-page="04"] .project-kicker .topic-line,
-      .page[data-page="05"] .project-kicker .topic-line,
-      .page[data-page="06"] .project-kicker .topic-line {
+      .page[data-page="05"] .project-kicker .topic-line {
         color: #73859d;
       }
-      .page[data-page="05"] .section-title .accent {
+      .page[data-page="04"] .section-title .accent {
         color: #5f7898;
       }
+      .page[data-page="03"] .project-stamp,
       .page[data-page="04"] .project-stamp,
-      .page[data-page="05"] .project-stamp,
-      .page[data-page="06"] .project-stamp {
+      .page[data-page="05"] .project-stamp {
         border-color: #d7e0eb;
         background: rgba(252, 254, 255, 0.92);
         box-shadow: 0 12px 26px rgba(88, 108, 132, 0.08);
       }
+      .page[data-page="03"] .project-stamp small,
       .page[data-page="04"] .project-stamp small,
-      .page[data-page="05"] .project-stamp small,
-      .page[data-page="06"] .project-stamp small {
+      .page[data-page="05"] .project-stamp small {
         color: #73859d;
       }
+      .page[data-page="03"] .project-stamp b,
       .page[data-page="04"] .project-stamp b,
-      .page[data-page="05"] .project-stamp b,
-      .page[data-page="06"] .project-stamp b {
+      .page[data-page="05"] .project-stamp b {
         color: #203955;
         text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
         letter-spacing: -0.07em;
       }
+      .page[data-page="03"] .project-stamp,
       .page[data-page="04"] .project-stamp,
-      .page[data-page="05"] .project-stamp,
-      .page[data-page="06"] .project-stamp {
+      .page[data-page="05"] .project-stamp {
         background: linear-gradient(
           180deg,
           rgba(255, 255, 255, 0.96) 0%,
           rgba(240, 246, 252, 0.96) 100%
         );
       }
-      .page.dark[data-page="07"] .project-stamp,
-      .page.dark[data-page="08"] .project-stamp {
+      .page.dark[data-page="06"] .project-stamp,
+      .page.dark[data-page="07"] .project-stamp {
         border-color: rgba(196, 210, 228, 0.2);
         background: linear-gradient(
           180deg,
@@ -143,36 +141,37 @@
         );
         box-shadow: 0 14px 30px rgba(6, 10, 18, 0.22);
       }
-      .page.dark[data-page="07"] .project-stamp small,
-      .page.dark[data-page="08"] .project-stamp small {
+      .page.dark[data-page="06"] .project-stamp small,
+      .page.dark[data-page="07"] .project-stamp small {
         color: #b6c6d8;
       }
-      .page.dark[data-page="07"] .project-stamp b,
-      .page.dark[data-page="08"] .project-stamp b {
+      .page.dark[data-page="06"] .project-stamp b,
+      .page.dark[data-page="07"] .project-stamp b {
         color: #f3f7fc;
         text-shadow: 0 1px 0 rgba(10, 18, 30, 0.28);
         letter-spacing: -0.07em;
       }
+      .page[data-page="03"] .section-head p,
+      .page[data-page="03"] .section-head .sub,
       .page[data-page="04"] .section-head p,
       .page[data-page="05"] .section-head p,
-      .page[data-page="06"] .section-head p,
       .page[data-page="04"] .section-head .sub,
-      .page[data-page="05"] .section-head .sub,
-      .page[data-page="06"] .section-head .sub {
+      .page[data-page="05"] .section-head .sub {
         color: #5f7086;
       }
-      .page[data-page="04"] .card.tinted {
+      .page[data-page="03"] .card.tinted {
         background: #eef5ea;
         border-color: #cfe0bd;
       }
-      .page[data-page="04"] .flow-step.highlight {
+      .page[data-page="03"] .flow-step.highlight {
         background: #eaf4df;
         border-color: #bfd694;
       }
-      .page[data-page="05"] .trace-wrap {
+      .page[data-page="04"] .trace-wrap {
         background: #f7fafe;
         border-color: #d6e0ec;
       }
+      .page.dark[data-page="06"],
       .page.dark[data-page="07"],
       .page.dark[data-page="08"] {
         background: linear-gradient(
@@ -194,16 +193,20 @@
       .dark:after {
         color: #3a4d66;
       }
+      .page.dark[data-page="06"] .card:not(.dark-card),
       .page.dark[data-page="07"] .card:not(.dark-card),
       .page.dark[data-page="08"] .card:not(.dark-card) {
         background: #f7fafe;
         border-color: #d8e2ef;
         color: #142235;
       }
+      .page.dark[data-page="06"] .card:not(.dark-card) .tiny-label,
       .page.dark[data-page="07"] .card:not(.dark-card) .tiny-label,
       .page.dark[data-page="08"] .card:not(.dark-card) .tiny-label {
         color: #6f829b;
       }
+      .page.dark[data-page="06"] .card:not(.dark-card) .micro,
+      .page.dark[data-page="06"] .card:not(.dark-card) .proof-item span,
       .page.dark[data-page="07"] .card:not(.dark-card) .micro,
       .page.dark[data-page="08"] .card:not(.dark-card) .micro,
       .page.dark[data-page="07"] .card:not(.dark-card) .proof-item span,
@@ -214,14 +217,16 @@
       .page.dark[data-page="08"] .card:not(.dark-card) .proof-item strong {
         color: #142235;
       }
-      .page.dark[data-page="08"] .section-title {
+      .page.dark[data-page="07"] .section-title {
         color: #fff;
         font-size: 40px;
       }
+      .page.dark[data-page="06"]:after,
       .page.dark[data-page="07"]:after,
       .page.dark[data-page="08"]:after {
         color: #71839b;
       }
+      .page.dark[data-page="06"] .section-head,
       .page.dark[data-page="07"] .section-head,
       .page.dark[data-page="08"] .section-head {
         margin-top: -12mm;
@@ -807,47 +812,47 @@
         line-height: 1.5;
       }
 
-      .page[data-page="03"] .section-title {
+      .page[data-page="02"] .section-title {
         font-size: 42px;
         line-height: 1.04;
       }
-      .page[data-page="03"] .cards-2 {
+      .page[data-page="02"] .cards-2 {
         gap: 6mm;
       }
-      .page[data-page="03"] .card {
+      .page[data-page="02"] .card {
         padding: 7mm;
       }
-      .page[data-page="03"] .card-title {
+      .page[data-page="02"] .card-title {
         font-size: 26px;
       }
-      .page[data-page="03"] .project-card {
+      .page[data-page="02"] .project-card {
         position: relative;
         overflow: hidden;
       }
-      .page[data-page="03"] .project-card:before {
+      .page[data-page="02"] .project-card:before {
         content: "";
         position: absolute;
         inset: 0 auto 0 0;
         width: 7px;
         border-radius: 20px 0 0 20px;
       }
-      .page[data-page="03"] .project-card.project-one:before {
+      .page[data-page="02"] .project-card.project-one:before {
         background: linear-gradient(180deg, #8da9c7 0%, #6987a8 100%);
       }
-      .page[data-page="03"] .project-card.project-two:before {
+      .page[data-page="02"] .project-card.project-two:before {
         background: linear-gradient(180deg, #d0b188 0%, #b78e60 100%);
       }
-      .page[data-page="03"] .project-card.project-one {
+      .page[data-page="02"] .project-card.project-one {
         background: linear-gradient(180deg, #fcfdff 0%, #eef4fb 100%);
         border-color: #d6e1ee;
         box-shadow: 0 12px 28px rgba(104, 124, 150, 0.1);
       }
-      .page[data-page="03"] .project-card.project-two {
+      .page[data-page="02"] .project-card.project-two {
         background: linear-gradient(180deg, #faf4ea 0%, #efe4d2 100%);
         border-color: #decfb7;
         box-shadow: 0 12px 28px rgba(133, 109, 74, 0.1);
       }
-      .page[data-page="03"] .project-card .project-label {
+      .page[data-page="02"] .project-card .project-label {
         display: inline-flex;
         align-items: center;
         padding: 7px 12px;
@@ -857,40 +862,40 @@
         text-transform: uppercase;
         margin-bottom: 0;
       }
-      .page[data-page="03"] .project-head {
+      .page[data-page="02"] .project-head {
         display: flex;
         align-items: center;
         gap: 10px;
         flex-wrap: wrap;
         margin-bottom: 12px;
       }
-      .page[data-page="03"] .project-card.project-one .project-label {
+      .page[data-page="02"] .project-card.project-one .project-label {
         background: #e8f0fb;
         color: #44607f;
         border: 1px solid #c8d7e8;
       }
-      .page[data-page="03"] .project-card.project-two .project-label {
+      .page[data-page="02"] .project-card.project-two .project-label {
         background: #f4e8d5;
         color: #7c5d33;
         border: 1px solid #dfc8a6;
       }
-      .page[data-page="03"] .project-card .project-role {
+      .page[data-page="02"] .project-card .project-role {
         font: 700 11px/1.3 NotoKR;
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: #7d8a99;
         margin-bottom: 0;
       }
-      .page[data-page="03"] .project-card.project-two .project-role {
+      .page[data-page="02"] .project-card.project-two .project-role {
         color: #8a7455;
       }
-      .page[data-page="03"] .proof-list {
+      .page[data-page="02"] .proof-list {
         padding: 6.5mm;
       }
-      .page[data-page="03"] .proof-item {
+      .page[data-page="02"] .proof-item {
         padding-bottom: 8px;
       }
-      .page[data-page="03"] .proof-item strong {
+      .page[data-page="02"] .proof-item strong {
         font-size: 16px;
       }
 
@@ -902,9 +907,9 @@
         body {
           background: #fff;
         }
+        .page[data-page="03"] .project-stamp,
         .page[data-page="04"] .project-stamp,
-        .page[data-page="05"] .project-stamp,
-        .page[data-page="06"] .project-stamp {
+        .page[data-page="05"] .project-stamp {
           background: #f7fbff !important;
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
@@ -917,11 +922,11 @@
           box-shadow: none;
           padding-bottom: 18mm;
         }
-        .page[data-page="07"] {
+        .page[data-page="06"] {
           padding-top: 10mm;
           padding-bottom: 10mm;
         }
-        .page[data-page="07"] .dark-card {
+        .page[data-page="06"] .dark-card {
           min-height: 0 !important;
         }
       }
@@ -1125,78 +1130,8 @@
         </div>
       </section>
 
-      <!-- PAGE 02 · POSITIONING -->
+      <!-- PAGE 02 · PROJECT MAP -->
       <section class="page" data-page="02">
-        <div class="section-head">
-          <div>
-            <div class="kicker">Positioning</div>
-            <h2 class="section-title">
-              태도가 아니라<br />실제
-              <span class="marker" style="background: none; color: #6b8f1f"
-                >작업 방식</span
-              >으로<br />설명합니다
-            </h2>
-          </div>
-          <p>
-            로그를 보고, 기준을 세우고, 원인을 좁혀 해결했습니다. 두 프로젝트의
-            세 가지 접근 방식입니다.
-          </p>
-        </div>
-
-        <div class="cards-3" style="margin-top: 80px">
-          <article class="card">
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 13px">
-              <div class="icon" style="margin-bottom: 0; flex-shrink: 0">1</div>
-              <div class="tiny-label" style="margin-bottom: 0">Approach 01 — 원인 추적</div>
-            </div>
-            <h3 class="card-title">LangSmith 기반 Trace 분석</h3>
-            <p class="sub">
-              <br />LangSmith Trace와 State 흐름부터
-              확인합니다.
-            </p>
-            <div class="tags">
-              <span>LangSmith Trace</span><span>State 전파 추적</span
-              ><span>DB 교차검증</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 13px">
-              <div class="icon" style="margin-bottom: 0; flex-shrink: 0">2</div>
-              <div class="tiny-label" style="margin-bottom: 0">Approach 02 — 품질 정의</div>
-            </div>
-            <h3 class="card-title">루브릭 기반 품질 평가<br/><br/></h3>
-            <p class="sub">
-              <br />
-              품질 루브릭과 평가 하네스로 <br />
-              기준을 고정합니다.
-            </p>
-            <div class="tags">
-              <span>품질 루브릭 설계</span><span>평가 하네스</span
-              ><span>전후 비교 고정</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 13px">
-              <div class="icon" style="margin-bottom: 0; flex-shrink: 0">3</div>
-              <div class="tiny-label" style="margin-bottom: 0">Approach 03 — 구조 개선</div>
-            </div>
-            <h3 class="card-title">노드 책임 분리 및 구조 개선</h3>
-            <p class="sub">
-              <br />노드 책임과 트랜잭션 경계를 다시
-              나눕니다.
-            </p>
-            <div class="tags">
-              <span>노드 책임 분리</span><span>Router Orchestration</span
-              ><span>UPSERT / Session 재설계</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- PAGE 04 · PROJECT MAP -->
-      <section class="page" data-page="03">
         <div class="grid-lines"></div>
         <div
           class="section-head"
@@ -1635,8 +1570,8 @@
         </div>
       </section>
 
-      <!-- PAGE 05 · HR COPILOT · PROBLEM -->
-      <section class="page" data-page="04">
+      <!-- PAGE 03 · HR COPILOT · PROBLEM -->
+      <section class="page" data-page="03">
         <div class="section-head">
           <div>
             <div class="project-kicker">
@@ -1846,8 +1781,8 @@
         </div>
       </section>
 
-      <!-- PAGE 06 · HR COPILOT · TRACE ANALYSIS -->
-      <section class="page" data-page="05">
+      <!-- PAGE 04 · HR COPILOT · TRACE ANALYSIS -->
+      <section class="page" data-page="04">
         <div class="grid-lines"></div>
         <div class="section-head" style="grid-template-columns: 0.82fr 1.18fr; margin-bottom: 4mm;">
           <div>
@@ -2303,8 +2238,8 @@
         </div>
       </section>
 
-      <!-- PAGE 07 · HR COPILOT · RESULT -->
-      <section class="page" data-page="06">
+      <!-- PAGE 05 · HR COPILOT · RESULT -->
+      <section class="page" data-page="05">
         <div class="section-head">
           <div>
             <div class="project-kicker">
@@ -2400,8 +2335,8 @@
         <!-- REPLACED OLD CARDS — delete below -->
       </section>
 
-      <!-- PAGE 08 · BIZ-FUND-AI · ARCHITECTURE -->
-      <section class="page dark" data-page="07">
+      <!-- PAGE 06 · BIZ-FUND-AI · ARCHITECTURE -->
+      <section class="page dark" data-page="06">
         <div class="grid-lines"></div>
         <div
           class="section-head"
@@ -2587,8 +2522,8 @@
         </div>
       </section>
 
-      <!-- PAGE 09 · BIZ-FUND-AI · TROUBLESHOOTING -->
-      <section class="page dark" data-page="08">
+      <!-- PAGE 07 · BIZ-FUND-AI · TROUBLESHOOTING -->
+      <section class="page dark" data-page="07">
         <div
           class="section-head"
           style="
@@ -2971,8 +2906,8 @@
         </div>
       </section>
 
-      <!-- PAGE 10 · CLOSING -->
-      <section class="page dark" data-page="09">
+      <!-- PAGE 08 · CLOSING -->
+      <section class="page dark" data-page="08">
         <div class="blob b1"></div>
         <div class="blob b2"></div>
         <div class="dots"></div>
