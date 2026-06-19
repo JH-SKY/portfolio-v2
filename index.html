@@ -84,55 +84,62 @@
       }
       .page[data-page="03"],
       .page[data-page="04"],
-      .page[data-page="05"] {
+      .page[data-page="05"],
+      .page[data-page="06"] {
         background: #f2f5f9;
       }
-      .page[data-page="04"] {
+      .page[data-page="05"] {
         padding-top: 12mm;
       }
       .page[data-page="03"] .marker,
       .page[data-page="04"] .marker,
-      .page[data-page="05"] .marker {
+      .page[data-page="05"] .marker,
+      .page[data-page="06"] .marker {
         background: linear-gradient(transparent 55%, #dceaff 55%);
       }
       .page[data-page="03"] .project-kicker .topic-line,
       .page[data-page="04"] .project-kicker .topic-line,
-      .page[data-page="05"] .project-kicker .topic-line {
+      .page[data-page="05"] .project-kicker .topic-line,
+      .page[data-page="06"] .project-kicker .topic-line {
         color: #73859d;
       }
-      .page[data-page="04"] .section-title .accent {
+      .page[data-page="05"] .section-title .accent {
         color: #5f7898;
       }
       .page[data-page="03"] .project-stamp,
       .page[data-page="04"] .project-stamp,
-      .page[data-page="05"] .project-stamp {
+      .page[data-page="05"] .project-stamp,
+      .page[data-page="06"] .project-stamp {
         border-color: #d7e0eb;
         background: rgba(252, 254, 255, 0.92);
         box-shadow: 0 12px 26px rgba(88, 108, 132, 0.08);
       }
       .page[data-page="03"] .project-stamp small,
       .page[data-page="04"] .project-stamp small,
-      .page[data-page="05"] .project-stamp small {
+      .page[data-page="05"] .project-stamp small,
+      .page[data-page="06"] .project-stamp small {
         color: #73859d;
       }
       .page[data-page="03"] .project-stamp b,
       .page[data-page="04"] .project-stamp b,
-      .page[data-page="05"] .project-stamp b {
+      .page[data-page="05"] .project-stamp b,
+      .page[data-page="06"] .project-stamp b {
         color: #203955;
         text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
         letter-spacing: -0.07em;
       }
       .page[data-page="03"] .project-stamp,
       .page[data-page="04"] .project-stamp,
-      .page[data-page="05"] .project-stamp {
+      .page[data-page="05"] .project-stamp,
+      .page[data-page="06"] .project-stamp {
         background: linear-gradient(
           180deg,
           rgba(255, 255, 255, 0.96) 0%,
           rgba(240, 246, 252, 0.96) 100%
         );
       }
-      .page.dark[data-page="06"] .project-stamp,
-      .page.dark[data-page="07"] .project-stamp {
+      .page.dark[data-page="07"] .project-stamp,
+      .page.dark[data-page="08"] .project-stamp {
         border-color: rgba(196, 210, 228, 0.2);
         background: linear-gradient(
           180deg,
@@ -141,12 +148,12 @@
         );
         box-shadow: 0 14px 30px rgba(6, 10, 18, 0.22);
       }
-      .page.dark[data-page="06"] .project-stamp small,
-      .page.dark[data-page="07"] .project-stamp small {
+      .page.dark[data-page="07"] .project-stamp small,
+      .page.dark[data-page="08"] .project-stamp small {
         color: #b6c6d8;
       }
-      .page.dark[data-page="06"] .project-stamp b,
-      .page.dark[data-page="07"] .project-stamp b {
+      .page.dark[data-page="07"] .project-stamp b,
+      .page.dark[data-page="08"] .project-stamp b {
         color: #f3f7fc;
         text-shadow: 0 1px 0 rgba(10, 18, 30, 0.28);
         letter-spacing: -0.07em;
@@ -155,25 +162,27 @@
       .page[data-page="03"] .section-head .sub,
       .page[data-page="04"] .section-head p,
       .page[data-page="05"] .section-head p,
+      .page[data-page="06"] .section-head p,
       .page[data-page="04"] .section-head .sub,
-      .page[data-page="05"] .section-head .sub {
+      .page[data-page="05"] .section-head .sub,
+      .page[data-page="06"] .section-head .sub {
         color: #5f7086;
       }
-      .page[data-page="03"] .card.tinted {
+      .page[data-page="04"] .card.tinted {
         background: #eef5ea;
         border-color: #cfe0bd;
       }
-      .page[data-page="03"] .flow-step.highlight {
+      .page[data-page="04"] .flow-step.highlight {
         background: #eaf4df;
         border-color: #bfd694;
       }
-      .page[data-page="04"] .trace-wrap {
+      .page[data-page="05"] .trace-wrap {
         background: #f7fafe;
         border-color: #d6e0ec;
       }
-      .page.dark[data-page="06"],
       .page.dark[data-page="07"],
-      .page.dark[data-page="08"] {
+      .page.dark[data-page="08"],
+      .page.dark[data-page="09"] {
         background: linear-gradient(
           135deg,
           var(--dark-soft-1) 0%,
@@ -193,42 +202,43 @@
       .dark:after {
         color: #3a4d66;
       }
-      .page.dark[data-page="06"] .card:not(.dark-card),
       .page.dark[data-page="07"] .card:not(.dark-card),
-      .page.dark[data-page="08"] .card:not(.dark-card) {
+      .page.dark[data-page="08"] .card:not(.dark-card),
+      .page.dark[data-page="09"] .card:not(.dark-card) {
         background: #f7fafe;
         border-color: #d8e2ef;
         color: #142235;
       }
-      .page.dark[data-page="06"] .card:not(.dark-card) .tiny-label,
       .page.dark[data-page="07"] .card:not(.dark-card) .tiny-label,
-      .page.dark[data-page="08"] .card:not(.dark-card) .tiny-label {
+      .page.dark[data-page="08"] .card:not(.dark-card) .tiny-label,
+      .page.dark[data-page="09"] .card:not(.dark-card) .tiny-label {
         color: #6f829b;
       }
-      .page.dark[data-page="06"] .card:not(.dark-card) .micro,
-      .page.dark[data-page="06"] .card:not(.dark-card) .proof-item span,
       .page.dark[data-page="07"] .card:not(.dark-card) .micro,
       .page.dark[data-page="08"] .card:not(.dark-card) .micro,
       .page.dark[data-page="07"] .card:not(.dark-card) .proof-item span,
-      .page.dark[data-page="08"] .card:not(.dark-card) .proof-item span {
+      .page.dark[data-page="08"] .card:not(.dark-card) .proof-item span,
+      .page.dark[data-page="09"] .card:not(.dark-card) .micro,
+      .page.dark[data-page="09"] .card:not(.dark-card) .proof-item span {
         color: #65788f;
       }
       .page.dark[data-page="07"] .card:not(.dark-card) .proof-item strong,
-      .page.dark[data-page="08"] .card:not(.dark-card) .proof-item strong {
+      .page.dark[data-page="08"] .card:not(.dark-card) .proof-item strong,
+      .page.dark[data-page="09"] .card:not(.dark-card) .proof-item strong {
         color: #142235;
       }
-      .page.dark[data-page="07"] .section-title {
+      .page.dark[data-page="08"] .section-title {
         color: #fff;
         font-size: 40px;
       }
-      .page.dark[data-page="06"]:after,
       .page.dark[data-page="07"]:after,
-      .page.dark[data-page="08"]:after {
+      .page.dark[data-page="08"]:after,
+      .page.dark[data-page="09"]:after {
         color: #71839b;
       }
-      .page.dark[data-page="06"] .section-head,
       .page.dark[data-page="07"] .section-head,
-      .page.dark[data-page="08"] .section-head {
+      .page.dark[data-page="08"] .section-head,
+      .page.dark[data-page="09"] .section-head {
         margin-top: -12mm;
       }
 
@@ -1015,7 +1025,8 @@
         }
         .page[data-page="03"] .project-stamp,
         .page[data-page="04"] .project-stamp,
-        .page[data-page="05"] .project-stamp {
+        .page[data-page="05"] .project-stamp,
+        .page[data-page="06"] .project-stamp {
           background: #f7fbff !important;
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
@@ -1028,11 +1039,11 @@
           box-shadow: none;
           padding-bottom: 18mm;
         }
-        .page[data-page="06"] {
+        .page[data-page="07"] {
           padding-top: 10mm;
           padding-bottom: 10mm;
         }
-        .page[data-page="06"] .dark-card {
+        .page[data-page="07"] .dark-card {
           min-height: 0 !important;
         }
       }
@@ -1347,8 +1358,295 @@
         </div>
       </section>
 
-      <!-- PAGE 03 · HR COPILOT · PROBLEM -->
+      <!-- PAGE 03 · HR COPILOT · OVERVIEW -->
       <section class="page" data-page="03">
+        <div class="section-head" style="grid-template-columns: 0.78fr 1.22fr; margin-bottom: 7mm;">
+          <div>
+            <div class="project-kicker">
+              <div class="topic-line">Project Overview</div>
+            </div>
+            <h2 class="section-title">
+              <span class="marker" style="background: none; color: #2f6fb2"
+                >면접 질문 생성</span
+              ><br />에이전트를 만든<br />프로젝트입니다
+            </h2>
+          </div>
+          <div class="project-meta">
+            <div class="project-stamp">
+              <small>Project 1</small><b>HR Copilot</b>
+            </div>
+            <p class="sub" style="margin-top: 10px">
+              지원자 문서와 채용공고를 바탕으로
+              <strong>면접 질문 · 예상 답변 · 평가 가이드</strong>를 생성해,
+              면접관이 빠르게 핵심 리스크를 검증할 수 있도록 돕는 HR
+              Copilot입니다.
+            </p>
+          </div>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 8mm;
+            align-items: start;
+          "
+        >
+          <div style="display: grid; gap: 10px">
+            <article class="card" style="padding: 5.5mm">
+              <div class="tiny-label" style="margin-bottom: 10px">
+                What It Solves
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+                  gap: 8px;
+                "
+              >
+                <div
+                  style="
+                    padding: 12px 14px;
+                    border-radius: 14px;
+                    background: #f4f8ff;
+                    border: 1.5px solid #c9daf1;
+                  "
+                >
+                  <div style="font: 800 14px/1 NotoKR; color: #20456d">
+                    면접 질문 생성
+                  </div>
+                  <div style="font-size: 12px; color: #5f7898; margin-top: 6px; line-height: 1.5">
+                    지원자 문서를 읽고 핵심 질문 후보를 생성
+                  </div>
+                </div>
+                <div
+                  style="
+                    padding: 12px 14px;
+                    border-radius: 14px;
+                    background: #f4f8ff;
+                    border: 1.5px solid #c9daf1;
+                  "
+                >
+                  <div style="font: 800 14px/1 NotoKR; color: #20456d">
+                    예상 답변 생성
+                  </div>
+                  <div style="font-size: 12px; color: #5f7898; margin-top: 6px; line-height: 1.5">
+                    질문별 예상 답변을 붙여 면접 준비 시간 단축
+                  </div>
+                </div>
+                <div
+                  style="
+                    padding: 12px 14px;
+                    border-radius: 14px;
+                    background: #f4f8ff;
+                    border: 1.5px solid #c9daf1;
+                  "
+                >
+                  <div style="font: 800 14px/1 NotoKR; color: #20456d">
+                    평가 가이드 생성
+                  </div>
+                  <div style="font-size: 12px; color: #5f7898; margin-top: 6px; line-height: 1.5">
+                    면접관이 같은 기준으로 판단할 수 있도록 보조
+                  </div>
+                </div>
+                <div
+                  style="
+                    padding: 12px 14px;
+                    border-radius: 14px;
+                    background: #eef7e0;
+                    border: 1.5px solid #c5dca2;
+                  "
+                >
+                  <div style="font: 800 14px/1 NotoKR; color: #33581b">
+                    핵심 리스크 검증
+                  </div>
+                  <div style="font-size: 12px; color: #64804a; margin-top: 6px; line-height: 1.5">
+                    공백기·직무 전환·성과 부풀리기 같은 포인트를 우선 확인
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" style="padding: 5.5mm">
+              <div class="tiny-label" style="margin-bottom: 10px">
+                Why It Matters
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 8px;
+                "
+              >
+                <div
+                  style="
+                    padding: 12px 14px;
+                    border-radius: 14px;
+                    background: #fff;
+                    border: 1px solid #d7e0eb;
+                  "
+                >
+                  <div style="font: 800 13px/1 NotoKR; color: #203955">
+                    질문 품질 편차 감소
+                  </div>
+                  <div style="font-size: 12px; color: #66798f; margin-top: 6px; line-height: 1.5">
+                    면접관마다 다른 질문 깊이를 일정하게 맞추는 목적
+                  </div>
+                </div>
+                <div
+                  style="
+                    padding: 12px 14px;
+                    border-radius: 14px;
+                    background: #fff;
+                    border: 1px solid #d7e0eb;
+                  "
+                >
+                  <div style="font: 800 13px/1 NotoKR; color: #203955">
+                    서류 검토 병목 완화
+                  </div>
+                  <div style="font-size: 12px; color: #66798f; margin-top: 6px; line-height: 1.5">
+                    지원자 수가 많아도 질문 초안을 빠르게 준비
+                  </div>
+                </div>
+                <div
+                  style="
+                    padding: 12px 14px;
+                    border-radius: 14px;
+                    background: #fff;
+                    border: 1px solid #d7e0eb;
+                  "
+                >
+                  <div style="font: 800 13px/1 NotoKR; color: #203955">
+                    평가 기준 일관화
+                  </div>
+                  <div style="font-size: 12px; color: #66798f; margin-top: 6px; line-height: 1.5">
+                    질문과 평가 가이드를 함께 생성해 면접 품질 보조
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div style="display: grid; gap: 10px">
+            <article class="card" style="padding: 5mm">
+              <div class="tiny-label" style="margin-bottom: 10px">
+                Agent Flow
+              </div>
+              <div
+                style="
+                  border-radius: 18px;
+                  border: 1px solid #d7e0eb;
+                  background: linear-gradient(180deg, #fcfdff 0%, #f2f7fd 100%);
+                  padding: 14px 14px 10px;
+                "
+              >
+                <svg
+                  width="100%"
+                  height="230"
+                  viewBox="0 0 520 230"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                >
+                  <defs>
+                    <marker
+                      id="arr-overview"
+                      viewBox="0 0 10 10"
+                      refX="8"
+                      refY="5"
+                      markerWidth="6"
+                      markerHeight="6"
+                      orient="auto-start-reverse"
+                    >
+                      <path d="M0,0 L10,5 L0,10 z" fill="#7a8898" />
+                    </marker>
+                  </defs>
+                  <rect x="14" y="24" width="88" height="54" rx="14" fill="#ffffff" stroke="#d6e1ee" />
+                  <text x="58" y="46" text-anchor="middle" font-size="13" font-weight="800" fill="#16365c">문서 입력</text>
+                  <text x="58" y="64" text-anchor="middle" font-size="11" fill="#6a7a8a">이력서 · 공고</text>
+
+                  <rect x="118" y="24" width="104" height="54" rx="14" fill="#eef7e0" stroke="#bfd694" />
+                  <text x="170" y="44" text-anchor="middle" font-size="13" font-weight="800" fill="#33581b">검증 포인트 추출</text>
+                  <text x="170" y="62" text-anchor="middle" font-size="11" fill="#64804a">must-ask 정의</text>
+
+                  <rect x="238" y="24" width="84" height="54" rx="14" fill="#ffffff" stroke="#d6e1ee" />
+                  <text x="280" y="46" text-anchor="middle" font-size="13" font-weight="800" fill="#16365c">Questioner</text>
+                  <text x="280" y="64" text-anchor="middle" font-size="11" fill="#6a7a8a">질문 생성</text>
+
+                  <rect x="338" y="24" width="78" height="54" rx="14" fill="#ffffff" stroke="#d6e1ee" />
+                  <text x="377" y="46" text-anchor="middle" font-size="13" font-weight="800" fill="#16365c">Predictor</text>
+                  <text x="377" y="64" text-anchor="middle" font-size="11" fill="#6a7a8a">예상 답변</text>
+
+                  <rect x="432" y="24" width="74" height="54" rx="14" fill="#ffffff" stroke="#d6e1ee" />
+                  <text x="469" y="46" text-anchor="middle" font-size="13" font-weight="800" fill="#16365c">Driller</text>
+                  <text x="469" y="64" text-anchor="middle" font-size="11" fill="#6a7a8a">꼬리 질문</text>
+
+                  <rect x="170" y="122" width="90" height="54" rx="14" fill="#ffffff" stroke="#d6e1ee" />
+                  <text x="215" y="144" text-anchor="middle" font-size="13" font-weight="800" fill="#16365c">Reviewer</text>
+                  <text x="215" y="162" text-anchor="middle" font-size="11" fill="#6a7a8a">품질 평가</text>
+
+                  <rect x="278" y="122" width="90" height="54" rx="14" fill="#ffffff" stroke="#d6e1ee" />
+                  <text x="323" y="144" text-anchor="middle" font-size="13" font-weight="800" fill="#16365c">Selector</text>
+                  <text x="323" y="162" text-anchor="middle" font-size="11" fill="#6a7a8a">상위 질문 선택</text>
+
+                  <rect x="386" y="122" width="110" height="54" rx="14" fill="#dceaff" stroke="#aac8f0" />
+                  <text x="441" y="144" text-anchor="middle" font-size="13" font-weight="800" fill="#1c4f83">면접 질문 세트</text>
+                  <text x="441" y="162" text-anchor="middle" font-size="11" fill="#5a7aaa">질문 · 답변 · 가이드</text>
+
+                  <line x1="102" y1="51" x2="118" y2="51" stroke="#7a8898" stroke-width="3" marker-end="url(#arr-overview)" />
+                  <line x1="222" y1="51" x2="238" y2="51" stroke="#7a8898" stroke-width="3" marker-end="url(#arr-overview)" />
+                  <line x1="322" y1="51" x2="338" y2="51" stroke="#7a8898" stroke-width="3" marker-end="url(#arr-overview)" />
+                  <line x1="416" y1="51" x2="432" y2="51" stroke="#7a8898" stroke-width="3" marker-end="url(#arr-overview)" />
+                  <path d="M469 78 V104 H215 V122" fill="none" stroke="#7a8898" stroke-width="3" marker-end="url(#arr-overview)" />
+                  <line x1="260" y1="149" x2="278" y2="149" stroke="#7a8898" stroke-width="3" marker-end="url(#arr-overview)" />
+                  <line x1="368" y1="149" x2="386" y2="149" stroke="#7a8898" stroke-width="3" marker-end="url(#arr-overview)" />
+                </svg>
+              </div>
+            </article>
+
+            <article class="card" style="padding: 5mm">
+              <div class="tiny-label" style="margin-bottom: 10px">
+                Stack & Scope
+              </div>
+              <div style="display: grid; gap: 8px">
+                <div
+                  style="
+                    padding: 12px 14px;
+                    border-radius: 14px;
+                    background: #ffffff;
+                    border: 1px solid #d7e0eb;
+                  "
+                >
+                  <div style="font: 800 13px/1 NotoKR; color: #203955">
+                    핵심 기술
+                  </div>
+                  <div style="font-size: 13px; color: #5f7086; margin-top: 7px; line-height: 1.55">
+                    LangGraph · LangSmith · FastAPI · PostgreSQL · pgvector
+                  </div>
+                </div>
+                <div
+                  style="
+                    padding: 12px 14px;
+                    border-radius: 14px;
+                    background: #ffffff;
+                    border: 1px solid #d7e0eb;
+                  "
+                >
+                  <div style="font: 800 13px/1 NotoKR; color: #203955">
+                    내가 맡은 범위
+                  </div>
+                  <div style="font-size: 13px; color: #5f7086; margin-top: 7px; line-height: 1.55">
+                    질문 생성 파이프라인 설계 · 품질 평가 기준 정리 ·
+                    LangSmith 추적 기반 개선
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 04 · HR COPILOT · PROBLEM -->
+      <section class="page" data-page="04">
         <div class="section-head">
           <div>
             <div class="project-kicker">
@@ -1558,8 +1856,8 @@
         </div>
       </section>
 
-      <!-- PAGE 04 · HR COPILOT · TRACE ANALYSIS -->
-      <section class="page" data-page="04">
+      <!-- PAGE 05 · HR COPILOT · TRACE ANALYSIS -->
+      <section class="page" data-page="05">
         <div class="grid-lines"></div>
         <div class="section-head" style="grid-template-columns: 0.82fr 1.18fr; margin-bottom: 4mm;">
           <div>
@@ -2015,8 +2313,8 @@
         </div>
       </section>
 
-      <!-- PAGE 05 · HR COPILOT · RESULT -->
-      <section class="page" data-page="05">
+      <!-- PAGE 06 · HR COPILOT · RESULT -->
+      <section class="page" data-page="06">
         <div class="section-head">
           <div>
             <div class="project-kicker">
@@ -2112,8 +2410,8 @@
         <!-- REPLACED OLD CARDS — delete below -->
       </section>
 
-      <!-- PAGE 06 · BIZ-FUND-AI · ARCHITECTURE -->
-      <section class="page dark" data-page="06">
+      <!-- PAGE 07 · BIZ-FUND-AI · ARCHITECTURE -->
+      <section class="page dark" data-page="07">
         <div class="grid-lines"></div>
         <div
           class="section-head"
@@ -2299,8 +2597,8 @@
         </div>
       </section>
 
-      <!-- PAGE 07 · BIZ-FUND-AI · TROUBLESHOOTING -->
-      <section class="page dark" data-page="07">
+      <!-- PAGE 08 · BIZ-FUND-AI · TROUBLESHOOTING -->
+      <section class="page dark" data-page="08">
         <div
           class="section-head"
           style="
@@ -2683,8 +2981,8 @@
         </div>
       </section>
 
-      <!-- PAGE 08 · CLOSING -->
-      <section class="page dark" data-page="08">
+      <!-- PAGE 09 · CLOSING -->
+      <section class="page dark" data-page="09">
         <div class="blob b1"></div>
         <div class="blob b2"></div>
         <div class="dots"></div>
