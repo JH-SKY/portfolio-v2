@@ -3962,7 +3962,7 @@
         <div class="biz-overview-grid">
           <article class="biz-card biz-dark-card biz-overview-main">
             <div class="biz-label">SERVICE DEFINITION</div>
-            <h3>복잡한 정책 공고를<br />사업장별 신청 가능한 정보로 전환</h3>
+            <h3>사업장 정보와 정책 공고를 연결해<br />추천 정책과 신청 근거를 제시</h3>
             <div class="biz-inputs">
             <div class="biz-input"><strong>공공데이터 API 정책 공고</strong><span>지원 대상 · 신청 조건 · 지원 한도 · 제출 서류</span></div>
             <div class="biz-input"><strong>사용자·사업장 정보</strong><span>질문 · 지역 · 업종 · 업력 · 재무 조건</span></div>
@@ -3990,7 +3990,7 @@
         <div class="grid-lines"></div>
         <div class="section-head" style="grid-template-columns:.9fr 1.1fr">
           <div><div class="project-kicker"><div class="topic-line">RAG ARCHITECTURE</div></div><h2 class="section-title"><span class="accent">Hybrid RAG</span> 설계</h2></div>
-          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>정책 문서의 섹션 구조와 질문의 표현 편차</strong>를 함께 고려해 검색 실패와 오탐을 줄이도록 Hybrid RAG를 설계했습니다.</p></div>
+          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>정책 문서 구조, 질문 표현 편차, 사업장 메타데이터</strong>를 함께 반영해 검색 실패와 오탐을 줄이도록 Hybrid RAG를 설계했습니다.</p></div>
         </div>
         <article class="biz-card biz-dark-card rag-shell">
           <div class="rag-lane"><div class="rag-lane-title"><b>01</b> 정책 공고 색인 파이프라인</div><div class="rag-flow">
@@ -4004,7 +4004,7 @@
           <div class="rag-decision"><strong>검색 후보 수 설계</strong><span>Vector top 20 · FTS top 20을 먼저 모은 뒤 RRF로 top 5 정책만 남겼습니다.</span></div>
           <div class="rag-decision"><strong>RRF + 답변 컨텍스트</strong><span>RRF는 k=60을 적용했고, 최종 답변에는 상위 3청크만 넣어 잡음을 줄였습니다.</span></div>
           <div class="rag-decision"><strong>정책 문서 전용 청킹</strong><span>섹션 분할을 우선하고, 헤더가 약한 문서는 800자 윈도우 · 100자 오버랩으로 폴백했습니다.</span></div>
-          <div class="rag-decision"><strong>Contextual Embedding</strong><span>정책명·기관명 prefix를 붙여 text-embedding-3-small 1536차원으로 임베딩했습니다.</span></div>
+          <div class="rag-decision"><strong>메타데이터 전략</strong><span>정책명·기관명·지원유형 prefix를 붙여 임베딩하고, target_logic의 지역·업종·업력 조건으로 후보를 다시 정렬했습니다.</span></div>
         </div>
       </section>
 
