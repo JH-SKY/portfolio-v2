@@ -4438,8 +4438,10 @@
               <small>프로젝트 2</small><b>BIZ-FUND-AI</b>
             </div>
             <p class="sub">
-              <strong>정책 문서 구조, 질문 표현 편차, 사업장 메타데이터</strong
-              >를 함께 반영해 <br />검색 실패와 오탐을 줄이도록 Hybrid RAG를
+              <strong
+                >벡터 검색만 붙인 RAG가 아니라, 쿼리 리라이트·질문 의도
+                분해·메타데이터 기반 리랭킹</strong
+              >을 적용해 <br />사업자 적합도 중심 추천이 되도록 Hybrid RAG를
               설계했습니다.
             </p>
           </div>
@@ -4483,10 +4485,10 @@
                 <strong>사용자 질문</strong><span>생활어·복합 목적 질문</span>
               </div>
               <div class="rag-step key">
-                <strong>의도 분해</strong><span>운영비·고용 등 목적 분리</span>
+                <strong>질문 의도 분해</strong><span>운영비·고용 등 목적 분리</span>
               </div>
               <div class="rag-step">
-                <strong>의미 검색</strong><span>유사 표현 후보 검색</span>
+                <strong>쿼리 리라이트</strong><span>유사 표현 후보 재구성</span>
               </div>
               <div class="rag-step">
                 <strong>키워드 검색</strong><span>정책명·기관명 검색</span>
@@ -4495,7 +4497,7 @@
                 <strong>RRF 결합</strong><span>두 검색 순위 통합</span>
               </div>
               <div class="rag-step">
-                <strong>사업장 재정렬</strong><span>지역·업종·업력 반영</span>
+                <strong>메타데이터 기반 리랭킹</strong><span>지역·업종·업력 반영</span>
               </div>
               <div class="rag-step key">
                 <strong>근거 기반 답변</strong
@@ -4527,7 +4529,7 @@
             >
           </div>
           <div class="rag-decision">
-            <strong>메타데이터 전략</strong
+            <strong>컨텍스추얼 임베딩</strong
             ><span
               >정책명·기관명·지원유형 정보를 앞에 붙여 임베딩하고,
               target_logic의 지역·업종·업력 조건으로 후보를 다시
@@ -4555,8 +4557,8 @@
             </div>
             <p class="sub">
               <strong
-                >작업 복잡도에 따라 모델을 분리하고, 품질 회귀 여부까지
-                검증했습니다.</strong
+                >작업별로 모델을 분리해 비용을 낮추고, 평가 하네스로 경량 모델
+                전환 이후 품질 회귀 여부를 검증했습니다.</strong
               >
             </p>
           </div>
@@ -4594,8 +4596,8 @@
               <strong>평가 하네스 검증</strong>
             </div>
             <p>
-              경량 모델로 바꾼 뒤에도 실제 서비스 기준 통과 건수가 유지되는지를
-              운영 기준으로 봤습니다.
+              경량 모델로 바꾼 뒤에도 실제 서비스 기준 품질이 유지되는지 평가
+              하네스로 검증했습니다.
             </p>
           </div>
           <div class="eval-strip">
@@ -4610,8 +4612,8 @@
             </div>
             <div class="eval-arrow">›</div>
             <div class="eval-step">
-              <strong>통과 기준 3개</strong
-              ><span>분기 · 예상 정책 · 핵심 내용</span>
+              <strong>운영 기준 3개</strong
+              ><span>분기 정확도 · 예상 정책 적중 · 핵심 내용 포함</span>
             </div>
             <div class="eval-arrow">›</div>
             <div class="eval-step result">
@@ -4644,10 +4646,12 @@
             </div>
             <p class="sub">
               <strong>
-                공공데이터 API와 첨부파일 데이터를 안정적으로 적재해야
-                했습니다.</strong
+                공공데이터 API와 첨부파일 데이터를 안정적으로 적재하고,
+                구조화 결과를 검증한 뒤에만 저장하도록 파이프라인을
+                설계했습니다.</strong
               >
-              개별 실패가 전체 배치로 번지지 않도록 적재 구조를 분리했습니다.
+              개별 실패가 전체 배치로 번지지 않도록 실패 격리 구조도 함께
+              적용했습니다.
             </p>
           </div>
         </div>
@@ -4658,8 +4662,8 @@
               <strong> 적재가 흔들리면 추천 근거 전체가 흔들립니다.</strong>
             </div>
             <p>
-              핵심은 수집량이 아니라, 외부 공고와 첨부파일을 안정적으로 구조화해
-              RAG 입력 품질을 지킨 점입니다.
+              핵심은 수집량이 아니라, 외부 공고와 첨부파일을 검증된 정책
+              데이터로 바꿔 RAG 입력 품질을 지킨 점입니다.
             </p>
           </div>
 
@@ -4681,12 +4685,12 @@
             <div class="pipeline-stage">
               <strong>공고별 파싱</strong
               ><span>실패 범위를 해당 공고로 제한</span>
-              <div class="pipeline-guard">Savepoint<br />부분 롤백</div>
+              <div class="pipeline-guard">Savepoint<br />실패 격리</div>
             </div>
             <div class="pipeline-stage">
               <strong>AI 구조화·결과검증</strong
               ><span>필수 필드가 없는 결과 차단</span>
-              <div class="pipeline-guard">품질 미달 데이터<br />저장 제외</div>
+              <div class="pipeline-guard">구조화 결과 검증<br />품질 미달 데이터 저장 제외</div>
             </div>
             <div class="pipeline-stage">
               <strong>정책 DB 적재</strong
