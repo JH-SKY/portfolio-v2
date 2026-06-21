@@ -2856,8 +2856,10 @@
               <small>프로젝트 1</small><b>HR Copilot</b>
             </div>
             <p class="sub" style="margin-top: 10px">
-              <strong>LangGraph 기반 멀티에이전트 면접 질문 생성 에이전트</strong
-              >입니다. 지원자 문서 기반 질문 세트 생성, 채용공고 위험 문구 점검,
+              <strong
+                >LangGraph 기반 멀티에이전트로 구현한 면접 질문 생성
+                에이전트</strong
+              >입니다. <br>지원자 문서 기반 질문 세트 생성, 채용공고 위험 문구 점검,
               운영 로그 확인까지 연결한 프로젝트입니다.
             </p>
             <a
@@ -2888,7 +2890,10 @@
             </div>
             <div class="intro-output">
               <strong>평가 가이드</strong>
-              <span>지원자 답변에 정확한 수치가 포함되어 있는지, 문서 내용과 논리가 어긋나지 않는지 판단할 수 있도록 평가 기준을 제공합니다.</span>
+              <span
+                >지원자 답변에 정확한 수치가 포함되어 있는지, 문서 내용과 논리가
+                어긋나지 않는지 판단할 수 있도록 평가 기준을 제공합니다.</span
+              >
             </div>
           </div>
         </article>
@@ -3171,8 +3176,9 @@
             </div>
             <p>
               <strong
-                >LangGraph 슈퍼바이저 패턴으로 멀티에이전트 흐름을 제어하고,
-                기준 미달 결과만 재생성하는 루프를 설계했습니다.</strong
+                >verification_point_extractor를 앞단에 두고, review_router로
+                재생성 여부를 분기하는 순차형 멀티에이전트 흐름을
+                설계했습니다.</strong
               >
             </p>
           </div>
@@ -3657,7 +3663,8 @@
             <div class="design-note">
               <strong>왜 역할을 나눴는가</strong>
               <span
-                >질문 생성, 답변 예측, 추가 질문, 품질 평가의 책임 분리</span
+                >questioner, predictor, driller, reviewer가 역할을 나눠 순차
+                실행되도록 구성했습니다.</span
               >
             </div>
             <div class="design-note">
@@ -3718,8 +3725,8 @@
           <div class="trace5-pill control">
             <strong>원인을 특정하고 구조를 개선</strong>
             <span
-              >Trace에서 확인한 품질 저하 지점을 검증 포인트 추출기와 최종 선별
-              단계 개선으로 연결했습니다.</span
+              >Trace에서 확인한 품질 저하 지점을 verification_point_extractor와
+              최종 선별 로직 개선으로 연결했습니다.</span
             >
           </div>
         </div>
@@ -3982,8 +3989,9 @@
             <div class="trace5-finding action">
               <strong>LLMOps 개선 조치</strong>
               <span
-                >검증 포인트 추출기 추가, 필수 질문 보호 단위 세분화, 최종 선별
-                기준 강화를 통해 관측 결과를 운영 개선으로 연결했습니다.</span
+                >verification_point_extractor 추가, 필수 질문 보호 단위
+                세분화, 최종 선별 기준 강화를 통해 관측 결과를 운영 개선으로
+                연결했습니다.</span
               >
             </div>
             <div class="trace5-finding">
@@ -3992,9 +4000,9 @@
                 핵심이었습니다</strong
               >
               <span
-                >품질 평가기는 계속 수정 필요를 반환했지만, 질문 생성 이후
-                상태가 약해져 꼬리 질문 단계가 같은 패턴으로 되돌아가는 것을
-                확인했습니다.</span
+                >reviewer는 계속 수정 필요를 반환했지만, 질문 생성 이후
+                feedback state가 약해져 driller 단계가 같은 패턴으로
+                되돌아가는 것을 확인했습니다.</span
               >
             </div>
             <div class="trace5-finding">
@@ -4002,19 +4010,22 @@
                 >추적 결과 2. 생성 성공과 최종 반영은 다른 문제였습니다</strong
               >
               <span
-                >검증 포인트 추출기가 뽑은 필수 질문이 질문 생성 단계에서는 살아
-                있었지만, 최종 선별 단계에서 빠지는 문제를 확인했습니다.</span
+                >verification_point_extractor가 추출한 필수 질문이 questioner
+                단계에서는 살아 있었지만, 최종 선별 단계에서 빠지는 문제를
+                확인했습니다.</span
               >
             </div>
           </div>
         </div>
 
         <div class="trace5-strip">
-          <strong>Trace를 품질 저하 원인을 추적하는 운영 도구로 사용했습니다.</strong>
+          <strong
+            >Trace를 품질 저하 원인을 추적하는 운영 도구로 사용했습니다.</strong
+          >
           <span
             >결과 로그만 보면 “질문이 만들어졌다”만 보입니다. LangSmith Trace를
-            붙인 뒤에는 각 노드의 상태값을 직접 확인할 수 있었고, 이를 기준으로
-            원인 지점을 좁힐 수
+            붙인 뒤에는 각 노드의 상태값과 verification_profile 전달 여부를
+            직접 확인할 수 있었고, 이를 기준으로 원인 지점을 좁힐 수
             있었습니다.</span
           >
         </div>
@@ -4399,9 +4410,7 @@
                 <i>03</i>
                 <div>
                   <strong>신청 근거 설명</strong
-                  ><span
-                    >공고문 근거와 제외 조건까지 함께 제공합니다.</span
-                  >
+                  ><span>공고문 근거와 제외 조건까지 함께 제공합니다.</span>
                 </div>
               </div>
             </div>
@@ -4489,7 +4498,8 @@
                 <strong>사업장 재정렬</strong><span>지역·업종·업력 반영</span>
               </div>
               <div class="rag-step key">
-                <strong>근거 기반 답변</strong><span>상위 정책과 추천 이유를 함께 답변</span>
+                <strong>근거 기반 답변</strong
+                ><span>상위 정책과 추천 이유를 함께 답변</span>
               </div>
             </div>
           </div>
@@ -4519,8 +4529,9 @@
           <div class="rag-decision">
             <strong>메타데이터 전략</strong
             ><span
-              >정책명·기관명·지원유형 정보를 앞에 붙여 임베딩하고, target_logic의
-              지역·업종·업력 조건으로 후보를 다시 정렬했습니다.</span
+              >정책명·기관명·지원유형 정보를 앞에 붙여 임베딩하고,
+              target_logic의 지역·업종·업력 조건으로 후보를 다시
+              정렬했습니다.</span
             >
           </div>
         </div>
@@ -4543,7 +4554,10 @@
               <small>프로젝트 2</small><b>BIZ-FUND-AI</b>
             </div>
             <p class="sub">
-              <strong>작업 복잡도에 따라 모델을 분리하고, 품질 회귀 여부까지 검증했습니다.</strong>
+              <strong
+                >작업 복잡도에 따라 모델을 분리하고, 품질 회귀 여부까지
+                검증했습니다.</strong
+              >
             </p>
           </div>
         </div>
@@ -4580,7 +4594,8 @@
               <strong>평가 하네스 검증</strong>
             </div>
             <p>
-              경량 모델로 바꾼 뒤에도 실제 서비스 기준 통과 건수가 유지되는지를 운영 기준으로 봤습니다.
+              경량 모델로 바꾼 뒤에도 실제 서비스 기준 통과 건수가 유지되는지를
+              운영 기준으로 봤습니다.
             </p>
           </div>
           <div class="eval-strip">
@@ -4629,10 +4644,10 @@
             </div>
             <p class="sub">
               <strong>
-                공공데이터 API와 첨부파일 데이터를 안정적으로
-                적재해야 했습니다.</strong
-              > 개별 실패가 전체 배치로 번지지 않도록 적재 구조를
-              분리했습니다.
+                공공데이터 API와 첨부파일 데이터를 안정적으로 적재해야
+                했습니다.</strong
+              >
+              개별 실패가 전체 배치로 번지지 않도록 적재 구조를 분리했습니다.
             </p>
           </div>
         </div>
@@ -4643,8 +4658,8 @@
               <strong> 적재가 흔들리면 추천 근거 전체가 흔들립니다.</strong>
             </div>
             <p>
-              핵심은 수집량이 아니라, 외부 공고와 첨부파일을 안정적으로
-              구조화해 RAG 입력 품질을 지킨 점입니다.
+              핵심은 수집량이 아니라, 외부 공고와 첨부파일을 안정적으로 구조화해
+              RAG 입력 품질을 지킨 점입니다.
             </p>
           </div>
 
