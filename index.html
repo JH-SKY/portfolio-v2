@@ -2498,6 +2498,10 @@
         body {
           background: #fff;
         }
+        * {
+          text-shadow: none !important;
+          filter: none !important;
+        }
         .page[data-page="03"] .project-stamp,
         .page[data-page="04"] .project-stamp,
         .page[data-page="05"] .project-stamp,
@@ -2513,6 +2517,33 @@
           overflow: hidden;
           box-shadow: none;
           padding-bottom: 18mm;
+        }
+        .card,
+        .intro-card,
+        .design-card,
+        .trace5-card,
+        .trace5-finding,
+        .trace5-strip,
+        .eval6-card,
+        .eval6-score,
+        .biz-card,
+        .project-stamp,
+        .overview-link {
+          box-shadow: none !important;
+          background-clip: padding-box;
+        }
+        .overview-link {
+          background: #ffffff !important;
+          background-image: none !important;
+        }
+        .page.dark[data-page="07"] .project-stamp,
+        .page.dark[data-page="08"] .project-stamp,
+        .page.dark[data-page="09"] .project-stamp,
+        .page.dark[data-page="10"] .project-stamp {
+          background: rgba(18, 31, 54, 0.98) !important;
+          background-image: none !important;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
         }
         .page[data-page="07"] {
           padding-top: 10mm;
@@ -4036,10 +4067,9 @@
             >Trace를 품질 저하 원인을 추적하는 운영 도구로 사용했습니다.</strong
           >
           <span
-            >결과 로그만 보면 질문이 만들어졌다만 보입니다. LangSmith Trace를 추적하여
-            각 노드의 STATE 값과 전달 여부를 직접
-            확인할 수 있었고, 이를 기준으로 원인 지점을 좁힐 수
-            있었습니다.</span
+            >결과 로그만 보면 질문이 만들어졌다만 보입니다. LangSmith Trace를
+            추적하여 각 노드의 STATE 값과 전달 여부를 직접 확인할 수 있었고,
+            이를 기준으로 원인 지점을 좁힐 수 있었습니다.</span
           >
         </div>
       </section>
@@ -4461,8 +4491,7 @@
               <strong
                 >벡터 검색만 붙인 RAG가 아니라, 검색 재시도·질문 의도
                 분해·메타데이터 기반 리랭킹</strong
-              >을 적용해 사업자 중심 추천이 되도록 Hybrid RAG를
-              설계했습니다.
+              >을 적용해 사업자 중심 추천이 되도록 Hybrid RAG를 설계했습니다.
             </p>
           </div>
         </div>
@@ -4579,7 +4608,7 @@
             </div>
             <p class="sub">
               <strong
-                >작업별로 모델을 분리해 비용을 낮추고, 평가 하네스로 경량 모델
+                >작업별로 모델을 분리해 비용을 낮추고, <br>평가 하네스로 경량 모델
                 전환 이후 품질 회귀 여부를 검증했습니다.</strong
               >
             </p>
@@ -4672,8 +4701,6 @@
                 결과를 검증한 뒤에만 저장하도록 파이프라인을
                 설계했습니다.</strong
               >
-              개별 실패가 전체 배치로 번지지 않도록 실패 격리 구조도 함께
-              적용했습니다.
             </p>
           </div>
         </div>
@@ -4684,8 +4711,8 @@
               <strong> 적재가 흔들리면 추천 근거 전체가 흔들립니다.</strong>
             </div>
             <p>
-              핵심은 수집량이 아니라, 외부 공고와 첨부파일을 검증된 정책
-              데이터로 바꿔 RAG 입력 품질을 지킨 점입니다.
+              핵심은 외부 공고와 첨부파일을 검증된 정책
+              데이터로 바꿔 RAG 검색 품질을 지킨 점입니다.
             </p>
           </div>
 
