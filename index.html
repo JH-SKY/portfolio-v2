@@ -2883,7 +2883,7 @@
             <div class="compare-proof">
               <div class="proof-box">
                 <strong>Hybrid RAG 구현</strong>
-                <span>pgvector + FTS + RRF로 정책 검색 파이프라인 구성</span>
+                <span>pgvector + BM25 + RRF로 정책 검색 파이프라인 구성</span>
               </div>
               <div class="proof-box">
                 <strong>서비스 구조 1인 설계</strong>
@@ -4507,8 +4507,8 @@
             </div>
             <p class="sub">
               <strong
-                >벡터 검색만 붙인 RAG가 아니라, 검색 재시도·질문 의도
-                분해·메타데이터 기반 리랭킹</strong
+                >pgvector 의미 검색과 BM25·Nori 키워드 검색을 결합하고, 검색
+                재시도·질문 의도 분해·메타데이터 기반 리랭킹</strong
               >을 적용해 사업자 중심 추천이 되도록 Hybrid RAG를 설계했습니다.
             </p>
           </div>
@@ -4559,7 +4559,7 @@
                 <strong>쿼리 리라이트</strong><span>유사 표현 후보 재구성</span>
               </div>
               <div class="rag-step">
-                <strong>키워드 검색</strong><span>정책명·기관명 검색</span>
+                <strong>BM25 + Nori 검색</strong><span>정책명·기관명 검색 최적화</span>
               </div>
               <div class="rag-step key">
                 <strong>RRF 결합</strong><span>두 검색 순위 통합</span>
@@ -4579,7 +4579,7 @@
           <div class="rag-decision">
             <strong>검색 후보 수 설계</strong
             ><span
-              >Vector top 20 · FTS top 20을 먼저 모은 뒤 RRF로 top 5 정책만
+              >pgvector top 20 · BM25 top 20을 먼저 모은 뒤 RRF로 top 5 정책만
               남겼습니다.</span
             >
           </div>
