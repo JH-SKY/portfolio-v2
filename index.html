@@ -39,8 +39,7 @@
         --accent-soft: #e2ffad;
         --accent-deep: #7cb800;
         --card: #ffffff;
-        --shadow:
-          0 1px 2px rgba(13, 17, 23, 0.06), 0 6px 20px rgba(13, 17, 23, 0.07);
+        --shadow: none;
         --radius: 20px;
       }
       * {
@@ -108,8 +107,7 @@
       .page[data-page="05"] .project-stamp,
       .page[data-page="06"] .project-stamp {
         border-color: #d7e0eb;
-        background: rgba(252, 254, 255, 0.92);
-        box-shadow: 0 12px 26px rgba(88, 108, 132, 0.08);
+        background: #f7fbff;
       }
       .page[data-page="03"] .project-stamp small,
       .page[data-page="04"] .project-stamp small,
@@ -122,28 +120,12 @@
       .page[data-page="05"] .project-stamp b,
       .page[data-page="06"] .project-stamp b {
         color: #203955;
-        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
         letter-spacing: -0.07em;
-      }
-      .page[data-page="03"] .project-stamp,
-      .page[data-page="04"] .project-stamp,
-      .page[data-page="05"] .project-stamp,
-      .page[data-page="06"] .project-stamp {
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.96) 0%,
-          rgba(240, 246, 252, 0.96) 100%
-        );
       }
       .page.dark[data-page="07"] .project-stamp,
       .page.dark[data-page="08"] .project-stamp {
         border-color: rgba(196, 210, 228, 0.2);
-        background: linear-gradient(
-          180deg,
-          rgba(251, 253, 255, 0.1) 0%,
-          rgba(229, 239, 250, 0.06) 100%
-        );
-        box-shadow: 0 14px 30px rgba(6, 10, 18, 0.22);
+        background: #18263d;
       }
       .page.dark[data-page="07"] .project-stamp small,
       .page.dark[data-page="08"] .project-stamp small {
@@ -152,7 +134,6 @@
       .page.dark[data-page="07"] .project-stamp b,
       .page.dark[data-page="08"] .project-stamp b {
         color: #f3f7fc;
-        text-shadow: 0 1px 0 rgba(10, 18, 30, 0.28);
         letter-spacing: -0.07em;
       }
       .page[data-page="03"] .section-head p,
@@ -187,11 +168,10 @@
         padding: 8px 14px;
         border-radius: 999px;
         border: 1px solid #c6d7ef;
-        background: linear-gradient(180deg, #ffffff 0%, #eef4fb 100%);
+        background: #ffffff;
         font: 800 12px/1 NotoKR;
         color: #2f6fb2;
         text-decoration: none;
-        box-shadow: 0 10px 18px rgba(88, 108, 132, 0.08);
       }
       .page[data-page="03"] .overview-link:hover,
       .page[data-page="07"] .overview-link:hover {
@@ -239,7 +219,6 @@
         border-radius: 22px;
         border: 1px solid #d7e0eb;
         background: #fff;
-        box-shadow: var(--shadow);
       }
       .page[data-page="03"] .intro-lead {
         font-size: 22px;
@@ -2117,10 +2096,7 @@
       }
 
       .blob {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(40px);
-        pointer-events: none;
+        display: none;
       }
       .b1 {
         width: 160mm;
