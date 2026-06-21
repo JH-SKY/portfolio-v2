@@ -2865,14 +2865,14 @@
           </div>
           <div class="project-meta">
             <div class="project-stamp">
-              <small>프로젝트 1</small><b>HR Copilot</b>
+              <small>TEAM PROJECT</small><b>HR Copilot</b>
             </div>
             <p class="sub" style="margin-top: 10px">
               <strong
                 >LangGraph 기반 멀티에이전트로 구현한 면접 질문 생성
                 에이전트</strong
-              >입니다. <br>지원자 문서 기반 질문 세트 생성, 채용공고 위험 문구 점검,
-              운영 로그 확인까지 연결한 프로젝트입니다.
+              >입니다. <br />지원자 문서 기반 질문 세트 생성, 운영 로그 까지
+              연결한 프로젝트입니다.
             </p>
             <a
               class="overview-link"
@@ -3177,20 +3177,20 @@
             </div>
             <h2 class="section-title">
               <span class="marker" style="background: none; color: #2f6fb2"
-                >에이전트 설계</span
+                >멀티 에이전트 설계</span
               >
             </h2>
           </div>
           <div class="project-meta">
             <div class="project-stamp">
-              <small>프로젝트 1</small>
+              <small>TEAM PROJECT</small>
               <b>HR Copilot</b>
             </div>
             <p>
               <strong
-                >verification_point_extractor를 앞단에 두고, review_router로
-                재생성 여부를 분기하는 순차형 멀티에이전트 흐름을
-                설계했습니다.</strong
+                >리스크 추출 노드를 앞단에 두고, review노드로 재생성 여부를
+                분기하는 <br />
+                순차형 멀티에이전트 흐름을 설계했습니다.</strong
               >
             </p>
           </div>
@@ -3277,7 +3277,7 @@
                   font-size="11"
                   fill="#64804a"
                 >
-                  공백기·직무 전환·성과 부풀리기 리스크를 먼저 고정
+                  공백기와 같은 리스크를 먼저 고정
                 </text>
 
                 <rect
@@ -3306,8 +3306,7 @@
                   font-size="11"
                   fill="#607288"
                 >
-                  리스크 추출, 질문 생성, 추가 검증 질문, 평가를 분리해 각 역할
-                  책임을 나눔
+                  노드를 분리해 각 역할 책임을 나눔
                 </text>
 
                 <rect
@@ -3675,14 +3674,14 @@
             <div class="design-note">
               <strong>왜 역할을 나눴는가</strong>
               <span
-                >questioner, predictor, driller, reviewer가 역할을 나눠 순차
-                실행되도록 구성했습니다.</span
+                >각 단계의 책임을 명확히 하고 품질 저하를 줄이기
+                위해서입니다.</span
               >
             </div>
             <div class="design-note">
               <strong>어떻게 운영 관점까지 봤는가</strong>
               <span
-                >재생성 루프와 실행 추적 로그를 함께 보며 품질 저하 원인을
+                >재생성 루프와 실행 추적 로그를 보며 품질 저하 원인을
                 추적했습니다.</span
               >
             </div>
@@ -3709,7 +3708,7 @@
           </div>
           <div class="project-meta">
             <div class="project-stamp">
-              <small>프로젝트 1</small><b>HR Copilot</b>
+              <small>TEAM PROJECT</small><b>HR Copilot</b>
             </div>
             <p class="sub" style="margin-top: 10px">
               <strong
@@ -4001,8 +4000,8 @@
             <div class="trace5-finding action">
               <strong>LLMOps 개선 조치</strong>
               <span
-                >verification_point_extractor 추가, 필수 질문 보호 단위
-                세분화, 최종 선별 기준 강화를 통해 관측 결과를 운영 개선으로
+                >verification_point_extractor 추가, 필수 질문 보호 단위 세분화,
+                최종 선별 기준 강화를 통해 관측 결과를 운영 개선으로
                 연결했습니다.</span
               >
             </div>
@@ -4012,9 +4011,9 @@
                 핵심이었습니다</strong
               >
               <span
-                >reviewer는 계속 수정 필요를 반환했지만, 질문 생성 이후
-                feedback state가 약해져 driller 단계가 같은 패턴으로
-                되돌아가는 것을 확인했습니다.</span
+                >reviewer는 계속 수정 필요를 반환했지만, 질문 생성 이후 feedback
+                state가 약해져 driller 단계가 같은 패턴으로 되돌아가는 것을
+                확인했습니다.</span
               >
             </div>
             <div class="trace5-finding">
@@ -4036,8 +4035,8 @@
           >
           <span
             >결과 로그만 보면 “질문이 만들어졌다”만 보입니다. LangSmith Trace를
-            붙인 뒤에는 각 노드의 상태값과 verification_profile 전달 여부를
-            직접 확인할 수 있었고, 이를 기준으로 원인 지점을 좁힐 수
+            붙인 뒤에는 각 노드의 상태값과 verification_profile 전달 여부를 직접
+            확인할 수 있었고, 이를 기준으로 원인 지점을 좁힐 수
             있었습니다.</span
           >
         </div>
@@ -4064,7 +4063,7 @@
           </div>
           <div class="project-meta">
             <div class="project-stamp">
-              <small>프로젝트 1</small><b>HR Copilot</b>
+              <small>TEAM PROJECT</small><b>HR Copilot</b>
             </div>
             <p
               style="
@@ -4345,7 +4344,7 @@
           </div>
           <div class="project-meta">
             <div class="project-stamp">
-              <small>프로젝트 2</small><b>BIZ-FUND-AI</b>
+              <small>SOLO PROJECT</small><b>BIZ-FUND-AI</b>
             </div>
             <p class="sub">
               <strong
@@ -4447,7 +4446,7 @@
           </div>
           <div class="project-meta">
             <div class="project-stamp">
-              <small>프로젝트 2</small><b>BIZ-FUND-AI</b>
+              <small>SOLO PROJECT</small><b>BIZ-FUND-AI</b>
             </div>
             <p class="sub">
               <strong
@@ -4497,7 +4496,8 @@
                 <strong>사용자 질문</strong><span>생활어·복합 목적 질문</span>
               </div>
               <div class="rag-step key">
-                <strong>질문 의도 분해</strong><span>운영비·고용 등 목적 분리</span>
+                <strong>질문 의도 분해</strong
+                ><span>운영비·고용 등 목적 분리</span>
               </div>
               <div class="rag-step">
                 <strong>쿼리 리라이트</strong><span>유사 표현 후보 재구성</span>
@@ -4509,7 +4509,8 @@
                 <strong>RRF 결합</strong><span>두 검색 순위 통합</span>
               </div>
               <div class="rag-step">
-                <strong>메타데이터 기반 리랭킹</strong><span>지역·업종·업력 반영</span>
+                <strong>메타데이터 기반 리랭킹</strong
+                ><span>지역·업종·업력 반영</span>
               </div>
               <div class="rag-step key">
                 <strong>근거 기반 답변</strong
@@ -4565,7 +4566,7 @@
           </div>
           <div class="project-meta">
             <div class="project-stamp">
-              <small>프로젝트 2</small><b>BIZ-FUND-AI</b>
+              <small>SOLO PROJECT</small><b>BIZ-FUND-AI</b>
             </div>
             <p class="sub">
               <strong
@@ -4654,12 +4655,12 @@
           </div>
           <div class="project-meta">
             <div class="project-stamp">
-              <small>프로젝트 2</small><b>BIZ-FUND-AI</b>
+              <small>SOLO PROJECT</small><b>BIZ-FUND-AI</b>
             </div>
             <p class="sub">
               <strong>
-                공공데이터 API와 첨부파일 데이터를 안정적으로 적재하고,
-                구조화 결과를 검증한 뒤에만 저장하도록 파이프라인을
+                공공데이터 API와 첨부파일 데이터를 안정적으로 적재하고, 구조화
+                결과를 검증한 뒤에만 저장하도록 파이프라인을
                 설계했습니다.</strong
               >
               개별 실패가 전체 배치로 번지지 않도록 실패 격리 구조도 함께
@@ -4702,7 +4703,9 @@
             <div class="pipeline-stage">
               <strong>AI 구조화·결과검증</strong
               ><span>필수 필드가 없는 결과 차단</span>
-              <div class="pipeline-guard">구조화 결과 검증<br />품질 미달 데이터 저장 제외</div>
+              <div class="pipeline-guard">
+                구조화 결과 검증<br />품질 미달 데이터 저장 제외
+              </div>
             </div>
             <div class="pipeline-stage">
               <strong>정책 DB 적재</strong
