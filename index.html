@@ -2501,6 +2501,11 @@
         * {
           text-shadow: none !important;
           filter: none !important;
+          backdrop-filter: none !important;
+        }
+        .blob,
+        .grid-lines {
+          display: none !important;
         }
         .page[data-page="03"] .project-stamp,
         .page[data-page="04"] .project-stamp,
@@ -2521,26 +2526,62 @@
         .card,
         .intro-card,
         .design-card,
+        .design-pill,
+        .design-note,
         .trace5-card,
         .trace5-finding,
         .trace5-strip,
         .eval6-card,
         .eval6-score,
+        .eval6-principle,
+        .eval6-rubric-box,
         .biz-card,
+        .biz-function,
+        .biz-input,
+        .biz-output,
+        .biz-label,
+        .rag-step,
+        .rag-decision,
+        .pipeline-stage,
+        .pipeline-guard,
         .project-stamp,
         .overview-link {
           box-shadow: none !important;
+          background-image: none !important;
           background-clip: padding-box;
+        }
+        .page:not(.dark) .intro-card,
+        .page:not(.dark) .design-card,
+        .page:not(.dark) .design-pill,
+        .page:not(.dark) .design-note,
+        .page:not(.dark) .trace5-card,
+        .page:not(.dark) .trace5-finding,
+        .page:not(.dark) .trace5-strip,
+        .page:not(.dark) .eval6-card,
+        .page:not(.dark) .eval6-score,
+        .page:not(.dark) .eval6-principle,
+        .page:not(.dark) .eval6-rubric-box {
+          background: #ffffff !important;
         }
         .overview-link {
           background: #ffffff !important;
+          background-image: none !important;
+        }
+        .page.dark .biz-card,
+        .page.dark .biz-function,
+        .page.dark .biz-input,
+        .page.dark .biz-output,
+        .page.dark .rag-step,
+        .page.dark .rag-decision,
+        .page.dark .pipeline-stage,
+        .page.dark .pipeline-guard {
           background-image: none !important;
         }
         .page.dark[data-page="07"] .project-stamp,
         .page.dark[data-page="08"] .project-stamp,
         .page.dark[data-page="09"] .project-stamp,
         .page.dark[data-page="10"] .project-stamp {
-          background: rgba(18, 31, 54, 0.98) !important;
+          background: #18263d !important;
           background-image: none !important;
           -webkit-print-color-adjust: exact;
           print-color-adjust: exact;
