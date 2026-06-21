@@ -179,7 +179,8 @@
       .page[data-page="03"] .project-meta {
         gap: 10px;
       }
-      .page[data-page="03"] .overview-link {
+      .page[data-page="03"] .overview-link,
+      .page[data-page="07"] .overview-link {
         display: inline-flex;
         align-items: center;
         width: fit-content;
@@ -192,7 +193,8 @@
         text-decoration: none;
         box-shadow: 0 10px 18px rgba(88, 108, 132, 0.08);
       }
-      .page[data-page="03"] .overview-link:hover {
+      .page[data-page="03"] .overview-link:hover,
+      .page[data-page="07"] .overview-link:hover {
         color: #1f5f9f;
       }
       .page[data-page="03"] .overview-topline {
@@ -3703,7 +3705,7 @@
             <h2 class="section-title">
               <span class="accent" style="color: #2f6fb2">LangSmith Trace</span
               ><br />
-              품질 저하 원인을 추적했습니다
+              품질 저하 원인 추적
             </h2>
           </div>
           <div class="project-meta">
@@ -3721,7 +3723,7 @@
 
         <div class="trace5-topline">
           <div class="trace5-pill">
-            <strong>결과 로그만으로는 품질 운영 판단이 어렵습니다</strong>
+            <strong>결과 로그만으로는 품질 개선이 어렵습니다</strong>
             <span
               >질문이 생성됐다는 사실만으로는 왜 품질이 흔들렸는지 설명할 수
               없었습니다.</span
@@ -4012,7 +4014,7 @@
               >
               <span
                 >reviewer는 계속 수정 필요를 반환했지만, 질문 생성 이후 feedback
-                state가 약해져 driller 단계가 같은 패턴으로 되돌아가는 것을
+                state가 초기화되어 driller 단계가 같은 패턴으로 되돌아가는 것을
                 확인했습니다.</span
               >
             </div>
@@ -4034,8 +4036,8 @@
             >Trace를 품질 저하 원인을 추적하는 운영 도구로 사용했습니다.</strong
           >
           <span
-            >결과 로그만 보면 “질문이 만들어졌다”만 보입니다. LangSmith Trace를
-            붙인 뒤에는 각 노드의 상태값과 verification_profile 전달 여부를 직접
+            >결과 로그만 보면 질문이 만들어졌다만 보입니다. LangSmith Trace를 추적하여
+            각 노드의 STATE 값과 전달 여부를 직접
             확인할 수 있었고, 이를 기준으로 원인 지점을 좁힐 수
             있었습니다.</span
           >
@@ -4353,6 +4355,13 @@
               >
               에이전트입니다.
             </p>
+            <a
+              class="overview-link"
+              href="https://github.com/JH-SKY/biz-fund-ai/blob/main/README.md"
+              target="_blank"
+              rel="noreferrer"
+              >GitHub README 보기</a
+            >
           </div>
         </div>
         <div class="biz-overview-grid">
@@ -4450,9 +4459,9 @@
             </div>
             <p class="sub">
               <strong
-                >벡터 검색만 붙인 RAG가 아니라, 쿼리 리라이트·질문 의도
+                >벡터 검색만 붙인 RAG가 아니라, 검색 재시도·질문 의도
                 분해·메타데이터 기반 리랭킹</strong
-              >을 적용해 사업자 적합도 중심 추천이 되도록 Hybrid RAG를
+              >을 적용해 사업자 중심 추천이 되도록 Hybrid RAG를
               설계했습니다.
             </p>
           </div>
@@ -4609,7 +4618,7 @@
               <strong>평가 하네스 검증</strong>
             </div>
             <p>
-              경량 모델로 바꾼 뒤에도 실제 서비스 기준 품질이 유지되는지 평가
+              경량 모델로 바꾼 뒤에도 서비스 기준 품질이 유지되는지 평가
               하네스로 검증했습니다.
             </p>
           </div>
