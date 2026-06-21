@@ -1054,190 +1054,538 @@
       }
 
       /* BIZ-FUND-AI pages: one visual message per page */
-      .biz-page .section-head { margin-bottom: 5mm; }
-      .biz-page .project-meta { gap: 12px; }
+      .biz-page .section-head {
+        margin-bottom: 5mm;
+      }
+      .biz-page .project-meta {
+        gap: 12px;
+      }
       .biz-page .project-meta .sub {
-        max-width: 560px; font-size: 15px; line-height: 1.55; text-align: right;
+        max-width: 560px;
+        font-size: 15px;
+        line-height: 1.55;
+        text-align: right;
       }
       .biz-card {
-        border-radius: 22px; border: 1px solid #d8e2ef; background: #f7fafe;
+        border-radius: 22px;
+        border: 1px solid #d8e2ef;
+        background: #f7fafe;
         box-shadow: 0 16px 32px rgba(5, 13, 25, 0.18);
       }
       .biz-dark-card {
         border-color: rgba(219, 231, 245, 0.16);
-        background: rgba(8, 18, 32, 0.72); color: #f7fbff;
+        background: rgba(8, 18, 32, 0.72);
+        color: #f7fbff;
       }
-      .biz-label { font-size: 11px; line-height: 1; font-weight: 900; letter-spacing: .14em; color: #758aa4; }
-      .biz-dark-card .biz-label { color: #91a7c2; }
-      .biz-overview-grid { display: grid; grid-template-columns: 1.18fr .82fr; gap: 12px; }
-      .biz-overview-main, .biz-function-card { padding: 5.5mm; }
+      .biz-label {
+        font-size: 11px;
+        line-height: 1;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        color: #758aa4;
+      }
+      .biz-dark-card .biz-label {
+        color: #91a7c2;
+      }
+      .biz-overview-grid {
+        display: grid;
+        grid-template-columns: 1.18fr 0.82fr;
+        gap: 12px;
+      }
+      .biz-overview-main,
+      .biz-function-card {
+        padding: 5.5mm;
+      }
       .biz-overview-main h3 {
-        margin-top: 10px; max-width: 640px; font: 900 28px/1.2 NotoKRBold, NotoKR, sans-serif;
-        letter-spacing: -.045em;
+        margin-top: 10px;
+        max-width: 640px;
+        font:
+          900 28px/1.2 NotoKRBold,
+          NotoKR,
+          sans-serif;
+        letter-spacing: -0.045em;
       }
-      .biz-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 18px; }
+      .biz-inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 18px;
+      }
       .biz-input {
-        padding: 11px 13px; border-radius: 14px; border: 1px solid rgba(217,230,246,.16);
-        background: rgba(255,255,255,.07);
+        padding: 11px 13px;
+        border-radius: 14px;
+        border: 1px solid rgba(217, 230, 246, 0.16);
+        background: rgba(255, 255, 255, 0.07);
       }
-      .biz-input strong, .biz-output strong { display: block; font-size: 14px; color: inherit; }
-      .biz-input span, .biz-output span {
-        display: block; margin-top: 4px; font-size: 11px; line-height: 1.4; font-weight: 700; color: #9eb0c6;
+      .biz-input strong,
+      .biz-output strong {
+        display: block;
+        font-size: 14px;
+        color: inherit;
       }
-      .biz-engine { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; margin: 12px 0; }
-      .biz-engine:before, .biz-engine:after { content: ""; height: 1px; background: rgba(190,212,236,.28); }
+      .biz-input span,
+      .biz-output span {
+        display: block;
+        margin-top: 4px;
+        font-size: 11px;
+        line-height: 1.4;
+        font-weight: 700;
+        color: #9eb0c6;
+      }
+      .biz-engine {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 12px;
+        margin: 12px 0;
+      }
+      .biz-engine:before,
+      .biz-engine:after {
+        content: "";
+        height: 1px;
+        background: rgba(190, 212, 236, 0.28);
+      }
       .biz-engine b {
-        padding: 11px 22px; border-radius: 999px; background: #b9ff2d; color: #173006;
-        font-size: 16px; white-space: nowrap;
+        padding: 11px 22px;
+        border-radius: 999px;
+        background: #b9ff2d;
+        color: #173006;
+        font-size: 16px;
+        white-space: nowrap;
       }
-      .biz-outputs { display: grid; grid-template-columns: repeat(4,1fr); gap: 7px; }
+      .biz-outputs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 7px;
+      }
       .biz-output {
-        padding: 11px 10px; border-radius: 13px; border: 1px solid rgba(217,230,246,.14);
-        background: rgba(255,255,255,.055);
+        padding: 11px 10px;
+        border-radius: 13px;
+        border: 1px solid rgba(217, 230, 246, 0.14);
+        background: rgba(255, 255, 255, 0.055);
       }
-      .biz-function-list { display: grid; gap: 9px; margin-top: 12px; }
+      .biz-function-list {
+        display: grid;
+        gap: 9px;
+        margin-top: 12px;
+      }
       .biz-function {
-        display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: center;
-        padding: 11px 12px; border-radius: 14px; border: 1px solid #d7e1ee; background: #fff;
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 10px;
+        align-items: center;
+        padding: 11px 12px;
+        border-radius: 14px;
+        border: 1px solid #d7e1ee;
+        background: #fff;
       }
       .biz-function i {
-        display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px;
-        background: #e8f5cf; color: #4f7f00; font-style: normal; font-size: 13px; font-weight: 900;
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 11px;
+        background: #e8f5cf;
+        color: #4f7f00;
+        font-style: normal;
+        font-size: 13px;
+        font-weight: 900;
       }
-      .biz-function strong { display: block; font-size: 15px; color: #17375d; }
+      .biz-function strong {
+        display: block;
+        font-size: 15px;
+        color: #17375d;
+      }
       .biz-function span {
-        display: block; margin-top: 3px; font-size: 11px; line-height: 1.4; font-weight: 700; color: #667a92;
+        display: block;
+        margin-top: 3px;
+        font-size: 11px;
+        line-height: 1.4;
+        font-weight: 700;
+        color: #667a92;
       }
       .biz-function-foot {
-        margin-top: 10px; padding: 11px 12px; border-radius: 14px; background: #f4f7fb;
-        border: 1px dashed #d8e2ef; font-size: 11px; line-height: 1.5; font-weight: 800; color: #6a7d95;
+        margin-top: 10px;
+        padding: 11px 12px;
+        border-radius: 14px;
+        background: #f4f7fb;
+        border: 1px dashed #d8e2ef;
+        font-size: 11px;
+        line-height: 1.5;
+        font-weight: 800;
+        color: #6a7d95;
       }
       .biz-stackline {
-        display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 11px;
-        padding: 10px 14px; border-radius: 14px; border: 1px solid rgba(217,230,246,.14);
-        background: rgba(255,255,255,.055); color: #a9bad0; font-size: 11px; font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 11px;
+        padding: 10px 14px;
+        border-radius: 14px;
+        border: 1px solid rgba(217, 230, 246, 0.14);
+        background: rgba(255, 255, 255, 0.055);
+        color: #a9bad0;
+        font-size: 11px;
+        font-weight: 800;
       }
-      .biz-stackline a { color: #b9ff2d; text-decoration: none; }
-      .rag-shell { padding: 4.5mm; }
+      .biz-stackline a {
+        color: #b9ff2d;
+        text-decoration: none;
+      }
+      .rag-shell {
+        padding: 4.5mm;
+      }
       .rag-lane {
-        padding: 16px 15px; border-radius: 17px; border: 1px solid rgba(214,228,244,.14);
-        background: rgba(255,255,255,.055);
+        padding: 16px 15px;
+        border-radius: 17px;
+        border: 1px solid rgba(214, 228, 244, 0.14);
+        background: rgba(255, 255, 255, 0.055);
       }
-      .rag-lane + .rag-lane { margin-top: 12px; }
-      .rag-lane-title { display: flex; align-items: center; gap: 9px; margin-bottom: 13px; color: #dbe8f7; font-size: 15px; font-weight: 900; }
+      .rag-lane + .rag-lane {
+        margin-top: 12px;
+      }
+      .rag-lane-title {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin-bottom: 13px;
+        color: #dbe8f7;
+        font-size: 15px;
+        font-weight: 900;
+      }
       .rag-lane-title b {
-        display: grid; place-items: center; width: 25px; height: 25px; border-radius: 8px;
-        background: #b9ff2d; color: #173006; font-size: 11px;
+        display: grid;
+        place-items: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 8px;
+        background: #b9ff2d;
+        color: #173006;
+        font-size: 11px;
       }
-      .rag-flow { display: grid; grid-template-columns: repeat(7,minmax(0,1fr)); align-items: stretch; gap: 6px; }
+      .rag-flow {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 6px;
+      }
       .rag-step {
-        position: relative; display: grid; align-content: center; min-height: 78px; padding: 10px 8px;
-        border-radius: 12px; border: 1px solid rgba(214,228,244,.16);
-        background: rgba(255,255,255,.065); text-align: center;
+        position: relative;
+        display: grid;
+        align-content: center;
+        min-height: 78px;
+        padding: 10px 8px;
+        border-radius: 12px;
+        border: 1px solid rgba(214, 228, 244, 0.16);
+        background: rgba(255, 255, 255, 0.065);
+        text-align: center;
       }
       .rag-step:not(:last-child):after {
-        content: "›"; position: absolute; right: -7px; top: 50%; z-index: 2; transform: translateY(-52%);
-        color: #8fa4bd; font-size: 19px; font-weight: 900;
+        content: "›";
+        position: absolute;
+        right: -7px;
+        top: 50%;
+        z-index: 2;
+        transform: translateY(-52%);
+        color: #8fa4bd;
+        font-size: 19px;
+        font-weight: 900;
       }
-      .rag-step strong { font-size: 14px; line-height: 1.2; color: #f5f9fe; }
-      .rag-step span { margin-top: 5px; font-size: 10px; line-height: 1.35; font-weight: 700; color: #91a5bc; }
-      .rag-step.key { border-color: rgba(185,255,45,.42); background: rgba(185,255,45,.12); }
-      .rag-step.key strong { color: #dfff9f; }
-      .rag-decisions { display: grid; grid-template-columns: repeat(4,1fr); gap: 9px; margin-top: 10px; }
-      .rag-decision { padding: 15px 14px; border-radius: 14px; border: 1px solid #d8e2ef; background: #f7fafe; }
-      .rag-decision strong { display: block; font-size: 15px; line-height: 1.2; color: #17375d; }
-      .rag-decision span { display: block; margin-top: 5px; font-size: 10.5px; line-height: 1.4; font-weight: 800; color: #647991; }
-      .ops9-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: 11px; }
-      .model-card, .ops-score { min-height: 260px; padding: 6mm; }
-      .model-table { display: grid; gap: 10px; margin-top: 16px; }
+      .rag-step strong {
+        font-size: 14px;
+        line-height: 1.2;
+        color: #f5f9fe;
+      }
+      .rag-step span {
+        margin-top: 5px;
+        font-size: 10px;
+        line-height: 1.35;
+        font-weight: 700;
+        color: #91a5bc;
+      }
+      .rag-step.key {
+        border-color: rgba(185, 255, 45, 0.42);
+        background: rgba(185, 255, 45, 0.12);
+      }
+      .rag-step.key strong {
+        color: #dfff9f;
+      }
+      .rag-decisions {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 9px;
+        margin-top: 10px;
+      }
+      .rag-decision {
+        padding: 15px 14px;
+        border-radius: 14px;
+        border: 1px solid #d8e2ef;
+        background: #f7fafe;
+      }
+      .rag-decision strong {
+        display: block;
+        font-size: 15px;
+        line-height: 1.2;
+        color: #17375d;
+      }
+      .rag-decision span {
+        display: block;
+        margin-top: 5px;
+        font-size: 10.5px;
+        line-height: 1.4;
+        font-weight: 800;
+        color: #647991;
+      }
+      .ops9-grid {
+        display: grid;
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: 11px;
+      }
+      .model-card,
+      .ops-score {
+        min-height: 260px;
+        padding: 6mm;
+      }
+      .model-table {
+        display: grid;
+        gap: 10px;
+        margin-top: 16px;
+      }
       .model-row {
-        display: grid; grid-template-columns: 1.05fr .8fr 1.45fr; gap: 7px; align-items: center;
-        padding: 15px 13px; border-radius: 13px; border: 1px solid rgba(214,228,244,.14);
-        background: rgba(255,255,255,.055);
+        display: grid;
+        grid-template-columns: 1.05fr 0.8fr 1.45fr;
+        gap: 7px;
+        align-items: center;
+        padding: 15px 13px;
+        border-radius: 13px;
+        border: 1px solid rgba(214, 228, 244, 0.14);
+        background: rgba(255, 255, 255, 0.055);
       }
-      .model-row strong { font-size: 15px; color: #f1f7fd; }
-      .model-row b { font-size: 14px; color: #b9ff2d; }
-      .model-row span { font-size: 11px; line-height: 1.4; font-weight: 700; color: #91a5bc; }
-      .ops-score { display: grid; align-content: center; background: #f7fafe; }
+      .model-row strong {
+        font-size: 15px;
+        color: #f1f7fd;
+      }
+      .model-row b {
+        font-size: 14px;
+        color: #b9ff2d;
+      }
+      .model-row span {
+        font-size: 11px;
+        line-height: 1.4;
+        font-weight: 700;
+        color: #91a5bc;
+      }
+      .ops-score {
+        display: grid;
+        align-content: center;
+        background: #f7fafe;
+      }
       .ops-score .big {
-        margin-top: 10px; font: 900 60px/.95 NotoKRBold, NotoKR, sans-serif;
-        letter-spacing: -.065em; color: #4f8d00;
+        margin-top: 10px;
+        font:
+          900 60px/0.95 NotoKRBold,
+          NotoKR,
+          sans-serif;
+        letter-spacing: -0.065em;
+        color: #4f8d00;
       }
-      .ops-score .big small { font-size: 20px; color: #667b91; letter-spacing: -.03em; }
-      .ops-score p { margin-top: 10px; font-size: 12px; line-height: 1.5; font-weight: 800; color: #60758d; }
+      .ops-score .big small {
+        font-size: 20px;
+        color: #667b91;
+        letter-spacing: -0.03em;
+      }
+      .ops-score p {
+        margin-top: 10px;
+        font-size: 12px;
+        line-height: 1.5;
+        font-weight: 800;
+        color: #60758d;
+      }
       .eval-harness {
-        margin-top: 12px; padding: 14px 13px; border-radius: 17px;
-        border: 1px solid #d8e2ef; background: #f7fafe;
+        margin-top: 13px;
+        padding: 16px 14px;
+        border-radius: 17px;
+        border: 1px solid #d8e2ef;
+        background: #f7fafe;
       }
       .eval-harness-head {
-        display: grid; grid-template-columns: 1.06fr .94fr; gap: 14px; align-items: end;
-        margin-bottom: 10px;
+        display: grid;
+        grid-template-columns: 1.06fr 0.94fr;
+        gap: 14px;
+        align-items: end;
+        margin-bottom: 12px;
       }
       .eval-harness-head small {
-        display: block; font-size: 11px; line-height: 1; font-weight: 900;
-        letter-spacing: .14em; color: #7a8ea7;
+        display: block;
+        font-size: 11px;
+        line-height: 1;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        color: #7a8ea7;
       }
       .eval-harness-head strong {
-        display: block; margin-top: 7px; font-size: 20px; line-height: 1.14;
-        letter-spacing: -.04em; color: #17375d;
+        display: block;
+        margin-top: 8px;
+        font-size: 22px;
+        line-height: 1.16;
+        letter-spacing: -0.04em;
+        color: #17375d;
       }
       .eval-harness-head p {
-        font-size: 11.5px; line-height: 1.4; font-weight: 800; color: #60758d;
+        font-size: 12px;
+        line-height: 1.45;
+        font-weight: 800;
+        color: #60758d;
         text-align: right;
       }
       .eval-strip {
-        display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; align-items: center;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+        align-items: center;
         gap: 10px;
       }
       .eval-step {
-        min-height: 68px; padding: 11px 8px; border-radius: 12px; border: 1px solid #d7e1ed;
-        background: #fff; text-align: center;
+        min-height: 72px;
+        padding: 12px 9px;
+        border-radius: 12px;
+        border: 1px solid #d7e1ed;
+        background: #fff;
+        text-align: center;
       }
-      .eval-step strong { display: block; font-size: 15px; color: #17375d; }
-      .eval-step span { display: block; margin-top: 5px; font-size: 11px; line-height: 1.4; font-weight: 700; color: #687c93; }
-      .eval-arrow { color: #8195ad; font-size: 19px; font-weight: 900; }
-      .eval-step.result { border-color: #b9db87; background: #eff8df; }
-      .eval-step.result strong { color: #477900; }
+      .eval-step strong {
+        display: block;
+        font-size: 15px;
+        color: #17375d;
+      }
+      .eval-step span {
+        display: block;
+        margin-top: 5px;
+        font-size: 11px;
+        line-height: 1.4;
+        font-weight: 700;
+        color: #687c93;
+      }
+      .eval-arrow {
+        color: #8195ad;
+        font-size: 19px;
+        font-weight: 900;
+      }
+      .eval-step.result {
+        border-color: #b9db87;
+        background: #eff8df;
+      }
+      .eval-step.result strong {
+        color: #477900;
+      }
       .eval-harness-note {
-        margin-top: 8px; font-size: 10.5px; line-height: 1.35; font-weight: 800; color: #6a7d95;
+        margin-top: 8px;
+        font-size: 10.5px;
+        line-height: 1.35;
+        font-weight: 800;
+        color: #6a7d95;
         text-align: right;
       }
-      .pipeline-card { padding: 5.5mm; }
+      .pipeline-card {
+        padding: 5.5mm;
+      }
       .pipeline-card-head {
-        display: grid; grid-template-columns: .92fr 1.08fr; gap: 14px; align-items: end;
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 14px;
+        align-items: end;
       }
       .pipeline-card-head strong {
-        display: block; margin-top: 8px; font-size: 22px; line-height: 1.15;
-        letter-spacing: -.04em; color: #f5f9fe;
+        display: block;
+        margin-top: 8px;
+        font-size: 22px;
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+        color: #f5f9fe;
       }
       .pipeline-card-head p {
-        font-size: 12px; line-height: 1.45; font-weight: 800; color: #a9bbd0;
+        font-size: 12px;
+        line-height: 1.45;
+        font-weight: 800;
+        color: #a9bbd0;
         text-align: right;
       }
-      .pipeline-flow { display: grid; grid-template-columns: repeat(5,1fr); gap: 9px; margin-top: 17px; }
+      .pipeline-flow {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 9px;
+        margin-top: 17px;
+      }
       .pipeline-stage {
-        position: relative; min-height: 204px; padding: 17px 12px; border-radius: 15px;
-        border: 1px solid rgba(216,229,244,.15); background: rgba(255,255,255,.06);
+        position: relative;
+        min-height: 204px;
+        padding: 17px 12px;
+        border-radius: 15px;
+        border: 1px solid rgba(216, 229, 244, 0.15);
+        background: rgba(255, 255, 255, 0.06);
       }
       .pipeline-stage:not(:last-child):after {
-        content: "›"; position: absolute; right: -9px; top: 42px; z-index: 2;
-        color: #94a9c1; font-size: 24px; font-weight: 900;
+        content: "›";
+        position: absolute;
+        right: -9px;
+        top: 42px;
+        z-index: 2;
+        color: #94a9c1;
+        font-size: 24px;
+        font-weight: 900;
       }
-      .pipeline-stage > strong { display: block; font-size: 16px; color: #f5f9fe; }
+      .pipeline-stage > strong {
+        display: block;
+        font-size: 16px;
+        color: #f5f9fe;
+      }
       .pipeline-stage > span {
-        display: block; margin-top: 7px; min-height: 34px; font-size: 11px;
-        line-height: 1.45; font-weight: 700; color: #93a7bf;
+        display: block;
+        margin-top: 7px;
+        min-height: 34px;
+        font-size: 11px;
+        line-height: 1.45;
+        font-weight: 700;
+        color: #93a7bf;
       }
       .pipeline-guard {
-        margin-top: 14px; padding: 11px 10px; border-radius: 10px;
-        background: rgba(185,255,45,.12); color: #dbff98; font-size: 12px; line-height: 1.4; font-weight: 900;
+        margin-top: 14px;
+        padding: 11px 10px;
+        border-radius: 10px;
+        background: rgba(185, 255, 45, 0.12);
+        color: #dbff98;
+        font-size: 12px;
+        line-height: 1.4;
+        font-weight: 900;
       }
-      .pipeline-results { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 12px; }
-      .pipeline-result { padding: 15px 15px; border-radius: 15px; border: 1px solid #d8e2ef; background: #f7fafe; }
-      .pipeline-result span { display: block; font-size: 12px; font-weight: 800; color: #6c8097; }
-      .pipeline-result strong { display: block; margin-top: 7px; font-size: 20px; line-height: 1.15; color: #17375d; }
-      .pipeline-result strong b { color: #4f8d00; }
-
+      .pipeline-results {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .pipeline-result {
+        padding: 15px 15px;
+        border-radius: 15px;
+        border: 1px solid #d8e2ef;
+        background: #f7fafe;
+      }
+      .pipeline-result span {
+        display: block;
+        font-size: 12px;
+        font-weight: 800;
+        color: #6c8097;
+      }
+      .pipeline-result strong {
+        display: block;
+        margin-top: 7px;
+        font-size: 20px;
+        line-height: 1.15;
+        color: #17375d;
+      }
+      .pipeline-result strong b {
+        color: #4f8d00;
+      }
 
       .page.dark[data-page="07"],
       .page.dark[data-page="08"],
@@ -2167,7 +2515,10 @@
       <!-- PAGE 01 · COVER -->
       <section class="page dark" data-page="01">
         <div class="blob b1"></div>
-        <div class="blob b2" style="bottom: -6mm; width: 88mm; height: 88mm"></div>
+        <div
+          class="blob b2"
+          style="bottom: -6mm; width: 88mm; height: 88mm"
+        ></div>
         <div class="dots"></div>
         <div class="grid-lines"></div>
 
@@ -2819,7 +3170,10 @@
               <b>HR Copilot</b>
             </div>
             <p>
-              <strong>LangGraph 슈퍼바이저 패턴으로 멀티에이전트 흐름을 제어하고, 기준 미달 결과만 재생성하는 루프를 설계했습니다.</strong>
+              <strong
+                >LangGraph 슈퍼바이저 패턴으로 멀티에이전트 흐름을 제어하고,
+                기준 미달 결과만 재생성하는 루프를 설계했습니다.</strong
+              >
             </p>
           </div>
         </div>
@@ -2835,7 +3189,10 @@
             </div>
             <div class="design-pill accent">
               <strong>지원자 리스크 선추출</strong>
-              <span>질문 생성 전 공백기·직무 전환·성과 부풀리기 같은 핵심 리스크 추출</span>
+              <span
+                >질문 생성 전 공백기·직무 전환·성과 부풀리기 같은 핵심 리스크
+                추출</span
+              >
             </div>
             <div class="design-pill control">
               <strong>기준 미달 시 재생성</strong>
@@ -2931,7 +3288,8 @@
                   font-size="11"
                   fill="#607288"
                 >
-                  리스크 추출, 질문 생성, 추가 검증 질문, 평가를 분리해 각 역할 책임을 나눔
+                  리스크 추출, 질문 생성, 추가 검증 질문, 평가를 분리해 각 역할
+                  책임을 나눔
                 </text>
 
                 <rect
@@ -3292,7 +3650,8 @@
             <div class="design-note">
               <strong>왜 지원자 리스크를 먼저 뽑았는가</strong>
               <span
-                >공백기, 직무 전환, 성과 부풀리기처럼 면접에서 반드시 확인해야 할 리스크가 질문에서 빠지지 않도록 하기 위해서입니다.</span
+                >공백기, 직무 전환, 성과 부풀리기처럼 면접에서 반드시 확인해야
+                할 리스크가 질문에서 빠지지 않도록 하기 위해서입니다.</span
               >
             </div>
             <div class="design-note">
@@ -3304,7 +3663,8 @@
             <div class="design-note">
               <strong>어떻게 운영 관점까지 봤는가</strong>
               <span
-                >재생성 루프와 실행 추적 로그를 함께 보며 품질 저하 원인을 추적했습니다.</span
+                >재생성 루프와 실행 추적 로그를 함께 보며 품질 저하 원인을
+                추적했습니다.</span
               >
             </div>
           </div>
@@ -3334,8 +3694,8 @@
             </div>
             <p class="sub" style="margin-top: 10px">
               <strong
-                >LangSmith Trace로 노드별 중간 상태를 추적해 품질 저하
-                원인을 찾고, 구조 개선으로 이어갔습니다.</strong
+                >LangSmith Trace로 노드별 중간 상태를 추적해 품질 저하 원인을
+                찾고, 구조 개선으로 이어갔습니다.</strong
               >
             </p>
           </div>
@@ -3358,7 +3718,7 @@
           <div class="trace5-pill control">
             <strong>원인을 특정하고 구조를 개선</strong>
             <span
-              >Trace에서 확인한 품질 저하 지점을 지원자 리스크 추출 단계와 최종 선별
+              >Trace에서 확인한 품질 저하 지점을 검증 포인트 추출기와 최종 선별
               단계 개선으로 연결했습니다.</span
             >
           </div>
@@ -3445,7 +3805,7 @@
                 font-size="11"
                 fill="#607288"
               >
-                추가 검증 질문
+                꼬리 질문 보강
               </text>
 
               <rect
@@ -3622,7 +3982,7 @@
             <div class="trace5-finding action">
               <strong>LLMOps 개선 조치</strong>
               <span
-                >지원자 리스크 추출 단계 추가, 필수 질문 보호 단위 세분화, 최종 선별
+                >검증 포인트 추출기 추가, 필수 질문 보호 단위 세분화, 최종 선별
                 기준 강화를 통해 관측 결과를 운영 개선으로 연결했습니다.</span
               >
             </div>
@@ -3632,8 +3992,8 @@
                 핵심이었습니다</strong
               >
               <span
-                >품질 평가 단계는 계속 수정 필요를 반환했지만, 질문 생성 이후
-                상태가 약해져 추가 질문 단계가 같은 패턴으로 되돌아가는 것을
+                >품질 평가기는 계속 수정 필요를 반환했지만, 질문 생성 이후
+                상태가 약해져 꼬리 질문 단계가 같은 패턴으로 되돌아가는 것을
                 확인했습니다.</span
               >
             </div>
@@ -3642,7 +4002,7 @@
                 >추적 결과 2. 생성 성공과 최종 반영은 다른 문제였습니다</strong
               >
               <span
-                >지원자 리스크 추출 단계에서 뽑은 필수 질문이 질문 생성 단계에서는 살아
+                >검증 포인트 추출기가 뽑은 필수 질문이 질문 생성 단계에서는 살아
                 있었지만, 최종 선별 단계에서 빠지는 문제를 확인했습니다.</span
               >
             </div>
@@ -3951,32 +4311,103 @@
       <!-- PAGE 07 · BIZ-FUND-AI · PROJECT OVERVIEW -->
       <section class="page dark biz-page" data-page="07">
         <div class="grid-lines"></div>
-        <div class="section-head" style="grid-template-columns:.9fr 1.1fr">
-          <div><div class="project-kicker"><div class="topic-line">PROJECT OVERVIEW</div></div><h2 class="section-title" style="color:#fff"><span class="accent">프로젝트</span> 소개</h2></div>
-          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>공공데이터 API로 정책 공고를 수집하고, 사업장 조건에 맞는 정책자금을 매칭하는</strong> 에이전트입니다.</p></div>
+        <div class="section-head" style="grid-template-columns: 0.9fr 1.1fr">
+          <div>
+            <div class="project-kicker">
+              <div class="topic-line">PROJECT OVERVIEW</div>
+            </div>
+            <h2 class="section-title" style="color: #fff">
+              <span class="accent">프로젝트</span> 소개
+            </h2>
+          </div>
+          <div class="project-meta">
+            <div class="project-stamp">
+              <small>프로젝트 2</small><b>BIZ-FUND-AI</b>
+            </div>
+            <p class="sub">
+              <strong
+                >공공데이터 API로 정책 공고를 수집하고, 사업장 조건에 맞는
+                정책자금을 매칭하는</strong
+              >
+              에이전트입니다.
+            </p>
+          </div>
         </div>
         <div class="biz-overview-grid">
           <article class="biz-card biz-dark-card biz-overview-main">
             <div class="biz-label">SERVICE DEFINITION</div>
-            <h3>사업장 정보와 정책 공고를 매칭해<br />추천 정책과 근거를 생성</h3>
+            <h3>
+              사업장 정보와 정책 공고를 매칭해<br />추천 정책과 근거를 생성
+            </h3>
             <div class="biz-inputs">
-            <div class="biz-input"><strong>공공데이터 API 정책 공고</strong><span>지원 대상 · 신청 조건 · 지원 한도 · 제출 서류</span></div>
-            <div class="biz-input"><strong>사용자·사업장 정보</strong><span>질문 · 지역 · 업종 · 업력 · 재무 조건</span></div>
+              <div class="biz-input">
+                <strong>공공데이터 API 정책 공고</strong
+                ><span>지원 대상 · 신청 조건 · 지원 한도 · 제출 서류</span>
+              </div>
+              <div class="biz-input">
+                <strong>사용자·사업장 정보</strong
+                ><span>질문 · 지역 · 업종 · 업력 · 재무 조건</span>
+              </div>
             </div>
             <div class="biz-engine"><b>BIZ-FUND-AI 분석</b></div>
             <div class="biz-outputs">
-              <div class="biz-output"><strong>추천 정책</strong><span>조건에 맞는 공고 후보</span></div><div class="biz-output"><strong>추천 근거</strong><span>지역·업종·사업장 적합성</span></div><div class="biz-output"><strong>신청 조건</strong><span>자격·제외 조건 설명</span></div><div class="biz-output"><strong>준비 정보</strong><span>제출 서류·신청 방법</span></div>
+              <div class="biz-output">
+                <strong>추천 정책</strong><span>조건에 맞는 공고 후보</span>
+              </div>
+              <div class="biz-output">
+                <strong>추천 근거</strong><span>지역·업종·사업장 적합성</span>
+              </div>
+              <div class="biz-output">
+                <strong>신청 조건</strong><span>자격·제외 조건 설명</span>
+              </div>
+              <div class="biz-output">
+                <strong>준비 정보</strong><span>제출 서류·신청 방법</span>
+              </div>
             </div>
-            <div class="biz-stackline"><span>1인 설계·구현 · 2026.03.10 ~ 06.20 · FastAPI · LangGraph · PostgreSQL · pgvector</span><a href="https://github.com/JH-SKY/biz-fund-ai" target="_blank">GitHub README →</a></div>
+            <div class="biz-stackline">
+              <span
+                >1인 설계·구현 · 2026.03.10 ~ 06.20 · FastAPI · LangGraph ·
+                PostgreSQL · pgvector</span
+              ><a href="https://github.com/JH-SKY/biz-fund-ai" target="_blank">
+                README <br />문서보기</a
+              >
+            </div>
           </article>
           <article class="biz-card biz-function-card">
             <div class="biz-label">CORE FUNCTIONS</div>
             <div class="biz-function-list">
-              <div class="biz-function"><i>01</i><div><strong>공공데이터 API 연동</strong><span>기업마당 등 외부 공고를 수집해 검색 가능한 정책 데이터로 전환</span></div></div>
-              <div class="biz-function"><i>02</i><div><strong>맞춤 정책 추천</strong><span>질문과 사업장 조건을 함께 반영해 정책 후보를 선별</span></div></div>
-              <div class="biz-function"><i>03</i><div><strong>신청 근거 설명</strong><span>공고문 근거와 제외 조건까지 함께 제공합니다.</span></div></div>
+              <div class="biz-function">
+                <i>01</i>
+                <div>
+                  <strong>공공데이터 API 연동</strong
+                  ><span
+                    >기업마당 등 외부 공고를 수집해 검색 가능한 정책 데이터로
+                    전환</span
+                  >
+                </div>
+              </div>
+              <div class="biz-function">
+                <i>02</i>
+                <div>
+                  <strong>맞춤 정책 추천</strong
+                  ><span
+                    >질문과 사업장 조건을 함께 반영해 정책 후보를 선별</span
+                  >
+                </div>
+              </div>
+              <div class="biz-function">
+                <i>03</i>
+                <div>
+                  <strong>신청 근거 설명</strong
+                  ><span
+                    >공고문 근거와 제외 조건까지 함께 제공합니다.</span
+                  >
+                </div>
+              </div>
             </div>
-            <div class="biz-function-foot">핵심 범위는 정책 추천과 신청 근거 설명 자동화입니다.</div>
+            <div class="biz-function-foot">
+              핵심 범위는 정책 추천과 신청 근거 설명 자동화입니다.
+            </div>
           </article>
         </div>
       </section>
@@ -3984,81 +4415,286 @@
       <!-- PAGE 08 · BIZ-FUND-AI · RAG ARCHITECTURE -->
       <section class="page dark biz-page" data-page="08">
         <div class="grid-lines"></div>
-        <div class="section-head" style="grid-template-columns:.9fr 1.1fr">
-          <div><div class="project-kicker"><div class="topic-line">RAG ARCHITECTURE</div></div><h2 class="section-title"><span class="accent">Hybrid RAG</span> 설계</h2></div>
-          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>정책 문서 구조, 질문 표현 편차, 사업장 메타데이터</strong>를 함께 반영해 검색 실패와 오탐을 줄이도록 Hybrid RAG를 설계했습니다.</p></div>
+        <div class="section-head" style="grid-template-columns: 0.9fr 1.1fr">
+          <div>
+            <div class="project-kicker">
+              <div class="topic-line">RAG ARCHITECTURE</div>
+            </div>
+            <h2 class="section-title">
+              <span class="accent">Hybrid RAG</span> 설계
+            </h2>
+          </div>
+          <div class="project-meta">
+            <div class="project-stamp">
+              <small>프로젝트 2</small><b>BIZ-FUND-AI</b>
+            </div>
+            <p class="sub">
+              <strong>정책 문서 구조, 질문 표현 편차, 사업장 메타데이터</strong
+              >를 함께 반영해 <br />검색 실패와 오탐을 줄이도록 Hybrid RAG를
+              설계했습니다.
+            </p>
+          </div>
         </div>
         <article class="biz-card biz-dark-card rag-shell">
-          <div class="rag-lane"><div class="rag-lane-title"><b>01</b> 정책 공고 색인 파이프라인</div><div class="rag-flow">
-            <div class="rag-step"><strong>외부 공고</strong><span>공공데이터 API 정책 데이터</span></div><div class="rag-step"><strong>문서 파싱</strong><span>PDF · HWP · HTML</span></div><div class="rag-step key"><strong>섹션 청킹</strong><span>지원 대상·한도 경계 보존</span></div><div class="rag-step"><strong>맥락 보강</strong><span>정책명·기관명 추가</span></div><div class="rag-step"><strong>임베딩</strong><span>text-embedding-3-small</span></div><div class="rag-step"><strong>원문 저장</strong><span>정책·청크 구조화</span></div><div class="rag-step key"><strong>pgvector</strong><span>검색 색인 완성</span></div>
-          </div></div>
-          <div class="rag-lane"><div class="rag-lane-title"><b>02</b> 개인화 검색·답변 파이프라인</div><div class="rag-flow">
-            <div class="rag-step"><strong>사용자 질문</strong><span>생활어·복합 목적 질문</span></div><div class="rag-step key"><strong>의도 분해</strong><span>운영비·고용 등 목적 분리</span></div><div class="rag-step"><strong>의미 검색</strong><span>유사 표현 후보 검색</span></div><div class="rag-step"><strong>키워드 검색</strong><span>정책명·기관명 검색</span></div><div class="rag-step key"><strong>RRF 결합</strong><span>두 검색 순위 통합</span></div><div class="rag-step"><strong>사업장 재정렬</strong><span>지역·업종·업력 반영</span></div><div class="rag-step key"><strong>근거 기반 답변</strong><span>상위 정책과 추천 이유를 함께 답변</span></div>
-          </div></div>
+          <div class="rag-lane">
+            <div class="rag-lane-title">
+              <b>01</b> 정책 공고 색인 파이프라인
+            </div>
+            <div class="rag-flow">
+              <div class="rag-step">
+                <strong>외부 공고</strong
+                ><span>공공데이터 API 정책 데이터</span>
+              </div>
+              <div class="rag-step">
+                <strong>문서 파싱</strong><span>PDF · HWP · HTML</span>
+              </div>
+              <div class="rag-step key">
+                <strong>섹션 청킹</strong><span>지원 대상·한도 경계 보존</span>
+              </div>
+              <div class="rag-step">
+                <strong>맥락 보강</strong><span>정책명·기관명 추가</span>
+              </div>
+              <div class="rag-step">
+                <strong>임베딩</strong><span>text-embedding-3-small</span>
+              </div>
+              <div class="rag-step">
+                <strong>원문 저장</strong><span>정책·청크 구조화</span>
+              </div>
+              <div class="rag-step key">
+                <strong>pgvector</strong><span>검색 색인 완성</span>
+              </div>
+            </div>
+          </div>
+          <div class="rag-lane">
+            <div class="rag-lane-title">
+              <b>02</b> 개인화 검색·답변 파이프라인
+            </div>
+            <div class="rag-flow">
+              <div class="rag-step">
+                <strong>사용자 질문</strong><span>생활어·복합 목적 질문</span>
+              </div>
+              <div class="rag-step key">
+                <strong>의도 분해</strong><span>운영비·고용 등 목적 분리</span>
+              </div>
+              <div class="rag-step">
+                <strong>의미 검색</strong><span>유사 표현 후보 검색</span>
+              </div>
+              <div class="rag-step">
+                <strong>키워드 검색</strong><span>정책명·기관명 검색</span>
+              </div>
+              <div class="rag-step key">
+                <strong>RRF 결합</strong><span>두 검색 순위 통합</span>
+              </div>
+              <div class="rag-step">
+                <strong>사업장 재정렬</strong><span>지역·업종·업력 반영</span>
+              </div>
+              <div class="rag-step key">
+                <strong>근거 기반 답변</strong><span>상위 정책과 추천 이유를 함께 답변</span>
+              </div>
+            </div>
+          </div>
         </article>
         <div class="rag-decisions">
-          <div class="rag-decision"><strong>검색 후보 수 설계</strong><span>Vector top 20 · FTS top 20을 먼저 모은 뒤 RRF로 top 5 정책만 남겼습니다.</span></div>
-          <div class="rag-decision"><strong>RRF + 답변 컨텍스트</strong><span>RRF는 k=60을 적용했고, 최종 답변에는 상위 3청크만 넣어 잡음을 줄였습니다.</span></div>
-          <div class="rag-decision"><strong>정책 문서 전용 청킹</strong><span>섹션 분할을 우선하고, 헤더가 약한 문서는 800자 윈도우 · 100자 오버랩으로 폴백했습니다.</span></div>
-          <div class="rag-decision"><strong>메타데이터 전략</strong><span>정책명·기관명·지원유형 정보를 앞에 붙여 임베딩하고, target_logic의 지역·업종·업력 조건으로 후보를 다시 정렬했습니다.</span></div>
+          <div class="rag-decision">
+            <strong>검색 후보 수 설계</strong
+            ><span
+              >Vector top 20 · FTS top 20을 먼저 모은 뒤 RRF로 top 5 정책만
+              남겼습니다.</span
+            >
+          </div>
+          <div class="rag-decision">
+            <strong>RRF + 답변 컨텍스트</strong
+            ><span
+              >RRF는 k=60을 적용했고, 최종 답변에는 상위 3청크만 넣어 잡음을
+              줄였습니다.</span
+            >
+          </div>
+          <div class="rag-decision">
+            <strong>정책 문서 전용 청킹</strong
+            ><span
+              >섹션 분할을 우선하고, 헤더가 약한 문서는 800자 윈도우 · 100자
+              오버랩으로 폴백했습니다.</span
+            >
+          </div>
+          <div class="rag-decision">
+            <strong>메타데이터 전략</strong
+            ><span
+              >정책명·기관명·지원유형 정보를 앞에 붙여 임베딩하고, target_logic의
+              지역·업종·업력 조건으로 후보를 다시 정렬했습니다.</span
+            >
+          </div>
         </div>
       </section>
 
       <!-- PAGE 09 · BIZ-FUND-AI · COST AND QUALITY -->
       <section class="page dark biz-page" data-page="09">
         <div class="grid-lines"></div>
-        <div class="section-head" style="grid-template-columns:.9fr 1.1fr">
-          <div><div class="project-kicker"><div class="topic-line">COST &amp; QUALITY VALIDATION</div></div><h2 class="section-title"><span class="accent">비용·품질</span> 검증</h2></div>
-          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>작업 복잡도에 따라 모델을 분리하고, 품질 회귀 여부까지 검증했습니다.</strong></p></div>
+        <div class="section-head" style="grid-template-columns: 0.9fr 1.1fr">
+          <div>
+            <div class="project-kicker">
+              <div class="topic-line">COST &amp; QUALITY VALIDATION</div>
+            </div>
+            <h2 class="section-title">
+              <span class="accent">비용·품질</span> 검증
+            </h2>
+          </div>
+          <div class="project-meta">
+            <div class="project-stamp">
+              <small>프로젝트 2</small><b>BIZ-FUND-AI</b>
+            </div>
+            <p class="sub">
+              <strong>작업 복잡도에 따라 모델을 분리하고, 품질 회귀 여부까지 검증했습니다.</strong>
+            </p>
+          </div>
         </div>
         <div class="ops9-grid">
-          <article class="biz-card biz-dark-card model-card"><div class="biz-label">MODEL SELECTION</div><div class="model-table">
-            <div class="model-row"><strong>인사 응답</strong><b>정적 응답</b><span>출력 패턴이 고정된 작업은 LLM 호출 제거</span></div>
-            <div class="model-row"><strong>질문 분류·RAG 답변</strong><b>GPT-4o-mini</b><span>레이블 분류와 검색 근거 정리는 경량 모델 사용</span></div>
-            <div class="model-row"><strong>정책 공고 구조화</strong><b>GPT-4o 유지</b><span>비정형 문서의 JSON 추출은 정확도 우선</span></div>
-          </div></article>
-          <article class="biz-card ops-score"><div class="biz-label">COST RESULT</div><div class="big">약 1/15 <small>비용</small></div><p>모델 단가와 작업별 호출 구조를 기준으로 계산한 추정치입니다. 실제 청구 비용이 아닌 설계 전후 예상 비용을 비교했습니다.</p></article>
+          <article class="biz-card biz-dark-card model-card">
+            <div class="biz-label">MODEL SELECTION</div>
+            <div class="model-table">
+              <div class="model-row">
+                <strong>인사 응답</strong><b>정적 응답</b
+                ><span>출력 패턴이 고정된 작업은 LLM 호출 제거</span>
+              </div>
+              <div class="model-row">
+                <strong>질문 분류·RAG 답변</strong><b>GPT-4o-mini</b
+                ><span>레이블 분류와 검색 근거 정리는 경량 모델 사용</span>
+              </div>
+              <div class="model-row">
+                <strong>정책 공고 구조화</strong><b>GPT-4o 유지</b
+                ><span>비정형 문서의 JSON 추출은 정확도 우선</span>
+              </div>
+            </div>
+          </article>
+          <article class="biz-card ops-score">
+            <div class="biz-label">COST RESULT</div>
+            <div class="big">약 1/15 <small>비용</small></div>
+            <p>
+              모델 단가와 작업별 호출 구조를 기준으로 계산한 추정치입니다. 실제
+              청구 비용이 아닌 설계 전후 예상 비용을 비교했습니다.
+            </p>
+          </article>
         </div>
         <article class="eval-harness">
           <div class="eval-harness-head">
-            <div><strong>평가 하네스 검증</strong></div>
-            <p>경량 모델로 바꾼 뒤에도 실제 서비스 기준 통과 건수가 유지되는지를 운영 기준으로 봤습니다.</p>
+            <div>
+              <strong>평가 하네스 검증</strong>
+            </div>
+            <p>
+              경량 모델로 바꾼 뒤에도 실제 서비스 기준 통과 건수가 유지되는지를 운영 기준으로 봤습니다.
+            </p>
           </div>
           <div class="eval-strip">
-            <div class="eval-step"><strong>고정 평가셋 12개</strong><span>정책 검색 10 · 통계 1 · 일반 상담 1</span></div><div class="eval-arrow">›</div><div class="eval-step"><strong>동일 사업장 시나리오</strong><span>시나리오 계정으로 실제 API E2E 실행</span></div><div class="eval-arrow">›</div><div class="eval-step"><strong>승인 기준 3개</strong><span>분기 · 예상 정책 · 핵심 내용</span></div><div class="eval-arrow">›</div><div class="eval-step result"><strong>경량 모델 전환 후에도 10 / 12 통과 유지</strong><span>모델 변경 전후 83.3% 동일</span></div>
+            <div class="eval-step">
+              <strong>고정 평가셋 12개</strong
+              ><span>정책 검색 10 · 통계 1 · 일반 상담 1</span>
+            </div>
+            <div class="eval-arrow">›</div>
+            <div class="eval-step">
+              <strong>동일 사업장 조건</strong
+              ><span>시나리오 계정으로 실제 API 흐름 실행</span>
+            </div>
+            <div class="eval-arrow">›</div>
+            <div class="eval-step">
+              <strong>통과 기준 3개</strong
+              ><span>분기 · 예상 정책 · 핵심 내용</span>
+            </div>
+            <div class="eval-arrow">›</div>
+            <div class="eval-step result">
+              <strong>경량 모델 전환 후에도 10 / 12 통과 유지</strong
+              ><span>모델 변경 전후 83.3% 동일</span>
+            </div>
           </div>
-          <div class="eval-harness-note">3개 기준을 모두 충족해야 1건 승인으로 집계했고, 미통과 2건은 표현 편차 케이스로 분리했습니다.</div>
+          <div class="eval-harness-note">
+            3개 기준을 모두 충족해야 1건 통과로 집계했고, 미통과 2건은 표현 편차
+            케이스로 분리했습니다.
+          </div>
         </article>
       </section>
 
       <!-- PAGE 10 · BIZ-FUND-AI · DATA OPERATIONS -->
       <section class="page dark biz-page" data-page="10">
         <div class="grid-lines"></div>
-        <div class="section-head" style="grid-template-columns:.9fr 1.1fr">
-          <div><div class="project-kicker"><div class="topic-line">DATA PIPELINE OPERATIONS</div></div><h2 class="section-title"><span class="accent">정책 데이터</span> 적재 운영</h2></div>
-          <div class="project-meta"><div class="project-stamp"><small>프로젝트 2</small><b>BIZ-FUND-AI</b></div><p class="sub"><strong>공공데이터 API와 첨부파일 데이터를 안정적으로 적재해야 했습니다.</strong> 개별 실패가 전체 배치로 번지지 않도록 적재 구조를 분리했습니다.</p></div>
+        <div class="section-head" style="grid-template-columns: 0.9fr 1.1fr">
+          <div>
+            <div class="project-kicker">
+              <div class="topic-line">DATA PIPELINE OPERATIONS</div>
+            </div>
+            <h2 class="section-title">
+              <span class="accent">정책 데이터</span> 적재 운영
+            </h2>
+          </div>
+          <div class="project-meta">
+            <div class="project-stamp">
+              <small>프로젝트 2</small><b>BIZ-FUND-AI</b>
+            </div>
+            <p class="sub">
+              <strong>
+                공공데이터 API와 첨부파일 데이터를 안정적으로
+                적재해야 했습니다.</strong
+              > 개별 실패가 전체 배치로 번지지 않도록 적재 구조를
+              분리했습니다.
+            </p>
+          </div>
         </div>
         <article class="biz-card biz-dark-card pipeline-card">
           <div class="pipeline-card-head">
-            <div><div class="biz-label">WHY THIS PAGE</div><strong>검색이 좋아도 적재가 흔들리면 추천 근거 전체가 흔들립니다.</strong></div>
-            <p>핵심은 수집량이 아니라, 외부 공고와 첨부파일을 안정적으로 구조화해 RAG 입력 품질을 지킨 점입니다.</p>
+            <div>
+              <div class="biz-label">WHY THIS PAGE</div>
+              <strong> 적재가 흔들리면 추천 근거 전체가 흔들립니다.</strong>
+            </div>
+            <p>
+              핵심은 수집량이 아니라, 외부 공고와 첨부파일을 안정적으로
+              구조화해 RAG 입력 품질을 지킨 점입니다.
+            </p>
           </div>
-          <div class="biz-label">FAILURE-CONTROLLED INGESTION</div>
+
           <div class="pipeline-flow">
-            <div class="pipeline-stage"><strong>공공데이터 API 수집</strong><span>대량 공고와 첨부파일 수집</span><div class="pipeline-guard">페이지별 독립 세션<br />DB 연결 끊김 방지</div></div>
-            <div class="pipeline-stage"><strong>실제 파일 형식 판별</strong><span>확장자가 아닌 파일 헤더 확인</span><div class="pipeline-guard">Magic Number<br />첨부파일 정상 파싱률 24% → 57%</div></div>
-            <div class="pipeline-stage"><strong>공고별 파싱</strong><span>실패 범위를 해당 공고로 제한</span><div class="pipeline-guard">Savepoint<br />부분 롤백</div></div>
-            <div class="pipeline-stage"><strong>AI 구조화·결과검증</strong><span>필수 필드가 없는 결과 차단</span><div class="pipeline-guard">품질 미달 데이터<br />저장 제외</div></div>
-            <div class="pipeline-stage"><strong>정책 DB 적재</strong><span>중복 공고도 안전하게 재실행</span><div class="pipeline-guard">UPSERT<br />멱등성 확보</div></div>
+            <div class="pipeline-stage">
+              <strong>공공데이터 API 수집</strong
+              ><span>대량 공고와 첨부파일 수집</span>
+              <div class="pipeline-guard">
+                페이지별 독립 세션<br />DB 연결 끊김 방지
+              </div>
+            </div>
+            <div class="pipeline-stage">
+              <strong>실제 파일 형식 판별</strong
+              ><span>확장자가 아닌 파일 헤더 확인</span>
+              <div class="pipeline-guard">
+                Magic Number<br />첨부파일 정상 파싱률 24% → 57%
+              </div>
+            </div>
+            <div class="pipeline-stage">
+              <strong>공고별 파싱</strong
+              ><span>실패 범위를 해당 공고로 제한</span>
+              <div class="pipeline-guard">Savepoint<br />부분 롤백</div>
+            </div>
+            <div class="pipeline-stage">
+              <strong>AI 구조화·결과검증</strong
+              ><span>필수 필드가 없는 결과 차단</span>
+              <div class="pipeline-guard">품질 미달 데이터<br />저장 제외</div>
+            </div>
+            <div class="pipeline-stage">
+              <strong>정책 DB 적재</strong
+              ><span>중복 공고도 안전하게 재실행</span>
+              <div class="pipeline-guard">UPSERT<br />멱등성 확보</div>
+            </div>
           </div>
         </article>
         <div class="pipeline-results">
-          <div class="pipeline-result"><span>수집 성공 로그가 아닌 실제 DB 반영 건수</span><strong>약 300건 → <b>1,282건</b></strong></div>
-          <div class="pipeline-result"><span>공고 1건 파싱 실패 시 롤백 범위</span><strong>전체 배치 → <b>해당 공고만</b></strong></div>
-          <div class="pipeline-result"><span>AI 구조화를 포함한 장기 배치</span><strong><b>1,255건</b> 중단 없이 완료</strong></div>
+          <div class="pipeline-result">
+            <span>수집 성공 로그가 아닌 실제 DB 반영 건수</span
+            ><strong>약 300건 → <b>1,282건</b></strong>
+          </div>
+          <div class="pipeline-result">
+            <span>공고 1건 파싱 실패 시 롤백 범위</span
+            ><strong>전체 배치 → <b>해당 공고만</b></strong>
+          </div>
+          <div class="pipeline-result">
+            <span>AI 구조화를 포함한 장기 배치</span
+            ><strong><b>1,255건</b> 중단 없이 완료</strong>
+          </div>
         </div>
       </section>
-
 
       <!-- PAGE 11 · CLOSING -->
       <section class="page dark" data-page="11" style="overflow: hidden">
