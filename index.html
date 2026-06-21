@@ -2894,7 +2894,7 @@
               </div>
               <div class="proof-box">
                 <strong>운영 관점 고려</strong>
-                <span>모델 분리, 평가 하네스, checkpointer 구조까지 반영</span>
+                <span>모델 분리, 평가 하네스, 대화 상태 저장 구조까지 반영</span>
               </div>
             </div>
           </article>
@@ -4559,10 +4559,10 @@
                 ><span>운영비·고용 등 목적 분리</span>
               </div>
               <div class="rag-step">
-                <strong>쿼리 리라이트</strong><span>유사 표현 후보 재구성</span>
+                <strong>쿼리 리라이트</strong><span>검색 결과가 약하면 질의를 다시 정제</span>
               </div>
               <div class="rag-step">
-                <strong>BM25 + Nori 검색</strong><span>한국어 정책명·기관명 검색 보정</span>
+                <strong>BM25 + Nori 검색</strong><span>정책명·기관명 검색 후 부족하면 재검색</span>
               </div>
               <div class="rag-step key">
                 <strong>RRF 결합</strong><span>두 검색 순위 통합</span>
@@ -4582,8 +4582,8 @@
           <div class="rag-decision">
             <strong>검색 후보 수 설계</strong
             ><span
-              >pgvector top 20 · BM25 top 20을 수집한 뒤 RRF로 top 5 정책만
-              남겼습니다.</span
+              >1차 검색 결과가 부족하면 질의를 다시 정제하고, pgvector top 20 ·
+              BM25 top 20을 수집한 뒤 RRF로 top 5 정책만 남겼습니다.</span
             >
           </div>
           <div class="rag-decision">
