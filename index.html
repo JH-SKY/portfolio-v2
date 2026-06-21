@@ -1061,10 +1061,22 @@
         gap: 12px;
       }
       .biz-page .project-meta .sub {
-        max-width: 560px;
+        max-width: 640px;
         font-size: 15px;
-        line-height: 1.55;
+        line-height: 1.58;
         text-align: right;
+        word-break: keep-all;
+        overflow-wrap: normal;
+      }
+      .biz-page .project-meta .sub strong,
+      .biz-page .rag-step strong,
+      .biz-page .rag-step span,
+      .biz-page .rag-decision strong,
+      .biz-page .rag-decision span,
+      .biz-page .eval-step strong,
+      .biz-page .eval-step span {
+        word-break: keep-all;
+        overflow-wrap: normal;
       }
       .biz-card {
         border-radius: 22px;
@@ -4441,7 +4453,7 @@
               <strong
                 >벡터 검색만 붙인 RAG가 아니라, 쿼리 리라이트·질문 의도
                 분해·메타데이터 기반 리랭킹</strong
-              >을 적용해 <br />사업자 적합도 중심 추천이 되도록 Hybrid RAG를
+              >을 적용해 사업자 적합도 중심 추천이 되도록 Hybrid RAG를
               설계했습니다.
             </p>
           </div>
