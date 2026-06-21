@@ -4507,8 +4507,9 @@
             </div>
             <p class="sub">
               <strong
-                >pgvector 의미 검색과 BM25·Nori 키워드 검색을 결합하고, 검색
-                재시도·질문 의도 분해·메타데이터 기반 리랭킹</strong
+                >Hybrid RAG 구조로 pgvector 의미 검색과 BM25 sparse 검색을
+                결합하고, 한국어 정책명·기관명 검색 보정을 위해 Nori 분석기와
+                검색 재시도·질문 의도 분해·메타데이터 기반 리랭킹</strong
               >을 적용해 사업자 중심 추천이 되도록 Hybrid RAG를 설계했습니다.
             </p>
           </div>
@@ -4559,7 +4560,7 @@
                 <strong>쿼리 리라이트</strong><span>유사 표현 후보 재구성</span>
               </div>
               <div class="rag-step">
-                <strong>BM25 + Nori 검색</strong><span>정책명·기관명 검색 최적화</span>
+                <strong>BM25 + Nori 검색</strong><span>한국어 정책명·기관명 검색 보정</span>
               </div>
               <div class="rag-step key">
                 <strong>RRF 결합</strong><span>두 검색 순위 통합</span>
@@ -4581,6 +4582,12 @@
             ><span
               >pgvector top 20 · BM25 top 20을 먼저 모은 뒤 RRF로 top 5 정책만
               남겼습니다.</span
+            >
+          </div>
+          <div class="rag-decision">
+            <strong>한국어 검색 보정</strong
+            ><span
+              >복합어와 정책명 검색 누락을 줄이기 위해 Nori 분석기를 적용했습니다.</span
             >
           </div>
           <div class="rag-decision">
