@@ -4511,8 +4511,8 @@
             </div>
             <p class="sub">
               <strong
-                >검색 재시도·질문 의도 분해·메타데이터 기반
-                리랭킹을 적용해 사업자 중심 추천이 되도록 Hybrid RAG를 설계했습니다.</strong
+                >질문 의도 분해·사전 쿼리 재작성·RRF 기반 Hybrid 검색을
+                적용해 사업자 중심 추천이 되도록 설계했습니다.</strong
               >
             </p>
           </div>
@@ -4528,7 +4528,8 @@
                 ><span>공공데이터 API 정책 데이터</span>
               </div>
               <div class="rag-step">
-                <strong>문서 파싱</strong><span>PDF · HWP · HTML</span>
+                <strong>문서 파싱</strong
+                ><span>PDF 텍스트 · 정책 요약 HTML 정리</span>
               </div>
               <div class="rag-step key">
                 <strong>섹션 청킹</strong><span>지원 대상·한도 경계 보존</span>
@@ -4560,17 +4561,19 @@
                 ><span>운영비·고용 등 목적 분리</span>
               </div>
               <div class="rag-step">
-                <strong>쿼리 리라이트</strong><span>검색 결과가 약하면 질의를 다시 정제</span>
+                <strong>쿼리 리라이트</strong
+                ><span>검색 전 질의를 의도별로 최대 3개까지 정제</span>
               </div>
               <div class="rag-step">
-                <strong>BM25 + Nori 검색</strong><span>정책명·기관명 검색 후 부족하면 재검색</span>
+                <strong>BM25 + Nori 검색</strong
+                ><span>정책명·기관명 중심 sparse retrieval</span>
               </div>
               <div class="rag-step key">
                 <strong>RRF 결합</strong><span>두 검색 순위 통합</span>
               </div>
               <div class="rag-step">
-                <strong>메타데이터 기반 리랭킹</strong
-                ><span>지역·업종·업력 반영</span>
+                <strong>조건 필터·필드 가점</strong
+                ><span>지역·지원유형 조건 반영</span>
               </div>
               <div class="rag-step key">
                 <strong>근거 기반 답변</strong
