@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이종혁 · FDE / 비즈니스 엔지니어 포트폴리오</title>
+    <link rel="stylesheet" href="./role-portfolio.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">FDE</span> 이종혁 · Business Engineer Portfolio</div>
+      <nav class="nav" aria-label="portfolio pages">
+        <a href="./index.html">Agent</a>
+        <a href="./backend.html">Backend</a>
+        <a href="#implemented">Evidence</a>
+        <a href="#playbook">PoC</a>
+      </nav>
+    </header>
+
+    <main class="deck">
+      <section class="sheet dark">
+        <div class="page-label"><span>FDE Portfolio</span><span>01 / 12</span></div>
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Business engineer · FDE · consultant engineer</p>
+            <h1>고객 문제를 요구사항, 검증 기준, 운영 지표로 번역하는 엔지니어</h1>
+            <p class="lead">
+              정책 추천, 채용공고 컴플라이언스, 문서 일괄 등록, AI 비용/품질 관측성까지
+              실제 구현과 문서 근거로만 구성했습니다.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Problem discovery</span>
+              <span class="tag">PoC validation</span>
+              <span class="tag">Compliance</span>
+              <span class="tag">Workflow automation</span>
+              <span class="tag">AI operations</span>
+            </div>
+          </div>
+          <aside class="signal-panel">
+            <ul class="metric-list">
+              <li><b>문제</b><span>소상공인 정책 탐색, HR 채용 리스크, 반복 문서 처리</span></li>
+              <li><b>전환</b><span>요구사항을 데이터 모델, rule, trace, dashboard로 구체화</span></li>
+              <li><b>검증</b><span>평가셋, experiment run, case result, 테스트 근거</span></li>
+              <li><b>운영</b><span>비용, latency, fallback, feedback, audit 지표</span></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="sheet" id="implemented">
+        <div class="page-label"><span>Evidence Boundary</span><span>02 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Implemented vs proposed</p>
+          <h2>실제 구현된 것과 직무 적합성을 보여주는 제안을 분리해 신뢰도를 높입니다.</h2>
+          <table class="decision-table">
+            <thead><tr><th>구분</th><th>포트폴리오에서 말할 수 있는 내용</th><th>주의할 표현</th></tr></thead>
+            <tbody>
+              <tr><td>구현 근거 있음</td><td>정책 추천, 사업자 검증, 관리자 모니터링, 채용공고 분석, 문서 일괄 등록, 비용 대시보드</td><td>성과처럼 강하게 말해도 됨</td></tr>
+              <tr><td>문서/설계 근거 있음</td><td>문제정의, 요구사항, 데이터 흐름, 실험/테스트 계획, troubleshooting</td><td>구현과 설계를 구분해서 말함</td></tr>
+              <tr><td>증거 약함</td><td>고객 미팅, 실제 고객사 리딩, 제휴/매출 검증</td><td>과거 성과가 아니라 PoC 운영 방식으로만 표현</td></tr>
+            </tbody>
+          </table>
+          <div class="quote-box">FDE 포트폴리오의 톤은 “제가 고객사를 만났습니다”가 아니라 “고객 질문에 답할 수 있는 구현과 검증 구조를 만들었습니다”입니다.</div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>포트폴리오_계획서_근거기반_점검_2026-07-02.md · 백엔드_비즈니스_포트폴리오_구성계획_2026-07-02.md</div></div>
+      </section>
+
+      <section class="sheet soft-blue">
+        <div class="page-label"><span>Problem To Requirement</span><span>03 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">From vague pain to system shape</p>
+          <h2>고객 문제를 기능 목록이 아니라 검증 가능한 시스템 요구사항으로 바꿉니다.</h2>
+          <div class="grid-3">
+            <article class="card blue"><span class="kicker">BizMong</span><h3>정책 탐색 문제</h3><p>소상공인이 자신에게 맞는 정책을 찾기 어렵다는 문제를 사업자 검증, 정책 추천, RAG 답변, bookmark/notification 흐름으로 바꿨습니다.</p></article>
+            <article class="card green"><span class="kicker">HR Copilot</span><h3>채용 리스크 문제</h3><p>채용공고의 차별/모호성/허위성 위험을 issue type, severity, reason, replacement로 구조화했습니다.</p></article>
+            <article class="card amber"><span class="kicker">Bulk Import</span><h3>반복 업무 문제</h3><p>여러 지원자 문서 업로드를 grouping, profile extraction, screening preview로 자동화했습니다.</p></article>
+          </div>
+          <div class="status-strip">
+            <div class="status"><b>Question</b><span>누가 대상인가?</span></div>
+            <div class="status"><b>Question</b><span>어떤 판단 근거가 필요한가?</span></div>
+            <div class="status"><b>Question</b><span>운영자가 무엇을 확인해야 하나?</span></div>
+            <div class="status"><b>Output</b><span>데이터·rule·trace·dashboard</span></div>
+          </div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/docs/01_concept_and_requirements.md · biz-fund-ai/docs/03_data_design_spec.md · hr-copilot/backend/services/job_posting_service.py · hr-copilot/backend/services/document_bulk_import_service.py</div></div>
+      </section>
+
+      <section class="sheet soft-green">
+        <div class="page-label"><span>BizMong PoC</span><span>04 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Policy recommendation PoC</p>
+          <h2>소상공인 정책 추천은 “AI 답변”보다 “고객 조건에 맞는 근거 있는 추천”으로 보여줍니다.</h2>
+          <div class="flow">
+            <div class="flow-step"><b>Business</b><span>사업자 등록과 국세청 상태 검증</span></div>
+            <div class="flow-step"><b>Profile</b><span>업종, 지역, 사업 상태, 제한 조건</span></div>
+            <div class="flow-step"><b>Search</b><span>vector + BM25 + Nori + RRF</span></div>
+            <div class="flow-step"><b>Recommend</b><span>세금 체납 hard fail, 업종 alias 등 rule 적용</span></div>
+            <div class="flow-step"><b>Operate</b><span>bookmark, notification, feedback, correction note</span></div>
+          </div>
+          <div class="quote-box">FDE 관점의 핵심은 “모델이 추천했습니다”가 아니라 “추천이 왜 나왔는지, 운영자가 어떻게 고칠 수 있는지”입니다.</div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/backend/src/app/domains/business/test_biz_verification.py · biz-fund-ai/backend/src/app/agents/biz_mong/tools/policy_rag.py · biz-fund-ai/backend/tests/domains/policy/test_rule_based_match_engine.py · biz-fund-ai/backend/src/app/domains/admin/service.py</div></div>
+      </section>
+
+      <section class="sheet soft-amber">
+        <div class="page-label"><span>Compliance PoC</span><span>05 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">HR job posting compliance</p>
+          <h2>채용공고 분석은 고객사의 법적/운영 리스크를 제품 기능으로 번역한 가장 FDE다운 사례입니다.</h2>
+          <div class="grid-4">
+            <article class="card"><h3>Risk pattern</h3><p>성차별, 연령차별, 직무 무관 개인정보, 허위공고, 조건 변경, 급여 누락 등을 rule로 구조화했습니다.</p></article>
+            <article class="card"><h3>Severity</h3><p>issue type과 severity로 현업 담당자가 우선순위를 이해할 수 있게 했습니다.</p></article>
+            <article class="card"><h3>Reason</h3><p>왜 위험한지 reason을 남겨 단순 경고가 아니라 설명 가능한 분석으로 만들었습니다.</p></article>
+            <article class="card"><h3>Replacement</h3><p>수정 방향을 replacement로 제시해 고객 업무 액션까지 이어지게 했습니다.</p></article>
+          </div>
+          <table class="decision-table">
+            <thead><tr><th>고객 질문</th><th>시스템 답변</th><th>근거</th></tr></thead>
+            <tbody>
+              <tr><td>왜 이 문구가 문제인가?</td><td>issue type, severity, reason</td><td>RISK_PATTERNS</td></tr>
+              <tr><td>어떻게 고쳐야 하나?</td><td>replacement 제안</td><td>job_posting_service</td></tr>
+              <tr><td>결과를 반복 검증할 수 있나?</td><td>experiment run, case result</td><td>experiment APIs</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>hr-copilot/backend/services/job_posting_service.py · hr-copilot/backend/services/job_posting_trace_service.py · hr-copilot/docs/기획/채용공고분석데이터흐름.md · hr-copilot/docs/기획/채용공고_RAG_고도화가이드.md</div></div>
+      </section>
+
+      <section class="sheet">
+        <div class="page-label"><span>Workflow Automation</span><span>06 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Bulk document import</p>
+          <h2>지원자 문서 일괄 등록은 파일 처리, grouping, fallback, screening preview까지 이어지는 고객 업무 자동화입니다.</h2>
+          <div class="split">
+            <div>
+              <h3>고객 업무 흐름</h3>
+              <p class="lead">여러 지원자 파일을 받으면 담당자는 사람별 문서를 묶고, 기본 정보를 확인하고, 먼저 볼 지원자를 골라야 합니다.</p>
+            </div>
+            <div class="grid-2">
+              <article class="card blue"><h3>Safe upload</h3><p>ZIP member path에서 absolute path와 `..` path를 차단합니다.</p></article>
+              <article class="card green"><h3>Grouping</h3><p>파일명/폴더가 약하면 email/phone 기반으로 문서 묶음을 보정합니다.</p></article>
+              <article class="card amber"><h3>Fallback</h3><p>OpenAI key가 없으면 heuristic extraction으로 최소 기능을 유지합니다.</p></article>
+              <article class="card red"><h3>Screening</h3><p>readiness, completeness, job fit, evidence, risk로 preview를 만듭니다.</p></article>
+            </div>
+          </div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>hr-copilot/backend/services/document_bulk_import_service.py</div></div>
+      </section>
+
+      <section class="sheet soft-blue">
+        <div class="page-label"><span>PoC Validation</span><span>07 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Not a demo, a measurable loop</p>
+          <h2>PoC는 시연으로 끝내지 않고 평가셋, experiment run, version, case result로 반복 검증하게 구성합니다.</h2>
+          <div class="grid-3">
+            <article class="card blue"><span class="kicker">BizMong</span><h3>12개 시나리오 평가</h3><p>정책 추천 챗봇 품질을 12개 시나리오로 검증하고, 통과율을 문서화했습니다.</p></article>
+            <article class="card green"><span class="kicker">HR Copilot</span><h3>Experiment run</h3><p>채용공고 분석 pipeline version, analysis version, case result를 남겨 반복 실험이 가능합니다.</p></article>
+            <article class="card amber"><span class="kicker">Operations</span><h3>Quality signals</h3><p>fallback, dislike feedback, CTA click, latency, cost를 PoC 운영 지표로 사용할 수 있습니다.</p></article>
+          </div>
+          <div class="quote-box">FDE 면접에서는 “어떻게 팔 것인가”보다 “고객이 성공했다고 판단할 기준을 어떻게 만들 것인가”가 더 중요합니다.</div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/docs/04_experiment_and_test.md · biz-fund-ai/backend/src/app/scripts/evaluate_bizmong_quality.py · hr-copilot/backend/services/job_posting_service.py · biz-fund-ai/backend/src/app/domains/admin/service.py</div></div>
+      </section>
+
+      <section class="sheet dark">
+        <div class="page-label"><span>Operations</span><span>08 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Cost · Quality · Adoption risk</p>
+          <h2>고객 도입 후 가장 먼저 나오는 질문인 비용, 품질, 장애, 전환을 지표로 답하게 만들었습니다.</h2>
+          <table class="decision-table">
+            <thead><tr><th>고객 질문</th><th>답할 수 있는 지표</th><th>구현 근거</th></tr></thead>
+            <tbody>
+              <tr><td>답변이 느린가?</td><td>avg/p50/p95 latency</td><td>AgentRunLog, AgentNodeLog</td></tr>
+              <tr><td>비용이 어디서 발생하나?</td><td>model/node별 token/cost, projected today cost</td><td>telemetry, manager dashboard</td></tr>
+              <tr><td>fallback이 잦은가?</td><td>fallback runs, fallback rate</td><td>admin monitoring</td></tr>
+              <tr><td>사용자가 싫어한 답변은?</td><td>dislike feedback count</td><td>feedback context</td></tr>
+              <tr><td>추천이 행동으로 이어지나?</td><td>CTA click</td><td>agent overview</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/backend/src/app/domains/admin/service.py · biz-fund-ai/backend/src/app/agents/biz_mong/telemetry.py · hr-copilot/backend/services/manager_dashboard_service.py · hr-copilot/backend/repositories/manager_dashboard_repository.py</div></div>
+      </section>
+
+      <section class="sheet soft-green">
+        <div class="page-label"><span>Human In The Loop</span><span>09 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Control after AI output</p>
+          <h2>AI 결과를 그대로 방치하지 않고, 운영자가 검수하고 보정할 수 있는 루프를 설계했습니다.</h2>
+          <div class="grid-3">
+            <article class="card"><h3>Feedback context</h3><p>사용자 feedback과 관련 context를 관리자 화면에서 확인할 수 있는 API 구조가 있습니다.</p></article>
+            <article class="card"><h3>Correction note</h3><p>운영자가 잘못된 답변이나 정책 정보를 보정하기 위한 note 흐름이 있습니다.</p></article>
+            <article class="card"><h3>Audit log</h3><p>관리자 활동을 audit log로 남겨 운영 이력을 추적할 수 있습니다.</p></article>
+          </div>
+          <div class="grid-2" style="margin-top: 18px">
+            <article class="card red"><h3>Sensitive term guard</h3><p>HR screening에서는 민감 정보가 선별 근거로 쓰이지 않도록 warning을 생성합니다.</p></article>
+            <article class="card blue"><h3>Quality loop</h3><p>fallback, dislike, correction note를 다음 개선 backlog로 연결할 수 있습니다.</p></article>
+          </div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/backend/src/app/domains/admin/service.py · biz-fund-ai/backend/src/app/domains/admin/repository.py · biz-fund-ai/docs/03_data_design_spec.md · hr-copilot/backend/services/document_bulk_import_service.py</div></div>
+      </section>
+
+      <section class="sheet soft-red">
+        <div class="page-label"><span>Troubleshooting</span><span>10 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Iteration story</p>
+          <h2>문제가 생겼을 때 고객에게 설명 가능한 방식으로 원인을 좁힐 수 있는 trace와 로그를 남깁니다.</h2>
+          <div class="timeline">
+            <div class="timeline-row"><b>채용공고 분석</b><span>pipeline node별 request/output/elapsed_ms/error_message를 LlmCallLog에 저장</span></div>
+            <div class="timeline-row"><b>정책 추천</b><span>RAG hit count, fallback mode, prompt/model/graph/rag strategy version을 run 상세로 조회</span></div>
+            <div class="timeline-row"><b>비용 증가</b><span>top cost node와 projected today cost로 어느 분석 흐름이 비용을 만드는지 확인</span></div>
+            <div class="timeline-row"><b>품질 불만</b><span>dislike feedback, correction note, node latency/error를 개선 단서로 사용</span></div>
+          </div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>hr-copilot/backend/services/job_posting_trace_service.py · hr-copilot/backend/models/llm_call_log.py · biz-fund-ai/backend/src/app/domains/admin/service.py · hr-copilot/backend/services/manager_dashboard_service.py</div></div>
+      </section>
+
+      <section class="sheet" id="playbook">
+        <div class="page-label"><span>Customer PoC Playbook</span><span>11 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Proposed operating method, not claimed past customer work</p>
+          <h2>실제 고객 미팅 성과로 과장하지 않고, 구현 근거를 바탕으로 PoC를 어떻게 운영할지 제안합니다.</h2>
+          <div class="flow">
+            <div class="flow-step"><b>1. Scope</b><span>고객 업무 흐름과 성공 기준을 정의</span></div>
+            <div class="flow-step"><b>2. Data</b><span>입력 문서, 사업자 정보, 정책 데이터 품질 확인</span></div>
+            <div class="flow-step"><b>3. Baseline</b><span>현재 수작업 또는 기존 시스템 결과를 기준선으로 저장</span></div>
+            <div class="flow-step"><b>4. Pilot</b><span>평가셋/experiment run으로 반복 검증</span></div>
+            <div class="flow-step"><b>5. Operate</b><span>비용, latency, feedback, correction을 운영 지표로 관리</span></div>
+          </div>
+          <div class="quote-box">이 페이지는 과거 실적 주장이 아니라, FDE 역할에서 고객 PoC를 맡았을 때 바로 적용할 수 있는 운영 방식입니다.</div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>실제 구현 근거: biz-fund-ai admin monitoring · hr-copilot experiment run · document bulk import · LLM cost dashboard. 고객 미팅/제휴 실행 성과로 주장하지 않음.</div></div>
+      </section>
+
+      <section class="sheet dark">
+        <div class="page-label"><span>Closing</span><span>12 / 12</span></div>
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Why this role fits</p>
+            <h2>고객의 애매한 말을 시스템이 답할 수 있는 질문으로 바꾸고, 그 답을 코드와 지표로 남깁니다.</h2>
+            <p class="lead">FDE/비즈니스 엔지니어 포트폴리오는 개발 실력보다 고객 문제를 구현 가능한 구조로 번역한 증거를 전면에 둡니다.</p>
+          </div>
+          <aside class="signal-panel">
+            <ul class="metric-list">
+              <li><b>요구</b><span>문제정의를 데이터 모델과 workflow로 전환</span></li>
+              <li><b>검증</b><span>평가셋과 experiment run으로 PoC 기준 수립</span></li>
+              <li><b>운영</b><span>비용, latency, fallback, feedback 지표로 설명</span></li>
+              <li><b>신뢰</b><span>구현 근거가 약한 주장은 제안으로 분리</span></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

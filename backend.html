@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이종혁 · 백엔드 개발자 포트폴리오</title>
+    <link rel="stylesheet" href="./role-portfolio.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">BE</span> 이종혁 · Backend Portfolio</div>
+      <nav class="nav" aria-label="portfolio pages">
+        <a href="./index.html">Agent</a>
+        <a href="./business-engineer.html">FDE</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#tests">Tests</a>
+      </nav>
+    </header>
+
+    <main class="deck">
+      <section class="sheet dark" id="summary">
+        <div class="page-label"><span>Backend Portfolio</span><span>01 / 12</span></div>
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Evidence-first backend engineer</p>
+            <h1>AI 서비스가 운영될 때 깨지는 지점을 먼저 보는 백엔드 개발자</h1>
+            <p class="lead">
+              FastAPI 기반 도메인 API, 정책 RAG 파이프라인, 멀티 인스턴스 배치 안정성,
+              AI 실행 관측성, 테스트까지 실제 코드와 문서 근거로 정리했습니다.
+            </p>
+            <div class="tag-row">
+              <span class="tag">FastAPI</span>
+              <span class="tag">SQLAlchemy Async</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">RAG</span>
+              <span class="tag">APScheduler</span>
+              <span class="tag">Observability</span>
+            </div>
+          </div>
+          <aside class="signal-panel">
+            <ul class="metric-list">
+              <li><b>Lock</b><span>PostgreSQL Advisory Lock으로 스케줄러 중복 실행 방지</span></li>
+              <li><b>RAG</b><span>섹션 chunking, contextual embedding, hash skip, hybrid search</span></li>
+              <li><b>Trace</b><span>AgentRunLog, AgentNodeLog, LlmCallLog 기반 운영 지표</span></li>
+              <li><b>Test</b><span>검색, 추천 권한, 외부 API 실패, 도메인 규칙 테스트</span></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="sheet" id="evidence">
+        <div class="page-label"><span>Evidence Index</span><span>02 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">증거가 있는 것만 전면에 배치</p>
+          <h2>포트폴리오의 모든 강점은 코드나 문서에서 추적 가능하게 구성했습니다.</h2>
+          <div class="grid-3">
+            <article class="card blue">
+              <span class="kicker">Biz-Fund-AI</span>
+              <h3>정책 추천 AI 백엔드</h3>
+              <p>정책 수집, 구조화, 임베딩, hybrid retrieval, 관리자 운영 지표, 사업자 검증 테스트까지 연결된 메인 백엔드 사례입니다.</p>
+            </article>
+            <article class="card green">
+              <span class="kicker">HR Copilot</span>
+              <h3>분석 job과 LLM 운영 로그</h3>
+              <p>채용공고 컴플라이언스 분석, experiment run, node trace, LLM 비용 집계가 구현된 비동기 분석 백엔드 사례입니다.</p>
+            </article>
+            <article class="card amber">
+              <span class="kicker">Study Room</span>
+              <h3>기본기 보조 근거</h3>
+              <p>인증, 예약 충돌, 권한, 상태 전이를 다룬 일반 백엔드 프로젝트로 AI 프로젝트 밖의 기본기를 보강합니다.</p>
+            </article>
+          </div>
+          <table class="decision-table">
+            <thead>
+              <tr><th>면접관 질문</th><th>포트폴리오에서 보여줄 답</th><th>근거 유형</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>운영에서 중복 실행을 막았나?</td><td>Advisory Lock 기반 scheduler singleton</td><td>worker code</td></tr>
+              <tr><td>검색 품질은 어떻게 만들었나?</td><td>섹션 chunking, Nori, BM25, vector, RRF</td><td>service code + tests</td></tr>
+              <tr><td>AI 비용과 장애를 추적하나?</td><td>run/node/cost/latency/fallback/dislike 지표</td><td>admin service + log models</td></tr>
+              <tr><td>실패 케이스 테스트가 있나?</td><td>외부 API timeout, 권한, 검색 ranking, hard fail</td><td>pytest files</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>백엔드_비즈니스_포트폴리오_구성계획_2026-07-02.md · 포트폴리오_계획서_근거기반_점검_2026-07-02.md</div></div>
+      </section>
+
+      <section class="sheet soft-blue">
+        <div class="page-label"><span>Architecture</span><span>03 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Domain boundaries</p>
+          <h2>Router-Service-Repository를 도메인 단위로 나누고, 운영 도메인까지 API 경계에 포함했습니다.</h2>
+          <div class="system-map">
+            <div class="map-column">
+              <h3>Product API</h3>
+              <div class="map-node">auth · business · policy</div>
+              <div class="map-node">chat · diagnosis · notification</div>
+              <div class="map-node">bookmark · recommendation</div>
+            </div>
+            <div class="map-column">
+              <h3>Pipeline</h3>
+              <div class="map-node">BizInfo sync</div>
+              <div class="map-node">AI structuring</div>
+              <div class="map-node">embedding · search index</div>
+            </div>
+            <div class="map-column">
+              <h3>Operations</h3>
+              <div class="map-node">admin monitoring</div>
+              <div class="map-node">feedback · correction note</div>
+              <div class="map-node">audit · batch log</div>
+            </div>
+          </div>
+          <div class="quote-box">핵심은 CRUD를 늘리는 것이 아니라, 사용자 기능과 운영자 기능을 같은 백엔드 책임 안에서 분리해 추적 가능하게 만든 점입니다.</div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/backend/src/app/api/v1/*_router.py · biz-fund-ai/backend/src/app/domains/*/service.py · biz-fund-ai/docs/02_system_architecture.md · biz-fund-ai/docs/03_data_design_spec.md</div></div>
+      </section>
+
+      <section class="sheet soft-green">
+        <div class="page-label"><span>Data Pipeline Reliability</span><span>04 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Batch failure isolation</p>
+          <h2>정책 수집/구조화/임베딩 배치에서 중복 실행과 부분 실패를 각각 다른 방식으로 막았습니다.</h2>
+          <div class="flow">
+            <div class="flow-step"><b>Scheduler</b><span>APScheduler가 매일 정책 동기화 job을 실행</span></div>
+            <div class="flow-step"><b>Advisory Lock</b><span>pg_try_advisory_lock으로 leader instance만 실행</span></div>
+            <div class="flow-step"><b>UPSERT</b><span>중복 정책은 ON CONFLICT DO UPDATE로 반영</span></div>
+            <div class="flow-step"><b>Savepoint</b><span>개별 정책 실패를 begin_nested로 격리</span></div>
+            <div class="flow-step"><b>Embedding</b><span>변경된 정책만 임베딩하고 batch 처리</span></div>
+          </div>
+          <div class="grid-2" style="margin-top: 22px">
+            <article class="card">
+              <h3>운영 리스크</h3>
+              <p>서버 인스턴스가 늘면 같은 배치가 여러 번 실행될 수 있고, 한 정책 처리 실패가 전체 transaction을 오염시킬 수 있습니다.</p>
+            </article>
+            <article class="card">
+              <h3>설계 판단</h3>
+              <p>중복 실행은 DB advisory lock으로, 부분 실패는 savepoint로, 중복 데이터는 UPSERT로 각각 분리해서 해결했습니다.</p>
+            </article>
+          </div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/backend/src/app/worker/scheduler.py · biz-fund-ai/backend/src/app/domains/policy/sync_service.py · biz-fund-ai/backend/src/app/domains/policy/embedding_service.py · biz-fund-ai/docs/05_troubleshooting_log.md</div></div>
+      </section>
+
+      <section class="sheet">
+        <div class="page-label"><span>Cloud Runtime</span><span>05 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Supabase pgbouncer</p>
+          <h2>클라우드 DB 연결 문제는 connection option과 batch session 수명으로 좁혀 해결했습니다.</h2>
+          <div class="split">
+            <div>
+              <h3>문제</h3>
+              <p class="lead">장시간 AI 배치 중 DB 연결이 끊기거나 prepared statement 문제가 발생하면 전체 수집 파이프라인이 멈춥니다.</p>
+            </div>
+            <div class="grid-2">
+              <article class="card blue"><h3>pool_pre_ping</h3><p>끊긴 connection을 재사용하기 전에 확인하도록 설정했습니다.</p></article>
+              <article class="card green"><h3>pool_recycle</h3><p>오래 살아 있는 connection으로 인한 장애 가능성을 낮췄습니다.</p></article>
+              <article class="card amber"><h3>prepared cache off</h3><p>pgbouncer 환경에서 prepared statement cache 충돌을 피했습니다.</p></article>
+              <article class="card red"><h3>paged session</h3><p>대량 배치를 100건 단위 세션으로 나눠 session 수명을 제한했습니다.</p></article>
+            </div>
+          </div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/backend/src/app/database/postgres/database.py · biz-fund-ai/docs/05_troubleshooting_log.md</div></div>
+      </section>
+
+      <section class="sheet soft-blue">
+        <div class="page-label"><span>Hybrid RAG</span><span>06 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Search quality</p>
+          <h2>정책 문서의 구조를 살리는 chunking과 고유명사 검색을 보완하는 hybrid retrieval을 설계했습니다.</h2>
+          <div class="grid-4">
+            <article class="card"><span class="kicker">Chunk</span><h3>섹션 기반 분리</h3><p>지원대상, 지원내용, 신청방법 같은 정책 문서 헤더를 기준으로 chunk를 만듭니다.</p></article>
+            <article class="card"><span class="kicker">Fallback</span><h3>Sliding window</h3><p>섹션이 없을 때 800자 window와 100자 overlap으로 fallback합니다.</p></article>
+            <article class="card"><span class="kicker">Context</span><h3>Embedding prefix</h3><p>정책명, 기관, 지원유형을 embedding 입력에 붙이고 DB에는 원문 chunk를 저장합니다.</p></article>
+            <article class="card"><span class="kicker">Cost</span><h3>Content hash</h3><p>SHA-256 hash가 같으면 재임베딩을 skip해 API 비용과 DB write를 줄입니다.</p></article>
+          </div>
+          <table class="decision-table">
+            <thead><tr><th>검색 문제</th><th>구현 판단</th><th>검증 근거</th></tr></thead>
+            <tbody>
+              <tr><td>정책명/기관명 같은 고유명사</td><td>Elasticsearch BM25 + Nori</td><td>nori analyzer test</td></tr>
+              <tr><td>의미 유사 질문</td><td>pgvector cosine search</td><td>dense retrieval label</td></tr>
+              <tr><td>두 결과의 순위 통합</td><td>RRF 기반 hybrid result</td><td>sparse ranking test</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/backend/src/app/domains/policy/embedding_service.py · biz-fund-ai/backend/src/app/agents/biz_mong/tools/policy_rag.py · biz-fund-ai/docs/06_rag_pipeline_design.md · biz-fund-ai/backend/tests/domains/policy/test_elasticsearch_helpers.py</div></div>
+      </section>
+
+      <section class="sheet dark">
+        <div class="page-label"><span>AI Observability</span><span>07 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Run · Node · Cost · Feedback</p>
+          <h2>AI 답변을 블랙박스로 두지 않고, run과 node 단위로 운영자가 볼 수 있는 지표를 만들었습니다.</h2>
+          <div class="grid-3">
+            <article class="card"><h3>Run overview</h3><ul class="compact-list"><li>total runs</li><li>success rate</li><li>avg/p50/p95 latency</li><li>fallback rate</li></ul></article>
+            <article class="card"><h3>Cost tracking</h3><ul class="compact-list"><li>input/output token</li><li>model별 cost</li><li>USD/KRW conversion</li><li>prompt/model version breakdown</li></ul></article>
+            <article class="card"><h3>Quality signal</h3><ul class="compact-list"><li>dislike feedback</li><li>CTA click</li><li>RAG hit count</li><li>error code/message</li></ul></article>
+          </div>
+          <div class="quote-box">면접에서 이 페이지는 “AI 기능 구현”이 아니라 “AI 기능을 운영 가능한 백엔드 시스템으로 만들었다”는 증거로 사용합니다.</div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/backend/src/app/domains/admin/service.py · biz-fund-ai/backend/src/app/agents/biz_mong/telemetry.py · biz-fund-ai/backend/src/app/api/v1/admin_router.py</div></div>
+      </section>
+
+      <section class="sheet soft-amber">
+        <div class="page-label"><span>Async Analysis</span><span>08 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">HR Copilot backend case</p>
+          <h2>채용공고 컴플라이언스 분석을 job, trace, experiment run으로 반복 가능한 분석 파이프라인으로 만들었습니다.</h2>
+          <div class="flow">
+            <div class="flow-step"><b>Input</b><span>text, PDF, uploaded file, existing posting</span></div>
+            <div class="flow-step"><b>Job</b><span>submit, active job 조회, cancel job</span></div>
+            <div class="flow-step"><b>Rules</b><span>성차별, 연령차별, 개인정보, 허위공고 등 위험 패턴</span></div>
+            <div class="flow-step"><b>Trace</b><span>pipeline node별 LlmCallLog 기록</span></div>
+            <div class="flow-step"><b>Experiment</b><span>pipeline version, analysis version, case result</span></div>
+          </div>
+          <div class="grid-2" style="margin-top: 22px">
+            <article class="card"><h3>백엔드 어필 포인트</h3><p>분석 요청을 단발성 API로 처리하지 않고 job 상태, 취소, active job, 실험 실행까지 관리합니다.</p></article>
+            <article class="card"><h3>운영 어필 포인트</h3><p>어떤 node에서 어떤 결과가 나왔는지 trace로 남겨 디버깅과 품질 개선의 출발점을 만듭니다.</p></article>
+          </div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>hr-copilot/backend/services/job_posting_service.py · hr-copilot/backend/services/job_posting_trace_service.py · hr-copilot/backend/api/v1/routers/job_posting_router.py · hr-copilot/docs/기획/채용공고분석데이터흐름.md</div></div>
+      </section>
+
+      <section class="sheet">
+        <div class="page-label"><span>Auth & Ownership</span><span>09 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">SSOT and permission</p>
+          <h2>인증과 소유권은 로컬 상태가 아니라 DB와 서비스 계층에서 검증되는 기준으로 정리했습니다.</h2>
+          <div class="grid-3">
+            <article class="card blue"><h3>Business context</h3><p>정책 추천 요청 시 요청 사업자 ID가 사용자 컨텍스트와 맞는지 검증합니다.</p></article>
+            <article class="card green"><h3>Bookmark state</h3><p>추천 결과에서 bookmark 상태를 포함하고 토글 동작을 테스트합니다.</p></article>
+            <article class="card amber"><h3>Study room auth</h3><p>JWT, bcrypt, 예약 소유권, 예약 충돌 같은 백엔드 기본기를 보조 근거로 사용합니다.</p></article>
+          </div>
+          <div class="status-strip">
+            <div class="status"><b>Risk</b><span>다른 사업자의 추천 결과 접근</span></div>
+            <div class="status"><b>Risk</b><span>로컬 상태와 DB 상태 불일치</span></div>
+            <div class="status"><b>Risk</b><span>예약 권한 없는 수정/삭제</span></div>
+            <div class="status"><b>Guard</b><span>서비스 계층 검증과 테스트</span></div>
+          </div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/backend/tests/domains/policy/test_policy_service.py · study-room-reservation/app/services/auth_service.py · study-room-reservation/app/services/reservation_service.py</div></div>
+      </section>
+
+      <section class="sheet soft-green" id="tests">
+        <div class="page-label"><span>Tests</span><span>10 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Tests that protect failure cases</p>
+          <h2>테스트는 개수를 자랑하기보다 실제 장애와 오판을 막는 범위로 보여줍니다.</h2>
+          <table class="decision-table">
+            <thead><tr><th>테스트 축</th><th>확인한 위험</th><th>대표 테스트 범위</th></tr></thead>
+            <tbody>
+              <tr><td>외부 API</td><td>국세청 API 장애가 가입/검증 흐름을 깨는 문제</td><td>timeout, HTTP error, key missing, 휴폐업/미등록</td></tr>
+              <tr><td>검색 품질</td><td>한국어 정책 검색에서 고유명사와 ranking이 흔들리는 문제</td><td>nori analyzer, token extraction, sparse search ranking</td></tr>
+              <tr><td>추천 권한</td><td>다른 사업자 context로 추천 조회하는 문제</td><td>requested business id validation, bookmark state</td></tr>
+              <tr><td>도메인 규칙</td><td>정책 추천에서 hard fail 조건을 놓치는 문제</td><td>tax arrears hard fail, sector alias matching</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/backend/tests/domains/business/test_biz_verification.py · biz-fund-ai/backend/tests/domains/policy/test_elasticsearch_helpers.py · biz-fund-ai/backend/tests/domains/policy/test_policy_service.py · biz-fund-ai/backend/tests/domains/policy/test_rule_based_match_engine.py</div></div>
+      </section>
+
+      <section class="sheet soft-red">
+        <div class="page-label"><span>Troubleshooting</span><span>11 / 12</span></div>
+        <div class="content-with-evidence">
+          <p class="eyebrow">Debug stories</p>
+          <h2>트러블슈팅은 증상, 원인, 수정, 재발 방지 순서로 말할 수 있게 구성합니다.</h2>
+          <div class="timeline">
+            <div class="timeline-row"><b>정책 수집 mismatch</b><span>로그 성공 건수와 DB 반영 건수가 다른 문제를 UPSERT와 transaction 처리 관점에서 추적</span></div>
+            <div class="timeline-row"><b>Supabase runtime</b><span>pgbouncer와 asyncpg 연결 특성에 맞춰 prepared cache와 pool option 조정</span></div>
+            <div class="timeline-row"><b>AI trace</b><span>채용공고 분석 node별 실행 결과를 LlmCallLog로 남겨 어느 단계에서 품질 문제가 생겼는지 확인 가능</span></div>
+            <div class="timeline-row"><b>Embedding cost</b><span>content hash로 변경 없는 정책 재임베딩을 건너뛰어 반복 비용을 줄임</span></div>
+          </div>
+        </div>
+        <div class="evidence"><strong>Evidence</strong><div>biz-fund-ai/docs/05_troubleshooting_log.md · biz-fund-ai/backend/src/app/database/postgres/database.py · hr-copilot/backend/services/job_posting_trace_service.py · biz-fund-ai/backend/src/app/domains/policy/embedding_service.py</div></div>
+      </section>
+
+      <section class="sheet dark">
+        <div class="page-label"><span>Closing</span><span>12 / 12</span></div>
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">What I bring as a backend engineer</p>
+            <h2>기능을 만드는 데서 끝내지 않고, 배치·검색·비용·장애·테스트까지 운영 질문에 답하는 백엔드를 만듭니다.</h2>
+            <p class="lead">이 포트폴리오는 화려한 주장보다 실제 코드에 남은 설계 판단을 중심으로 구성했습니다.</p>
+          </div>
+          <aside class="signal-panel">
+            <ul class="metric-list">
+              <li><b>1</b><span>멀티 인스턴스 배치 중복 실행 방지</span></li>
+              <li><b>2</b><span>정책 도메인에 맞춘 RAG 검색 파이프라인</span></li>
+              <li><b>3</b><span>AI run/node/cost/feedback 관측성</span></li>
+              <li><b>4</b><span>실패 케이스를 겨냥한 테스트 설계</span></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
