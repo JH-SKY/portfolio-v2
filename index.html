@@ -2857,7 +2857,7 @@
               </div>
               <div class="proof-box">
                 <strong>질문 품질 구조 개선</strong>
-                <span>verification_point_extractor와 selector를 추가·개선</span>
+                <span>리스크 검증노드와 selector를 추가·개선</span>
               </div>
             </div>
           </article>
@@ -2881,8 +2881,7 @@
               </div>
               <div class="compare-subline">
                 검색 구조, 작업별 모델 배치, 운영 안정성까지<br />실서비스
-                관점으로
-                설계한 경험
+                관점으로 설계한 경험
               </div>
               <div class="signal-row">
                 <span class="signal-chip">Hybrid RAG</span>
@@ -2894,7 +2893,10 @@
             <div class="compare-proof">
               <div class="proof-box">
                 <strong>Hybrid RAG 구현</strong>
-                <span>의미 검색 + 키워드 검색 + RRF로 정책 검색 파이프라인 구성</span>
+                <span
+                  >의미 검색 + 키워드 검색 + RRF로 정책 검색 파이프라인
+                  구성</span
+                >
               </div>
               <div class="proof-box">
                 <strong>서비스 구조 1인 설계</strong>
@@ -3803,8 +3805,8 @@
           <div class="trace5-pill control">
             <strong>원인을 특정하고 구조를 개선</strong>
             <span
-              >Trace에서 확인한 품질 저하 지점을 verification_point_extractor와
-              최종 선별 로직 개선으로 연결했습니다.</span
+              >Trace에서 확인한 품질 저하 지점을 리스크 추출 노드와 최종 선별
+              로직 개선으로 연결했습니다.</span
             >
           </div>
         </div>
@@ -4067,9 +4069,8 @@
             <div class="trace5-finding action">
               <strong>LLMOps 개선 조치</strong>
               <span
-                >verification_point_extractor 추가, 필수 질문 보호 단위 세분화,
-                최종 선별 기준 강화를 통해 관측 결과를 운영 개선으로
-                연결했습니다.</span
+                >리스크 추출 노드 추가, 필수 질문 보호 단위 세분화, 최종 선별
+                기준 강화를 통해 관측 결과를 운영 개선으로 연결했습니다.</span
               >
             </div>
             <div class="trace5-finding">
@@ -4088,8 +4089,8 @@
                 >추적 결과 2. 생성 성공과 최종 반영은 다른 문제였습니다</strong
               >
               <span
-                >verification_point_extractor가 추출한 필수 질문이 questioner
-                단계에서는 살아 있었지만, 최종 선별 단계에서 빠지는 문제를
+                >리스크 추출 노드가 추출한 필수 질문이 questioner 단계에서는
+                살아 있었지만, 최종 선별 단계에서 빠지는 문제를
                 확인했습니다.</span
               >
             </div>
@@ -4176,7 +4177,7 @@
               <div class="eval6-principle">
                 <div class="eval6-num">03</div>
                 <div>
-                  <strong>독립 평가자</strong>
+                  <strong>독립 평가</strong>
                   <span
                     >생성과 분리된 평가 역할로 자기평가 편향을 줄인 검증
                     구조</span
@@ -4255,7 +4256,7 @@
                 font-weight="800"
                 fill="#17375d"
               >
-                독립 평가자
+                독립 평가
               </text>
               <text
                 x="280"
@@ -4605,8 +4606,8 @@
               >정책명·기관명처럼 정확히 맞아야 하는 정보는 키워드 검색으로
               보완하고, 표현이 다른 질문은 의미 검색으로 처리하도록
               구현했습니다. 정책 추천은 단순히 관련 공고를 찾는 것보다 실제 신청
-              조건이 더 중요하다고 생각해, 지역·업종·자금 목적 같은 사업장 조건을
-              후보 점수에 반영했습니다.</span
+              조건이 더 중요하다고 생각해, 지역·업종·자금 목적 같은 사업장
+              조건을 후보 점수에 반영했습니다.</span
             >
           </div>
         </div>
@@ -4631,7 +4632,8 @@
             <p class="sub">
               <strong
                 >작업 난도와 정확도 요구에 따라 모델을 배치하고, <br />평가
-                하네스로 경량 모델 전환 이후 품질 회귀 여부를 검증했습니다.</strong
+                하네스로 경량 모델 전환 이후 품질 회귀 여부를
+                검증했습니다.</strong
               >
             </p>
           </div>
@@ -4659,7 +4661,7 @@
             <div class="big">약 1/15 <small>비용</small></div>
             <p>
               모델 단가와 작업별 호출 구조를 기준으로 계산한 추정치입니다. 실제
-              청구 비용이 아닌 설계 전후 예상 비용을 비교했습니다.
+              청구 비용이 아닌 설계 전후 동일 테스트 토큰비용을 비교했습니다.
             </p>
           </article>
         </div>
@@ -4675,8 +4677,8 @@
           </div>
           <div class="eval-strip">
             <div class="eval-step">
-              <strong>7개 사업장 · 15개 질문</strong
-              ><span>BIZ-01~07 · 우회 표현 · 복합 목적 포함</span>
+              <strong>7개 테스트셋 · 15개 시나리오</strong
+              ><span> 우회 표현 · 복합 목적 포함</span>
             </div>
             <div class="eval-arrow">›</div>
             <div class="eval-step">
@@ -4696,8 +4698,9 @@
           </div>
           <div class="eval-harness-note">
             업종·지역·재무 상태가 다른 7개 사업장 시나리오에 15개 질문을 배분해
-            검증했고, 고용 지원·보증금 대출 동시 문의, 월급 지원·임대료 부담 완화,
-            전기세·가스비 생활어 질문 같은 복합 케이스까지 통과 기준에 포함했습니다.
+            검증했고, 고용 지원·보증금 대출 동시 문의, 월급 지원·임대료 부담
+            완화, 전기세·가스비 생활어 질문 같은 복합 케이스까지 통과 기준에
+            포함했습니다.
           </div>
         </article>
       </section>
@@ -4947,7 +4950,7 @@
               트러블슈팅 로그
             </div>
             <div style="font-size: 13px; color: #6a7e96">
-              BIZ-FUND-AI · 장애 3건 복구 기록
+              BIZ-FUND-AI · 장애 기록
             </div>
             <div
               style="
