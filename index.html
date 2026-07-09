@@ -2887,7 +2887,7 @@
             <div class="compare-proof">
               <div class="proof-box">
                 <strong>Hybrid RAG 구현</strong>
-                <span>pgvector + BM25 + RRF로 정책 검색 파이프라인 구성</span>
+                <span>의미 검색 + 키워드 검색 + RRF로 정책 검색 파이프라인 구성</span>
               </div>
               <div class="proof-box">
                 <strong>서비스 구조 1인 설계</strong>
@@ -4518,8 +4518,8 @@
             </div>
             <p class="sub">
               <strong
-                >질문 의도 분해·사전 쿼리 재작성·RRF 기반 Hybrid 검색을
-                적용해 사업자 중심 추천이 되도록 설계했습니다.</strong
+                >질문 의도를 나누고 검색어를 재작성한 뒤, 의미 검색과 키워드
+                검색을 RRF로 결합해 사업자 중심 추천이 되도록 설계했습니다.</strong
               >
             </p>
           </div>
@@ -4551,7 +4551,7 @@
                 <strong>원문 저장</strong><span>정책·청크 구조화</span>
               </div>
               <div class="rag-step key">
-                <strong>pgvector</strong><span>검색 색인 완성</span>
+                <strong>검색 색인</strong><span>의미·키워드 검색 준비</span>
               </div>
             </div>
           </div>
@@ -4569,18 +4569,18 @@
               </div>
               <div class="rag-step">
                 <strong>검색어 최적화</strong
-                ><span>LLM이 질문을 검색하기 좋은 질의 3개로 변환</span>
+                ><span>질문을 최대 3개 검색 질의로 재작성</span>
               </div>
               <div class="rag-step">
-                <strong>BM25 + Nori 검색</strong
-                ><span>정책명·기관명 중심 sparse retrieval</span>
+                <strong>의미·키워드 검색</strong
+                ><span>pgvector + BM25/Nori 병렬 검색</span>
               </div>
               <div class="rag-step key">
-                <strong>RRF 결합</strong><span>두 검색 순위 통합</span>
+                <strong>RRF 결합</strong><span>의미·키워드 순위 통합</span>
               </div>
               <div class="rag-step">
-                <strong>조건 필터·필드 가점</strong
-                ><span>지역·지원유형 조건 반영</span>
+                <strong>개인화 재랭킹</strong
+                ><span>지역·업종·자금 목적 반영</span>
               </div>
               <div class="rag-step key">
                 <strong>근거 기반 답변</strong
@@ -4593,15 +4593,16 @@
           <div class="rag-decision">
             <strong>검색 후보 수 설계</strong
             ><span
-              >1차 검색 결과가 부족하면 질의를 다시 정제하고, pgvector top 20 ·
-              BM25 top 20을 수집한 뒤 RRF로 top 5 정책만 남겼습니다.</span
+              >의도별 재작성 질의마다 의미 검색(pgvector) top 20과 키워드
+              검색(BM25/Nori) top 20을 수집한 뒤 RRF로 top 5 정책을
+              선정했습니다.</span
             >
           </div>
           <div class="rag-decision">
-            <strong>한국어 정책 검색 보정</strong
+            <strong>정확 검색과 의미 검색 병렬화</strong
             ><span
-              >Nori 분석기와 컨텍스추얼 임베딩으로 정책명·기관명 검색 누락을
-              줄였습니다.</span
+              >정책명·기관명은 키워드 검색으로, 표현이 다른 질문은 의미 검색으로
+              보완했습니다.</span
             >
           </div>
           <div class="rag-decision">

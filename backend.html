@@ -76,7 +76,7 @@
             </thead>
             <tbody>
               <tr><td>운영에서 중복 실행을 막았나?</td><td>Advisory Lock 기반 scheduler singleton</td><td>worker code</td></tr>
-              <tr><td>검색 품질은 어떻게 만들었나?</td><td>섹션 chunking, Nori, BM25, vector, RRF</td><td>service code + tests</td></tr>
+              <tr><td>검색 품질은 어떻게 만들었나?</td><td>섹션 chunking, 의미 검색, 키워드 검색, RRF</td><td>service code + tests</td></tr>
               <tr><td>AI 비용과 장애를 추적하나?</td><td>run/node/cost/latency/fallback/dislike 지표</td><td>admin service + log models</td></tr>
               <tr><td>실패 케이스 테스트가 있나?</td><td>외부 API timeout, 권한, 검색 ranking, hard fail</td><td>pytest files</td></tr>
             </tbody>
@@ -176,8 +176,8 @@
           <table class="decision-table">
             <thead><tr><th>검색 문제</th><th>구현 판단</th><th>검증 근거</th></tr></thead>
             <tbody>
-              <tr><td>정책명/기관명 같은 고유명사</td><td>Elasticsearch BM25 + Nori</td><td>nori analyzer test</td></tr>
-              <tr><td>의미 유사 질문</td><td>pgvector cosine search</td><td>dense retrieval label</td></tr>
+              <tr><td>정책명/기관명 같은 고유명사</td><td>키워드 검색(BM25 + Nori)</td><td>nori analyzer test</td></tr>
+              <tr><td>표현이 다른 의미 유사 질문</td><td>의미 검색(pgvector cosine)</td><td>dense retrieval label</td></tr>
               <tr><td>두 결과의 순위 통합</td><td>RRF 기반 hybrid result</td><td>sparse ranking test</td></tr>
             </tbody>
           </table>
